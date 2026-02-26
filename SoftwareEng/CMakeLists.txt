@@ -26,7 +26,9 @@ set(DEBUG_SOURCE_FILES "Main Directory/main.cpp"
         "Main Directory/Participation.cpp"
         "Main Directory/Participation.h"
         "Main Directory/Date.cpp"
-        "Main Directory/Date.h")
+        "Main Directory/Date.h"
+        "Main Directory/System.cpp"
+        "Main Directory/System.h")
 # Create RELEASE target
 add_executable(release_target ${RELEASE_SOURCE_FILES}
         "Main Directory/main.cpp")

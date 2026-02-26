@@ -1,4 +1,17 @@
 "C:\Program Files\JetBrains\CLion 2025.2.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "MinGW Makefiles" -S C:\Users\Dell\CLionProjects\Project-software-engineering\SoftwareEng -B C:\Users\Dell\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug
 -- Configuring done (0.3s)
--- Generating done (0.1s)
--- Build files have been written to: C:/Users/Dell/CLionProjects/Project-software-engineering/SoftwareEng/cmake-build-debug
+CMake Error at CMakeLists.txt:36 (add_executable):
+  Cannot find source file:
+
+    Main Directory/Date.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm
+  .ccm .cxxm .c++m .h .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90
+  .f95 .f03 .hip .ispc
+
+
+CMake Error at CMakeLists.txt:36 (add_executable):
+  No SOURCES given to target: debug_target
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

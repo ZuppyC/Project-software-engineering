@@ -13,7 +13,8 @@ private:
     string name;
     string identifier;
     int capacity;
-
+public:
+    Room();
 };
 
 
