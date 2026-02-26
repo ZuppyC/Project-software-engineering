@@ -13,15 +13,25 @@ link_directories(./gtest/lib)
 # Only add cpp files, no h files!
 # Only add files with functionality here, no test files!
 # Make sure the "main" function is in "main_release"!
-set(RELEASE_SOURCE_FILES src/Largest.cpp src/Fighterplane.cpp)
+set(RELEASE_SOURCE_FILES
+        "Main Directory/main.cpp")
 # Set source files for DEBUG target
 # Only add cpp files, no h files!
 # Make sure the "main" function is in "main_debug"!
-set(DEBUG_SOURCE_FILES src/Largest.cpp src/Fighterplane.cpp
-        src/extratest.cpp)
+set(DEBUG_SOURCE_FILES "Main Directory/main.cpp"
+        "Main Directory/Meeting.cpp"
+        "Main Directory/Meeting.h"
+        "Main Directory/Room.cpp"
+        "Main Directory/Room.h"
+        "Main Directory/Participation.cpp"
+        "Main Directory/Participation.h"
+        "Main Directory/Date.cpp"
+        "Main Directory/Date.h")
 # Create RELEASE target
-add_executable(release_target ${RELEASE_SOURCE_FILES})
+add_executable(release_target ${RELEASE_SOURCE_FILES}
+        "Main Directory/main.cpp")
 # Create DEBUG target
-add_executable(debug_target ${DEBUG_SOURCE_FILES})
+add_executable(debug_target ${DEBUG_SOURCE_FILES}
+        "Main Directory/main.cpp")
 # Link library
 target_link_libraries(debug_target gtest)
