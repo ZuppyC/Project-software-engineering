@@ -1,0 +1,4 @@
+C:/Users/Admin/CLionProjects/SoftwareEng/cmake-build-debug/CMakeFiles/release_target.dir
+C:/Users/Admin/CLionProjects/SoftwareEng/cmake-build-debug/CMakeFiles/debug_target.dir
+C:/Users/Admin/CLionProjects/SoftwareEng/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Admin/CLionProjects/SoftwareEng/cmake-build-debug/CMakeFiles/rebuild_cache.dir
