@@ -25,8 +25,6 @@ set(DEBUG_SOURCE_FILES "Main Directory/main.cpp"
         "Main Directory/Room.h"
         "Main Directory/Participation.cpp"
         "Main Directory/Participation.h"
-        "Main Directory/Date.cpp"
-        "Main Directory/Date.h"
         "Main Directory/System.cpp"
         "Main Directory/System.h")
 # Create RELEASE target

@@ -3,3 +3,16 @@
 //
 
 #include "System.h"
+
+
+System::System()
+{
+
+}
+
+System* System::parser(TiXmlDocument doc)
+{
+    System* systeem = new System();
+    return systeem;
+
+}

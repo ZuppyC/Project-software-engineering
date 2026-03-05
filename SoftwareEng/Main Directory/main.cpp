@@ -8,10 +8,6 @@
 using namespace std;
 
 
-System parser(TiXmlDocument document)
-{
-    return System;
-}
 
 int main()
 {
