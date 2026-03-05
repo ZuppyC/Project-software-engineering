@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <SYSTEM>
     <ROOM>
         <NAME>M.G.025</NAME>
@@ -13,7 +14,7 @@
         <LABEL>Weekly meeting</LABEL>
         <IDENTIFIER>Meeting_478463</IDENTIFIER>
         <ROOM>Room98732</ROOM>
-        <DATE>2026-05-22<DATE>
+        <DATE>2026-05-22</DATE>
     </MEETING>
     <PARTICIPATION>
         <MEETING>Meeting_478463</MEETING>

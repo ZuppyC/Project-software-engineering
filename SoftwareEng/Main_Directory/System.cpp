@@ -12,13 +12,20 @@ System::System()
 
 System* System::parser(const char* xmldoc)
 {
-    System* systeem = new System();
-    TiXmlDocument doc;
-    doc.Print();
-    if (doc.LoadFile(xmldoc) != true)
-    {
-        std::cerr << "amanasikim" << endl;
-    }
-    return systeem;
 
 }
+void System::addMeeting(Meeting* meeting)
+{
+    meetings.push_back(meeting);
+}
+
+void System::addRoom(Room* room)
+{
+    rooms.push_back(room);
+}
+
+void System::addParticipation(Participation* participation)
+{
+    participations.push_back(participation);
+}
+
