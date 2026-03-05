@@ -14,24 +14,27 @@ link_directories(./gtest/lib)
 # Only add files with functionality here, no test files!
 # Make sure the "main" function is in "main_release"!
 set(RELEASE_SOURCE_FILES
-        "Main Directory/main.cpp")
+        "Main_Directory/main.cpp")
 # Set source files for DEBUG target
 # Only add cpp files, no h files!
 # Make sure the "main" function is in "main_debug"!
-set(DEBUG_SOURCE_FILES "Main Directory/main.cpp"
-        "Main Directory/Meeting.cpp"
-        "Main Directory/Meeting.h"
-        "Main Directory/Room.cpp"
-        "Main Directory/Room.h"
-        "Main Directory/Participation.cpp"
-        "Main Directory/Participation.h"
-        "Main Directory/System.cpp"
-        "Main Directory/System.h")
+set(DEBUG_SOURCE_FILES "Main_Directory/main.cpp"
+        Main_Directory/Meeting.cpp
+        Main_Directory/Room.cpp
+        Main_Directory/Participation.cpp
+        Main_Directory/System.cpp
+        Main_Directory/Tests.cpp
+        Main_Directory/Tests.h)
 # Create RELEASE target
 add_executable(release_target ${RELEASE_SOURCE_FILES}
-        "Main Directory/main.cpp")
+        Main_Directory/main.cpp
+        Main_Directory/System.cpp
+        xmlparser/tinystr.cpp
+        xmlparser/tinyxmlerror.cpp
+        xmlparser/tinyxmlparser.cpp
+        xmlparser/tinyxml.cpp)
 # Create DEBUG target
 add_executable(debug_target ${DEBUG_SOURCE_FILES}
-        "Main Directory/main.cpp")
+        Main_Directory/Tests.cpp)
 # Link library
 target_link_libraries(debug_target gtest)

@@ -25,7 +25,7 @@ public:
     void addRoom(Room* room);
     void addMeeting(Meeting* meeting);
     void addParticipation(Participation* participation);
-    System* parser(TiXmlDocument doc);
+    System* parser(const char* doc);
 };
 
 
