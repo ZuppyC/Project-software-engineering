@@ -12,13 +12,18 @@ System::System()
 
 System* System::parser(const char* xmldoc)
 {
-    System* systeem = new System();
-    TiXmlDocument doc;
-    doc.Print();
-    if (doc.LoadFile(xmldoc) != true)
-    {
-        std::cerr << "amanasikim" << endl;
-    }
-    return systeem;
+    System* system = new System();
+    TiXmlDocument doc(xmldoc);
 
+    if (!doc.LoadFile()) {
+        std::cerr << "XML kon niet geladen worden: "
+                  << doc.ErrorDesc() << std::endl;
+        delete system;
+        return nullptr;
+    }
+
+    std::cout << "XML bestand succesvol geladen." << std::endl;
+    return system;
 }
+
+

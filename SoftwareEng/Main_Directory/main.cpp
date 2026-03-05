@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-    System* systeem = new System;
-    systeem = systeem->parser("xmlfile.xml");
+    System s;
+    s.parser("..\\Main_Directory\\xmlfile.xml");
     return 0;
 }

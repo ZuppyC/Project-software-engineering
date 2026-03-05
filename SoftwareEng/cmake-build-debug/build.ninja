@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/Admin/CLionProjects/SoftwareEng/cmake-build-debug/
+cmake_ninja_workdir = C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target release_target
 
@@ -49,21 +49,61 @@ cmake_ninja_workdir = C$:/Users/Admin/CLionProjects/SoftwareEng/cmake-build-debu
 
 build cmake_object_order_depends_target_release_target: phony || .
 
-build CMakeFiles/release_target.dir/src/Largest.cpp.obj: CXX_COMPILER__release_target_unscanned_Debug C$:/Users/Admin/CLionProjects/SoftwareEng/src/Largest.cpp || cmake_object_order_depends_target_release_target
+build CMakeFiles/release_target.dir/Main_Directory/main.cpp.obj: CXX_COMPILER__release_target_unscanned_Debug C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Main_Directory/main.cpp || cmake_object_order_depends_target_release_target
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\release_target.dir\src\Largest.cpp.obj.d
+  DEP_FILE = CMakeFiles\release_target.dir\Main_Directory\main.cpp.obj.d
   FLAGS = -std=c++17 -Wall -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/Admin/CLionProjects/SoftwareEng/./gtest/include
+  INCLUDES = -IC:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/./gtest/include
   OBJECT_DIR = CMakeFiles\release_target.dir
-  OBJECT_FILE_DIR = CMakeFiles\release_target.dir\src
+  OBJECT_FILE_DIR = CMakeFiles\release_target.dir\Main_Directory
 
-build CMakeFiles/release_target.dir/src/Fighterplane.cpp.obj: CXX_COMPILER__release_target_unscanned_Debug C$:/Users/Admin/CLionProjects/SoftwareEng/src/Fighterplane.cpp || cmake_object_order_depends_target_release_target
+build CMakeFiles/release_target.dir/Tests/Tests.cpp.obj: CXX_COMPILER__release_target_unscanned_Debug C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Tests/Tests.cpp || cmake_object_order_depends_target_release_target
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\release_target.dir\src\Fighterplane.cpp.obj.d
+  DEP_FILE = CMakeFiles\release_target.dir\Tests\Tests.cpp.obj.d
   FLAGS = -std=c++17 -Wall -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/Admin/CLionProjects/SoftwareEng/./gtest/include
+  INCLUDES = -IC:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/./gtest/include
   OBJECT_DIR = CMakeFiles\release_target.dir
-  OBJECT_FILE_DIR = CMakeFiles\release_target.dir\src
+  OBJECT_FILE_DIR = CMakeFiles\release_target.dir\Tests
+
+build CMakeFiles/release_target.dir/Main_Directory/System.cpp.obj: CXX_COMPILER__release_target_unscanned_Debug C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Main_Directory/System.cpp || cmake_object_order_depends_target_release_target
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\release_target.dir\Main_Directory\System.cpp.obj.d
+  FLAGS = -std=c++17 -Wall -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/./gtest/include
+  OBJECT_DIR = CMakeFiles\release_target.dir
+  OBJECT_FILE_DIR = CMakeFiles\release_target.dir\Main_Directory
+
+build CMakeFiles/release_target.dir/xmlparser/tinystr.cpp.obj: CXX_COMPILER__release_target_unscanned_Debug C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/xmlparser/tinystr.cpp || cmake_object_order_depends_target_release_target
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\release_target.dir\xmlparser\tinystr.cpp.obj.d
+  FLAGS = -std=c++17 -Wall -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/./gtest/include
+  OBJECT_DIR = CMakeFiles\release_target.dir
+  OBJECT_FILE_DIR = CMakeFiles\release_target.dir\xmlparser
+
+build CMakeFiles/release_target.dir/xmlparser/tinyxmlerror.cpp.obj: CXX_COMPILER__release_target_unscanned_Debug C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/xmlparser/tinyxmlerror.cpp || cmake_object_order_depends_target_release_target
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\release_target.dir\xmlparser\tinyxmlerror.cpp.obj.d
+  FLAGS = -std=c++17 -Wall -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/./gtest/include
+  OBJECT_DIR = CMakeFiles\release_target.dir
+  OBJECT_FILE_DIR = CMakeFiles\release_target.dir\xmlparser
+
+build CMakeFiles/release_target.dir/xmlparser/tinyxmlparser.cpp.obj: CXX_COMPILER__release_target_unscanned_Debug C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/xmlparser/tinyxmlparser.cpp || cmake_object_order_depends_target_release_target
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\release_target.dir\xmlparser\tinyxmlparser.cpp.obj.d
+  FLAGS = -std=c++17 -Wall -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/./gtest/include
+  OBJECT_DIR = CMakeFiles\release_target.dir
+  OBJECT_FILE_DIR = CMakeFiles\release_target.dir\xmlparser
+
+build CMakeFiles/release_target.dir/xmlparser/tinyxml.cpp.obj: CXX_COMPILER__release_target_unscanned_Debug C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/xmlparser/tinyxml.cpp || cmake_object_order_depends_target_release_target
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\release_target.dir\xmlparser\tinyxml.cpp.obj.d
+  FLAGS = -std=c++17 -Wall -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/./gtest/include
+  OBJECT_DIR = CMakeFiles\release_target.dir
+  OBJECT_FILE_DIR = CMakeFiles\release_target.dir\xmlparser
 
 
 # =============================================================================
@@ -73,12 +113,12 @@ build CMakeFiles/release_target.dir/src/Fighterplane.cpp.obj: CXX_COMPILER__rele
 #############################################
 # Link the executable release_target.exe
 
-build release_target.exe: CXX_EXECUTABLE_LINKER__release_target_Debug CMakeFiles/release_target.dir/src/Largest.cpp.obj CMakeFiles/release_target.dir/src/Fighterplane.cpp.obj
+build release_target.exe: CXX_EXECUTABLE_LINKER__release_target_Debug CMakeFiles/release_target.dir/Main_Directory/main.cpp.obj CMakeFiles/release_target.dir/Tests/Tests.cpp.obj CMakeFiles/release_target.dir/Main_Directory/System.cpp.obj CMakeFiles/release_target.dir/xmlparser/tinystr.cpp.obj CMakeFiles/release_target.dir/xmlparser/tinyxmlerror.cpp.obj CMakeFiles/release_target.dir/xmlparser/tinyxmlparser.cpp.obj CMakeFiles/release_target.dir/xmlparser/tinyxml.cpp.obj
   CONFIG = Debug
   FLAGS = -std=c++17 -Wall -g
   LINK_FLAGS = -pthread
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  LINK_PATH = -LC:/Users/Admin/CLionProjects/SoftwareEng/./gtest/lib
+  LINK_PATH = -LC:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/./gtest/lib
   OBJECT_DIR = CMakeFiles\release_target.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -95,29 +135,53 @@ build release_target.exe: CXX_EXECUTABLE_LINKER__release_target_Debug CMakeFiles
 
 build cmake_object_order_depends_target_debug_target: phony || .
 
-build CMakeFiles/debug_target.dir/src/Largest.cpp.obj: CXX_COMPILER__debug_target_unscanned_Debug C$:/Users/Admin/CLionProjects/SoftwareEng/src/Largest.cpp || cmake_object_order_depends_target_debug_target
+build CMakeFiles/debug_target.dir/Main_Directory/System.cpp.obj: CXX_COMPILER__debug_target_unscanned_Debug C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Main_Directory/System.cpp || cmake_object_order_depends_target_debug_target
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\debug_target.dir\src\Largest.cpp.obj.d
+  DEP_FILE = CMakeFiles\debug_target.dir\Main_Directory\System.cpp.obj.d
   FLAGS = -std=c++17 -Wall -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/Admin/CLionProjects/SoftwareEng/./gtest/include
+  INCLUDES = -IC:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/./gtest/include
   OBJECT_DIR = CMakeFiles\debug_target.dir
-  OBJECT_FILE_DIR = CMakeFiles\debug_target.dir\src
+  OBJECT_FILE_DIR = CMakeFiles\debug_target.dir\Main_Directory
 
-build CMakeFiles/debug_target.dir/src/Fighterplane.cpp.obj: CXX_COMPILER__debug_target_unscanned_Debug C$:/Users/Admin/CLionProjects/SoftwareEng/src/Fighterplane.cpp || cmake_object_order_depends_target_debug_target
+build CMakeFiles/debug_target.dir/Tests/Tests.cpp.obj: CXX_COMPILER__debug_target_unscanned_Debug C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Tests/Tests.cpp || cmake_object_order_depends_target_debug_target
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\debug_target.dir\src\Fighterplane.cpp.obj.d
+  DEP_FILE = CMakeFiles\debug_target.dir\Tests\Tests.cpp.obj.d
   FLAGS = -std=c++17 -Wall -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/Admin/CLionProjects/SoftwareEng/./gtest/include
+  INCLUDES = -IC:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/./gtest/include
   OBJECT_DIR = CMakeFiles\debug_target.dir
-  OBJECT_FILE_DIR = CMakeFiles\debug_target.dir\src
+  OBJECT_FILE_DIR = CMakeFiles\debug_target.dir\Tests
 
-build CMakeFiles/debug_target.dir/src/extratest.cpp.obj: CXX_COMPILER__debug_target_unscanned_Debug C$:/Users/Admin/CLionProjects/SoftwareEng/src/extratest.cpp || cmake_object_order_depends_target_debug_target
+build CMakeFiles/debug_target.dir/xmlparser/tinystr.cpp.obj: CXX_COMPILER__debug_target_unscanned_Debug C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/xmlparser/tinystr.cpp || cmake_object_order_depends_target_debug_target
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\debug_target.dir\src\extratest.cpp.obj.d
+  DEP_FILE = CMakeFiles\debug_target.dir\xmlparser\tinystr.cpp.obj.d
   FLAGS = -std=c++17 -Wall -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -IC:/Users/Admin/CLionProjects/SoftwareEng/./gtest/include
+  INCLUDES = -IC:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/./gtest/include
   OBJECT_DIR = CMakeFiles\debug_target.dir
-  OBJECT_FILE_DIR = CMakeFiles\debug_target.dir\src
+  OBJECT_FILE_DIR = CMakeFiles\debug_target.dir\xmlparser
+
+build CMakeFiles/debug_target.dir/xmlparser/tinyxmlerror.cpp.obj: CXX_COMPILER__debug_target_unscanned_Debug C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/xmlparser/tinyxmlerror.cpp || cmake_object_order_depends_target_debug_target
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\debug_target.dir\xmlparser\tinyxmlerror.cpp.obj.d
+  FLAGS = -std=c++17 -Wall -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/./gtest/include
+  OBJECT_DIR = CMakeFiles\debug_target.dir
+  OBJECT_FILE_DIR = CMakeFiles\debug_target.dir\xmlparser
+
+build CMakeFiles/debug_target.dir/xmlparser/tinyxmlparser.cpp.obj: CXX_COMPILER__debug_target_unscanned_Debug C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/xmlparser/tinyxmlparser.cpp || cmake_object_order_depends_target_debug_target
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\debug_target.dir\xmlparser\tinyxmlparser.cpp.obj.d
+  FLAGS = -std=c++17 -Wall -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/./gtest/include
+  OBJECT_DIR = CMakeFiles\debug_target.dir
+  OBJECT_FILE_DIR = CMakeFiles\debug_target.dir\xmlparser
+
+build CMakeFiles/debug_target.dir/xmlparser/tinyxml.cpp.obj: CXX_COMPILER__debug_target_unscanned_Debug C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/xmlparser/tinyxml.cpp || cmake_object_order_depends_target_debug_target
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\debug_target.dir\xmlparser\tinyxml.cpp.obj.d
+  FLAGS = -std=c++17 -Wall -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/./gtest/include
+  OBJECT_DIR = CMakeFiles\debug_target.dir
+  OBJECT_FILE_DIR = CMakeFiles\debug_target.dir\xmlparser
 
 
 # =============================================================================
@@ -127,12 +191,12 @@ build CMakeFiles/debug_target.dir/src/extratest.cpp.obj: CXX_COMPILER__debug_tar
 #############################################
 # Link the executable debug_target.exe
 
-build debug_target.exe: CXX_EXECUTABLE_LINKER__debug_target_Debug CMakeFiles/debug_target.dir/src/Largest.cpp.obj CMakeFiles/debug_target.dir/src/Fighterplane.cpp.obj CMakeFiles/debug_target.dir/src/extratest.cpp.obj
+build debug_target.exe: CXX_EXECUTABLE_LINKER__debug_target_Debug CMakeFiles/debug_target.dir/Main_Directory/System.cpp.obj CMakeFiles/debug_target.dir/Tests/Tests.cpp.obj CMakeFiles/debug_target.dir/xmlparser/tinystr.cpp.obj CMakeFiles/debug_target.dir/xmlparser/tinyxmlerror.cpp.obj CMakeFiles/debug_target.dir/xmlparser/tinyxmlparser.cpp.obj CMakeFiles/debug_target.dir/xmlparser/tinyxml.cpp.obj
   CONFIG = Debug
   FLAGS = -std=c++17 -Wall -g
   LINK_FLAGS = -pthread
   LINK_LIBRARIES = -lgtest  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  LINK_PATH = -LC:/Users/Admin/CLionProjects/SoftwareEng/./gtest/lib
+  LINK_PATH = -LC:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/./gtest/lib
   OBJECT_DIR = CMakeFiles\debug_target.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -145,7 +209,7 @@ build debug_target.exe: CXX_EXECUTABLE_LINKER__debug_target_Debug CMakeFiles/deb
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Admin\CLionProjects\SoftwareEng\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2025.2.4\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2025.2.4\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -156,7 +220,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Admin\CLionProjects\SoftwareEng\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2025.2.4\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\Admin\CLionProjects\SoftwareEng -BC:\Users\Admin\CLionProjects\SoftwareEng\cmake-build-debug"
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2025.2.4\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng -BC:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -176,7 +240,7 @@ build release_target: phony release_target.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/Admin/CLionProjects/SoftwareEng/cmake-build-debug
+# Folder: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/cmake-build-debug
 
 build all: phony release_target.exe debug_target.exe
 
@@ -187,14 +251,14 @@ build all: phony release_target.exe debug_target.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja C$:/Users/Admin/CLionProjects/SoftwareEng/cmake-build-debug/cmake_install.cmake: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/WindowsPaths.cmake C$:/Users/Admin/CLionProjects/SoftwareEng/CMakeLists.txt CMakeCache.txt CMakeFiles/4.0.2/CMakeCCompiler.cmake CMakeFiles/4.0.2/CMakeCXXCompiler.cmake CMakeFiles/4.0.2/CMakeRCCompiler.cmake CMakeFiles/4.0.2/CMakeSystem.cmake
+build build.ninja C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/cmake-build-debug/cmake_install.cmake: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/WindowsPaths.cmake C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/CMakeLists.txt CMakeCache.txt CMakeFiles/4.0.2/CMakeCCompiler.cmake CMakeFiles/4.0.2/CMakeCXXCompiler.cmake CMakeFiles/4.0.2/CMakeRCCompiler.cmake CMakeFiles/4.0.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/WindowsPaths.cmake C$:/Users/Admin/CLionProjects/SoftwareEng/CMakeLists.txt CMakeCache.txt CMakeFiles/4.0.2/CMakeCCompiler.cmake CMakeFiles/4.0.2/CMakeCXXCompiler.cmake CMakeFiles/4.0.2/CMakeRCCompiler.cmake CMakeFiles/4.0.2/CMakeSystem.cmake: phony
+build C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.2.4/bin/cmake/win/x64/share/cmake-4.0/Modules/Platform/WindowsPaths.cmake C$:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/CMakeLists.txt CMakeCache.txt CMakeFiles/4.0.2/CMakeCCompiler.cmake CMakeFiles/4.0.2/CMakeCXXCompiler.cmake CMakeFiles/4.0.2/CMakeRCCompiler.cmake CMakeFiles/4.0.2/CMakeSystem.cmake: phony
 
 
 #############################################
