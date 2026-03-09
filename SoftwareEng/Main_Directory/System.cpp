@@ -7,6 +7,8 @@
 
 System::System()
 {
+    _initcheck = this;
+
 
 }
 
@@ -23,7 +25,11 @@ System* System::parser(const char* xmldoc)
     }
 
     std::cout << "XML bestand succesvol geladen." << std::endl;
-    return system;
+    return nullptr;
+}
+bool System::properlyInitialized()
+{
+    return _initcheck ==this;
 }
 
 

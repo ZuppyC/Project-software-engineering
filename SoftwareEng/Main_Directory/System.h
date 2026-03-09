@@ -17,6 +17,7 @@ using namespace std;
 class System
 {
 private:
+    System* _initcheck;
     vector<Room*> rooms;
     vector<Meeting*> meetings;
     vector<Participation*> participations;
@@ -26,6 +27,8 @@ public:
     void addMeeting(Meeting* meeting);
     void addParticipation(Participation* participation);
     System* parser(const char* doc);
+
+    bool properlyInitialized();
 };
 
 
