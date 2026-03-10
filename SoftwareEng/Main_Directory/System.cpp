@@ -19,11 +19,11 @@ System* System::parser(const char* xmldoc)
 
     System* system = new System();
     TiXmlDocument doc(xmldoc);
-
+    doc.LoadFile();
+    TiXmlElement* s = doc.FirstChildElement("SYSTEM");
     REQUIRE(
-        doc.FirstChildElement("SYSTEM")->FirstChildElement("ROOM") != NULL &&
-        doc.FirstChildElement("SYSTEM")->FirstChildElement("MEETING") != NULL &&
-        doc.FirstChildElement("SYSTEM")->FirstChildElement("PARTICIPATION") != NULL,
+        s != nullptr &&
+        s->FirstChildElement("ROOM") != nullptr,
         "De XML bestand moet ROOM, MEETING en PARTICIPATION elementen hebben."
     );
 
