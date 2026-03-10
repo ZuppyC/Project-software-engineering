@@ -12,6 +12,6 @@ using namespace std;
 int main()
 {
     System s;
-    s.parser("..\\Main_Directory\\xmlfile.xml");
+    s.parser("xmlfile.xml");
     return 0;
 }
