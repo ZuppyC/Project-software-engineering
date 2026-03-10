@@ -19,7 +19,13 @@ System* System::parser(const char* xmldoc)
 
     System* system = new System();
     TiXmlDocument doc(xmldoc);
-    doc.LoadFile();
+    if (!doc.LoadFile()) {
+        std::cerr << "XML kon niet geladen worden: "
+                  << doc.ErrorDesc() << std::endl;
+        delete system;
+        return nullptr;
+    }
+
     TiXmlElement* s = doc.FirstChildElement("SYSTEM");
     REQUIRE(
         s != nullptr &&
@@ -37,19 +43,28 @@ System* System::parser(const char* xmldoc)
         "De XML bestand moet MEETINGS element hebben."
     );
 
-
-    if (!doc.LoadFile()) {
-        std::cerr << "XML kon niet geladen worden: "
-                  << doc.ErrorDesc() << std::endl;
-        delete system;
-        return nullptr;
-    }
-
     std::cout << "XML bestand succesvol geladen." << std::endl;
+    TiXmlElement* begin = s->FirstChildElement();
+    for (TiXmlElement* childs = begin; childs!= NULL;childs = childs->NextSiblingElement())
+    {
+        string type = childs->Value();
+        if (type == "ROOM")
+        {
+            cout << "dit is een room" <<endl;
+        }
+        else if (type == "MEETING")
+        {
+            cout << "dit is een meeting" << endl;
+        }
+        else if (type == "PARTICIPATION")
+        {
+            cout << "dit is een participatie" << endl;
+        }
+    }
+    ENSURE(!rooms.empty(),"geen room");
+    ENSURE(!meetings.empty(),"geen meeting");
+    ENSURE(!participations.empty(),"geen participatie");
 
-    ENSURE(!rooms.empty(), "ROOMS zijn niet gelezen");
-    ENSURE(!meetings.empty(), "MEETINGS zijn niet gelezen");
-    ENSURE(!participations.empty(), "PARTICIPATIONS zijn niet gelezen");
 
     return nullptr;
 }

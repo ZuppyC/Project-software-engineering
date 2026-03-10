@@ -15,6 +15,10 @@ private:
     int capacity;
 public:
     Room();
+    void setName(string name);
+    void setIdentifier(string id);
+    void setCapacity(int getal);
+    ~Room();
 };
 
 
