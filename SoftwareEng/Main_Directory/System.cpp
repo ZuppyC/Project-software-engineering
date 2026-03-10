@@ -24,8 +24,19 @@ System* System::parser(const char* xmldoc)
     REQUIRE(
         s != nullptr &&
         s->FirstChildElement("ROOM") != nullptr,
-        "De XML bestand moet ROOM, MEETING en PARTICIPATION elementen hebben."
+        "De XML bestand moet ROOM element hebben."
     );
+    REQUIRE(
+        s != nullptr &&
+        s->FirstChildElement("PARTICIPATION") != nullptr,
+        "De XML bestand moet PARTICIPATION element hebben."
+    );
+    REQUIRE(
+        s != nullptr &&
+        s->FirstChildElement("MEETING") != nullptr,
+        "De XML bestand moet MEETINGS element hebben."
+    );
+
 
     if (!doc.LoadFile()) {
         std::cerr << "XML kon niet geladen worden: "
@@ -37,7 +48,7 @@ System* System::parser(const char* xmldoc)
     std::cout << "XML bestand succesvol geladen." << std::endl;
 
     ENSURE(!rooms.empty(), "ROOMS zijn niet gelezen");
-    ENSURE(!meetings.empty(), "MMEETINGS zijn niet gelezen");
+    ENSURE(!meetings.empty(), "MEETINGS zijn niet gelezen");
     ENSURE(!participations.empty(), "PARTICIPATIONS zijn niet gelezen");
 
     return nullptr;
