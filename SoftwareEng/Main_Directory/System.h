@@ -28,6 +28,11 @@ public:
     void addParticipation(Participation* participation);
     System* parser(const char* doc);
 
+    void printBlok(ofstream& outputFile, Meeting* m);
+    void print();
+
+
+
     bool properlyInitialized();
 };
 

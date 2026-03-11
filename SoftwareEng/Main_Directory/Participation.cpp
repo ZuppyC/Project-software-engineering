@@ -12,5 +12,11 @@ void Participation::setmeeting(string meeting) {
 void Participation::setUser(string user) {
     users.push_back(user);
 }
+vector<string> Participation::getUsers() {
+    return users;
+}
+string Participation::getmeeting() {
+    return meeting;
+}
 
 

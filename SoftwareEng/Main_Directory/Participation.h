@@ -15,7 +15,10 @@ private:
     string meeting;
 public:
     void setUser(string user);
+    vector<string> getUsers();
+
     void setmeeting(string meeting);
+    string getmeeting();
 };
 
 

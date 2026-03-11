@@ -5,6 +5,7 @@
 #include "System.h"
 #include <iostream>
 #include "../src/DesignByContract.h"
+#include <fstream>
 
 System::System()
 {
@@ -62,6 +63,7 @@ System* System::parser(const char* xmldoc)
             meetNgreet->setId(childs->FirstChildElement("IDENTIFIER")->GetText());
             meetNgreet->setLabel(childs->FirstChildElement("LABEL")->GetText());
             meetNgreet->setRoom(childs->FirstChildElement("ROOM")->GetText());
+            meetNgreet->setDate(childs->FirstChildElement("DATE")->GetText());
 
             meetings.push_back(meetNgreet);
 
@@ -79,6 +81,16 @@ System* System::parser(const char* xmldoc)
             participations.push_back(participatie);
         }
     }
+
+    for (Meeting* i: meetings) {
+        for (Participation* j: participations) {
+            if (j->getmeeting()==i->getId()) {
+                i->setPart(j);
+            }
+        }
+
+    }
+
     ENSURE(!rooms.empty(),"geen room");
     ENSURE(!meetings.empty(),"geen meeting");
     ENSURE(!participations.empty(),"geen participatie");
@@ -86,6 +98,81 @@ System* System::parser(const char* xmldoc)
 
     return system;
 }
+
+void System::printBlok(ofstream& outputFile, Meeting* m) {
+
+
+    vector<string> dagen= {"Sunday", "Monday","Tuesday", "Wednesday","Thursday", "Friday", "Saturday"};
+
+    tm* mDate= m->getDate();
+    string dag= to_string(mDate->tm_mday);
+    if (dag.size()==1) {
+        dag= "0"+dag;
+    }
+    string maand= to_string(mDate->tm_mon);
+    if (maand.size()==1) {
+        maand= "0"+maand;
+    }
+    int jaar= mDate->tm_year;
+    outputFile<< "- "<<m->getRoom()<<", "<<dagen[mDate->tm_wday]<<" "<<dag<<"/"<<maand<<"/"<<jaar<<"\n";
+    outputFile<<m->getLabel()<<"\n";
+
+    vector<string> users = m->getPart()->getUsers();
+    for (int i = 0; i < users.size()-1; i++) {
+            outputFile<<users[i]<<", ";
+    }
+    outputFile<<users[users.size()-1]<<"\n";
+
+    string id= m->getId().substr(8);
+    outputFile<<"Meeting ID: "<<id<<endl;
+
+
+}
+
+
+
+
+
+void System::print() {
+    ofstream outputFile("SystemOutput.txt");
+
+    outputFile<< "Past meetings:\n";
+    int teller=0;
+    for (Meeting* m: meetings) {
+        if (m->isPast()) {
+            teller+=1;
+            printBlok(outputFile, m);
+        }
+    }
+
+    outputFile<<"\n"<<"\n"<<"Future Meetings:\n";
+    teller=0;
+    for (Meeting* m: meetings) {
+        if (m->isPast()==false) {
+            teller+=1;
+            printBlok(outputFile, m);
+        }
+    }
+
+    outputFile<<"\n"<<"\n"<<"Conflicts:\n";
+    teller= 0;
+    for (int i =0; i< meetings.size();i++) {
+        for (int j= i+1; j<meetings.size();j++) {
+            tm* d1 = meetings[i]->getDate();
+            tm* d2 = meetings[j]->getDate();
+            if (d1->tm_mday == d2->tm_mday && d1->tm_mon == d2->tm_mon && d1->tm_year == d2->tm_year) {
+                teller+=1;
+                printBlok(outputFile, meetings[j]);
+            }
+        }
+    }
+
+    outputFile.close();
+
+
+
+}
+
 bool System::properlyInitialized()
 {
     return _initcheck ==this;
