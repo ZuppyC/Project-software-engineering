@@ -56,6 +56,10 @@ System* System::parser(const char* xmldoc)
             ruimte->setIdentifier(childs->FirstChildElement("IDENTIFIER")->GetText());
             ruimte->setName(childs->FirstChildElement("NAME")->GetText());
             rooms.push_back(ruimte);
+
+            ENSURE(ruimte->getCapacity() != 0, "Er is get CAPACITY gelzen");
+            ENSURE(!ruimte->getIdentifier().empty(), "Er is geen IDENTIFIER gelezen");
+            ENSURE(!ruimte->getName().empty() , "Er is geen NAME gelezen");
         }
         else if (type == "MEETING")
         {
@@ -64,6 +68,11 @@ System* System::parser(const char* xmldoc)
             meetNgreet->setLabel(childs->FirstChildElement("LABEL")->GetText());
             meetNgreet->setRoom(childs->FirstChildElement("ROOM")->GetText());
             meetNgreet->setDate(childs->FirstChildElement("DATE")->GetText());
+
+            ENSURE(!meetNgreet->getId().empty(), "Er is geen IDENTIFIER gelezen");
+            ENSURE(!meetNgreet->getLabel().empty(), "Er is geen LABEL gelezen");
+            ENSURE(!meetNgreet->getRoom().empty(), "Er is geen ROOM gelezen");
+            ENSURE(meetNgreet->getDate() != nullptr, "Er is geen DATE gelezen");
 
             meetings.push_back(meetNgreet);
 
@@ -78,6 +87,9 @@ System* System::parser(const char* xmldoc)
                 participatie->setUser(user->GetText());
             }
 
+            ENSURE(!participatie->getUsers().empty(), "Er is geen USER gelezen");
+            ENSURE(!participatie->getmeeting().empty(), "Er is geen MEETING gelezen");
+
             participations.push_back(participatie);
         }
     }
@@ -86,6 +98,8 @@ System* System::parser(const char* xmldoc)
         for (Participation* j: participations) {
             if (j->getmeeting()==i->getId()) {
                 i->setPart(j);
+
+                ENSURE(i->getPart() != nullptr, "Er is geen PARTICIPATION gelezen");
             }
         }
 
@@ -134,8 +148,13 @@ void System::printBlok(ofstream& outputFile, Meeting* m) {
 
 
 
-void System::print() {
-    ofstream outputFile("SystemOutput.txt");
+void System::print(string filename) {
+
+    ofstream outputFile(filename);
+
+    REQUIRE(!rooms.empty(),"Er zijn geen ROOMs");
+    REQUIRE(!meetings.empty(),"Er zijn geen MEETINGs");
+    REQUIRE(!participations.empty(),"Er zijn geen PARTICIPATIONs");
 
     outputFile<< "Past meetings:\n";
     int teller=0;

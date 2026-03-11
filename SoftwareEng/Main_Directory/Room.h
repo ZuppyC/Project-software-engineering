@@ -12,7 +12,8 @@ class Room
 private:
     string name;
     string identifier;
-    int capacity;
+    int capacity=0;
+
 public:
     Room();
     void setName(string name);

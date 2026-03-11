@@ -13,6 +13,6 @@ int main()
 {
     System s;
     s.parser("..//Main_Directory//xmlfile.xml");
-    s.print();
+    s.print("SystemOutput");
     return 0;
 }

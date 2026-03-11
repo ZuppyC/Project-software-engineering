@@ -11,9 +11,9 @@ using namespace std;
 class Meeting
 {
 private:
-    string label;
-    string identifier;
-    string Room;
+    string label = "";
+    string identifier = "";
+    string Room = "";
     tm* date= nullptr;
     Participation* participants= nullptr;
 public:
