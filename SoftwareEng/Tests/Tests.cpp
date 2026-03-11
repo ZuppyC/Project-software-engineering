@@ -35,6 +35,29 @@ TEST_F(SYSTEMTESTS, test1)
 
 }
 
+TEST_F(SYSTEMTESTS, NoROOM)
+{
+    EXPECT_DEATH(sss_.parser("xmlfile.xml"), "De XML bestand moet ROOM element hebben.");
+
+}
+TEST_F(SYSTEMTESTS, NoPARTICIPATION)
+{
+    EXPECT_DEATH(sss_.parser("xmlfile.xml"), "De XML bestand moet PARTICIPATION element hebben.");
+
+}
+TEST_F(SYSTEMTESTS, NoMEETINGS)
+{
+    EXPECT_DEATH(sss_.parser("xmlfile.xml"), "De XML bestand moet MEETINGS element hebben.");
+
+}
+
+TEST_F(SYSTEMTESTS, EnsureReadXxml)
+{
+    EXPECT_DEATH(sss_.parser("xmlfile.xml"), "Het XML bestand is fout gelezen");
+
+}
+
+
 int main(int argc, char** argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
