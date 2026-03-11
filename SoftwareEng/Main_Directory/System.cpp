@@ -164,7 +164,7 @@ void System::print() {
             if (d1->tm_mday == d2->tm_mday && d1->tm_mon == d2->tm_mon && d1->tm_year == d2->tm_year) {
                 teller+=1;
                 printBlok(outputFile, meetings[j]);
-                outputFile<<"Reason: conflict with meeting "<< meetings[j]->getId().substr(8)<<endl;
+                outputFile<<"  Reason: conflict with meeting "<< meetings[j]->getId().substr(8)<<endl;
             }
         }
     }
