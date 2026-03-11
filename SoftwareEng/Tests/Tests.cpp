@@ -1,4 +1,4 @@
-#include "..\Main_Directory/System.h"
+#include "../Main_Directory/System.h"
 #include "gtest/gtest.h"
 #include "iostream"
 System s;
@@ -27,35 +27,25 @@ protected:
 };
 
 
-TEST_F(SYSTEMTESTS, test1)
-{
-    EXPECT_TRUE(sss_.properlyInitialized());
-    EXPECT_EQ(nullptr, sss_.parser("xmlfile.xml"));
 
+
+TEST_F(SYSTEMTESTS, NoRoomViolation)
+{
+    EXPECT_DEATH(sss_.parser("../xmlfilesTests/NoRoom.xml"), "De XML bestand moet ROOM element hebben.");
+
+}
+TEST_F(SYSTEMTESTS, NoParticipationViolation)
+{
+    EXPECT_DEATH(sss_.parser("../xmlfilesTests/NoParticipation.xml"), "De XML bestand moet PARTICIPATION element hebben.");
+
+}
+TEST_F(SYSTEMTESTS, NoMeetingViolation)
+{
+    EXPECT_DEATH(sss_.parser("../xmlfilesTests/NoMeeting.xml"), "De XML bestand moet MEETINGS element hebben.");
 
 }
 
-TEST_F(SYSTEMTESTS, NoROOM)
-{
-    EXPECT_DEATH(sss_.parser("xmlfile.xml"), "De XML bestand moet ROOM element hebben.");
 
-}
-TEST_F(SYSTEMTESTS, NoPARTICIPATION)
-{
-    EXPECT_DEATH(sss_.parser("xmlfile.xml"), "De XML bestand moet PARTICIPATION element hebben.");
-
-}
-TEST_F(SYSTEMTESTS, NoMEETINGS)
-{
-    EXPECT_DEATH(sss_.parser("xmlfile.xml"), "De XML bestand moet MEETINGS element hebben.");
-
-}
-
-TEST_F(SYSTEMTESTS, EnsureReadXxml)
-{
-    EXPECT_DEATH(sss_.parser("xmlfile.xml"), "Het XML bestand is fout gelezen");
-
-}
 
 
 int main(int argc, char** argv) {

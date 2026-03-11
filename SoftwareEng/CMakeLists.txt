@@ -34,6 +34,10 @@ set(DEBUG_SOURCE_FILES
         xmlparser/tinyxmlerror.cpp
         xmlparser/tinyxmlparser.cpp
         xmlparser/tinyxml.cpp
+        Main_Directory/System.cpp
+        Main_Directory/Room.cpp
+        Main_Directory/Participation.cpp
+        Main_Directory/Meeting.cpp
 
 )
 # Create RELEASE target
