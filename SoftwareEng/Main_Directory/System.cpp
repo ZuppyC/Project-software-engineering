@@ -50,15 +50,33 @@ System* System::parser(const char* xmldoc)
         string type = childs->Value();
         if (type == "ROOM")
         {
-            cout << "dit is een room" <<endl;
+            Room* ruimte = new Room;
+            ruimte->setCapacity(stoi(childs->FirstChildElement("CAPACITY")->GetText()));
+            ruimte->setIdentifier(childs->FirstChildElement("IDENTIFIER")->GetText());
+            ruimte->setName(childs->FirstChildElement("NAME")->GetText());
+            rooms.push_back(ruimte);
         }
         else if (type == "MEETING")
         {
-            cout << "dit is een meeting" << endl;
+            Meeting* meetNgreet = new Meeting;
+            meetNgreet->setId(childs->FirstChildElement("IDENTIFIER")->GetText());
+            meetNgreet->setLabel(childs->FirstChildElement("LABEL")->GetText());
+            meetNgreet->setRoom(childs->FirstChildElement("ROOM")->GetText());
+
+            meetings.push_back(meetNgreet);
+
+
         }
         else if (type == "PARTICIPATION")
         {
-            cout << "dit is een participatie" << endl;
+            Participation* participatie = new Participation;
+            participatie->setmeeting(childs->FirstChildElement("MEETING")->GetText());
+
+            for (TiXmlElement* user = childs->FirstChildElement("USER"); user != NULL; user = user->NextSiblingElement("USER")) {
+                participatie->setUser(user->GetText());
+            }
+
+            participations.push_back(participatie);
         }
     }
     ENSURE(!rooms.empty(),"geen room");
@@ -66,7 +84,7 @@ System* System::parser(const char* xmldoc)
     ENSURE(!participations.empty(),"geen participatie");
 
 
-    return nullptr;
+    return system;
 }
 bool System::properlyInitialized()
 {
