@@ -5,13 +5,17 @@
 #ifndef SOFTWAREENG_PARTICIPATION_H
 #define SOFTWAREENG_PARTICIPATION_H
 #include <string>
-using namespace std;
 
+#include <vector>
+using namespace std;
 class Participation
 {
 private:
-    string user;
+    vector<string> users;
     string meeting;
+public:
+    void setUser(string user);
+    void setmeeting(string meeting);
 };
 
 

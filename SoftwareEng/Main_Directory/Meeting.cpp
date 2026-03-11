@@ -3,3 +3,15 @@
 //
 
 #include "Meeting.h"
+
+void Meeting::setId(string id) {
+    this->identifier = id;
+}
+
+void Meeting::setLabel(string label) {
+    this->label = label;
+}
+
+void Meeting::setRoom(string roomnr) {
+    this->Room = roomnr;
+}

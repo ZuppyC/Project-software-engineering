@@ -13,9 +13,11 @@ private:
     string label;
     string identifier;
     string Room;
-
-
 public:
+    void setLabel(string label);
+    void setId(string id);
+    void setRoom(string roomnr);
+
 
 };
 
