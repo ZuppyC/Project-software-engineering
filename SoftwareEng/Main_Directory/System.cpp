@@ -115,16 +115,17 @@ void System::printBlok(ofstream& outputFile, Meeting* m) {
     }
     int jaar= mDate->tm_year;
     outputFile<< "- "<<m->getRoom()<<", "<<dagen[mDate->tm_wday]<<" "<<dag<<"/"<<maand<<"/"<<jaar<<"\n";
-    outputFile<<m->getLabel()<<"\n";
+    outputFile<<"  "<<m->getLabel()<<"\n";
 
     vector<string> users = m->getPart()->getUsers();
     for (int i = 0; i < users.size()-1; i++) {
             outputFile<<users[i]<<", ";
     }
-    outputFile<<users[users.size()-1]<<"\n";
+    outputFile<<"  "<<users[users.size()-1]<<"\n";
 
     string id= m->getId().substr(8);
-    outputFile<<"Meeting ID: "<<id<<endl;
+    outputFile<<"  "<<"Meeting ID: "<<id<<endl;
+
 
 
 }
@@ -163,8 +164,16 @@ void System::print() {
             if (d1->tm_mday == d2->tm_mday && d1->tm_mon == d2->tm_mon && d1->tm_year == d2->tm_year) {
                 teller+=1;
                 printBlok(outputFile, meetings[j]);
+                outputFile<<"Reason: conflict with meeting "<< meetings[j]->getId().substr(8)<<endl;
             }
         }
+    }
+
+    outputFile<<"\n"<<"Rooms: "<<endl;
+
+    for (Room* r: rooms) {
+        outputFile << "- "<<r->getName()<<endl;
+        outputFile <<"  Capacity: "<<r->getCapacity()<<" people"<<endl;
     }
 
     outputFile.close();
