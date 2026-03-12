@@ -82,3 +82,11 @@ bool Meeting::conflictsWith(Meeting* m) {
     }
     return false;
 }
+
+bool Meeting::getBezig() {
+    return isBezig;
+}
+
+void Meeting::setBezig(bool bezig) {
+    isBezig= bezig;
+}

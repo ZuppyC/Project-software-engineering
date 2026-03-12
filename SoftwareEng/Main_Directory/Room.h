@@ -13,6 +13,7 @@ private:
     string name;
     string identifier;
     int capacity=0;
+    bool isOccupied= false;
 
 public:
     Room();
@@ -24,6 +25,9 @@ public:
 
     void setCapacity(int getal);
     int getCapacity();
+
+    bool getOccupied();
+    void setOccupied(bool occupied);
 
     ~Room();
 };

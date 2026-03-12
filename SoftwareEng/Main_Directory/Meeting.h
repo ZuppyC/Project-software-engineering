@@ -16,6 +16,7 @@ private:
     string room;
     tm* date= nullptr;
     vector<Participation*> participants;
+    bool isBezig= false;
 public:
     void setLabel(string label);
     string getLabel();
@@ -37,6 +38,11 @@ public:
     bool isPast();
 
     bool conflictsWith(Meeting *m);
+
+    bool getBezig();
+    void setBezig(bool bezig);
+
+
 
 
 

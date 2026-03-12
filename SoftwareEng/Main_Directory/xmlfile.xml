@@ -9,44 +9,26 @@
         <IDENTIFIER>Room_MG023</IDENTIFIER>
         <CAPACITY>10</CAPACITY>
     </ROOM>
-
-    <!-- ===================== -->
-    <!--       MEETINGS        -->
-    <!-- ===================== -->
-
-    <!-- Past meeting 1 -->
     <MEETING>
-        <LABEL>Weekly Meeting</LABEL>
-        <IDENTIFIER>Meeting_13897313</IDENTIFIER>
-        <ROOM>Room_MG023</ROOM>
-        <DATE>2026-05-22</DATE>
-    </MEETING>
-
-    <!-- Past meeting 2 -->
-    <MEETING>
-        <LABEL>Another meeting</LABEL>
-        <IDENTIFIER>Meeting_585417</IDENTIFIER>
-        <ROOM>Room_MG023</ROOM>
-        <DATE>2026-05-22</DATE>
-    </MEETING>
-
-    <MEETING>
-        <LABEL>Another meeting</LABEL>
-        <IDENTIFIER>Meeting_585417</IDENTIFIER>
+        <LABEL>XQSD</LABEL>
+        <IDENTIFIER>Meeting_2</IDENTIFIER>
         <ROOM>Room_MG023</ROOM>
         <DATE>2025-05-22</DATE>
     </MEETING>
-    <!-- ===================== -->
-    <!--    PARTICIPATIONS     -->
-    <!-- ===================== -->
+    <MEETING>
+        <LABEL>Another meeting</LABEL>
+        <IDENTIFIER>Meeting_13897313</IDENTIFIER>
+        <ROOM>Room_MG023</ROOM>
+        <DATE>2025-05-22</DATE>
+    </MEETING>
 
-    <!-- Weekly Meeting participants -->
+
     <PARTICIPATION>
         <MEETING>Meeting_13897313</MEETING>
         <USER>Kasper Engelen</USER>
     </PARTICIPATION>
     <PARTICIPATION>
-        <MEETING>Meeting_585417</MEETING>
+        <MEETING>Meeting_2</MEETING>
         <USER>Zenci Engelen</USER>
     </PARTICIPATION>
 

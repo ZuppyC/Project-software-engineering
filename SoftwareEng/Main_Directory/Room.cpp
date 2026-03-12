@@ -36,6 +36,15 @@ string Room::getName() {
     return name;
 }
 
+bool Room::getOccupied() {
+    return isOccupied;
+}
+
+void Room::setOccupied(bool occupied) {
+    isOccupied = occupied;
+}
+
+
 
 Room::~Room()
 {

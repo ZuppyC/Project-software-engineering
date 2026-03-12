@@ -25,6 +25,9 @@ public:
     System();
     void addRoom(Room* room);
     void addMeeting(Meeting* meeting);
+
+    vector<Meeting*> getMeeting();
+
     void addParticipation(Participation* participation);
     System* parser(const char* doc);
 
@@ -32,6 +35,10 @@ public:
     void print(string filename);
 
     bool properlyInitialized();
+
+    void takesPlace(Meeting* meeting);
+
+
 };
 
 

@@ -44,7 +44,7 @@ System* System::parser(const char* xmldoc)
         "De XML bestand moet MEETINGS element hebben."
     );
 
-    std::cout << "XML bestand succesvol geladen." << std::endl;
+
     TiXmlElement* begin = s->FirstChildElement();
     for (TiXmlElement* childs = begin; childs!= NULL;childs = childs->NextSiblingElement())
     {
@@ -209,9 +209,47 @@ void System::print(string filename) {
 
 }
 
+
+void System::takesPlace(Meeting* meeting) {
+    if (meetings.size()==1) {
+        cout<<"Meeting takes place"<<endl;
+        meeting->setBezig(true);
+
+    }
+    else{
+        for (Meeting* m: meetings) {
+            if (m==meeting) {
+                continue;
+            }
+            else if (meeting->conflictsWith(m) && m->getBezig()) {
+
+                cerr<<"The room is occupied, meeting canceled."<<endl;
+
+                return;
+            }
+            else {
+
+            }
+
+        }
+
+        cout<<"Meeting takes place"<<endl;
+        meeting->setBezig(true);
+    }
+
+
+
+}
+
+vector<Meeting *>System::getMeeting() {
+    return meetings;
+}
+
+
 bool System::properlyInitialized()
 {
     return _initcheck ==this;
 }
+
 
 
