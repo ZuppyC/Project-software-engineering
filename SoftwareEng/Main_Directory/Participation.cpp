@@ -9,11 +9,11 @@ void Participation::setmeeting(string meeting) {
     this->meeting = meeting;
 }
 
-void Participation::setUser(string user) {
-    users.push_back(user);
+void Participation::setUser(string user_) {
+    user = user_;
 }
-vector<string> Participation::getUsers() {
-    return users;
+string Participation::getUser() {
+    return user;
 }
 string Participation::getmeeting() {
     return meeting;

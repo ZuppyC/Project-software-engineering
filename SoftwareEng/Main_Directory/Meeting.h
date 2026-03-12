@@ -11,11 +11,11 @@ using namespace std;
 class Meeting
 {
 private:
-    string label = "";
-    string identifier = "";
-    string Room = "";
+    string label;
+    string identifier;
+    string room;
     tm* date= nullptr;
-    Participation* participants= nullptr;
+    vector<Participation*> participants;
 public:
     void setLabel(string label);
     string getLabel();
@@ -30,11 +30,15 @@ public:
     tm* getDate() const;
 
     void setPart(Participation* part);
-    Participation* getPart() const;
+    vector<Participation*> getPart() const;
 
     tm* strToTm(const string& datum);
 
     bool isPast();
+
+    bool conflictsWith(Meeting *m);
+
+
 
 
 };

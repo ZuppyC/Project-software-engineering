@@ -85,21 +85,24 @@ System* System::parser(const char* xmldoc)
 
             for (TiXmlElement* user = childs->FirstChildElement("USER"); user != NULL; user = user->NextSiblingElement("USER")) {
                 participatie->setUser(user->GetText());
+
             }
 
-            ENSURE(!participatie->getUsers().empty(), "Er is geen USER gelezen");
+            ENSURE(!participatie->getUser().empty(), "Er is geen USER gelezen");
             ENSURE(!participatie->getmeeting().empty(), "Er is geen MEETING gelezen");
 
             participations.push_back(participatie);
         }
     }
 
-    for (Meeting* i: meetings) {
-        for (Participation* j: participations) {
-            if (j->getmeeting()==i->getId()) {
+    for (Participation* j: participations) {
+        for (Meeting* i: meetings) {
+            if (j->getmeeting()== i->getId()) {
                 i->setPart(j);
 
-                ENSURE(i->getPart() != nullptr, "Er is geen PARTICIPATION gelezen");
+
+
+                ENSURE(!i->getPart().empty(), "Er is geen PARTICIPATION gelezen");
             }
         }
 
@@ -131,11 +134,11 @@ void System::printBlok(ofstream& outputFile, Meeting* m) {
     outputFile<< "- "<<m->getRoom()<<", "<<dagen[mDate->tm_wday]<<" "<<dag<<"/"<<maand<<"/"<<jaar<<"\n";
     outputFile<<"  "<<m->getLabel()<<"\n";
 
-    vector<string> users = m->getPart()->getUsers();
+    vector<Participation*> users = m->getPart();
     for (int i = 0; i < users.size()-1; i++) {
-            outputFile<<users[i]<<", ";
+            outputFile<<users[i]->getUser()<<", ";
     }
-    outputFile<<"  "<<users[users.size()-1]<<"\n";
+    outputFile<<"  "<<users[users.size()-1]->getUser()<<"\n";
 
     string id= m->getId().substr(8);
     outputFile<<"  "<<"Meeting ID: "<<id<<endl;
@@ -157,34 +160,39 @@ void System::print(string filename) {
     REQUIRE(!participations.empty(),"Er zijn geen PARTICIPATIONs");
 
     outputFile<< "Past meetings:\n";
-    int teller=0;
+
     for (Meeting* m: meetings) {
         if (m->isPast()) {
-            teller+=1;
+
             printBlok(outputFile, m);
         }
     }
 
     outputFile<<"\n"<<"\n"<<"Future Meetings:\n";
-    teller=0;
+    vector<Meeting*> futureMeetings;
     for (Meeting* m: meetings) {
         if (m->isPast()==false) {
-            teller+=1;
-            printBlok(outputFile, m);
+            for (Meeting* m2: futureMeetings) {
+                if (!m->conflictsWith(m2) || futureMeetings.empty()) {
+                    printBlok(outputFile, m);
+                    futureMeetings.push_back(m);
+                }
+            }
+            if (futureMeetings.empty()) {
+                printBlok(outputFile, m);
+                futureMeetings.push_back(m);
+            }
         }
     }
 
     outputFile<<"\n"<<"\n"<<"Conflicts:\n";
-    teller= 0;
+
     for (int i =0; i< meetings.size();i++) {
-        for (int j= i+1; j<meetings.size();j++) {
-            tm* d1 = meetings[i]->getDate();
-            tm* d2 = meetings[j]->getDate();
-            if (d1->tm_mday == d2->tm_mday && d1->tm_mon == d2->tm_mon && d1->tm_year == d2->tm_year) {
-                teller+=1;
-                printBlok(outputFile, meetings[j]);
-                outputFile<<"  Reason: conflict with meeting "<< meetings[j]->getId().substr(8)<<endl;
-            }
+        for (int j= i+1; j < meetings.size();j++) {
+           if (meetings[i]->conflictsWith(meetings[j])) {
+               printBlok(outputFile, meetings[j]);
+               outputFile<<"  Reason: conflict with meeting "<< meetings[j]->getId().substr(8)<<endl;
+           }
         }
     }
 

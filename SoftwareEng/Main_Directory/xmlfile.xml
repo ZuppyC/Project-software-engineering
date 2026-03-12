@@ -1,164 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SYSTEM>
 
-    <ROOM>
-        <NAME>M.G.025</NAME>
-        <IDENTIFIER>M.G.025</IDENTIFIER>
-        <CAPACITY>55</CAPACITY>
-    </ROOM>
-
+    <!-- ===================== -->
+    <!--        ROOMS          -->
+    <!-- ===================== -->
     <ROOM>
         <NAME>M.G.023</NAME>
-        <IDENTIFIER>Room98732</IDENTIFIER>
+        <IDENTIFIER>Room_MG023</IDENTIFIER>
         <CAPACITY>10</CAPACITY>
     </ROOM>
 
-    <ROOM>
-        <NAME>M.G.101</NAME>
-        <IDENTIFIER>RoomA1</IDENTIFIER>
-        <CAPACITY>30</CAPACITY>
-    </ROOM>
+    <!-- ===================== -->
+    <!--       MEETINGS        -->
+    <!-- ===================== -->
 
-    <ROOM>
-        <NAME>M.G.204</NAME>
-        <IDENTIFIER>RoomB7</IDENTIFIER>
-        <CAPACITY>20</CAPACITY>
-    </ROOM>
-
-
+    <!-- Past meeting 1 -->
     <MEETING>
-        <LABEL>Weekly meeting</LABEL>
-        <IDENTIFIER>Meeting_100001</IDENTIFIER>
-        <ROOM>Room98732</ROOM>
-        <DATE>2024-03-10</DATE>
+        <LABEL>Weekly Meeting</LABEL>
+        <IDENTIFIER>Meeting_13897313</IDENTIFIER>
+        <ROOM>Room_MG023</ROOM>
+        <DATE>2026-05-22</DATE>
+    </MEETING>
+
+    <!-- Past meeting 2 -->
+    <MEETING>
+        <LABEL>Another meeting</LABEL>
+        <IDENTIFIER>Meeting_585417</IDENTIFIER>
+        <ROOM>Room_MG023</ROOM>
+        <DATE>2026-05-22</DATE>
     </MEETING>
 
     <MEETING>
-        <LABEL>Project kickoff</LABEL>
-        <IDENTIFIER>Meeting_100002</IDENTIFIER>
-        <ROOM>M.G.025</ROOM>
-        <DATE>2025-11-15</DATE>
+        <LABEL>Another meeting</LABEL>
+        <IDENTIFIER>Meeting_585417</IDENTIFIER>
+        <ROOM>Room_MG023</ROOM>
+        <DATE>2025-05-22</DATE>
     </MEETING>
+    <!-- ===================== -->
+    <!--    PARTICIPATIONS     -->
+    <!-- ===================== -->
 
-    <MEETING>
-        <LABEL>Budget discussion</LABEL>
-        <IDENTIFIER>Meeting_100003</IDENTIFIER>
-        <ROOM>RoomA1</ROOM>
-        <DATE>2026-01-20</DATE>
-    </MEETING>
-
-    <MEETING>
-        <LABEL>Marketing strategy</LABEL>
-        <IDENTIFIER>Meeting_100004</IDENTIFIER>
-        <ROOM>RoomB7</ROOM>
-        <DATE>2026-02-15</DATE>
-    </MEETING>
-
-
-    <!-- conflicts -->
-    <MEETING>
-        <LABEL>AI Workshop</LABEL>
-        <IDENTIFIER>Meeting_100005</IDENTIFIER>
-        <ROOM>M.G.025</ROOM>
-        <DATE>2026-07-10</DATE>
-    </MEETING>
-
-    <MEETING>
-        <LABEL>Security briefing</LABEL>
-        <IDENTIFIER>Meeting_100006</IDENTIFIER>
-        <ROOM>Room98732</ROOM>
-        <DATE>2026-07-10</DATE>
-    </MEETING>
-
-    <MEETING>
-        <LABEL>Database training</LABEL>
-        <IDENTIFIER>Meeting_100007</IDENTIFIER>
-        <ROOM>RoomA1</ROOM>
-        <DATE>2026-07-10</DATE>
-    </MEETING>
-
-
-    <!-- future meetings -->
-    <MEETING>
-        <LABEL>Design review</LABEL>
-        <IDENTIFIER>Meeting_100008</IDENTIFIER>
-        <ROOM>M.G.025</ROOM>
-        <DATE>2026-10-05</DATE>
-    </MEETING>
-
-    <MEETING>
-        <LABEL>Product launch planning</LABEL>
-        <IDENTIFIER>Meeting_100009</IDENTIFIER>
-        <ROOM>RoomB7</ROOM>
-        <DATE>2026-12-12</DATE>
-    </MEETING>
-
-    <MEETING>
-        <LABEL>Future strategy</LABEL>
-        <IDENTIFIER>Meeting_100010</IDENTIFIER>
-        <ROOM>Room98732</ROOM>
-        <DATE>2027-02-18</DATE>
-    </MEETING>
-
-
+    <!-- Weekly Meeting participants -->
     <PARTICIPATION>
-        <MEETING>Meeting_100001</MEETING>
-        <USER>Peter Selie</USER>
+        <MEETING>Meeting_13897313</MEETING>
+        <USER>Kasper Engelen</USER>
     </PARTICIPATION>
-
     <PARTICIPATION>
-        <MEETING>Meeting_100001</MEETING>
-        <USER>Alice Martin</USER>
-    </PARTICIPATION>
-
-    <PARTICIPATION>
-        <MEETING>Meeting_100002</MEETING>
-        <USER>John Smith</USER>
-    </PARTICIPATION>
-
-    <PARTICIPATION>
-        <MEETING>Meeting_100002</MEETING>
-        <USER>Emma Clark</USER>
-    </PARTICIPATION>
-
-    <PARTICIPATION>
-        <MEETING>Meeting_100003</MEETING>
-        <USER>David Brown</USER>
-    </PARTICIPATION>
-
-    <PARTICIPATION>
-        <MEETING>Meeting_100004</MEETING>
-        <USER>Sophia Lee</USER>
-    </PARTICIPATION>
-
-    <PARTICIPATION>
-        <MEETING>Meeting_100005</MEETING>
-        <USER>Michael Scott</USER>
-    </PARTICIPATION>
-
-    <PARTICIPATION>
-        <MEETING>Meeting_100006</MEETING>
-        <USER>Jim Halpert</USER>
-    </PARTICIPATION>
-
-    <PARTICIPATION>
-        <MEETING>Meeting_100007</MEETING>
-        <USER>Dwight Schrute</USER>
-    </PARTICIPATION>
-
-    <PARTICIPATION>
-        <MEETING>Meeting_100008</MEETING>
-        <USER>Pam Beesly</USER>
-    </PARTICIPATION>
-
-    <PARTICIPATION>
-        <MEETING>Meeting_100009</MEETING>
-        <USER>Ryan Howard</USER>
-    </PARTICIPATION>
-
-    <PARTICIPATION>
-        <MEETING>Meeting_100010</MEETING>
-        <USER>Kelly Kapoor</USER>
+        <MEETING>Meeting_585417</MEETING>
+        <USER>Zenci Engelen</USER>
     </PARTICIPATION>
 
 </SYSTEM>

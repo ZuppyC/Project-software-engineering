@@ -31,8 +31,6 @@ public:
     void printBlok(ofstream& outputFile, Meeting* m);
     void print(string filename);
 
-
-
     bool properlyInitialized();
 };
 

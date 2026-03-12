@@ -22,10 +22,10 @@ string Meeting::getLabel() {
 }
 
 void Meeting::setRoom(string roomnr) {
-    this->Room = roomnr;
+    this->room = roomnr;
 }
 string Meeting::getRoom() {
-    return Room;
+    return room;
 }
 
 void Meeting::setDate(const string& a) {
@@ -51,11 +51,11 @@ tm* Meeting::strToTm(const string& datum) {
     return time;
 }
 
-void Meeting::setPart(Participation *part) {
-    participants = part;
+void Meeting::setPart(Participation* part) {
+    participants.push_back(part);
 }
 
-Participation* Meeting::getPart() const {
+vector<Participation*> Meeting::getPart() const {
     return participants;
 }
 
@@ -69,4 +69,16 @@ bool Meeting::isPast() {
     bool b= today->tm_year+1900 == mdate->tm_year && today->tm_mon+1 > mdate->tm_mon;
     bool c= today->tm_year+1900 == mdate->tm_year && today->tm_mon+1 == mdate->tm_mon && today->tm_mday > mdate->tm_mday;
     return a||b||c;
+}
+
+bool Meeting::conflictsWith(Meeting* m) {
+    tm* d1 = date;
+    tm* d2 = m->getDate();
+
+    if (d1->tm_mday == d2->tm_mday && d1->tm_mon == d2->tm_mon && d1->tm_year == d2->tm_year
+        && room== m->getRoom()) {
+        return true;
+
+    }
+    return false;
 }

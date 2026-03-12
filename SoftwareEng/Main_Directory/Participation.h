@@ -11,11 +11,11 @@ using namespace std;
 class Participation
 {
 private:
-    vector<string> users;
+    string user;
     string meeting;
 public:
-    void setUser(string user);
-    vector<string> getUsers();
+    void setUser(string user_);
+    string getUser();
 
     void setmeeting(string meeting);
     string getmeeting();
