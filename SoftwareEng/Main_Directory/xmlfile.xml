@@ -1,35 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SYSTEM>
 
-    <!-- ===================== -->
-    <!--        ROOMS          -->
-    <!-- ===================== -->
     <ROOM>
-        <NAME>M.G.023</NAME>
-        <IDENTIFIER>Room_MG023</IDENTIFIER>
-        <CAPACITY>10</CAPACITY>
+        <NAME>M.G.025</NAME>
+        <IDENTIFIER>M.G.025</IDENTIFIER>
+        <CAPACITY>55</CAPACITY>
+    </ROOM>
+    <ROOM>
+        <NAME>M.G.025</NAME>
+        <IDENTIFIER>M.G.235</IDENTIFIER>
+        <CAPACITY>55</CAPACITY>
+    </ROOM>
+    <ROOM>
+        <NAME>M.G.1</NAME>
+        <IDENTIFIER>M.G.235</IDENTIFIER>
+        <CAPACITY>55</CAPACITY>
     </ROOM>
     <MEETING>
-        <LABEL>XQSD</LABEL>
-        <IDENTIFIER>Meeting_2</IDENTIFIER>
-        <ROOM>Room_MG023</ROOM>
-        <DATE>2025-05-22</DATE>
+        <LABEL>Weekly meeting</LABEL>
+        <IDENTIFIER>Meeting_100001</IDENTIFIER>
+        <ROOM>M.G.025</ROOM>
+        <DATE>2024-03-10</DATE>
     </MEETING>
     <MEETING>
-        <LABEL>Another meeting</LABEL>
-        <IDENTIFIER>Meeting_13897313</IDENTIFIER>
-        <ROOM>Room_MG023</ROOM>
-        <DATE>2025-05-22</DATE>
+        <LABEL>today meeting</LABEL>
+        <IDENTIFIER>Meeting_12</IDENTIFIER>
+        <ROOM>M.G.235</ROOM>
+        <DATE>2028-03-10</DATE>
     </MEETING>
-
-
+    <MEETING>
+        <LABEL>today meeting</LABEL>
+        <IDENTIFIER>Meeting_12764</IDENTIFIER>
+        <ROOM>M.G.235</ROOM>
+        <DATE>2028-03-10</DATE>
+    </MEETING>
+    <MEETING>
+        <LABEL>today meeting</LABEL>
+        <IDENTIFIER>Meeting_1</IDENTIFIER>
+        <ROOM>M.G.1</ROOM>
+        <DATE>2029-03-10</DATE>
+    </MEETING>
+    <MEETING>
+        <LABEL>today meeting</LABEL>
+        <IDENTIFIER>Meeting_12345</IDENTIFIER>
+        <ROOM>M.G.1</ROOM>
+        <DATE>2029-03-10</DATE>
+    </MEETING>
     <PARTICIPATION>
-        <MEETING>Meeting_13897313</MEETING>
-        <USER>Kasper Engelen</USER>
-    </PARTICIPATION>
-    <PARTICIPATION>
-        <MEETING>Meeting_2</MEETING>
-        <USER>Zenci Engelen</USER>
+        <MEETING>Meeting_100001</MEETING>
+        <USER>Peter Selie</USER>
     </PARTICIPATION>
 
 </SYSTEM>

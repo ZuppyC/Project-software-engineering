@@ -38,6 +38,8 @@ public:
 
     void takesPlace(Meeting* meeting);
 
+    void takePlaceEveryMeeting();
+
 
 };
 

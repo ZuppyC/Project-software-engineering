@@ -72,7 +72,7 @@ bool Meeting::isPast() {
 }
 
 bool Meeting::conflictsWith(Meeting* m) {
-    tm* d1 = date;
+    tm* d1 = this->date;
     tm* d2 = m->getDate();
 
     if (d1->tm_mday == d2->tm_mday && d1->tm_mon == d2->tm_mon && d1->tm_year == d2->tm_year

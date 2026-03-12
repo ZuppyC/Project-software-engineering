@@ -135,10 +135,13 @@ void System::printBlok(ofstream& outputFile, Meeting* m) {
     outputFile<<"  "<<m->getLabel()<<"\n";
 
     vector<Participation*> users = m->getPart();
-    for (int i = 0; i < users.size()-1; i++) {
+    if (users.size()>0) {
+        for (int i = 0; i < users.size()-1; i++) {
             outputFile<<users[i]->getUser()<<", ";
+        }
+
+        outputFile<<"  "<<users[users.size()-1]->getUser()<<"\n";
     }
-    outputFile<<"  "<<users[users.size()-1]->getUser()<<"\n";
 
     string id= m->getId().substr(8);
     outputFile<<"  "<<"Meeting ID: "<<id<<endl;
@@ -191,7 +194,7 @@ void System::print(string filename) {
         for (int j= i+1; j < meetings.size();j++) {
            if (meetings[i]->conflictsWith(meetings[j])) {
                printBlok(outputFile, meetings[j]);
-               outputFile<<"  Reason: conflict with meeting "<< meetings[j]->getId().substr(8)<<endl;
+               outputFile<<"  Reason: conflict with meeting "<< meetings[i]->getId().substr(8)<<endl;
            }
         }
     }
@@ -223,7 +226,7 @@ void System::takesPlace(Meeting* meeting) {
             }
             else if (meeting->conflictsWith(m) && m->getBezig()) {
 
-                cerr<<"The room is occupied, meeting canceled."<<endl;
+                cerr<<"The room is occupied, meeting canceled."<< meeting->getId() <<endl;
 
                 return;
             }
@@ -233,7 +236,7 @@ void System::takesPlace(Meeting* meeting) {
 
         }
 
-        cout<<"Meeting takes place"<<endl;
+        cout<<"Meeting takes place"<< meeting->getId() <<endl;
         meeting->setBezig(true);
     }
 
@@ -251,5 +254,9 @@ bool System::properlyInitialized()
     return _initcheck ==this;
 }
 
-
+void System::takePlaceEveryMeeting() {
+    for (int i =0; i< meetings.size();i++) {
+        this->takesPlace(this->getMeeting()[i]);
+    }
+}
 

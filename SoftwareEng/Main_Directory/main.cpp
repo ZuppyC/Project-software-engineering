@@ -14,7 +14,6 @@ int main()
     System s;
     s.parser("..//Main_Directory//xmlfile.xml");
     s.print("SystemOutput");
-    s.takesPlace(s.getMeeting()[0]);
-    s.takesPlace(s.getMeeting()[1]);
+    s.takePlaceEveryMeeting();
     return 0;
 }
