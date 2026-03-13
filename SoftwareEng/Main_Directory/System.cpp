@@ -206,14 +206,17 @@ void System::print(string filename) {
         outputFile <<"  Capacity: "<<r->getCapacity()<<" people"<<endl;
     }
 
+    meetingPlanner = move(outputFile);
+
     outputFile.close();
-
-
 
 }
 
 
 void System::takesPlace(Meeting* meeting) {
+
+
+
     if (meetings.size()==1) {
         cout<<"Meeting takes place"<<endl;
         meeting->setBezig(true);
@@ -226,23 +229,25 @@ void System::takesPlace(Meeting* meeting) {
             }
             else if (meeting->conflictsWith(m) && m->getBezig()) {
 
-                cerr<<"The room is occupied, meeting canceled."<< meeting->getId() <<endl;
+                cerr<<"The room is occupied, meeting canceled: "<< meeting->getId() <<endl;
 
                 return;
             }
-            else {
-
-            }
-
         }
 
-        cout<<"Meeting takes place"<< meeting->getId() <<endl;
+        cout<<"Meeting takes place: "<< meeting->getId() <<endl;
         meeting->setBezig(true);
     }
-
-
-
 }
+
+
+void System::takePlaceEveryMeeting() {
+    for (int i =0; i< meetings.size();i++) {
+        this->takesPlace(this->getMeeting()[i]);
+
+    }
+}
+
 
 vector<Meeting *>System::getMeeting() {
     return meetings;
@@ -254,9 +259,5 @@ bool System::properlyInitialized()
     return _initcheck ==this;
 }
 
-void System::takePlaceEveryMeeting() {
-    for (int i =0; i< meetings.size();i++) {
-        this->takesPlace(this->getMeeting()[i]);
-    }
-}
+
 

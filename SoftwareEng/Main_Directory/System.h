@@ -5,7 +5,7 @@
 #ifndef SOFTWAREENG_SYSTEM_H
 #define SOFTWAREENG_SYSTEM_H
 #include <vector>
-
+#include <fstream>
 #include "Meeting.h"
 #include "Participation.h"
 #include "../xmlparser/tinyxml.h"
@@ -18,6 +18,7 @@ class System
 {
 private:
     System* _initcheck;
+    ofstream meetingPlanner;
     vector<Room*> rooms;
     vector<Meeting*> meetings;
     vector<Participation*> participations;
