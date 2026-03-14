@@ -230,7 +230,6 @@ void System::printBlok(ofstream& outputFile, Meeting* m) {
 void System::print(string filename) {
 
     ofstream outputFile(filename);
-
     REQUIRE(this->properlyInitialized(),"De systeem is fout geinitialiseerd");
 
     REQUIRE(!rooms.empty(),"Er zijn geen ROOMs");
@@ -294,7 +293,6 @@ void System::takesPlace(Meeting* meeting) {
     REQUIRE(this->properlyInitialized(),"De systeem is fout geinitialiseerd");
     REQUIRE(!rooms.empty(),"Er zijn geen ROOMs");
     REQUIRE(!meetings.empty(),"Er zijn geen MEETINGs");
-    REQUIRE(!participations.empty(),"Er zijn geen PARTICIPATIONs");
 
 
     if (meetings.size()==1) {

@@ -90,8 +90,6 @@ TEST_F(HAPPYDAY_SCENARIO,xmlIsJuist)
 
 
 
-
-
 TEST_F(SYSTEMTESTS, NoRoomViolation)
 {
     EXPECT_DEATH(sss_.parser("../xmlfilesTests/NoRoom.xml"), "De XML bestand moet ROOM element hebben.");
@@ -137,25 +135,12 @@ TEST_F(SYSTEMTESTS, CapacityNotGreaterThen0Violation)
 {
     EXPECT_DEATH(sss_.parser("../xmlfilesTests/CapacityNotGreaterThen0.xml"), "CAPACITY moet groter zijn dan 0");
 }
-
 TEST_F(SYSTEMTESTS, AboveMaxRoomCapViolation) {
-    EXPECT_DEATH(sss_.parser("../xmlfilesTests/AboveMaxRoomCap.xml"), "Aantal PARTITCIPATIONs is groter dan ROOM CAPACITY");
+    EXPECT_DEATH(sss_.parser("../xmlfilesTests/CapacityNotGreaterThen0.xml"), "Aantal PARTITCIPATIONs is groter dan ROOM CAPACITY");
 }
 
-TEST(SYSTEM_PRINTTEST, OutputfileIsJuist) {
-    System s;
-    s.parser("../xmlfilesTests/JuisteOutputFile.xml");
-
-    string filename= "OutputIsJuist.xml";
-    s.print(filename);
 
 
-    ifstream f(filename);
-    EXPECT_TRUE(f.is_open());
-    EXPECT_NE(f.peek(), ifstream::traits_type::eof());
-
-    f.close();
-}
 
 TEST(SYSTEM_MEETINGTEST, MeetingTakesPlace) {
     System s;
@@ -174,9 +159,24 @@ TEST(SYSTEM_MEETINGTEST, MeetingTakesPlace) {
 
     s.takesPlace(m);
 
-    EXPECT_TRUE(m->getBezig() || m->getCanceled());
+    EXPECT_TRUE(m->getBezig());
 }
 
+
+TEST(SYSTEM_PRINTTEST, OutputfileIsJuist) {
+    System s;
+    s.parser("../xmlfilesTests/JuisteOutputFile.xml");
+
+    string filename= "OutputIsJuist";
+    s.print(filename);
+
+
+    ifstream f(filename);
+    EXPECT_TRUE(f.is_open());
+    EXPECT_NE(f.peek(), ifstream::traits_type::eof());
+
+    f.close();
+}
 
 int main(int argc, char** argv) {
     testing::InitGoogleTest(&argc, argv);

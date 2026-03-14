@@ -7,13 +7,13 @@
         <CAPACITY>-3</CAPACITY>
     </ROOM>
     <ROOM>
-        <NAME>M.G.025</NAME>
+        <NAME>M.G.235</NAME>
         <IDENTIFIER>M.G.235</IDENTIFIER>
         <CAPACITY>55</CAPACITY>
     </ROOM>
     <ROOM>
         <NAME>M.G.1</NAME>
-        <IDENTIFIER>M.G.3</IDENTIFIER>
+        <IDENTIFIER>M.G.1</IDENTIFIER>
         <CAPACITY>55</CAPACITY>
     </ROOM>
     <MEETING>
