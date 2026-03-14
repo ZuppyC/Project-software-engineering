@@ -27,6 +27,7 @@ System* System::parser(const char* xmldoc)
         return nullptr;
     }
 
+
     TiXmlElement* s = doc.FirstChildElement("SYSTEM");
     REQUIRE(
         s != nullptr &&
@@ -52,12 +53,30 @@ System* System::parser(const char* xmldoc)
         if (type == "ROOM")
         {
             Room* ruimte = new Room;
-            ruimte->setCapacity(stoi(childs->FirstChildElement("CAPACITY")->GetText()));
+
+
+            try {
+                int cap= stoi(childs->FirstChildElement("CAPACITY")->GetText());
+                ruimte->setCapacity(cap);
+            }
+            catch (...) {
+                REQUIRE(false, "CAPACITY moet een int zijn");
+            }
+
+            int cap= stoi(childs->FirstChildElement("CAPACITY")->GetText());
+
+            REQUIRE(cap>0, "CAPACITY moet groter zijn dan 0");
+            ruimte->setCapacity(cap);
             ruimte->setIdentifier(childs->FirstChildElement("IDENTIFIER")->GetText());
-            ruimte->setName(childs->FirstChildElement("NAME")->GetText());
+            TiXmlElement* name1 = childs->FirstChildElement("NAME");
+
+            REQUIRE(name1 != nullptr, "Er is geen NAME element");
+
+            ruimte->setName(name1->GetText());
             rooms.push_back(ruimte);
 
-            ENSURE(ruimte->getCapacity() != 0, "Er is get CAPACITY gelzen");
+
+            ENSURE(ruimte->getCapacity() > 0, "Er is geen CAPACITY gelezen");
             ENSURE(!ruimte->getIdentifier().empty(), "Er is geen IDENTIFIER gelezen");
             ENSURE(!ruimte->getName().empty() , "Er is geen NAME gelezen");
         }
@@ -75,6 +94,7 @@ System* System::parser(const char* xmldoc)
             ENSURE(meetNgreet->getDate() != nullptr, "Er is geen DATE gelezen");
 
             meetings.push_back(meetNgreet);
+
 
 
         }
@@ -95,18 +115,60 @@ System* System::parser(const char* xmldoc)
         }
     }
 
-    for (Participation* j: participations) {
-        for (Meeting* i: meetings) {
-            if (j->getmeeting()== i->getId()) {
-                i->setPart(j);
 
+    for (Meeting* m : meetings) {
+        bool gevonden = false;
 
-
-                ENSURE(!i->getPart().empty(), "Er is geen PARTICIPATION gelezen");
+        for (Room* r : rooms) {
+            if (m->getRoom() == r->getName()) {
+                gevonden = true;
             }
         }
 
+        ENSURE(gevonden, "MEETING wijst naar ROOM die niet bestaat");
     }
+
+    for (Participation* p : participations) {
+
+        bool found = false;
+
+        for (Meeting* m : meetings) {
+            if (p->getmeeting() == m->getId()) {
+                m->setPart(p);
+                found = true;
+            }
+        }
+
+        for (Participation* j: participations) {
+            for (Meeting* i: meetings) {
+                if (j->getmeeting()== i->getId()) {
+                    i->setPart(j);
+
+
+
+                    ENSURE(!i->getPart().empty(), "Er is geen PARTICIPATION gelezen");
+                }
+            }
+
+        }
+
+        ENSURE(found, "PARTICIPATION wijst naar een MEETING die niet bestaat");
+    }
+
+
+
+    for (size_t i = 0; i < meetings.size(); i++) {
+        for (size_t j = i + 1; j < meetings.size(); j++) {
+            ENSURE(meetings[i]->getId() != meetings[j]->getId(),"Dubbele MEETING IDENTIFIER");
+        }
+    }
+
+    for (size_t i = 0; i < rooms.size(); i++) {
+        for (size_t j = i + 1; j < rooms.size(); j++) {
+            ENSURE(rooms[i]->getIdentifier() != rooms[j]->getIdentifier(),"Dubbele ROOM IDENTIFIER");
+        }
+    }
+
 
     ENSURE(!rooms.empty(),"geen room");
     ENSURE(!meetings.empty(),"geen meeting");

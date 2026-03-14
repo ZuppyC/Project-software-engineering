@@ -108,10 +108,35 @@ TEST_F(SYSTEMTESTS, NoMeetingViolation)
 
 }
 
+TEST_F(SYSTEMTESTS, NonExistingRoomViolation)
+{
+    EXPECT_DEATH(sss_.parser("../xmlfilesTests/Meeting_NoExistingRoom.xml"), "MEETING wijst naar ROOM die niet bestaat");
+}
 
+TEST_F(SYSTEMTESTS, NoExistingMeetingViolation)
+{
+    EXPECT_DEATH(sss_.parser("../xmlfilesTests/Participation_NoExistingMeeting.xml"), "PARTICIPATION wijst naar een MEETING die niet bestaat");
+}
 
+TEST_F(SYSTEMTESTS, DubbleRoomViolation)
+{
+    EXPECT_DEATH(sss_.parser("../xmlfilesTests/DubbelRoom.xml"), "Dubbele ROOM IDENTIFIER");
+}
 
+TEST_F(SYSTEMTESTS, DubbleMeetingViolation)
+{
+    EXPECT_DEATH(sss_.parser("../xmlfilesTests/DubbelMeeting.xml"), "Dubbele MEETING IDENTIFIER");
+}
 
+TEST_F(SYSTEMTESTS, CapacityNotIntViolation)
+{
+    EXPECT_DEATH(sss_.parser("../xmlfilesTests/CapacityNoInt.xml"), "CAPACITY moet een int zijn");
+}
+
+TEST_F(SYSTEMTESTS, CapacityNotGreaterThen0Violation)
+{
+    EXPECT_DEATH(sss_.parser("../xmlfilesTests/CapacityNotGreaterThen0.xml"), "CAPACITY moet groter zijn dan 0");
+}
 
 
 int main(int argc, char** argv) {
