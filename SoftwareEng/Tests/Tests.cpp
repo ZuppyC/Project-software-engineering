@@ -138,6 +138,10 @@ TEST_F(SYSTEMTESTS, CapacityNotGreaterThen0Violation)
     EXPECT_DEATH(sss_.parser("../xmlfilesTests/CapacityNotGreaterThen0.xml"), "CAPACITY moet groter zijn dan 0");
 }
 
+TEST_F(SYSTEMTESTS, AboveMaxRoomCapViolation) {
+    EXPECT_DEATH(sss_.parser("../xmlfilesTests/AboveMaxRoomCap.xml"), "Aantal PARTITCIPATIONs is groter dan ROOM CAPACITY");
+}
+
 TEST(SYSTEM_PRINTTEST, OutputfileIsJuist) {
     System s;
     s.parser("../xmlfilesTests/JuisteOutputFile.xml");

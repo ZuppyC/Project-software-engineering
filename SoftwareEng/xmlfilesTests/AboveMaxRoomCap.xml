@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SYSTEM>
+
+    <ROOM>
+        <NAME>M.G.025</NAME>
+        <IDENTIFIER>M.G.025</IDENTIFIER>
+        <CAPACITY>2</CAPACITY>
+    </ROOM>
+
+    <MEETING>
+        <LABEL>Weekly meeting</LABEL>
+        <IDENTIFIER>Meeting_100001</IDENTIFIER>
+        <ROOM>M.G.025</ROOM>
+        <DATE>2024-03-10</DATE>
+    </MEETING>
+
+    <PARTICIPATION>
+        <MEETING>Meeting_100001</MEETING>
+        <USER>Peter Selie</USER>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting_100001</MEETING>
+        <USER>Selie</USER>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting_100001</MEETING>
+        <USER>Peter</USER>
+    </PARTICIPATION>
+
+</SYSTEM>

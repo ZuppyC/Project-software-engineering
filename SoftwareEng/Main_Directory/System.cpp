@@ -136,6 +136,19 @@ System* System::parser(const char* xmldoc)
         ENSURE(gevonden, "MEETING wijst naar ROOM die niet bestaat");
     }
 
+    for (Participation* j: participations) {
+        for (Meeting* i: meetings) {
+            if (j->getmeeting()== i->getId()) {
+                i->setPart(j);
+
+
+
+                ENSURE(!i->getPart().empty(), "Er is geen PARTICIPATION gelezen");
+            }
+        }
+
+    }
+
     for (Participation* p : participations) {
 
         bool found = false;
@@ -147,20 +160,22 @@ System* System::parser(const char* xmldoc)
             }
         }
 
-        for (Participation* j: participations) {
-            for (Meeting* i: meetings) {
-                if (j->getmeeting()== i->getId()) {
-                    i->setPart(j);
-
-
-
-                    ENSURE(!i->getPart().empty(), "Er is geen PARTICIPATION gelezen");
-                }
-            }
-
-        }
-
         ENSURE(found, "PARTICIPATION wijst naar een MEETING die niet bestaat");
+    }
+
+
+    for (Meeting* i: meetings) {
+        int teller= 0;
+        for (Participation* j: participations) {
+            if (j->getmeeting()== i->getId()) {
+                teller+=1;
+            }
+        }
+        for (Room* r: rooms) {
+            if (r->getName()==i->getRoom()) {
+                REQUIRE(teller<= r->getCapacity(), "Aantal PARTITCIPATIONs is groter dan ROOM CAPACITY");
+            }
+        }
     }
 
 
