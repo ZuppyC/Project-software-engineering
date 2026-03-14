@@ -90,3 +90,11 @@ bool Meeting::getBezig() {
 void Meeting::setBezig(bool bezig) {
     isBezig= bezig;
 }
+
+void Meeting::setCanceled(bool canceled) {
+    isCanceled= canceled;
+}
+
+bool Meeting::getCanceled() {
+    return isCanceled;
+}

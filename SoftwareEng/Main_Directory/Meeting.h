@@ -17,6 +17,7 @@ private:
     tm* date= nullptr;
     vector<Participation*> participants;
     bool isBezig= false;
+    bool isCanceled= false;
 public:
     void setLabel(string label);
     string getLabel();
@@ -41,6 +42,9 @@ public:
 
     bool getBezig();
     void setBezig(bool bezig);
+
+    bool getCanceled();
+    void setCanceled(bool canceled);
 
 
 

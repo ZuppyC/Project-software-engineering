@@ -13,6 +13,14 @@ System::System()
 
 
 }
+void System::addRoom(Room *room) {
+    rooms.push_back(room);
+}
+
+void System::addMeeting(Meeting* meeting) {
+    meetings.push_back(meeting);
+}
+
 
 System* System::parser(const char* xmldoc)
 {
@@ -268,6 +276,8 @@ void System::print(string filename) {
         outputFile <<"  Capacity: "<<r->getCapacity()<<" people"<<endl;
     }
 
+    ENSURE(outputFile.is_open() && !outputFile.fail(), "Output bestand is niet correct gemaakt");
+
     meetingPlanner = move(outputFile);
 
     outputFile.close();
@@ -277,6 +287,8 @@ void System::print(string filename) {
 
 void System::takesPlace(Meeting* meeting) {
 
+    REQUIRE(!rooms.empty(),"Er zijn geen ROOMs");
+    REQUIRE(!meetings.empty(),"Er zijn geen MEETINGs");
 
 
     if (meetings.size()==1) {
@@ -292,22 +304,35 @@ void System::takesPlace(Meeting* meeting) {
             else if (meeting->conflictsWith(m) && m->getBezig()) {
 
                 cerr<<"The room is occupied, meeting canceled: "<< meeting->getId() <<endl;
-
+                meeting->setCanceled(true);
                 return;
             }
         }
 
         cout<<"Meeting takes place: "<< meeting->getId() <<endl;
         meeting->setBezig(true);
+
+
     }
+    ENSURE(meeting->getBezig() || meeting->getCanceled(), "Meeting hasnt taken place, or hasnt been canceled.");
 }
 
 
 void System::takePlaceEveryMeeting() {
+
+    REQUIRE(!rooms.empty(),"Er zijn geen ROOMs");
+    REQUIRE(!meetings.empty(),"Er zijn geen MEETINGs");
+    REQUIRE(!participations.empty(),"Er zijn geen PARTICIPATIONs");
+
     for (int i =0; i< meetings.size();i++) {
         this->takesPlace(this->getMeeting()[i]);
 
     }
+
+    for (Meeting* m: meetings) {
+        ENSURE(m->getBezig() || m->getCanceled(), "Meeting hasnt taken place, or hasnt been canceled.");
+    }
+
 }
 
 

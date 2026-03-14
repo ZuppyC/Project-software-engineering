@@ -138,6 +138,41 @@ TEST_F(SYSTEMTESTS, CapacityNotGreaterThen0Violation)
     EXPECT_DEATH(sss_.parser("../xmlfilesTests/CapacityNotGreaterThen0.xml"), "CAPACITY moet groter zijn dan 0");
 }
 
+TEST(SYSTEM_PRINTTEST, OutputfileIsJuist) {
+    System s;
+    s.parser("../xmlfilesTests/JuisteOutputFile.xml");
+
+    string filename= "OutputIsJuist.xml";
+    s.print(filename);
+
+
+    ifstream f(filename);
+    EXPECT_TRUE(f.is_open());
+    EXPECT_NE(f.peek(), ifstream::traits_type::eof());
+
+    f.close();
+}
+
+TEST(SYSTEM_MEETINGTEST, MeetingTakesPlace) {
+    System s;
+
+    Room* r = new Room();
+    r->setIdentifier("R1");
+    r->setName("Test Room");
+    r->setCapacity(10);
+    s.addRoom(r);
+
+    Meeting* m = new Meeting();
+    m->setId("M1");
+    m->setLabel("Test Meeting");
+    m->setRoom("R1");
+    s.addMeeting(m);
+
+    s.takesPlace(m);
+
+    EXPECT_TRUE(m->getBezig() || m->getCanceled());
+}
+
 
 int main(int argc, char** argv) {
     testing::InitGoogleTest(&argc, argv);

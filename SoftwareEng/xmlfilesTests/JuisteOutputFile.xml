@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SYSTEM>
+
+    <ROOM>
+        <NAME>M.G.025</NAME>
+        <IDENTIFIER>M.G.025</IDENTIFIER>
+        <CAPACITY>55</CAPACITY>
+    </ROOM>
+    <ROOM>
+        <NAME>M.G.025</NAME>
+        <IDENTIFIER>M.G.235</IDENTIFIER>
+        <CAPACITY>55</CAPACITY>
+    </ROOM>
+    <ROOM>
+        <NAME>M.G.1</NAME>
+        <IDENTIFIER>M.G.3</IDENTIFIER>
+        <CAPACITY>55</CAPACITY>
+    </ROOM>
+    <MEETING>
+        <LABEL>Weekly meeting</LABEL>
+        <IDENTIFIER>Meeting_100001</IDENTIFIER>
+        <ROOM>M.G.025</ROOM>
+        <DATE>2024-03-10</DATE>
+    </MEETING>
+    <MEETING>
+        <LABEL>today meeting</LABEL>
+        <IDENTIFIER>Meeting_12</IDENTIFIER>
+        <ROOM>M.G.1</ROOM>
+        <DATE>2028-03-10</DATE>
+    </MEETING>
+    <MEETING>
+        <LABEL>today meeting</LABEL>
+        <IDENTIFIER>Meeting_1</IDENTIFIER>
+        <ROOM>M.G.1</ROOM>
+        <DATE>2029-03-10</DATE>
+    </MEETING>
+    <MEETING>
+        <LABEL>today meeting</LABEL>
+        <IDENTIFIER>Meeting_12345</IDENTIFIER>
+        <ROOM>M.G.1</ROOM>
+        <DATE>2029-03-10</DATE>
+    </MEETING>
+    <PARTICIPATION>
+        <MEETING>Meeting_100001</MEETING>
+        <USER>Peter Selie</USER>
+    </PARTICIPATION>
+
+</SYSTEM>
