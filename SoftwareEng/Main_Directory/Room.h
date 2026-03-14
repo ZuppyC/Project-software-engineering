@@ -19,15 +19,26 @@ public:
     Room();
     void setName(string name);
     string getName();
+    /*
+     *getters en setters voor de naam van het room
+     *
+     */
 
     void setIdentifier(string id);
     string getIdentifier();
+    /*
+     *getters en setters voor de ID van het ROOM
+     *
+     */
 
     void setCapacity(int getal);
     int getCapacity();
+    /*
+     *getters en setters voor de room capacity
+     *
+     */
 
-    bool getOccupied();
-    void setOccupied(bool occupied);
+
 
     ~Room();
 };
