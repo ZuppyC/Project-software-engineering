@@ -88,8 +88,6 @@ TEST_F(HAPPYDAY_SCENARIO,xmlIsJuist)
 
 
 
-
-
 TEST_F(SYSTEMTESTS, NoRoomViolation)
 {
     EXPECT_DEATH(sss_.parser("../xmlfilesTests/NoRoom.xml"), "De XML bestand moet ROOM element hebben.");
@@ -162,6 +160,44 @@ TEST(SYSTEM_MEETINGTEST, MeetingTakesPlace) {
 
     EXPECT_TRUE(m->getBezig());
 }
+
+TEST(SYSTEM_MEETINGTEST, MeetingCancelled) {
+    System s;
+
+    Room* r1 = new Room();
+    r1->setIdentifier("R1");
+    r1->setName("Test Room");
+    r1->setCapacity(10);
+    s.addRoom(r1);
+
+    Meeting* m1 = new Meeting();
+    m1->setId("M1");
+    m1->setLabel("Test Meeting");
+    m1->setRoom("R1");
+    m1->setDate("2027/10/20");
+    s.addMeeting(m1);
+
+
+    Meeting* m2 = new Meeting();
+    m2->setId("M2");
+    m2->setLabel("Test Meeting");
+    m2->setRoom("R1");
+    m2->setDate("2027/10/20");
+    s.addMeeting(m2);
+
+
+    s.takesPlace(m1);
+    s.takesPlace(m2);
+
+    EXPECT_TRUE(m2->getCanceled());
+}
+
+
+
+
+
+
+
 
 
 TEST(SYSTEM_PRINTTEST, OutputfileIsJuist) {
