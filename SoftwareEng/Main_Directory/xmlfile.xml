@@ -1,46 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <SYSTEM>
+
     <ROOM>
-        <NAME>M.G.025</NAME>
-        <IDENTIFIER>M.G.025</IDENTIFIER>
+        <NAME>M.G.12</NAME>
+        <IDENTIFIER>M.G.12</IDENTIFIER>
         <CAPACITY>55</CAPACITY>
     </ROOM>
     <ROOM>
-        <NAME>M.G.023</NAME>
-        <IDENTIFIER>Room98732</IDENTIFIER>
-        <CAPACITY>10</CAPACITY>
+        <NAME>M.G.235</NAME>
+        <IDENTIFIER>M.G.235</IDENTIFIER>
+        <CAPACITY>55</CAPACITY>
+    </ROOM>
+    <ROOM>
+        <NAME>M.G.1</NAME>
+        <IDENTIFIER>M.G.1</IDENTIFIER>
+        <CAPACITY>55</CAPACITY>
     </ROOM>
     <MEETING>
         <LABEL>Weekly meeting</LABEL>
-        <IDENTIFIER>Meeting_478463</IDENTIFIER>
-        <ROOM>Room98732</ROOM>
-        <DATE>2026-05-22</DATE>
+        <IDENTIFIER>Meeting_100001</IDENTIFIER>
+        <ROOM>M.G.235</ROOM>
+        <DATE>2024-03-10</DATE>
     </MEETING>
     <MEETING>
-        <LABEL>Weekly meeting</LABEL>
+        <LABEL>today meeting</LABEL>
+        <IDENTIFIER>Meeting_12</IDENTIFIER>
+        <ROOM>M.G.235</ROOM>
+        <DATE>2025-03-10</DATE>
+    </MEETING>
+    <MEETING>
+        <LABEL>today meeting</LABEL>
+        <IDENTIFIER>Meeting_12764</IDENTIFIER>
+        <ROOM>M.G.235</ROOM>
+        <DATE>2026-03-10</DATE>
+    </MEETING>
+    <MEETING>
+        <LABEL>today meeting</LABEL>
         <IDENTIFIER>Meeting_1</IDENTIFIER>
-        <ROOM>M.G.025</ROOM>
-        <DATE>2026-05-22</DATE>
+        <ROOM>M.G.1</ROOM>
+        <DATE>2027-03-10</DATE>
     </MEETING>
     <MEETING>
-        <LABEL>Weekly meeting</LABEL>
-        <IDENTIFIER>Meeting_2</IDENTIFIER>
-        <ROOM>M.G.025</ROOM>
-        <DATE>2026-05-22</DATE>
+        <LABEL>today meeting</LABEL>
+        <IDENTIFIER>Meeting_12345</IDENTIFIER>
+        <ROOM>M.G.1</ROOM>
+        <DATE>2028-03-10</DATE>
     </MEETING>
     <PARTICIPATION>
-        <MEETING>Meeting_478463</MEETING>
+        <MEETING>Meeting_100001</MEETING>
         <USER>Peter Selie</USER>
     </PARTICIPATION>
     <PARTICIPATION>
-        <MEETING>Meeting_478463</MEETING>
-        <USER>Zenci si</USER>
+        <MEETING>Meeting_1</MEETING>
+        <USER>bruna mars</USER>
     </PARTICIPATION>
     <PARTICIPATION>
         <MEETING>Meeting_1</MEETING>
-        <USER>Dokaebi</USER>
-    </PARTICIPATION>
-    <PARTICIPATION>
-        <MEETING>Meeting_2</MEETING>
-        <USER>hibana</USER>
+        <USER>zenci as</USER>
     </PARTICIPATION>
 </SYSTEM>
