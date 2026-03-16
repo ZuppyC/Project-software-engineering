@@ -128,7 +128,7 @@ System* System::parser(const char* xmldoc)
         bool gevonden = false;
 
         for (Room* r : rooms) {
-            if (m->getRoom() == r->getName()) {
+            if (m->getRoom() == r->getIdentifier()) {
                 gevonden = true;
             }
         }
