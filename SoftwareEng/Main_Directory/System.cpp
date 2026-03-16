@@ -136,18 +136,6 @@ System* System::parser(const char* xmldoc)
         ENSURE(gevonden, "MEETING wijst naar ROOM die niet bestaat");
     }
 
-    for (Participation* j: participations) {
-        for (Meeting* i: meetings) {
-            if (j->getmeeting()== i->getId()) {
-                i->setPart(j);
-
-
-
-                ENSURE(!i->getPart().empty(), "Er is geen PARTICIPATION gelezen");
-            }
-        }
-
-    }
 
     for (Participation* p : participations) {
 
@@ -220,13 +208,17 @@ void System::printBlok(ofstream& outputFile, Meeting* m) {
     outputFile<<"  "<<m->getLabel()<<"\n";
 
     vector<Participation*> users = m->getPart();
-    if (users.size()>0) {
+    if (users.size()>1)
+    {
         for (int i = 0; i < users.size()-1; i++) {
             outputFile<<users[i]->getUser()<<", ";
         }
-
+        outputFile<<users[users.size()-1]->getUser()<<"\n";
+    }else if (users.size()==1)
+    {
         outputFile<<"  "<<users[users.size()-1]->getUser()<<"\n";
     }
+
 
     string id= m->getId().substr(8);
     outputFile<<"  "<<"Meeting ID: "<<id<<endl;
