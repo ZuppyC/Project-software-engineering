@@ -25,19 +25,19 @@
     <MEETING>
         <LABEL>today meeting</LABEL>
         <IDENTIFIER>Meeting_12</IDENTIFIER>
-        <ROOM>M.G.1</ROOM>
+        <ROOM>M.G.3</ROOM>
         <DATE>2028-03-10</DATE>
     </MEETING>
     <MEETING>
         <LABEL>today meeting</LABEL>
         <IDENTIFIER>Meeting_1</IDENTIFIER>
-        <ROOM>M.G.1</ROOM>
+        <ROOM>M.G.3</ROOM>
         <DATE>2029-03-10</DATE>
     </MEETING>
     <MEETING>
         <LABEL>today meeting</LABEL>
         <IDENTIFIER>Meeting_12345</IDENTIFIER>
-        <ROOM>M.G.1</ROOM>
+        <ROOM>M.G.3</ROOM>
         <DATE>2029-03-10</DATE>
     </MEETING>
     <PARTICIPATION>

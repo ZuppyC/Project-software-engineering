@@ -110,10 +110,11 @@ System* System::parser(const char* xmldoc)
         {
             Participation* participatie = new Participation;
             participatie->setmeeting(childs->FirstChildElement("MEETING")->GetText());
-            TiXmlElement* user = childs->FirstChildElement("USER");
 
-            participatie->setUser(user->GetText());
+            for (TiXmlElement* user = childs->FirstChildElement("USER"); user != NULL; user = user->NextSiblingElement("USER")) {
+                participatie->setUser(user->GetText());
 
+            }
 
             ENSURE(!participatie->getUser().empty(), "Er is geen USER gelezen");
             ENSURE(!participatie->getmeeting().empty(), "Er is geen MEETING gelezen");
@@ -127,12 +128,25 @@ System* System::parser(const char* xmldoc)
         bool gevonden = false;
 
         for (Room* r : rooms) {
-            if (m->getRoom() == r->getIdentifier()) {
+            if (m->getRoom() == r->getName()) {
                 gevonden = true;
             }
         }
 
         ENSURE(gevonden, "MEETING wijst naar ROOM die niet bestaat");
+    }
+
+    for (Participation* j: participations) {
+        for (Meeting* i: meetings) {
+            if (j->getmeeting()== i->getId()) {
+                i->setPart(j);
+
+
+
+                ENSURE(!i->getPart().empty(), "Er is geen PARTICIPATION gelezen");
+            }
+        }
+
     }
 
     for (Participation* p : participations) {
@@ -182,7 +196,6 @@ System* System::parser(const char* xmldoc)
     ENSURE(!rooms.empty(),"geen room");
     ENSURE(!meetings.empty(),"geen meeting");
     ENSURE(!participations.empty(),"geen participatie");
-    ENSURE(system->properlyInitialized(), "de systeem is fout geinitialiseerd");
 
 
     return system;
@@ -208,7 +221,6 @@ void System::printBlok(ofstream& outputFile, Meeting* m) {
 
     vector<Participation*> users = m->getPart();
     if (users.size()>0) {
-
         for (int i = 0; i < users.size()-1; i++) {
             outputFile<<users[i]->getUser()<<", ";
         }
@@ -230,7 +242,6 @@ void System::printBlok(ofstream& outputFile, Meeting* m) {
 void System::print(string filename) {
 
     ofstream outputFile(filename);
-    REQUIRE(this->properlyInitialized(),"De systeem is fout geinitialiseerd");
 
     REQUIRE(!rooms.empty(),"Er zijn geen ROOMs");
     REQUIRE(!meetings.empty(),"Er zijn geen MEETINGs");
@@ -290,7 +301,7 @@ void System::print(string filename) {
 
 
 void System::takesPlace(Meeting* meeting) {
-    REQUIRE(this->properlyInitialized(),"De systeem is fout geinitialiseerd");
+
     REQUIRE(!rooms.empty(),"Er zijn geen ROOMs");
     REQUIRE(!meetings.empty(),"Er zijn geen MEETINGs");
 
@@ -323,7 +334,6 @@ void System::takesPlace(Meeting* meeting) {
 
 
 void System::takePlaceEveryMeeting() {
-    REQUIRE(this->properlyInitialized(),"De systeem is fout geinitialiseerd");
 
     REQUIRE(!rooms.empty(),"Er zijn geen ROOMs");
     REQUIRE(!meetings.empty(),"Er zijn geen MEETINGs");
