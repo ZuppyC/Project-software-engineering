@@ -138,9 +138,6 @@ TEST_F(SYSTEMTESTS, AboveMaxRoomCapViolation) {
     EXPECT_DEATH(sss_.parser("../xmlfilesTests/AboveMaxRoomCap.xml"), "Aantal PARTITCIPATIONs is groter dan ROOM CAPACITY");
 }
 
-
-
-
 TEST(SYSTEM_MEETINGTEST, MeetingTakesPlace) {
     System s;
 
