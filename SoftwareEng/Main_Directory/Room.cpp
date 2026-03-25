@@ -5,10 +5,7 @@
 #include "Room.h"
 
 
-Room::Room()
-{
 
-}
 
 void Room::setCapacity(int getal)
 {

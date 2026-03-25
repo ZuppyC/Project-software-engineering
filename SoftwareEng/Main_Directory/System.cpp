@@ -37,21 +37,19 @@ System* System::parser(const char* xmldoc)
 
 
     TiXmlElement* s = doc.FirstChildElement("SYSTEM");
-    REQUIRE(
-        s != nullptr &&
-        s->FirstChildElement("ROOM") != nullptr,
-        "De XML bestand moet ROOM element hebben."
-    );
-    REQUIRE(
-        s != nullptr &&
-        s->FirstChildElement("PARTICIPATION") != nullptr,
-        "De XML bestand moet PARTICIPATION element hebben."
-    );
-    REQUIRE(
-        s != nullptr &&
-        s->FirstChildElement("MEETING") != nullptr,
-        "De XML bestand moet MEETINGS element hebben."
-    );
+
+    //Preconditions
+    if (s == nullptr || s->FirstChildElement("ROOM") == nullptr) {
+        cerr<< "De XML bestand moet ROOM element hebben"<<endl;
+    }
+
+    if (s == nullptr || s->FirstChildElement("PARTICIPATION") == nullptr) {
+        cerr<< "De XML bestand moet PARTICIPATION element hebben"<<endl;
+    }
+
+    if (s == nullptr || s->FirstChildElement("MEETING") == nullptr) {
+        cerr<< "De XML bestand moet MEETING element hebben"<<endl;
+    }
 
 
     TiXmlElement* begin = s->FirstChildElement();
@@ -68,25 +66,41 @@ System* System::parser(const char* xmldoc)
                 ruimte->setCapacity(cap);
             }
             catch (...) {
-                REQUIRE(false, "CAPACITY moet een int zijn");
+
+                cerr<<"CAPACITY moet een int zijn"<<endl;
             }
 
             int cap= stoi(childs->FirstChildElement("CAPACITY")->GetText());
 
-            REQUIRE(cap>0, "CAPACITY moet groter zijn dan 0");
+
+            if (cap<0) {
+                cerr<<"CAPACITY moet groter zijn dan 0"<<endl;
+            }
             ruimte->setCapacity(cap);
             ruimte->setIdentifier(childs->FirstChildElement("IDENTIFIER")->GetText());
             TiXmlElement* name1 = childs->FirstChildElement("NAME");
 
-            REQUIRE(name1 != nullptr, "Er is geen NAME element");
+
+            if (name1 == nullptr) {
+                cerr<<"Er is geen NAME element"<<endl;
+            }
 
             ruimte->setName(name1->GetText());
             rooms.push_back(ruimte);
 
+            //Postconditions
 
-            ENSURE(ruimte->getCapacity() > 0, "Er is geen CAPACITY gelezen");
-            ENSURE(!ruimte->getIdentifier().empty(), "Er is geen IDENTIFIER gelezen");
-            ENSURE(!ruimte->getName().empty() , "Er is geen NAME gelezen");
+            if (ruimte->getCapacity() <= 0) {
+                cerr<<"Er is geen CAPACITY gelezen"<<endl;
+            }
+
+            if (ruimte->getIdentifier().empty()) {
+                cerr<<"Er is geen IDENTIFIER gelezen"<<endl;
+            }
+
+            if (ruimte->getName().empty()) {
+                cerr<<"Er is geen NAME gelezen"<<endl;
+            }
         }
         else if (type == "MEETING")
         {
@@ -96,10 +110,23 @@ System* System::parser(const char* xmldoc)
             meetNgreet->setRoom(childs->FirstChildElement("ROOM")->GetText());
             meetNgreet->setDate(childs->FirstChildElement("DATE")->GetText());
 
-            ENSURE(!meetNgreet->getId().empty(), "Er is geen IDENTIFIER gelezen");
-            ENSURE(!meetNgreet->getLabel().empty(), "Er is geen LABEL gelezen");
-            ENSURE(!meetNgreet->getRoom().empty(), "Er is geen ROOM gelezen");
-            ENSURE(meetNgreet->getDate() != nullptr, "Er is geen DATE gelezen");
+
+            //Postconditions
+            if (meetNgreet->getId().empty()) {
+                cerr<<"Er is geen IDENTIFIER gelezen"<<endl;
+            }
+
+            if (meetNgreet->getLabel().empty()) {
+                cerr<<"Er is geen LABEL gelezen"<<endl;
+            }
+
+            if (meetNgreet->getRoom().empty()) {
+                cerr<<"Er is geen ROOM gelezen"<<endl;
+            }
+
+            if (meetNgreet->getDate() == nullptr) {
+                cerr<<"Er is geen DATE gelezen"<<endl;
+            }
 
             meetings.push_back(meetNgreet);
 
@@ -116,8 +143,14 @@ System* System::parser(const char* xmldoc)
 
             }
 
-            ENSURE(!participatie->getUser().empty(), "Er is geen USER gelezen");
-            ENSURE(!participatie->getmeeting().empty(), "Er is geen MEETING gelezen");
+
+            //postconditions
+            if (participatie->getUser().empty()) {
+                cerr<<"Er is geen USER gelezen"<<endl;
+            }
+            if (participatie->getmeeting().empty()) {
+                cerr<<"Er is geen MEETING gelezen"<<endl;
+            }
 
             participations.push_back(participatie);
         }
@@ -133,7 +166,9 @@ System* System::parser(const char* xmldoc)
             }
         }
 
-        ENSURE(gevonden, "MEETING wijst naar ROOM die niet bestaat");
+        if (!gevonden) {
+            cerr<<"MEETING wijst naar ROOM die niet bestaat"<<endl;
+        }
     }
 
 
@@ -148,7 +183,9 @@ System* System::parser(const char* xmldoc)
             }
         }
 
-        ENSURE(found, "PARTICIPATION wijst naar een MEETING die niet bestaat");
+        if (!found) {
+            cerr<<"PARTICIPATION wijst naar een MEETING die niet bestaat"<<endl;
+        }
     }
 
 
@@ -161,7 +198,9 @@ System* System::parser(const char* xmldoc)
         }
         for (Room* r: rooms) {
             if (r->getName()==i->getRoom()) {
-                REQUIRE(teller<= r->getCapacity(), "Aantal PARTITCIPATIONs is groter dan ROOM CAPACITY");
+                 if (teller> r->getCapacity()) {
+                    cerr<<"Aantal PARTITCIPATIONs is groter dan ROOM CAPACITY"<<endl;
+                }
             }
         }
     }
@@ -170,20 +209,35 @@ System* System::parser(const char* xmldoc)
 
     for (size_t i = 0; i < meetings.size(); i++) {
         for (size_t j = i + 1; j < meetings.size(); j++) {
-            ENSURE(meetings[i]->getId() != meetings[j]->getId(),"Dubbele MEETING IDENTIFIER");
+
+            if (meetings[i]->getId() == meetings[j]->getId()) {
+                cerr<<"Dubbele MEETING IDENTIFIER"<<endl;
+            }
         }
     }
 
     for (size_t i = 0; i < rooms.size(); i++) {
         for (size_t j = i + 1; j < rooms.size(); j++) {
-            ENSURE(rooms[i]->getIdentifier() != rooms[j]->getIdentifier(),"Dubbele ROOM IDENTIFIER");
+
+            if (rooms[i]->getIdentifier() == rooms[j]->getIdentifier()) {
+                cerr<<"Dubbele ROOM IDENTIFIER"<<endl;
+            }
         }
     }
 
 
-    ENSURE(!rooms.empty(),"geen room");
-    ENSURE(!meetings.empty(),"geen meeting");
-    ENSURE(!participations.empty(),"geen participatie");
+
+    if (rooms.empty()) {
+        cerr<<"geen room"<<endl;
+    }
+
+    if (meetings.empty()) {
+        cerr<<"geen meeting"<<endl;
+    }
+
+    if (participations.empty()) {
+        cerr<<"geen participation"<<endl;
+    }
 
 
     return system;

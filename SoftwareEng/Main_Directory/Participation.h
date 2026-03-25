@@ -16,9 +16,15 @@ private:
 public:
     void setUser(string user_);
     string getUser();
+    /*
+     *  getters en setters voor participation User
+     */
 
     void setmeeting(string meeting);
     string getmeeting();
+    /*
+     *  getters en setters voor participation Meeting
+     */
 };
 
 

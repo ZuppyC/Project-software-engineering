@@ -16,20 +16,35 @@ private:
     bool isOccupied= false;
 
 public:
-    Room();
+
     void setName(string name);
     string getName();
+    /*
+     *  getters en setters voor room Name
+     */
 
     void setIdentifier(string id);
     string getIdentifier();
+    /*
+     *  getters en setters voor room Identifier
+     */
 
     void setCapacity(int getal);
     int getCapacity();
+    /*
+     *  getters en setters voor room Capacity
+     */
 
     bool getOccupied();
     void setOccupied(bool occupied);
+    /*
+     *  getters en setters voor room occupation, om te zien of de room word gebruikt of niet
+     */
 
     ~Room();
+    /*
+     *  Room object destructor
+     */
 };
 
 
