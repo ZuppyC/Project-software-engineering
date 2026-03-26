@@ -168,6 +168,7 @@ System* System::parser(const char* xmldoc)
 
         if (!gevonden) {
             cerr<<"MEETING wijst naar ROOM die niet bestaat"<<endl;
+            exit(-1);
         }
     }
 
@@ -185,6 +186,7 @@ System* System::parser(const char* xmldoc)
 
         if (!found) {
             cerr<<"PARTICIPATION wijst naar een MEETING die niet bestaat"<<endl;
+            exit(-1);
         }
     }
 
@@ -200,6 +202,7 @@ System* System::parser(const char* xmldoc)
             if (r->getName()==i->getRoom()) {
                  if (teller> r->getCapacity()) {
                     cerr<<"Aantal PARTITCIPATIONs is groter dan ROOM CAPACITY"<<endl;
+                     exit(-1);
                 }
             }
         }
@@ -212,6 +215,7 @@ System* System::parser(const char* xmldoc)
 
             if (meetings[i]->getId() == meetings[j]->getId()) {
                 cerr<<"Dubbele MEETING IDENTIFIER"<<endl;
+                exit(-1);
             }
         }
     }
@@ -221,6 +225,7 @@ System* System::parser(const char* xmldoc)
 
             if (rooms[i]->getIdentifier() == rooms[j]->getIdentifier()) {
                 cerr<<"Dubbele ROOM IDENTIFIER"<<endl;
+                exit(-1);
             }
         }
     }
