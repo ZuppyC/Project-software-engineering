@@ -6,36 +6,65 @@
 #include <iostream>
 #include <ctime>
 #include <bits/locale_classes.h>
+#include "../src/DesignByContract.h"
+
+Meeting::Meeting() {
+    _initCheck = this;
+}
+
+bool Meeting::properlyInitialized() {
+    return _initCheck == this;
+}
+
+
 
 void Meeting::setId(string id) {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
+    REQUIRE(!id.empty(), "Er is geen MEETING");
     this->identifier = id;
+    ENSURE(this->identifier==id, "MEETING is niet gelezen");
 }
 string Meeting::getId() {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     return identifier;
 }
 
 void Meeting::setLabel(string label) {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
+    REQUIRE(!label.empty(), "Er is geen LABEL");
+
     this->label = label;
+    ENSURE(this->label==label, "LABEL is niet gelezen");
 }
 string Meeting::getLabel() {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     return label;
 }
 
 void Meeting::setRoom(string roomnr) {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
+    REQUIRE(!roomnr.empty(), "Er is geen ROOM");
     this->room = roomnr;
+    ENSURE(this->room==roomnr, "ROOM is niet gelezen");
 }
 string Meeting::getRoom() {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     return room;
 }
 
 void Meeting::setDate(const string& a) {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
+    REQUIRE(a.size() == 10, "DATE moet formaat YYYY-MM-DD zijn");
     date = strToTm(a);
+    ENSURE(date != nullptr, "DATE is niet gelezen");
 }
 tm* Meeting::getDate() const {
+
     return date;
 }
 
 tm* Meeting::strToTm(const string& datum) {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
 
     int jaar = stoi(datum.substr(0, 4));
 
@@ -52,15 +81,26 @@ tm* Meeting::strToTm(const string& datum) {
 }
 
 void Meeting::setPart(Participation* part) {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
+    REQUIRE(part != nullptr, "Er is geen PARTICIPATION");
     participants.push_back(part);
+    bool part_in_p= false;
+    for (Participation* part_ :participants) {
+        if (part==part_) {
+            part_in_p= true;
+        }
+    }
+    ENSURE(part_in_p, "PARTICIPATION is niet gelezen");
 }
 
 vector<Participation*> Meeting::getPart() const {
+
     return participants;
 }
 
 
 bool Meeting::isPast() {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     time_t t = time(nullptr);
     tm* today = localtime(&t);
 
@@ -72,6 +112,8 @@ bool Meeting::isPast() {
 }
 
 bool Meeting::conflictsWith(Meeting* m) {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
+    REQUIRE(m != nullptr, "Er is geen MEETING");
     tm* d1 = this->date;
     tm* d2 = m->getDate();
 
@@ -84,17 +126,21 @@ bool Meeting::conflictsWith(Meeting* m) {
 }
 
 bool Meeting::getBezig() {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     return isBezig;
 }
 
 void Meeting::setBezig(bool bezig) {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     isBezig= bezig;
 }
 
 void Meeting::setCanceled(bool canceled) {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     isCanceled= canceled;
 }
 
 bool Meeting::getCanceled() {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     return isCanceled;
 }

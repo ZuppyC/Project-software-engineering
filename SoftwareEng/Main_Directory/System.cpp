@@ -73,7 +73,7 @@ System* System::parser(const char* xmldoc)
             int cap= stoi(childs->FirstChildElement("CAPACITY")->GetText());
 
 
-            if (cap<0) {
+            if (cap<=0) {
                 cerr<<"CAPACITY moet groter zijn dan 0"<<endl;
             }
             ruimte->setCapacity(cap);

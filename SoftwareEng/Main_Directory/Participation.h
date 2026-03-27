@@ -11,9 +11,13 @@ using namespace std;
 class Participation
 {
 private:
+    Participation* _initCheck;
     string user;
     string meeting;
 public:
+    Participation();
+    bool properlyInitialized();
+
     void setUser(string user_);
     string getUser();
     /*

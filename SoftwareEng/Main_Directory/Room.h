@@ -10,12 +10,15 @@ using namespace std;
 class Room
 {
 private:
+    Room* _initCheck;
     string name;
     string identifier;
     int capacity=0;
     bool isOccupied= false;
 
 public:
+    Room();
+    bool properlyInitialized();
 
     void setName(string name);
     string getName();

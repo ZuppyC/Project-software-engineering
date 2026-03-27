@@ -11,6 +11,7 @@ using namespace std;
 class Meeting
 {
 private:
+    Meeting* _initCheck;
     string label;
     string identifier;
     string room;
@@ -19,6 +20,15 @@ private:
     bool isBezig= false;
     bool isCanceled= false;
 public:
+
+    Meeting();
+    /*
+     * Constructor voor Meeting
+     */
+
+
+    bool properlyInitialized();
+
     void setLabel(string label);
     string getLabel();
     /*
