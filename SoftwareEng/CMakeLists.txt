@@ -24,7 +24,9 @@ set(RELEASE_SOURCE_FILES
         Main_Directory/Participation.cpp
         Main_Directory/Meeting.cpp
         Main_Directory/Input.cpp
-        Main_Directory/Input.h)
+        Main_Directory/Input.h
+        Main_Directory/Output.cpp
+        Main_Directory/Output.h)
 # Set source files for DEBUG target
 # Only add cpp files, no h files!
 # Make sure the "main" function is in "main_debug"!
@@ -42,6 +44,8 @@ set(DEBUG_SOURCE_FILES
         Main_Directory/Meeting.cpp
         Main_Directory/Input.cpp
         Main_Directory/Input.h
+        Main_Directory/Output.cpp
+        Main_Directory/Output.h
 
 )
 # Create RELEASE target

@@ -4,6 +4,7 @@
 #include <iostream>
 #include"input.h"
 #include "System.h"
+#include"output.h"
 #include "../xmlparser/tinyxml.h"
 using namespace std;
 
@@ -18,7 +19,8 @@ int main()
         return 1;
     }
 
-    s->print("SystemOutput");
+    Output out;
+    out.print("SystemOutput", *s);
     s->takePlaceEveryMeeting();
 
     delete s;
