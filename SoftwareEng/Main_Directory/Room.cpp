@@ -41,7 +41,7 @@ string Room::getIdentifier() {
 void Room::setName(string name_)
 {
     REQUIRE(properlyInitialized(), "ROOM is niet geinitialiseerd");
-    REQUIRE(!name.empty(), "Er is geen NAME");
+    REQUIRE(!name_.empty(), "Er is geen NAME");
     this->name = name_;
     ENSURE(name == name_, "NAME is niet gelezen");
 }

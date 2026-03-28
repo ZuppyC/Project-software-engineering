@@ -8,7 +8,7 @@
 #include <fstream>
 #include "Meeting.h"
 #include "Participation.h"
-#include "../xmlparser/tinyxml.h"
+
 using namespace std;
 
 #include "Room.h"
@@ -26,10 +26,13 @@ public:
     System();
     void addRoom(Room* room);
     void addMeeting(Meeting* meeting);
+    void addParticipation(Participation* participation);
 
     vector<Meeting*> getMeeting();
+    vector<Room*> getRooms();
+    vector<Participation*> getParticipations();
 
-    System* parser(const char* doc);
+
 
 
     void printBlok(ofstream& outputFile, Meeting* m);
