@@ -6,6 +6,8 @@
 #define SOFTWAREENG_SYSTEM_H
 #include <vector>
 #include <fstream>
+
+#include "input.h"
 #include "Meeting.h"
 #include "Participation.h"
 
@@ -17,12 +19,13 @@ using namespace std;
 class System
 {
 private:
+    Input input_bestand;
     System* _initcheck;
     vector<Room*> rooms;
     vector<Meeting*> meetings;
     vector<Participation*> participations;
 public:
-    System();
+    System(const char* xmldoc);
     void addRoom(Room* room);
     void addMeeting(Meeting* meeting);
     void addParticipation(Participation* participation);

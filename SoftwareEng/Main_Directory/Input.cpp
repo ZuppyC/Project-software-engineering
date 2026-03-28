@@ -9,17 +9,14 @@
 #include "System.h"
 #include <vector>
 
-System* Input::parser(const char* xmldoc)
+void Input::parser(const char* xmldoc, System* sys)
 {
 
-
-    System* system = new System();
     TiXmlDocument doc(xmldoc);
     if (!doc.LoadFile()) {
         std::cerr << "XML kon niet geladen worden: "
                   << doc.ErrorDesc() << std::endl;
-        delete system;
-        return nullptr;
+        return;
     }
 
 
@@ -73,7 +70,7 @@ System* Input::parser(const char* xmldoc)
             }
 
             ruimte->setName(name1->GetText());
-            system->addRoom(ruimte);
+            sys->addRoom(ruimte);
 
             //Postconditions
 
@@ -115,7 +112,7 @@ System* Input::parser(const char* xmldoc)
                 cerr<<"Er is geen DATE gelezen"<<endl;
             }
 
-            system->addMeeting(meetNgreet);
+            sys->addMeeting(meetNgreet);
 
 
 
@@ -139,12 +136,12 @@ System* Input::parser(const char* xmldoc)
                 cerr<<"Er is geen MEETING gelezen"<<endl;
             }
 
-            system->addParticipation(participatie);
+            sys->addParticipation(participatie);
         }
     }
-    vector<Meeting*> meetings = system->getMeeting();
-    vector<Room*> rooms = system->getRooms();
-    vector<Participation*> participations = system->getParticipations();
+    vector<Meeting*> meetings = sys->getMeeting();
+    vector<Room*> rooms = sys->getRooms();
+    vector<Participation*> participations = sys->getParticipations();
 
 
     for (Meeting* m : meetings) {
@@ -233,7 +230,4 @@ System* Input::parser(const char* xmldoc)
     if (participations.empty()) {
         cerr<<"geen participation"<<endl;
     }
-
-
-    return system;
 }

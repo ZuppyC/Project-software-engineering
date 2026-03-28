@@ -8,7 +8,7 @@
 class System;
 class Input {
     public:
-        System* parser(const char* xmldoc);
+        void parser(const char* xmldoc, System* sys);
 };
 
 

@@ -12,17 +12,11 @@ using namespace std;
 
 int main()
 {
-    Input in;
-    System* s = in.parser("..//Main_Directory//xmlfile.xml");
-
-    if (s == nullptr) {
-        return 1;
-    }
+    System* s = new System("xmlfile.xml");
 
     Output out;
+
     out.print("SystemOutput", *s);
     s->takePlaceEveryMeeting();
-
-    delete s;
     return 0;
 }

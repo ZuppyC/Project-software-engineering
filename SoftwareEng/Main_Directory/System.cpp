@@ -7,10 +7,12 @@
 #include "../src/DesignByContract.h"
 #include <fstream>
 
-System::System()
-{
-    _initcheck = this;
+#include "input.h"
 
+System::System(const char* xmldoc)
+{
+    input_bestand.parser(xmldoc, this);
+    _initcheck = this;
 
 }
 void System::addParticipation(Participation* participation) {
