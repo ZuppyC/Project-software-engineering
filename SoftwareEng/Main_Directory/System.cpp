@@ -15,6 +15,13 @@ System::System(const char* xmldoc)
     _initcheck = this;
 
 }
+
+System::System()
+{
+
+}
+
+
 void System::addParticipation(Participation* participation) {
     participations.push_back(participation);
 }

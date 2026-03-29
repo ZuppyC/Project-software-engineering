@@ -22,7 +22,6 @@ protected:
     }
 
     // Declares the variables your tests want to use.
-    System sss_;
 
 };
 
@@ -48,7 +47,6 @@ protected:
     }
 
     // Declares the variables your tests want to use.
-    System happydaysss_;
 
 };
 
@@ -87,6 +85,31 @@ bool FileCompare(const std::string leftFileName, const std::string rightFileName
     rightFile.close();
     return result;
 }
+
+TEST_F(SYSTEMTESTS, NoMeeting_VAL)
+{
+    // maak een file om de cerr op te vangen
+    std::ofstream Test_file("Nomeeting_val.txt");
+
+    // stuur de komende cerr in de file
+    std::streambuf* oldCerr = std::cerr.rdbuf(Test_file.rdbuf());
+
+    System s("../xmlfilesTests/NoMeeting.xml");
+
+    //herstel cerr zodat er niets meer erin kan
+    std::cerr.rdbuf(oldCerr);
+
+
+    EXPECT_TRUE(FileCompare("../Expected_output_tests/expected_Nomeeting_val.txt","Nomeeting_val.txt"));
+
+
+
+}
+
+
+
+
+
 
 //
 // TEST_F(HAPPYDAY_SCENARIO,xmlIsJuist)
