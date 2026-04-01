@@ -34,3 +34,7 @@ void Renovation::setEindDatum(const std::string &string)
     einddatum = strToTm(string);
 
 }
+
+void Renovation::setRoom(const std::string &room) {
+    this->room = room;
+}

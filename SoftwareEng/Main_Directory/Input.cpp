@@ -9,6 +9,11 @@
 #include "System.h"
 #include <vector>
 
+#include "Building.h"
+#include "Campus.h"
+#include "Catering.h"
+#include "Renovation.h"
+
 void Input::parser(const char* xmldoc, System* sys)
 {
 
@@ -137,8 +142,55 @@ void Input::parser(const char* xmldoc, System* sys)
             }
 
             sys->addParticipation(participatie);
+        }else if (type == "CAMPUS")
+        {
+            Campus* c = new Campus;
+            c->setId(childs->FirstChildElement("NAME")->GetText());
+            c->setName(childs->FirstChildElement("IDENTIFIER")->GetText());
+
+            // nog checken of geen dubbele identifier is en cerr
+
+
+        }else if (type == "BUILDING")
+        {
+            Building* b = new Building;
+            b->setId(childs->FirstChildElement("IDENTIFIER")->GetText());
+            b->setName(childs->FirstChildElement("NAME")->GetText());
+            b->setCampus(childs->FirstChildElement("CAMPUS")->GetText());
+
+
+        }else if (type == "CATERING") {
+
+            // dit ook in een aparte parser met catering only?
+
+            Catering* caterin = new Catering;
+
+            caterin->setCampus(childs->FirstChildElement("CAMPUS")->GetText());
+            caterin->setCo2(stof(childs->FirstChildElement("CO2")->GetText()));
+
+            // check if co2 float > 0
+            // check if campus id echt bestaat
+
+
+        }else if (type == "RENOVATION") {
+
+            // dit in een aparte parser later eerst hier laten?
+            Renovation* r = new Renovation;
+
+            r->setBeginDatum(childs->FirstChildElement("START")->GetText());
+
+            r->setEindDatum(childs->FirstChildElement("END")->GetText());
+
+            r->setRoom(childs->FirstChildElement("ROOM")->GetText());
+
+            //checken of er een room bestaat nog
+
         }
     }
+
+
+
+
     vector<Meeting*> meetings = sys->getMeeting();
     vector<Room*> rooms = sys->getRooms();
     vector<Participation*> participations = sys->getParticipations();

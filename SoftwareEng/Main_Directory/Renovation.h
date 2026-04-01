@@ -17,6 +17,8 @@ private:
 
 public:
 
+    void setRoom(const std::string& room);
+
     tm* strToTm(const std::string& datum);
     void setBeginDatum(const std::string& string);
     void setEindDatum(const std::string& string);
