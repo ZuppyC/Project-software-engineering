@@ -46,6 +46,14 @@ set(DEBUG_SOURCE_FILES
         Main_Directory/Input.h
         Main_Directory/Output.cpp
         Main_Directory/Output.h
+        Main_Directory/Campus.cpp
+        Main_Directory/Campus.h
+        Main_Directory/Building.cpp
+        Main_Directory/Building.h
+        Main_Directory/Catering.cpp
+        Main_Directory/Catering.h
+        Main_Directory/Renovation.cpp
+        Main_Directory/Renovation.h
 
 )
 # Create RELEASE target
