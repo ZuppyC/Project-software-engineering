@@ -144,3 +144,44 @@ bool Meeting::getCanceled() {
     REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     return isCanceled;
 }
+
+bool Meeting::getOnline() {
+    return isOnline;
+}
+
+void Meeting::setOnline(bool online) {
+    isOnline= online;
+}
+
+bool Meeting::getCatering() {
+    return hasCatering;
+}
+void Meeting::setCatering(string catering) {
+    if (catering=="true") {
+        hasCatering= true;
+    }
+    else {
+        hasCatering= false;
+    }
+}
+
+bool Meeting::getExternals() {
+    return hasExternals;
+}
+
+void Meeting::setExternals(string externals) {
+    if (externals=="true") {
+        hasExternals= true;
+    }
+    else {
+        hasExternals= false;
+    }
+}
+
+int Meeting::getHour() {
+    return hour;
+}
+
+void Meeting::setHour(int h) {
+    hour==h;
+}

@@ -16,9 +16,13 @@ private:
     string identifier;
     string room;
     tm* date= nullptr;
+    bool isOnline= false;
     vector<Participation*> participants;
     bool isBezig= false;
+    bool hasCatering= false;
+    bool hasExternals= false;
     bool isCanceled= false;
+    int hour;
 public:
 
     Meeting();
@@ -87,6 +91,20 @@ public:
      * om te zien of een meeting gecancelled is of niet
      *
      */
+    bool getOnline();
+    void setOnline(bool online);
+    /*
+    *getters en setters voor isOnline, checkt of meeting online is of niet
+    *
+    */
+    int getHour();
+ void setHour(int h);
+
+ bool getCatering();
+ void setCatering(string catering);
+
+ bool getExternals();
+ void setExternals(string extarnals);
 
 
 

@@ -37,7 +37,7 @@
         <LABEL>today meeting</LABEL>
         <IDENTIFIER>Meeting_1</IDENTIFIER>
         <ROOM>M.G.1</ROOM>
-        <DATE>2027-03-10</DATE>
+        <DATE>2027-03-10</DATE> 
     </MEETING>
     <MEETING>
         <LABEL>today meeting</LABEL>

@@ -76,7 +76,15 @@ void System::takesPlace(Meeting* meeting) {
         meeting->setBezig(true);
 
     }
+
     else{
+        for (Renovation* r: renovations) {
+            if (r->getRoom()==meeting->getRoom()) {
+                cerr<<"The room is being renovated, meeting canceled: "<< meeting->getId() <<endl;
+                meeting->setCanceled(true);
+                return;
+            }
+        }
         for (Meeting* m: meetings) {
             if (m==meeting) {
                 continue;
