@@ -71,10 +71,14 @@ void System::takesPlace(Meeting* meeting) {
     REQUIRE(!meetings.empty(),"Er zijn geen MEETINGs");
 
 
-    if (meetings.size()==1) {
+    if (meetings.size()==1 ) {
         cout<<"Meeting takes place"<<endl;
         meeting->setBezig(true);
 
+    }
+    else if (meeting->getOnline()==true) {
+        cout<<"Meeting takes place online"<<endl;
+        meeting->setBezig(true);
     }
 
     else{

@@ -320,32 +320,6 @@ void Input::parserMRP(const char* xmldoc, System* sys)
             }
 
             sys->addParticipation(participatie);
-        }else if (type == "CATERING") {
-
-            // dit ook in een aparte parser met catering only?
-
-            Catering* caterin = new Catering;
-
-            caterin->setCampus(childs->FirstChildElement("CAMPUS")->GetText());
-            caterin->setCo2(stof(childs->FirstChildElement("CO2")->GetText()));
-
-            // check if co2 float > 0
-            // check if campus id echt bestaat
-
-
-        }else if (type == "RENOVATION") {
-
-            // dit in een aparte parser later eerst hier laten?
-            Renovation* r = new Renovation;
-
-            r->setBeginDatum(childs->FirstChildElement("START")->GetText());
-
-            r->setEindDatum(childs->FirstChildElement("END")->GetText());
-
-            r->setRoom(childs->FirstChildElement("ROOM")->GetText());
-
-            //checken of er een room bestaat nog
-
         }
     }
 
