@@ -14,7 +14,7 @@
 #include "Catering.h"
 #include "Renovation.h"
 
-void Input::parser(const char* xmldoc, System* sys)
+void Input::laatste_parserMRP(const char* xmldoc, System* sys)
 {
 
     TiXmlDocument doc(xmldoc);
@@ -23,7 +23,6 @@ void Input::parser(const char* xmldoc, System* sys)
                   << doc.ErrorDesc() << std::endl;
         return;
     }
-
 
     TiXmlElement* s = doc.FirstChildElement("SYSTEM");
 

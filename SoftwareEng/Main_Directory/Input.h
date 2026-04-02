@@ -8,7 +8,11 @@
 class System;
 class Input {
     public:
-        void parser(const char* xmldoc, System* sys);
+        void eerste_parserCB(const char* xmldoc, System* sys);
+
+        void parser_catering(const char* xmldoc, System* sys);
+
+        void laatste_parserMRP(const char* xmldoc, System* sys);
 };
 
 
