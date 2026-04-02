@@ -271,6 +271,7 @@ void Input::parserMRP(const char* xmldoc, System* sys)
             meetNgreet->setRoom(childs->FirstChildElement("ROOM")->GetText());
             meetNgreet->setDate(childs->FirstChildElement("DATE")->GetText());
 
+
             meetNgreet->setHour(stoi(childs->FirstChildElement("HOUR")->GetText()));
             meetNgreet->setOnline(string (childs->FirstChildElement("ONLINE")->GetText())== "true");
             meetNgreet->setExternals(childs->FirstChildElement("EXTRENALS")->GetText());

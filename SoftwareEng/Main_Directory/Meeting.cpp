@@ -1,4 +1,4 @@
-//
+    //
 // Created by Dell on 26/02/2026.
 //
 
@@ -118,7 +118,7 @@ bool Meeting::conflictsWith(Meeting* m) {
     tm* d2 = m->getDate();
 
     if (d1->tm_mday == d2->tm_mday && d1->tm_mon == d2->tm_mon && d1->tm_year == d2->tm_year
-        && room== m->getRoom()) {
+        && room== m->getRoom() && hour== m->getHour());{
         return true;
 
     }
@@ -183,5 +183,8 @@ int Meeting::getHour() {
 }
 
 void Meeting::setHour(int h) {
-    hour==h;
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
+    REQUIRE(h >= 0 && h <= 23, "Hour moet tusssen 0 en 23 zijn ");
+    hour = h;
+    ENSURE(hour == h, "Hour is niet correct gezet");
 }
