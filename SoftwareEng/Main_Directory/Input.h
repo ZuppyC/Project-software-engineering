@@ -12,7 +12,11 @@ class Input {
 
         void parser_catering(const char* xmldoc, System* sys);
 
-        void laatste_parserMRP(const char* xmldoc, System* sys);
+        void parserMRP(const char* xmldoc, System* sys);
+
+        void parser_renovatie(const char* xmldoc, System* sys);
+
+
 };
 
 

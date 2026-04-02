@@ -14,7 +14,129 @@
 #include "Catering.h"
 #include "Renovation.h"
 
-void Input::laatste_parserMRP(const char* xmldoc, System* sys)
+
+void Input::eerste_parserCB(const char* xmldoc, System* sys)
+{
+
+    TiXmlDocument doc(xmldoc);
+    if (!doc.LoadFile()) {
+        std::cerr << "XML kon niet geladen worden: "
+                  << doc.ErrorDesc() << std::endl;
+        return;
+    }
+
+    TiXmlElement* s = doc.FirstChildElement("SYSTEM");
+
+
+    TiXmlElement* begin = s->FirstChildElement();
+
+
+    for (TiXmlElement* childs = begin; childs!= NULL;childs = childs->NextSiblingElement())
+    {
+
+        string type = childs->Value();
+
+        if (type == "CAMPUS")
+        {
+            // check of id al bestaat geen dubbele id's
+
+
+
+            Campus* c = new Campus();
+
+            c->setId(childs->FirstChildElement("IDENTIFIER")->GetText());
+            c->setName(childs->FirstChildElement("NAME")->GetText());
+
+            sys->addCampus(c);
+
+
+
+
+
+        }else if (type == "BUILDING")
+        {
+
+            Building* b = new Building;
+
+            b->setId(childs->FirstChildElement("IDENTIFIER")->GetText());
+            b->setName(childs->FirstChildElement("NAME")->GetText());
+            b->setCampus(childs->FirstChildElement("CAMPUS")->GetText());
+
+
+            sys->addBuilding(b);
+
+
+        }else
+        {
+            continue;
+        }
+
+    }
+
+
+
+
+
+}
+
+
+
+
+void Input::parser_renovatie(const char* xmldoc, System* sys)
+{
+
+    TiXmlDocument doc(xmldoc);
+    if (!doc.LoadFile()) {
+        std::cerr << "XML kon niet geladen worden: "
+                  << doc.ErrorDesc() << std::endl;
+        return;
+    }
+
+    TiXmlElement* s = doc.FirstChildElement("SYSTEM");
+
+
+    TiXmlElement* begin = s->FirstChildElement();
+
+    for (TiXmlElement* childs = begin; childs!= NULL;childs = childs->NextSiblingElement())
+    {
+
+        string type = childs->Value();
+        if (type == "RENOVATION")
+        {
+            // nog checks of valid is
+
+
+
+            Renovation* r = new Renovation;
+
+            r->setRoom(childs->FirstChildElement("ROOM")->GetText());
+
+            r->setBeginDatum(childs->FirstChildElement("START")->GetText());
+
+            r->setEindDatum(childs->FirstChildElement("END")->GetText());
+
+            sys->addRenovation(r);
+        }
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+void Input::parserMRP(const char* xmldoc, System* sys)
 {
 
     TiXmlDocument doc(xmldoc);
@@ -74,6 +196,7 @@ void Input::laatste_parserMRP(const char* xmldoc, System* sys)
             }
 
             ruimte->setName(name1->GetText());
+
             sys->addRoom(ruimte);
 
             //Postconditions
@@ -141,23 +264,6 @@ void Input::laatste_parserMRP(const char* xmldoc, System* sys)
             }
 
             sys->addParticipation(participatie);
-        }else if (type == "CAMPUS")
-        {
-            Campus* c = new Campus;
-            c->setId(childs->FirstChildElement("NAME")->GetText());
-            c->setName(childs->FirstChildElement("IDENTIFIER")->GetText());
-
-            // nog checken of geen dubbele identifier is en cerr
-
-
-        }else if (type == "BUILDING")
-        {
-            Building* b = new Building;
-            b->setId(childs->FirstChildElement("IDENTIFIER")->GetText());
-            b->setName(childs->FirstChildElement("NAME")->GetText());
-            b->setCampus(childs->FirstChildElement("CAMPUS")->GetText());
-
-
         }else if (type == "CATERING") {
 
             // dit ook in een aparte parser met catering only?
