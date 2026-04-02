@@ -71,6 +71,9 @@ void System::takesPlace(Meeting* meeting) {
     REQUIRE(!meetings.empty(),"Er zijn geen MEETINGs");
 
 
+
+
+
     if (meetings.size()==1 ) {
         cout<<"Meeting takes place"<<endl;
         meeting->setBezig(true);
@@ -105,6 +108,14 @@ void System::takesPlace(Meeting* meeting) {
         meeting->setBezig(true);
 
 
+    }
+    if (!meeting->getExternals()) {
+        for (Participation* p: meeting->getPart()) {
+            if (p->getExternal()) {
+                cout<<"User: "<<p->getUser()<<", can't participate in this meeting"<<endl;
+            }
+        }
+        cout<<"External users are not allowed"<<endl;
     }
     ENSURE(meeting->getBezig() || meeting->getCanceled(), "Meeting hasnt taken place, or hasnt been canceled.");
 }

@@ -42,4 +42,17 @@ string Participation::getmeeting() {
     return meeting;
 }
 
+void Participation::setExternal(string external) {
+    if (external=="true") {
+        isExternal = true;
+    }
+    else {
+        isExternal = false;
+    }
+}
+
+bool Participation::getExternal() {
+    return isExternal;
+}
+
 

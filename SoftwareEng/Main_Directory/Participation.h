@@ -14,6 +14,7 @@ private:
     Participation* _initCheck;
     string user;
     string meeting;
+    bool isExternal;
 public:
     Participation();
     bool properlyInitialized();
@@ -29,6 +30,9 @@ public:
     /*
      *  getters en setters voor participation Meeting
      */
+    void setExternal(string isExternal_);
+    bool getExternal();
+
 };
 
 
