@@ -55,7 +55,11 @@ public:
 
     void takesPlace(Meeting* meeting);
 
+    void handleCatering(Meeting* meeting);
+
     void takePlaceEveryMeeting();
+
+
 
 };
 
