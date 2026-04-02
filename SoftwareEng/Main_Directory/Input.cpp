@@ -80,6 +80,56 @@ void Input::eerste_parserCB(const char* xmldoc, System* sys)
 }
 
 
+void Input::parser_catering(const char* xmldoc, System* sys)
+{
+
+    TiXmlDocument doc(xmldoc);
+    if (!doc.LoadFile()) {
+        std::cerr << "XML kon niet geladen worden: "
+                  << doc.ErrorDesc() << std::endl;
+        return;
+    }
+
+    TiXmlElement* s = doc.FirstChildElement("SYSTEM");
+
+
+    TiXmlElement* begin = s->FirstChildElement();
+
+
+    for (TiXmlElement* childs = begin; childs!= NULL;childs = childs->NextSiblingElement())
+    {
+        string type = childs->Value();
+
+        if (type == "CATERING")
+        {
+
+            // checks
+            Catering* c = new Catering;
+
+            c->setCampus(childs->FirstChildElement("CAMPUS")->GetText());
+
+            c->setCo2(stof(childs->FirstChildElement("CO2")->GetText()));
+
+
+            sys->addCatering(c);
+
+        }
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 void Input::parser_renovatie(const char* xmldoc, System* sys)

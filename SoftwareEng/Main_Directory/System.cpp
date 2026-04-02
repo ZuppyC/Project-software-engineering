@@ -15,7 +15,9 @@ System::System(const char* xmldoc)
 
     input_bestand.parser_catering(xmldoc, this);
 
-    input_bestand.laatste_parserMRP(xmldoc, this);
+    input_bestand.parserMRP(xmldoc, this);
+
+    input_bestand.parser_renovatie(xmldoc,this);
 
     _initcheck = this;
 
