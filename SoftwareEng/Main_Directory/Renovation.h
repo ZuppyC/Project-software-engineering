@@ -5,6 +5,7 @@
 
 #ifndef SOFTWAREENG_RENOVATION_H
 #define SOFTWAREENG_RENOVATION_H
+using namespace std;
 
 
 class Renovation {
@@ -18,6 +19,7 @@ private:
 public:
 
     void setRoom(const std::string& room);
+    string getRoom();
 
     tm* strToTm(const std::string& datum);
     void setBeginDatum(const std::string& string);

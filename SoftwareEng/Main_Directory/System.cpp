@@ -11,7 +11,12 @@
 
 System::System(const char* xmldoc)
 {
-    input_bestand.parser(xmldoc, this);
+    input_bestand.eerste_parserCB(xmldoc, this);
+
+    input_bestand.parser_catering(xmldoc, this);
+
+    input_bestand.laatste_parserMRP(xmldoc, this);
+
     _initcheck = this;
 
 }
@@ -41,7 +46,21 @@ void System::addMeeting(Meeting* meeting) {
     meetings.push_back(meeting);
 }
 
+void System::addBuilding(Building* building) {
+    buildings.push_back(building);
+}
 
+void System::addCampus(Campus* campus) {
+    campuses.push_back(campus);
+}
+
+void System::addCatering(Catering* catering) {
+    caterings.push_back(catering);
+}
+
+void System::addRenovation(Renovation* renovation) {
+    renovations.push_back(renovation);
+}
 
 
 void System::takesPlace(Meeting* meeting) {

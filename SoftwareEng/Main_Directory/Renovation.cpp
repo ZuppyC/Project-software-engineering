@@ -23,6 +23,8 @@ tm *Renovation::strToTm(const std::string &datum)
 }
 
 
+
+
 void Renovation::setBeginDatum(const std::string &string)
 {
     begindatum = strToTm(string);
@@ -37,4 +39,8 @@ void Renovation::setEindDatum(const std::string &string)
 
 void Renovation::setRoom(const std::string &room) {
     this->room = room;
+}
+
+string Renovation::getRoom() {
+    return room;
 }
