@@ -60,6 +60,8 @@ public:
 
     void takePlaceEveryMeeting();
 
+    void trackOccupancy(Meeting* meeting);
+
     void trackCo2(Meeting* meeting);
 
     double getTotalCo2();

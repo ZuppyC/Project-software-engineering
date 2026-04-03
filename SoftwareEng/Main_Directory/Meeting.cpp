@@ -188,3 +188,11 @@ void Meeting::setHour(int h) {
     hour = h;
     ENSURE(hour == h, "Hour is niet correct gezet");
 }
+
+void Meeting::setOccupancy(int occupancy) {
+    this->occupancy = occupancy;
+}
+
+int Meeting::getOccupancy() {
+    return occupancy;
+}

@@ -84,6 +84,7 @@ void System::takesPlace(Meeting* meeting) {
         meeting->setBezig(true);
         trackCo2(meeting);
         if (!meeting->getOnline()) {
+            trackOccupancy(meeting);
             handleCatering(meeting);
         }
 
@@ -117,6 +118,7 @@ void System::takesPlace(Meeting* meeting) {
         cout<<"Meeting takes place: "<< meeting->getId() <<endl;
         meeting->setBezig(true);
         trackCo2(meeting);
+        trackOccupancy(meeting);
         handleCatering(meeting);
 
 
@@ -198,6 +200,24 @@ void System::trackCo2(Meeting* meeting) {
     }
     totalCo2 += meetingCo2;
 }
+
+
+
+void System::trackOccupancy(Meeting* meeting) {
+    REQUIRE(meeting != nullptr, "Er is geen Meeting");
+
+    int participantsCount = meeting->getPart().size();
+
+    for (Room* r :rooms) {
+        if (r->getIdentifier() == meeting->getRoom()) {
+            meeting->setOccupancy(participantsCount);
+            return;
+        }
+    }
+}
+
+
+
 
 
 void System::takePlaceEveryMeeting() {
