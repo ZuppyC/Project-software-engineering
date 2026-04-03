@@ -11,9 +11,11 @@ class Catering
 private:
     std::string campus;
     float co2;
+
 public:
     void setCampus(const std::string& campus);
     void setCo2(float co2);
+    float getCo2() const;
 };
 
 

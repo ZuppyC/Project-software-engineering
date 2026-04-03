@@ -48,6 +48,7 @@ public:
     vector<Meeting*> getMeeting();
     vector<Room*> getRooms();
     vector<Participation*> getParticipations();
+    double totalCo2 = 0.0;
 
 
     bool properlyInitialized();
@@ -58,6 +59,10 @@ public:
     void handleCatering(Meeting* meeting);
 
     void takePlaceEveryMeeting();
+
+    void trackCo2(Meeting* meeting);
+
+    double getTotalCo2();
 
 
 

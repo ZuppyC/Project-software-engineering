@@ -64,6 +64,11 @@ void System::addRenovation(Renovation* renovation) {
     renovations.push_back(renovation);
 }
 
+double System::getTotalCo2() {
+
+    return totalCo2;
+}
+
 
 void System::takesPlace(Meeting* meeting) {
 
@@ -77,6 +82,7 @@ void System::takesPlace(Meeting* meeting) {
     if (meetings.size()==1 ) {
         cout<<"Meeting takes place"<<endl;
         meeting->setBezig(true);
+        trackCo2(meeting);
         if (!meeting->getOnline()) {
             handleCatering(meeting);
         }
@@ -85,6 +91,7 @@ void System::takesPlace(Meeting* meeting) {
     else if (meeting->getOnline()==true) {
         cout<<"Meeting takes place online"<<endl;
         meeting->setBezig(true);
+        trackCo2(meeting);
     }
 
     else{
@@ -109,6 +116,7 @@ void System::takesPlace(Meeting* meeting) {
 
         cout<<"Meeting takes place: "<< meeting->getId() <<endl;
         meeting->setBezig(true);
+        trackCo2(meeting);
         handleCatering(meeting);
 
 
@@ -159,6 +167,36 @@ void System::handleCatering(Meeting* meeting) {
     cateringFile << "Time: " << meeting->getHour() << "h" << endl;
     cateringFile << "Catering cost : EUR " << totalCost << endl;
 
+}
+
+void System::trackCo2(Meeting* meeting) {
+    REQUIRE(meeting != nullptr, "Er is geen MEETING");
+
+    double meetingCo2 =0.0;
+    vector<Participation*> parts = meeting->getPart();
+
+    for (Participation* p : parts) {
+        if (meeting->getOnline()) {
+            meetingCo2 +=30;
+        }
+        else if (p->getExternal()) {
+            meetingCo2 += 1200;
+        }
+        else {
+            meetingCo2 +=120;
+        }
+    }
+
+    if (meeting->getCatering() && !meeting->getOnline()) {
+        if (!caterings.empty()) {
+
+
+            meetingCo2 += caterings[0]->getCo2() * parts.size();
+
+
+        }
+    }
+    totalCo2 += meetingCo2;
 }
 
 

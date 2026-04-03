@@ -14,3 +14,8 @@ void Catering::setCo2(float co2)
     this->co2 = co2;
 }
 
+float Catering::getCo2() const
+{
+    return co2;
+}
+
