@@ -111,7 +111,7 @@
    void setOccupancy(int occupancy);
    int getOccupancy();
 
-      void printMeeting();
+      void printMeeting(ofstream& outputFile);
   };
 
 

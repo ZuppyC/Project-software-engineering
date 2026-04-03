@@ -78,6 +78,14 @@ void System::takesPlace(Meeting* meeting) {
 
 
 
+    if (!meeting->getExternals()) {
+        for (Participation* p: meeting->getPart()) {
+            if (p->getExternal()) {
+                cout<<"User: "<<p->getUser()<<", can't participate in this meeting"<<meeting->getId()<<endl;
+            }
+        }
+        cout<<"External users are not allowed in: "<< meeting->getId()<<endl;
+    }
 
     if (meetings.size()==1 ) {
         cout<<"Meeting takes place"<<endl;
@@ -90,14 +98,14 @@ void System::takesPlace(Meeting* meeting) {
 
     }
     else if (meeting->getOnline()==true) {
-        cout<<"Meeting takes place online"<<endl;
+        cout<<"Meeting takes place online: "<<meeting->getId()<<endl;
         meeting->setBezig(true);
         trackCo2(meeting);
     }
 
     else{
         for (Renovation* r: renovations) {
-            if (r->getRoom()==meeting->getRoom()) {
+            if (r->isTussen(meeting->getDate())) {
                 cerr<<"The room is being renovated, meeting canceled: "<< meeting->getId() <<endl;
                 meeting->setCanceled(true);
                 return;
@@ -123,14 +131,7 @@ void System::takesPlace(Meeting* meeting) {
 
 
     }
-    if (!meeting->getExternals()) {
-        for (Participation* p: meeting->getPart()) {
-            if (p->getExternal()) {
-                cout<<"User: "<<p->getUser()<<", can't participate in this meeting"<<endl;
-            }
-        }
-        cout<<"External users are not allowed"<<endl;
-    }
+
     ENSURE(meeting->getBezig() || meeting->getCanceled(), "Meeting hasnt taken place, or hasnt been canceled.");
 }
 

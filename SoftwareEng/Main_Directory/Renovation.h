@@ -25,6 +25,7 @@ public:
     void setBeginDatum(const std::string& string);
     void setEindDatum(const std::string& string);
 
+    bool isTussen(tm* datum);
 };
 
 

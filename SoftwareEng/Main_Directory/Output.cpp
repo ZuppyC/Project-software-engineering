@@ -31,7 +31,7 @@ void Output::print(const std::string& filename, System& system) {
 
     outputFile<<"--== Meetings ==--\n"<<endl;
     for (Meeting* meeting : meetings) {
-        meeting->printMeeting();
+        meeting->printMeeting(outputFile);
     }
 
 }

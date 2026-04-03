@@ -311,6 +311,8 @@ void Input::parserMRP(const char* xmldoc, System* sys)
                 participatie->setUser(user->GetText());
 
             }
+            participatie->setExternal(childs->FirstChildElement("EXTERNAL")->GetText());
+
 
 
             //postconditions

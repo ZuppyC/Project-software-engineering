@@ -44,3 +44,24 @@ void Renovation::setRoom(const std::string &room) {
 string Renovation::getRoom() {
     return room;
 }
+
+bool Renovation::isTussen(tm *datum) {
+    if (begindatum->tm_year > datum->tm_year || einddatum->tm_year < datum->tm_year) {
+        return false;
+    }
+    else if (begindatum->tm_year == datum->tm_year && begindatum->tm_mon > datum->tm_mon) {
+        return false;
+    }
+    else if (einddatum->tm_year == datum->tm_year && einddatum->tm_mon < datum->tm_mon) {
+        return false;
+    }
+    else if (begindatum->tm_mon== datum->tm_mon && begindatum->tm_mday > datum->tm_mday) {
+        return false;
+    }
+    else if (einddatum->tm_mon==datum->tm_mon && einddatum->tm_mday < datum->tm_mday) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}

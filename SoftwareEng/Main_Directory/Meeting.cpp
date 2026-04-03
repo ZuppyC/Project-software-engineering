@@ -5,6 +5,7 @@
 #include "Meeting.h"
 #include <iostream>
 #include <ctime>
+#include <fstream>
 #include <bits/locale_classes.h>
 #include "../src/DesignByContract.h"
 
@@ -197,23 +198,23 @@ int Meeting::getOccupancy() {
     return occupancy;
 }
 
-void Meeting::printMeeting() {
-    cout<<"["<<identifier<<"]"<<endl;
+void Meeting::printMeeting(ofstream& outputfile) {
+    outputfile<<"["<<identifier<<"]"<<endl;
     tm* d1 = date;
-    cout<<" -  Time:  "<<d1->tm_mday<<"/"<<d1->tm_mon<<"/"<<d1->tm_year<<", "<<hour<<"h00"<<endl;
-    cout<<" -  Location:  "<<room<<endl;
+    outputfile<<" -  Time:  "<<d1->tm_mday<<"/"<<d1->tm_mon<<"/"<<d1->tm_year<<", "<<hour<<"h00"<<endl;
+    outputfile<<" -  Location:  "<<room<<endl;
     if (hasExternals) {
-        cout<<" -  Externals allowed"<<endl;
+        outputfile<<" -  Externals allowed"<<endl;
     }
     else {
-        cout<<" -  Externals not allowed"<<endl;
+        outputfile<<" -  Externals not allowed"<<endl;
     }
     if (hasCatering) {
-        cout<<" -  Catering"<<endl;
+        outputfile<<" -  Catering"<<endl;
     }
     else {
-        cout<<" -  No Catering"<<endl;
+        outputfile<<" -  No Catering"<<endl;
     }
 
-    cout<<" -  CO2 emitted:  "<<"HIER MOET NOG CO2 BEREKEND WORDEN"<<"\n"<<endl;
+    outputfile<<" -  CO2 emitted:  "<<"HIER MOET NOG CO2 BEREKEND WORDEN"<<"\n"<<endl;
 }
