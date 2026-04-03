@@ -24,17 +24,17 @@ set(RELEASE_SOURCE_FILES
         Main_Directory/Participation.cpp
         Main_Directory/Meeting.cpp
         Main_Directory/Input.cpp
-        Main_Directory/Input.h
+
         Main_Directory/Output.cpp
-        Main_Directory/Output.h
+
         Main_Directory/Catering.cpp
-        Main_Directory/Catering.h
+
         Main_Directory/Campus.cpp
-        Main_Directory/Campus.h
+
         Main_Directory/Building.cpp
-        Main_Directory/Building.h
+
         Main_Directory/Renovation.cpp
-        Main_Directory/Renovation.h
+
 )
 
 # Set source files for DEBUG target
@@ -53,17 +53,17 @@ set(DEBUG_SOURCE_FILES
         Main_Directory/Participation.cpp
         Main_Directory/Meeting.cpp
         Main_Directory/Input.cpp
-        Main_Directory/Input.h
+
         Main_Directory/Output.cpp
-        Main_Directory/Output.h
+
         Main_Directory/Campus.cpp
-        Main_Directory/Campus.h
+
         Main_Directory/Building.cpp
-        Main_Directory/Building.h
+
         Main_Directory/Catering.cpp
-        Main_Directory/Catering.h
+
         Main_Directory/Renovation.cpp
-        Main_Directory/Renovation.h
+
 
 )
 # Create RELEASE target

@@ -196,3 +196,24 @@ void Meeting::setOccupancy(int occupancy) {
 int Meeting::getOccupancy() {
     return occupancy;
 }
+
+void Meeting::printMeeting() {
+    cout<<"["<<identifier<<"]"<<endl;
+    tm* d1 = date;
+    cout<<" -  Time:  "<<d1->tm_mday<<"/"<<d1->tm_mon<<"/"<<d1->tm_year<<", "<<hour<<"h00"<<endl;
+    cout<<" -  Location:  "<<room<<endl;
+    if (hasExternals) {
+        cout<<" -  Externals allowed"<<endl;
+    }
+    else {
+        cout<<" -  Externals not allowed"<<endl;
+    }
+    if (hasCatering) {
+        cout<<" -  Catering"<<endl;
+    }
+    else {
+        cout<<" -  No Catering"<<endl;
+    }
+
+    cout<<" -  CO2 emitted:  "<<"HIER MOET NOG CO2 BEREKEND WORDEN"<<"\n"<<endl;
+}

@@ -1,61 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SYSTEM>
-    <ROOM>
-        <NAME>M.G.12</NAME>
-        <IDENTIFIER>M.G.12</IDENTIFIER>
-        <CAPACITY>55</CAPACITY>
-    </ROOM>
-    <ROOM>
-        <NAME>M.G.235</NAME>
-        <IDENTIFIER>M.G.235</IDENTIFIER>
-        <CAPACITY>55</CAPACITY>
-    </ROOM>
-    <ROOM>
-        <NAME>M.G.1</NAME>
-        <IDENTIFIER>M.G.1</IDENTIFIER>
-        <CAPACITY>55</CAPACITY>
-    </ROOM>
+
     <MEETING>
         <LABEL>Weekly meeting</LABEL>
-        <IDENTIFIER>Meeting_100001</IDENTIFIER>
-        <ROOM>M.G.235</ROOM>
-        <DATE>2024-03-10</DATE>
-
+        <IDENTIFIER>Meeting_478463</IDENTIFIER>
+        <ROOM>Room_87984521</ROOM>
+        <DATE>2026-05-22</DATE>
+        <HOUR>14</HOUR>
+        <ONLINE>false</ONLINE>
+        <EXTERNALS>false</EXTERNALS>
+        <CATERING>true</CATERING>
     </MEETING>
     <MEETING>
-        <LABEL>today meeting</LABEL>
-        <IDENTIFIER>Meeting_12</IDENTIFIER>
-        <ROOM>M.G.235</ROOM>
-        <DATE>2025-03-10</DATE>
-    </MEETING>
-    <MEETING>
-        <LABEL>today meeting</LABEL>
-        <IDENTIFIER>Meeting_12764</IDENTIFIER>
-        <ROOM>M.G.235</ROOM>
-        <DATE>2026-03-10</DATE>
-    </MEETING>
-    <MEETING>
-        <LABEL>today meeting</LABEL>
-        <IDENTIFIER>Meeting_1</IDENTIFIER>
-        <ROOM>M.G.1</ROOM>
-        <DATE>2027-03-10</DATE> 
-    </MEETING>
-    <MEETING>
-        <LABEL>today meeting</LABEL>
-        <IDENTIFIER>Meeting_12345</IDENTIFIER>
-        <ROOM>M.G.1</ROOM>
-        <DATE>2028-03-10</DATE>
+        <LABEL>monthly meeting</LABEL>
+        <IDENTIFIER>Meeting20</IDENTIFIER>
+        <ROOM>Room_87984521</ROOM>
+        <DATE>2028-05-22</DATE>
+        <HOUR>11</HOUR>
+        <ONLINE>true</ONLINE>
+        <EXTERNALS>true</EXTERNALS>
+        <CATERING>false</CATERING>
     </MEETING>
     <PARTICIPATION>
-        <MEETING>Meeting_100001</MEETING>
+        <MEETING>Meeting_478463</MEETING>
         <USER>Peter Selie</USER>
+        <EXTERNAL>true</EXTERNAL>
     </PARTICIPATION>
     <PARTICIPATION>
-        <MEETING>Meeting_1</MEETING>
-        <USER>bruna mars</USER>
+        <MEETING>Meeting20</MEETING>
+        <USER>Peter Selie</USER>
+        <EXTERNAL>true</EXTERNAL>
     </PARTICIPATION>
-    <PARTICIPATION>
-        <MEETING>Meeting_1</MEETING>
-        <USER>zenci as</USER>
-    </PARTICIPATION>
+    <BUILDING>
+        <NAME>Gebouw R</NAME>
+        <IDENTIFIER>CDE_R</IDENTIFIER>
+        <CAMPUS>Campus_CDE</CAMPUS>
+    </BUILDING>
+    <ROOM>
+        <NAME>R.014</NAME>
+        <IDENTIFIER>Room_87984521</IDENTIFIER>
+        <CAPACITY>10</CAPACITY>
+        <CAMPUS>Campus_CDE</CAMPUS>
+        <BUILDING>CDE_R</BUILDING>
+    </ROOM>
+    <RENOVATION>
+        <ROOM>Room_87984521</ROOM>
+        <START>2026-07-06</START>
+        <END>2026-07-14</END>
+    </RENOVATION>
+
+    <CAMPUS>
+        <NAME>Campus Drie Eiken</NAME>
+        <IDENTIFIER>Campus_CDE</IDENTIFIER>
+    </CAMPUS>
+    <CATERING>
+        <CAMPUS>Campus_CDE</CAMPUS>
+        <CO2>20</CO2>
+    </CATERING>
 </SYSTEM>

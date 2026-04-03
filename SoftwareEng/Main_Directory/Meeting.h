@@ -111,11 +111,7 @@
    void setOccupancy(int occupancy);
    int getOccupancy();
 
-
-
-
-
-
+      void printMeeting();
   };
 
 
