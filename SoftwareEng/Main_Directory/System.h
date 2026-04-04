@@ -34,6 +34,8 @@ private:
     vector<Campus*> campuses;
     vector<Building*> buildings;
 
+    double totalCo2 = 0.0;
+
 public:
     System(const char* xmldoc);
     System();
@@ -48,7 +50,7 @@ public:
     vector<Meeting*> getMeeting();
     vector<Room*> getRooms();
     vector<Participation*> getParticipations();
-    double totalCo2 = 0.0;
+
 
 
     bool properlyInitialized();
