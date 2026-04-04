@@ -44,6 +44,8 @@ public:
      *  getters en setters voor room occupation, om te zien of de room word gebruikt of niet
      */
 
+    void printRoom(ofstream& outputFile);
+
     ~Room();
     /*
      *  Room object destructor

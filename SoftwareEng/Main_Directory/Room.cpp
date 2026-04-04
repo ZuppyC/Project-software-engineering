@@ -3,6 +3,8 @@
 //
 
 #include "Room.h"
+#include <iostream>
+#include <fstream>
 #include "../src/DesignByContract.h"
 using namespace std;
 
@@ -51,7 +53,12 @@ string Room::getName() {
     return name;
 }
 
+void Room::printRoom(ofstream& outputfile) {
+    outputfile<<"["<<name<<"]"<<endl;
+    outputfile<<" -  ID:  "<<identifier<<endl;
+    outputfile<<" -  Capacity: "<<capacity<<endl;
 
+}
 
 
 

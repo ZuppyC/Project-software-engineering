@@ -199,8 +199,9 @@ int Meeting::getOccupancy() {
 }
 
 void Meeting::printMeeting(ofstream& outputfile) {
-    outputfile<<"["<<identifier<<"]"<<endl;
+    outputfile<<"["<<label<<"]"<<endl;
     tm* d1 = date;
+    outputfile<<" -  ID:  "<<identifier<<endl;
     outputfile<<" -  Time:  "<<d1->tm_mday<<"/"<<d1->tm_mon<<"/"<<d1->tm_year<<", "<<hour<<"h00"<<endl;
     outputfile<<" -  Location:  "<<room<<endl;
     if (hasExternals) {

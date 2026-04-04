@@ -13,7 +13,7 @@ class Meeting;
 class Output {
     public:
     void print(const std::string& filename, System& system);
-    void printBlok(std::ofstream& outputFile, Meeting* m);
+
 };
 
 

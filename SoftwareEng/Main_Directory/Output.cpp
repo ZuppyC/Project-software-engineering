@@ -34,4 +34,9 @@ void Output::print(const std::string& filename, System& system) {
         meeting->printMeeting(outputFile);
     }
 
+    outputFile<<"--== Rooms ==--\n"<<endl;
+    for (Room* room : rooms) {
+        room->printRoom(outputFile);
+    }
+
 }
