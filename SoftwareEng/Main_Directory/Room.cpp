@@ -57,7 +57,26 @@ void Room::printRoom(ofstream& outputfile) {
     outputfile<<"["<<name<<"]"<<endl;
     outputfile<<" -  ID:  "<<identifier<<endl;
     outputfile<<" -  Capacity: "<<capacity<<endl;
+    outputfile<<" -  Building: "<<building<<endl;
+    outputfile<<" -  Campus: "<<campus<<"\n"<<endl;
 
+}
+
+void Room::setBuilding(string _building) {
+    building= _building;
+}
+
+string Room::getBuilding() {
+    return building;
+}
+
+void Room::setCampus(string _campus) {
+    campus=_campus;
+
+}
+
+string Room::getCampus() {
+    return campus;
 }
 
 

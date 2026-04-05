@@ -15,6 +15,8 @@ private:
     string identifier;
     int capacity=0;
     bool isOccupied= false;
+    string campus;
+    string building;
 
 public:
     Room();
@@ -45,6 +47,12 @@ public:
      */
 
     void printRoom(ofstream& outputFile);
+
+    void setBuilding(string _building);
+    string getBuilding();
+
+    void setCampus(string _campus);
+    string getCampus();
 
     ~Room();
     /*

@@ -39,4 +39,6 @@ void Output::print(const std::string& filename, System& system) {
         room->printRoom(outputFile);
     }
 
+    outputFile<<²
+
 }

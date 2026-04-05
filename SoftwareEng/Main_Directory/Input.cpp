@@ -238,6 +238,8 @@ void Input::parserMRP(const char* xmldoc, System* sys)
             }
             ruimte->setCapacity(cap);
             ruimte->setIdentifier(childs->FirstChildElement("IDENTIFIER")->GetText());
+            ruimte->setBuilding(childs->FirstChildElement("BUILDING")->GetText());
+            ruimte->setCampus(childs->FirstChildElement("CAMPUS")->GetText());
             TiXmlElement* name1 = childs->FirstChildElement("NAME");
 
 
