@@ -14,7 +14,7 @@ private:
     Participation* _initCheck;
     string user;
     string meeting;
-    bool isExternal;
+    bool isExternal=false;
 public:
     Participation();
     bool properlyInitialized();

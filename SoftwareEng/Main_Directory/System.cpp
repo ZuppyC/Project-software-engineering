@@ -243,11 +243,15 @@ vector<Meeting *>System::getMeeting() {
     return meetings;
 }
 
+vector<Catering*> System::getCatering() {
+    return caterings;
+}
 
 bool System::properlyInitialized()
 {
     return _initcheck ==this;
 }
+
 
 
 

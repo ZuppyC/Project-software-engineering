@@ -7,7 +7,9 @@
 
 class System;
 class Input {
+
     public:
+
         void eerste_parserCB(const char* xmldoc, System* sys);
 
         void parser_catering(const char* xmldoc, System* sys);

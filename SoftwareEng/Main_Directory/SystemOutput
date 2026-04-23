@@ -2,17 +2,30 @@
 
 --== Meetings ==--
 
-[Meeting_478463]
+[Weekly meeting]
+ -  ID:  Meeting_478463
  -  Time:  22/5/2026, 14h00
  -  Location:  Room_87984521
  -  Externals not allowed
  -  Catering
- -  CO2 emitted:  HIER MOET NOG CO2 BEREKEND WORDEN
+ -  CO2 emitted:  280
 
-[Meeting20]
+[monthly meeting]
+ -  ID:  Meeting20
  -  Time:  22/5/2028, 11h00
  -  Location:  Room_87984521
  -  Externals allowed
  -  No Catering
- -  CO2 emitted:  HIER MOET NOG CO2 BEREKEND WORDEN
+ -  CO2 emitted:  50
 
+--== Rooms ==--
+
+[R.014]
+ -  ID:  Room_87984521
+ -  Capacity: 10
+ -  Building: CDE_R
+ -  Campus: Campus_CDE
+
+--== CO2 Summary ==--
+
+-  Total CO2:  0

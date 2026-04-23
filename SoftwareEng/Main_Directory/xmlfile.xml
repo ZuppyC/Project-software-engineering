@@ -24,7 +24,12 @@
     <PARTICIPATION>
         <MEETING>Meeting_478463</MEETING>
         <USER>Peter Selie</USER>
-        <EXTERNAL>true</EXTERNAL>
+        <EXTERNAL>false</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting_478463</MEETING>
+        <USER>zenci Selie</USER>µ
+        <EXTERNAL>false</EXTERNAL>
     </PARTICIPATION>
     <PARTICIPATION>
         <MEETING>Meeting20</MEETING>

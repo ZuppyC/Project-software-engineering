@@ -5,6 +5,8 @@
   #ifndef SOFTWAREENG_MEETING_H
   #define SOFTWAREENG_MEETING_H
   #include <string>
+
+#include "Catering.h"
   #include "Participation.h"
   using namespace std;
 
@@ -24,6 +26,9 @@
       bool isCanceled= false;
       int hour;
       int occupancy=0;
+
+
+
   public:
 
       Meeting();
@@ -111,8 +116,10 @@
    void setOccupancy(int occupancy);
    int getOccupancy();
 
-      void printMeeting(ofstream& outputFile);
+   void printMeeting(ofstream& outputFile);
+   double co2ZonderCatering();
   };
+
 
 
   #endif //SOFTWAREENG_MEETING_H

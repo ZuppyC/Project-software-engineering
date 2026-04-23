@@ -32,6 +32,20 @@ void Output::print(const std::string& filename, System& system) {
     outputFile<<"--== Meetings ==--\n"<<endl;
     for (Meeting* meeting : meetings) {
         meeting->printMeeting(outputFile);
+        Room* r;
+        double cateringCO2=0.0;
+        for (Room* room : system.getRooms()) {
+            if (meeting->getRoom()==room->getIdentifier()) {
+                r= room;
+            }
+        }
+        for (Catering* c: system.getCatering()) {
+            if (c->getCampus()==r->getCampus()) {
+                cateringCO2+=c->getCo2();
+            }
+        }
+        cateringCO2=cateringCO2* meeting->getPart().size();
+        outputFile<<" -  CO2 emitted:  "<<meeting->co2ZonderCatering()+cateringCO2<<"\n"<<endl;
     }
 
     outputFile<<"--== Rooms ==--\n"<<endl;
@@ -39,6 +53,9 @@ void Output::print(const std::string& filename, System& system) {
         room->printRoom(outputFile);
     }
 
-    outputFile<<²
+    outputFile<<"--== CO2 Summary ==--\n"<<endl;
+    outputFile<<"-  Total CO2:  "<<system.getTotalCo2()<<endl;
+
+
 
 }

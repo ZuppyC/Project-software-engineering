@@ -9,13 +9,16 @@ void Catering::setCampus(const std::string &campus)
     this->campus = campus;
 }
 
-void Catering::setCo2(float co2)
+void Catering::setCo2(double co2)
 {
     this->co2 = co2;
 }
 
-float Catering::getCo2() const
+double Catering::getCo2() const
 {
     return co2;
+}
+string Catering::getCampus() {
+    return campus;
 }
 

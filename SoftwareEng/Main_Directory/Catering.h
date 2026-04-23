@@ -2,20 +2,23 @@
 // Created by Gebruiker on 01.04.2026.
 //
 #include <string>
+
+#include "gtest/internal/gtest-port.h"
 #ifndef SOFTWAREENG_CATERING_H
 #define SOFTWAREENG_CATERING_H
 
-
+using namespace std;
 class Catering
 {
 private:
     std::string campus;
-    float co2;
+    double co2;
 
 public:
     void setCampus(const std::string& campus);
-    void setCo2(float co2);
-    float getCo2() const;
+    string getCampus();
+    void setCo2(double co2);
+    double getCo2() const;
 };
 
 

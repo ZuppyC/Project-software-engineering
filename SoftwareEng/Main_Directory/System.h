@@ -50,6 +50,7 @@ public:
     vector<Meeting*> getMeeting();
     vector<Room*> getRooms();
     vector<Participation*> getParticipations();
+    vector<Catering*> getCatering();
 
 
 

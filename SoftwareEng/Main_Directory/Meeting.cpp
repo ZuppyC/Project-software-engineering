@@ -217,5 +217,21 @@ void Meeting::printMeeting(ofstream& outputfile) {
         outputfile<<" -  No Catering"<<endl;
     }
 
-    outputfile<<" -  CO2 emitted:  "<<"HIER MOET NOG CO2 BEREKEND WORDEN"<<"\n"<<endl;
+}
+double Meeting::co2ZonderCatering() {
+
+    if (isOnline) {
+        return participants.size()*30;
+    }
+    double aantalCO2=0.0;
+
+    for (Participation* p : participants) {
+        if (p->getExternal()) {
+            aantalCO2+=1200;
+        }
+        else {
+            aantalCO2+=120;
+        }
+    }
+    return aantalCO2;
 }
