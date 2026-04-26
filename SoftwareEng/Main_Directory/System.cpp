@@ -175,6 +175,10 @@ void System::handleCatering(Meeting* meeting) {
 void System::trackCo2(Meeting* meeting) {
     REQUIRE(meeting != nullptr, "Er is geen MEETING");
 
+    if (meeting->getCo2Tracked()) {
+        return;
+    }
+
     double meetingCo2 =0.0;
     vector<Participation*> parts = meeting->getPart();
 
@@ -191,17 +195,33 @@ void System::trackCo2(Meeting* meeting) {
     }
 
     if (meeting->getCatering() && !meeting->getOnline()) {
-        if (!caterings.empty()) {
+        string campus = getCampusFromRoom(meeting->getRoom());
 
+        for (Catering* c : caterings) {
+            if (c->getCampus()==campus) {
+                meetingCo2 +=c->getCo2()*parts.size();
+                break;
+            }
+        }
 
-            meetingCo2 += caterings[0]->getCo2() * parts.size();
 
 
         }
-    }
     totalCo2 += meetingCo2;
-}
+    meeting->setCo2Tracked(true);
+    }
 
+
+
+
+string System::getCampusFromRoom(const string& roomId) {
+    for (Room* r : rooms) {
+        if (r->getIdentifier() == roomId) {
+            return r->getCampus();
+        }
+    }
+    return "";
+}
 
 
 void System::trackOccupancy(Meeting* meeting) {

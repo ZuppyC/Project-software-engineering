@@ -57,6 +57,9 @@ public:
     bool properlyInitialized();
 
 
+    string getCampusFromRoom(const string& roomId);
+
+
     void takesPlace(Meeting* meeting);
 
     void handleCatering(Meeting* meeting);

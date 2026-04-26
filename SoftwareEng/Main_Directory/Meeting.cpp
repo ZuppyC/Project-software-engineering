@@ -17,7 +17,13 @@ bool Meeting::properlyInitialized() {
     return _initCheck == this;
 }
 
+bool Meeting::getCo2Tracked() {
+    return co2Tracked;
+}
 
+void Meeting::setCo2Tracked(bool tracked) {
+    co2Tracked = tracked;
+}
 
 void Meeting::setId(string id) {
     REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
@@ -119,7 +125,7 @@ bool Meeting::conflictsWith(Meeting* m) {
     tm* d2 = m->getDate();
 
     if (d1->tm_mday == d2->tm_mday && d1->tm_mon == d2->tm_mon && d1->tm_year == d2->tm_year
-        && room== m->getRoom() && hour== m->getHour());{
+        && room== m->getRoom() && hour== m->getHour()){
         return true;
 
     }

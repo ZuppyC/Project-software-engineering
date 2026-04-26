@@ -26,6 +26,7 @@
       bool isCanceled= false;
       int hour;
       int occupancy=0;
+      bool co2Tracked = false;
 
 
 
@@ -104,6 +105,15 @@
       *
       */
       int getHour();
+
+      bool getCo2Tracked();
+      void setCo2Tracked(bool tracked);
+      /*
+       *getters en setters voor co2Tracked om te voorkomen dat de CO2 van dezelfde meeting meerdere keren wordt opgeteld
+       *
+       */
+
+
    void setHour(int h);
 
    bool getCatering();
