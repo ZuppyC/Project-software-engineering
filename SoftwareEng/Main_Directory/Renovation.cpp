@@ -4,6 +4,8 @@
 
 #include "Renovation.h"
 
+#include <iostream>
+
 
 tm *Renovation::strToTm(const std::string &datum)
 {

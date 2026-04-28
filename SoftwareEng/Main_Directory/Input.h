@@ -18,6 +18,9 @@ class Input {
 
         void parser_renovatie(const char* xmldoc, System* sys);
 
+        void consistencyCheck(System* sys);
+
+
 
 };
 

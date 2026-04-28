@@ -40,30 +40,92 @@ void Input::eerste_parserCB(const char* xmldoc, System* sys)
         {
             // check of id al bestaat geen dubbele id's
 
+            TiXmlElement* id = childs->FirstChildElement("IDENTIFIER");
+            TiXmlElement* name = childs->FirstChildElement("NAME");
 
+            bool flag = false;
+            if (id == nullptr)
+            {
+                cerr << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
+                flag = true;
 
-            Campus* c = new Campus();
+            }else if (id->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                flag = true;
 
-            c->setId(childs->FirstChildElement("IDENTIFIER")->GetText());
-            c->setName(childs->FirstChildElement("NAME")->GetText());
+            }
+            if (name == nullptr)
+            {
+                cerr << "geen ATTRIBUTE NAME gevonden." << endl;
+                flag = true;
+            }else if (name->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                flag = true;
+            }
 
-            sys->addCampus(c);
+            if (!flag)
+            {
+                Campus* c = new Campus();
 
+                c->setId(childs->FirstChildElement("IDENTIFIER")->GetText());
+                c->setName(childs->FirstChildElement("NAME")->GetText());
 
-
-
+                sys->addCampus(c);
+            }
 
         }else if (type == "BUILDING")
         {
+            TiXmlElement* id = childs->FirstChildElement("IDENTIFIER");
+            TiXmlElement* name = childs->FirstChildElement("NAME");
+            TiXmlElement* campus = childs->FirstChildElement("CAMPUS");
 
-            Building* b = new Building;
+            bool flag = false;
+            if (id == nullptr)
+            {
+                cerr << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
+                flag = true;
 
-            b->setId(childs->FirstChildElement("IDENTIFIER")->GetText());
-            b->setName(childs->FirstChildElement("NAME")->GetText());
-            b->setCampus(childs->FirstChildElement("CAMPUS")->GetText());
+            }else if (id->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                flag = true;
 
+            }
 
-            sys->addBuilding(b);
+            if (name == nullptr)
+            {
+                cerr << "geen ATTRIBUTE NAME gevonden." << endl;
+                flag = true;
+
+            }else if (name->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE NAME is leeg." << endl;
+                flag = true;
+
+            }
+
+            if (campus == nullptr)
+            {
+                cerr << "geen ATTRIBUTE CAMPUS gevonden." << endl;
+                flag = true;
+
+            }else if (campus->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE CAMPUS is leeg." << endl;
+                flag = true;
+
+            }
+            if (!flag) {
+                Building* b = new Building;
+
+                b->setId(childs->FirstChildElement("IDENTIFIER")->GetText());
+                b->setName(childs->FirstChildElement("NAME")->GetText());
+                b->setCampus(childs->FirstChildElement("CAMPUS")->GetText());
+
+                sys->addBuilding(b);
+            }
 
 
         }else
@@ -102,32 +164,64 @@ void Input::parser_catering(const char* xmldoc, System* sys)
 
         if (type == "CATERING")
         {
+            TiXmlElement* campus = childs->FirstChildElement("CAMPUS");
+            TiXmlElement* co2 = childs->FirstChildElement("CO2");
+
+            bool flag = false;
+            if (campus == nullptr)
+            {
+                cerr << "geen ATTRIBUTE CAMPUS gevonden." << endl;
+                flag = true;
+
+            }else if (campus->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE CAMPUS is leeg." << endl;
+                flag = true;
+
+            }else
+            if (co2 == nullptr)
+            {
+                cerr << "geen ATTRIBUTE CO2 gevonden." << endl;
+                flag = true;
+
+            }else if (co2->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE CO2 is leeg." << endl;
+                flag = true;
+
+            } else {
+                try {
+                    double cap= stod(co2->GetText());
+                    if (cap <= 0)
+                    {
+                        cerr << "de CAPACITY moet groter zijn dan 0" << endl;
+                        flag = true;
+                    }
+                }
+                catch (...) {
+
+                    cerr<<"CAPACITY moet een float zijn"<<endl;
+                    flag = true;
+                }
+            }
 
             // checks
-            Catering* c = new Catering;
+            if (!flag) {
+                Catering* c = new Catering;
 
-            c->setCampus(childs->FirstChildElement("CAMPUS")->GetText());
+                c->setCampus(childs->FirstChildElement("CAMPUS")->GetText());
 
-            c->setCo2(stof(childs->FirstChildElement("CO2")->GetText()));
+                c->setCo2(stof(childs->FirstChildElement("CO2")->GetText()));
 
 
-            sys->addCatering(c);
+                sys->addCatering(c);
+            }
 
         }
     }
 
 
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -155,17 +249,59 @@ void Input::parser_renovatie(const char* xmldoc, System* sys)
         {
             // nog checks of valid is
 
+            TiXmlElement* room = childs->FirstChildElement("ROOM");
+            TiXmlElement* start = childs->FirstChildElement("START");
+            TiXmlElement* end = childs->FirstChildElement("END");
+            bool flag = false;
+            if (room == nullptr)
+            {
+                cerr << "geen ATTRIBUTE ROOM gevonden." << endl;
+                flag = true;
+
+            }else if (room->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE ROOM is leeg." << endl;
+                flag = true;
+
+            }
+
+            if (start == nullptr)
+            {
+                cerr << "geen ATTRIBUTE START gevonden." << endl;
+                flag = true;
+
+            }else if (start->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE START is leeg." << endl;
+                flag = true;
+
+            }
+
+            if (end == nullptr)
+            {
+                cerr << "geen ATTRIBUTE END gevonden." << endl;
+                flag = true;
+
+            }else if (end->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE END is leeg." << endl;
+                flag = true;
+
+            }
 
 
-            Renovation* r = new Renovation;
+            if (!flag)
+            {
+                Renovation* r = new Renovation;
 
-            r->setRoom(childs->FirstChildElement("ROOM")->GetText());
+                r->setRoom(childs->FirstChildElement("ROOM")->GetText());
 
-            r->setBeginDatum(childs->FirstChildElement("START")->GetText());
+                r->setBeginDatum(childs->FirstChildElement("START")->GetText());
 
-            r->setEindDatum(childs->FirstChildElement("END")->GetText());
+                r->setEindDatum(childs->FirstChildElement("END")->GetText());
 
-            sys->addRenovation(r);
+                sys->addRenovation(r);
+            }
         }
     }
 
@@ -198,18 +334,6 @@ void Input::parserMRP(const char* xmldoc, System* sys)
 
     TiXmlElement* s = doc.FirstChildElement("SYSTEM");
 
-    //Preconditions
-    if (s == nullptr || s->FirstChildElement("ROOM") == nullptr) {
-        cerr<< "De XML bestand moet ROOM element hebben"<<endl;
-    }
-
-    if (s == nullptr || s->FirstChildElement("PARTICIPATION") == nullptr) {
-        cerr<< "De XML bestand moet PARTICIPATION element hebben"<<endl;
-    }
-
-    if (s == nullptr || s->FirstChildElement("MEETING") == nullptr) {
-        cerr<< "De XML bestand moet MEETING element hebben"<<endl;
-    }
 
 
     TiXmlElement* begin = s->FirstChildElement();
@@ -218,209 +342,442 @@ void Input::parserMRP(const char* xmldoc, System* sys)
         string type = childs->Value();
         if (type == "ROOM")
         {
-            Room* ruimte = new Room;
+            TiXmlElement* cap = childs->FirstChildElement("CAPACITY");
+            TiXmlElement* id = childs->FirstChildElement("IDENTIFIER");
+            TiXmlElement* building = childs->FirstChildElement("BUILDING");
+            TiXmlElement* campus = childs->FirstChildElement("CAMPUS");
+            TiXmlElement* name = childs->FirstChildElement("NAME");
+
+            bool flag = false;
+            if (cap == nullptr)
+            {
+                cerr << "geen ATTRIBUTE CAPACITY gevonden." << endl;
+                flag = true;
+
+            }else if (cap->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE CAPACITY is leeg." << endl;
+                flag = true;
+
+            }else
+            {
+                try
+                {
+                    double cap= stoi(childs->FirstChildElement("CAPACITY")->GetText());
+                    if (cap <= 0)
+                    {
+                        cerr << "de CAPACITY moet groter zijn dan 0" << endl;
+                        flag = true;
+                    }
 
 
-            try {
-                int cap= stoi(childs->FirstChildElement("CAPACITY")->GetText());
-                ruimte->setCapacity(cap);
+                }catch (...)
+                {
+                    cerr << "de CAPACITY moet een int zijn" << endl;
+                    flag = true;
+
+                }
+
             }
-            catch (...) {
+            if (id == nullptr)
+            {
+                cerr << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
+                flag = true;
 
-                cerr<<"CAPACITY moet een int zijn"<<endl;
+            }else if (id->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                flag = true;
+
             }
 
-            int cap= stoi(childs->FirstChildElement("CAPACITY")->GetText());
+            if (building == nullptr)
+            {
+                cerr << "geen ATTRIBUTE BUILDING gevonden." << endl;
+                flag = true;
 
+            }else if (building->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE BUILDING is leeg." << endl;
+                flag = true;
 
-            if (cap<=0) {
-                cerr<<"CAPACITY moet groter zijn dan 0"<<endl;
-            }
-            ruimte->setCapacity(cap);
-            ruimte->setIdentifier(childs->FirstChildElement("IDENTIFIER")->GetText());
-            ruimte->setBuilding(childs->FirstChildElement("BUILDING")->GetText());
-            ruimte->setCampus(childs->FirstChildElement("CAMPUS")->GetText());
-            TiXmlElement* name1 = childs->FirstChildElement("NAME");
-
-
-            if (name1 == nullptr) {
-                cerr<<"Er is geen NAME element"<<endl;
             }
 
-            ruimte->setName(name1->GetText());
+            if (campus == nullptr)
+            {
+                cerr << "geen ATTRIBUTE CAMPUS gevonden." << endl;
+                flag = true;
 
-            sys->addRoom(ruimte);
+            }else if (campus->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE CAMPUS is leeg." << endl;
+                flag = true;
 
-            //Postconditions
-
-            if (ruimte->getCapacity() <= 0) {
-                cerr<<"Er is geen CAPACITY gelezen"<<endl;
             }
 
-            if (ruimte->getIdentifier().empty()) {
-                cerr<<"Er is geen IDENTIFIER gelezen"<<endl;
+            if (name == nullptr)
+            {
+                cerr << "geen ATTRIBUTE NAME gevonden." << endl;
+                flag = true;
+
+            }else if (name->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE NAME is leeg." << endl;
+                flag = true;
+
             }
 
-            if (ruimte->getName().empty()) {
-                cerr<<"Er is geen NAME gelezen"<<endl;
+
+
+
+            if (!flag) {
+                Room* ruimte = new Room;
+
+                ruimte->setCapacity(stoi(childs->FirstChildElement("CAPACITY")->GetText()));
+                ruimte->setIdentifier(childs->FirstChildElement("IDENTIFIER")->GetText());
+                ruimte->setBuilding(childs->FirstChildElement("BUILDING")->GetText());
+                ruimte->setCampus(childs->FirstChildElement("CAMPUS")->GetText());
+                ruimte->setName(childs->FirstChildElement("NAME")->GetText());
+                sys->addRoom(ruimte);
             }
+
         }
         else if (type == "MEETING")
         {
-            Meeting* meetNgreet = new Meeting;
-            meetNgreet->setId(childs->FirstChildElement("IDENTIFIER")->GetText());
-            meetNgreet->setLabel(childs->FirstChildElement("LABEL")->GetText());
-            meetNgreet->setRoom(childs->FirstChildElement("ROOM")->GetText());
-            meetNgreet->setDate(childs->FirstChildElement("DATE")->GetText());
+            TiXmlElement* id = childs->FirstChildElement("IDENTIFIER");
+            TiXmlElement* label = childs->FirstChildElement("LABEL");
+            TiXmlElement* room = childs->FirstChildElement("ROOM");
+            TiXmlElement* datum = childs->FirstChildElement("DATE");
+            TiXmlElement* uur = childs->FirstChildElement("HOUR");
+            TiXmlElement* online = childs->FirstChildElement("ONLINE");
+            TiXmlElement* external = childs->FirstChildElement("EXTERNALS");
+            TiXmlElement* catering = childs->FirstChildElement("CATERING");
 
+            bool flag = false;
+            if (id == nullptr)
+            {
+                cerr << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
+                flag = true;
 
-            meetNgreet->setHour(stoi(childs->FirstChildElement("HOUR")->GetText()));
-            meetNgreet->setOnline(string (childs->FirstChildElement("ONLINE")->GetText())== "true");
-            meetNgreet->setExternals(childs->FirstChildElement("EXTERNALS")->GetText());
-            meetNgreet->setCatering(childs->FirstChildElement("CATERING")->GetText());
+            }else if (id->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                flag = true;
 
-
-
-
-            //Postconditions
-            if (meetNgreet->getId().empty()) {
-                cerr<<"Er is geen IDENTIFIER gelezen"<<endl;
             }
 
-            if (meetNgreet->getLabel().empty()) {
-                cerr<<"Er is geen LABEL gelezen"<<endl;
+            if (label == nullptr)
+            {
+                cerr << "geen ATTRIBUTE LABEL gevonden." << endl;
+                flag = true;
+
+            }else if (label->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE LABEL is leeg." << endl;
+                flag = true;
+
             }
 
-            if (meetNgreet->getRoom().empty()) {
-                cerr<<"Er is geen ROOM gelezen"<<endl;
+            if (room == nullptr)
+            {
+                cerr << "geen ATTRIBUTE ROOM gevonden." << endl;
+                flag = true;
+
+            }else if (room->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE ROOM is leeg." << endl;
+                flag = true;
+
             }
 
-            if (meetNgreet->getDate() == nullptr) {
-                cerr<<"Er is geen DATE gelezen"<<endl;
+            if (datum == nullptr)
+            {
+                cerr << "geen ATTRIBUTE DATE gevonden." << endl;
+                flag = true;
+
+            }else if (datum->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE DATE is leeg." << endl;
+                flag = true;
+
             }
 
-            sys->addMeeting(meetNgreet);
+            if (uur == nullptr)
+            {
+                cerr << "geen ATTRIBUTE HOUR gevonden." << endl;
+                flag = true;
+
+            }else if (uur->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE HOUR is leeg." << endl;
+                flag = true;
+
+            }else
+            {
+                try
+                {
+                    int cap = stoi(uur->GetText());
+                    if (0 > cap || cap > 23)
+                    {
+                        cerr << "ATTRIBUTE HOUR is moet tussen 0 en 23 zijn." << endl;
+                        flag = true;
+
+                    }
+
+                }catch (...)
+                {
+                    cerr << "ATTRIBUTE HOUR moet een int getal zijn." << endl;
+
+                }
+
+
+            }
+
+            if (online == nullptr)
+            {
+                cerr << "geen ATTRIBUTE ONLINE gevonden." << endl;
+                flag = true;
+
+            }else if (online->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE ONLINE is leeg." << endl;
+                flag = true;
+
+            }else
+            {
+                string boolean = online->GetText();
+                if (boolean != "true" && boolean != "false")
+                {
+                    cerr << "de ATTRIBUTE ONLINE moet een booleanse waarde zijn" << endl;
+                    flag = true;
+
+                }
+
+            }
+
+            if (external == nullptr)
+            {
+                cerr << "geen ATTRIBUTE EXTERNALS gevonden." << endl;
+                flag = true;
+
+            }else if (external->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE EXTERNALS is leeg." << endl;
+                flag = true;
+
+            }else
+            {
+                string boolean = external->GetText();
+                if (boolean != "true" && boolean != "false")
+                {
+                    cerr << "de ATTRIBUTE EXTERNALS moet een booleanse waarde zijn" << endl;
+                    flag = true;
+
+                }
+
+            }
+
+            if (catering == nullptr)
+            {
+                cerr << "geen ATTRIBUTE CATERING gevonden." << endl;
+                flag = true;
+
+            }else if (catering->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE CATERING is leeg." << endl;
+                flag = true;
+
+            }else
+            {
+                string boolean = catering->GetText();
+                if (boolean != "true" && boolean != "false")
+                {
+                    cerr << "de ATTRIBUTE CATERING moet een booleanse waarde zijn" << endl;
+                    flag = true;
+
+                }
+
+            }
+
+
+            if (!flag) {
+                Meeting* meetNgreet = new Meeting;
+                meetNgreet->setId(childs->FirstChildElement("IDENTIFIER")->GetText());
+                meetNgreet->setLabel(childs->FirstChildElement("LABEL")->GetText());
+                meetNgreet->setRoom(childs->FirstChildElement("ROOM")->GetText());
+                meetNgreet->setDate(childs->FirstChildElement("DATE")->GetText());
+
+
+                meetNgreet->setHour(stoi(childs->FirstChildElement("HOUR")->GetText()));
+                meetNgreet->setOnline(string (childs->FirstChildElement("ONLINE")->GetText())== "true");
+                meetNgreet->setExternals(childs->FirstChildElement("EXTERNALS")->GetText());
+                meetNgreet->setCatering(childs->FirstChildElement("CATERING")->GetText());
+                sys->addMeeting(meetNgreet);
+            }
 
 
 
         }
         else if (type == "PARTICIPATION")
         {
-            Participation* participatie = new Participation;
-            participatie->setmeeting(childs->FirstChildElement("MEETING")->GetText());
+            TiXmlElement* id = childs->FirstChildElement("MEETING");
+            TiXmlElement* user = childs->FirstChildElement("USER");
+            TiXmlElement* external = childs->FirstChildElement("EXTERNAL");
+            bool flag = false;
+            if (id == nullptr)
+            {
+                cerr << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
+                flag = true;
 
-            for (TiXmlElement* user = childs->FirstChildElement("USER"); user != NULL; user = user->NextSiblingElement("USER")) {
-                participatie->setUser(user->GetText());
+            }else if (id->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                flag = true;
 
             }
-            participatie->setExternal(childs->FirstChildElement("EXTERNAL")->GetText());
 
+            if (user == nullptr)
+            {
+                cerr << "geen ATTRIBUTE USER gevonden." << endl;
+                flag = true;
 
+            }else if (user->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE USER is leeg." << endl;
+                flag = true;
 
-            //postconditions
-            if (participatie->getUser().empty()) {
-                cerr<<"Er is geen USER gelezen"<<endl;
             }
-            if (participatie->getmeeting().empty()) {
-                cerr<<"Er is geen MEETING gelezen"<<endl;
-            }
 
-            sys->addParticipation(participatie);
-        }
-    }
+            if (external == nullptr)
+            {
+                cerr << "geen ATTRIBUTE EXTERNALS gevonden." << endl;
+                flag = true;
 
+            }else if (external->GetText() == nullptr)
+            {
+                cerr << "ATTRIBUTE EXTERNALS is leeg." << endl;
+                flag = true;
 
+            }else
+            {
+                string boolean = external->GetText();
+                if (boolean != "true" && boolean != "false")
+                {
+                    cerr << "de ATTRIBUTE EXTERNALS moet een booleanse waarde zijn" << endl;
+                    flag = true;
 
-
-    vector<Meeting*> meetings = sys->getMeeting();
-    vector<Room*> rooms = sys->getRooms();
-    vector<Participation*> participations = sys->getParticipations();
-
-
-    for (Meeting* m : meetings) {
-        bool gevonden = false;
-
-        for (Room* r : rooms) {
-            if (m->getRoom() == r->getIdentifier()) {
-                gevonden = true;
-            }
-        }
-
-        if (!gevonden) {
-            cerr<<"MEETING wijst naar ROOM die niet bestaat"<<endl;
-            exit(-1);
-        }
-    }
-
-
-    for (Participation* p : participations) {
-
-        bool found = false;
-
-        for (Meeting* m : meetings) {
-            if (p->getmeeting() == m->getId()) {
-                m->setPart(p);
-                found = true;
-            }
-        }
-
-        if (!found) {
-            cerr<<"PARTICIPATION wijst naar een MEETING die niet bestaat"<<endl;
-            exit(-1);
-        }
-    }
-
-
-    for (Meeting* i: meetings) {
-        int teller= 0;
-        for (Participation* j: participations) {
-            if (j->getmeeting()== i->getId()) {
-                teller+=1;
-            }
-        }
-        for (Room* r: rooms) {
-            if (r->getIdentifier()==i->getRoom()) {
-                 if (teller> r->getCapacity()) {
-                    cerr<<"Aantal PARTITCIPATIONs is groter dan ROOM CAPACITY"<<endl;
-                     exit(-1);
                 }
+
             }
+
+
+
+
+            if (!flag) {
+                Participation* participatie = new Participation;
+
+                participatie->setmeeting(childs->FirstChildElement("MEETING")->GetText());
+                participatie->setUser(childs->FirstChildElement("USER")->GetText());
+                participatie->setExternal(childs->FirstChildElement("EXTERNAL")->GetText());
+
+                sys->addParticipation(participatie);
+            }
+
         }
     }
 
 
 
-    for (size_t i = 0; i < meetings.size(); i++) {
-        for (size_t j = i + 1; j < meetings.size(); j++) {
-
-            if (meetings[i]->getId() == meetings[j]->getId()) {
-                cerr<<"Dubbele MEETING IDENTIFIER"<<endl;
-                exit(-1);
-            }
-        }
-    }
-
-    for (size_t i = 0; i < rooms.size(); i++) {
-        for (size_t j = i + 1; j < rooms.size(); j++) {
-
-            if (rooms[i]->getIdentifier() == rooms[j]->getIdentifier()) {
-                cerr<<"Dubbele ROOM IDENTIFIER"<<endl;
-                exit(-1);
-            }
-        }
-    }
-
-
-
-    if (rooms.empty()) {
-        cerr<<"geen room"<<endl;
-    }
-
-    if (meetings.empty()) {
-        cerr<<"geen meeting"<<endl;
-    }
-
-    if (participations.empty()) {
-        cerr<<"geen participation"<<endl;
-    }
+    //
+    // vector<Meeting*> meetings = sys->getMeeting();
+    // vector<Room*> rooms = sys->getRooms();
+    // vector<Participation*> participations = sys->getParticipations();
+    //
+    //
+    // for (Meeting* m : meetings) {
+    //     bool gevonden = false;
+    //
+    //     for (Room* r : rooms) {
+    //         if (m->getRoom() == r->getIdentifier()) {
+    //             gevonden = true;
+    //         }
+    //     }
+    //
+    //     if (!gevonden) {
+    //         cerr<<"MEETING wijst naar ROOM die niet bestaat"<<endl;
+    //         exit(-1);
+    //     }
+    // }
+    //
+    //
+    // for (Participation* p : participations) {
+    //
+    //     bool found = false;
+    //
+    //     for (Meeting* m : meetings) {
+    //         if (p->getmeeting() == m->getId()) {
+    //             m->setPart(p);
+    //             found = true;
+    //         }
+    //     }
+    //
+    //     if (!found) {
+    //         cerr<<"PARTICIPATION wijst naar een MEETING die niet bestaat"<<endl;
+    //         exit(-1);
+    //     }
+    // }
+    //
+    //
+    // for (Meeting* i: meetings) {
+    //     int teller= 0;
+    //     for (Participation* j: participations) {
+    //         if (j->getmeeting()== i->getId()) {
+    //             teller+=1;
+    //         }
+    //     }
+    //     for (Room* r: rooms) {
+    //         if (r->getIdentifier()==i->getRoom()) {
+    //              if (teller> r->getCapacity()) {
+    //                 cerr<<"Aantal PARTITCIPATIONs is groter dan ROOM CAPACITY"<<endl;
+    //                  exit(-1);
+    //             }
+    //         }
+    //     }
+    // }
+    //
+    //
+    //
+    // for (size_t i = 0; i < meetings.size(); i++) {
+    //     for (size_t j = i + 1; j < meetings.size(); j++) {
+    //
+    //         if (meetings[i]->getId() == meetings[j]->getId()) {
+    //             cerr<<"Dubbele MEETING IDENTIFIER"<<endl;
+    //             exit(-1);
+    //         }
+    //     }
+    // }
+    //
+    // for (size_t i = 0; i < rooms.size(); i++) {
+    //     for (size_t j = i + 1; j < rooms.size(); j++) {
+    //
+    //         if (rooms[i]->getIdentifier() == rooms[j]->getIdentifier()) {
+    //             cerr<<"Dubbele ROOM IDENTIFIER"<<endl;
+    //             exit(-1);
+    //         }
+    //     }
+    // }
+    //
+    //
+    //
+    // if (rooms.empty()) {
+    //     cerr<<"geen room"<<endl;
+    // }
+    //
+    // if (meetings.empty()) {
+    //     cerr<<"geen meeting"<<endl;
+    // }
+    //
+    // if (participations.empty()) {
+    //     cerr<<"geen participation"<<endl;
+    // }
 }
