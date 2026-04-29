@@ -272,6 +272,12 @@ bool System::properlyInitialized()
     return _initcheck ==this;
 }
 
+vector<Building *> System::getBuilding() {
+    return buildings;
+}
 
+vector<Campus *> System::getCampus() {
+    return campuses;
+}
 
 

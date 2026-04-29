@@ -16,3 +16,14 @@ void Building::setName(const std::string &name) {
     this->name = name;
 }
 
+std::string Building::getCampus() {
+    return campus;
+}
+
+std::string Building::getId() {
+    return id;
+}
+
+std::string Building::getName() {
+    return name;
+}

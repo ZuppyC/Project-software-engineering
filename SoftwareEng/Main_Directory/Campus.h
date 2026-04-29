@@ -13,6 +13,9 @@ private:
 public:
     void setName(const std::string& name);
     void setId(const std::string& id);
+    std::string getId();
+    std::string getName();
+
 };
 
 

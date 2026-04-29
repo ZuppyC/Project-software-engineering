@@ -14,3 +14,11 @@ void Campus::setName(const std::string &name) {
 }
 
 
+std::string Campus::getId() {
+    return identifier;
+}
+
+
+std::string Campus::getName() {
+    return name;
+}

@@ -17,6 +17,9 @@ public:
     void setName(const std::string& name);
     void setId(const std::string& id);
     void setCampus(const std::string& campus);
+    std::string getCampus();
+    std::string getId();
+    std::string getName();
 
 };
 

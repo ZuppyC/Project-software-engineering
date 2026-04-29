@@ -805,3 +805,81 @@ void Input::parserMRP(const char* xmldoc, System* sys)
     //     cerr<<"geen participation"<<endl;
     // }
 }
+
+void Input::consistencyCheck(System *sys)
+{
+    vector<Campus*> campusen = sys->getCampus();
+    vector<Building*> buildings = sys->getBuilding();
+    bool nietConsistensy = false;
+
+    for (Campus* c : campusen)
+    {
+        bool campusleeg = true;
+        for (Building* b : buildings)
+        {
+            if (c->getId() == b->getCampus())
+            {
+                campusleeg = false;
+            }
+        }
+        if (campusleeg)
+        {
+            cerr << "de volgende campus is leeg: " << c->getName() <<endl;
+            nietConsistensy = true;
+        }
+    }
+
+    for (Building* b : buildings)
+    {
+        bool buildingleeg = true;
+        for (Room* r : sys->getRooms())
+        {
+            if (r->getBuilding() == b->getId())
+            {
+                buildingleeg = false;
+            }
+        }
+        if (buildingleeg)
+        {
+            cerr << "de volgende gebouw is leeg" << b->getName() << endl;
+            nietConsistensy = true;
+        }
+
+    }
+
+    for (Meeting* m : sys->getMeeting())
+    {
+        bool oneNonExternal = true;
+
+        for (Participation* p : m->getPart())
+        {
+            if (!p->getExternal())
+            {
+                oneNonExternal = false;
+            }
+        }
+
+        if (oneNonExternal)
+        {
+            cerr << "er is geen Non-external in deze meeting: "<< m->getId() << endl;
+            nietConsistensy = true;
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+    if (nietConsistensy)
+    {
+        cerr << "Het systeem is niet consistent en wordt niet geaccepteerd." << endl;
+        exit(-1);
+
+    }
+}

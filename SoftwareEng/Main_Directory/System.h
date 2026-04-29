@@ -51,6 +51,9 @@ public:
     vector<Room*> getRooms();
     vector<Participation*> getParticipations();
     vector<Catering*> getCatering();
+    vector<Campus*> getCampus();
+    vector<Building*> getBuilding();
+
 
 
 
