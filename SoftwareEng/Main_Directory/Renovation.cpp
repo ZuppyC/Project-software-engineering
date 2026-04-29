@@ -17,8 +17,8 @@ tm *Renovation::strToTm(const std::string &datum)
 
     tm* time= new tm();
     time->tm_mday= dag;
-    time->tm_mon= maand;
-    time->tm_year= jaar;
+    time->tm_mon= maand - 1;
+    time->tm_year= jaar - 1900;
 
     return time;
 
@@ -66,4 +66,14 @@ bool Renovation::isTussen(tm *datum) {
     else {
         return true;
     }
+}
+
+tm *Renovation::getBeginDatum() {
+    return begindatum;
+
+}
+
+tm *Renovation::getEindDatum() {
+    return einddatum;
+
 }

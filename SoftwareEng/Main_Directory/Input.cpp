@@ -300,7 +300,19 @@ void Input::parser_renovatie(const char* xmldoc, System* sys)
 
                 r->setEindDatum(childs->FirstChildElement("END")->GetText());
 
-                sys->addRenovation(r);
+                tm begindatum = *r->getBeginDatum();
+                tm einddatum = *r->getEindDatum();
+
+                // als einddatum voor start datum is error
+                if (mktime(&einddatum) <= mktime(&begindatum))
+                {
+                    cerr << "ATTRIBUTE END moet een datum zijn NA START" << endl;
+                    delete r;
+
+                }else
+                {
+                    sys->addRenovation(r);
+                }
             }
         }
     }
@@ -363,7 +375,7 @@ void Input::parserMRP(const char* xmldoc, System* sys)
             {
                 try
                 {
-                    double cap= stoi(childs->FirstChildElement("CAPACITY")->GetText());
+                    int cap= stoi(childs->FirstChildElement("CAPACITY")->GetText());
                     if (cap <= 0)
                     {
                         cerr << "de CAPACITY moet groter zijn dan 0" << endl;
@@ -527,6 +539,7 @@ void Input::parserMRP(const char* xmldoc, System* sys)
                 }catch (...)
                 {
                     cerr << "ATTRIBUTE HOUR moet een int getal zijn." << endl;
+                    flag = true;
 
                 }
 
@@ -600,6 +613,7 @@ void Input::parserMRP(const char* xmldoc, System* sys)
             }
 
 
+
             if (!flag) {
                 Meeting* meetNgreet = new Meeting;
                 meetNgreet->setId(childs->FirstChildElement("IDENTIFIER")->GetText());
@@ -612,7 +626,17 @@ void Input::parserMRP(const char* xmldoc, System* sys)
                 meetNgreet->setOnline(string (childs->FirstChildElement("ONLINE")->GetText())== "true");
                 meetNgreet->setExternals(childs->FirstChildElement("EXTERNALS")->GetText());
                 meetNgreet->setCatering(childs->FirstChildElement("CATERING")->GetText());
-                sys->addMeeting(meetNgreet);
+
+                if (meetNgreet->getOnline() && meetNgreet->getCatering())
+                {
+                    cerr << "een online meeting kan geen catering hebben" << endl;
+                    delete meetNgreet;
+
+                }else
+                {
+                    sys->addMeeting(meetNgreet);
+
+                }
             }
 
 
@@ -620,18 +644,18 @@ void Input::parserMRP(const char* xmldoc, System* sys)
         }
         else if (type == "PARTICIPATION")
         {
-            TiXmlElement* id = childs->FirstChildElement("MEETING");
+            TiXmlElement* meeting = childs->FirstChildElement("MEETING");
             TiXmlElement* user = childs->FirstChildElement("USER");
             TiXmlElement* external = childs->FirstChildElement("EXTERNAL");
             bool flag = false;
-            if (id == nullptr)
+            if (meeting == nullptr)
             {
-                cerr << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
+                cerr << "geen ATTRIBUTE MEETING gevonden." << endl;
                 flag = true;
 
-            }else if (id->GetText() == nullptr)
+            }else if (meeting->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                cerr << "ATTRIBUTE MEETING is leeg." << endl;
                 flag = true;
 
             }
@@ -650,12 +674,12 @@ void Input::parserMRP(const char* xmldoc, System* sys)
 
             if (external == nullptr)
             {
-                cerr << "geen ATTRIBUTE EXTERNALS gevonden." << endl;
+                cerr << "geen ATTRIBUTE EXTERNAL gevonden." << endl;
                 flag = true;
 
             }else if (external->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE EXTERNALS is leeg." << endl;
+                cerr << "ATTRIBUTE EXTERNAL is leeg." << endl;
                 flag = true;
 
             }else

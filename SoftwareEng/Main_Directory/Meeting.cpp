@@ -81,8 +81,8 @@ tm* Meeting::strToTm(const string& datum) {
 
     tm* time= new tm();
     time->tm_mday= dag;
-    time->tm_mon= maand;
-    time->tm_year= jaar;
+    time->tm_mon= maand - 1;
+    time->tm_year= jaar - 1900;
 
     return time;
 }
@@ -112,9 +112,9 @@ bool Meeting::isPast() {
     tm* today = localtime(&t);
 
     tm* mdate = date;
-    bool a = today->tm_year+1900 > mdate->tm_year;
-    bool b= today->tm_year+1900 == mdate->tm_year && today->tm_mon+1 > mdate->tm_mon;
-    bool c= today->tm_year+1900 == mdate->tm_year && today->tm_mon+1 == mdate->tm_mon && today->tm_mday > mdate->tm_mday;
+    bool a = today->tm_year > mdate->tm_year;
+    bool b= today->tm_year == mdate->tm_year && today->tm_mon > mdate->tm_mon;
+    bool c= today->tm_year == mdate->tm_year && today->tm_mon == mdate->tm_mon && today->tm_mday > mdate->tm_mday;
     return a||b||c;
 }
 
