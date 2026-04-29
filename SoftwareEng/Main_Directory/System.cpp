@@ -166,7 +166,7 @@ void System::handleCatering(Meeting* meeting) {
 
     cateringFile << "Meeting ID : " << meeting->getId() << endl;
     cateringFile << "Location : " << meeting->getRoom() << endl;
-    cateringFile << "Date: " << d->tm_mday << "/" << d->tm_mon << "/" << d->tm_year << endl;
+    cateringFile << "Date: " << d->tm_mday << "/" << d->tm_mon + 1 << "/" << d->tm_year + 1900 << endl;
     cateringFile << "Time: " << meeting->getHour() << "h" << endl;
     cateringFile << "Catering cost : EUR " << totalCost << endl;
 
