@@ -11,15 +11,15 @@
 
 System::System(const char* xmldoc)
 {
-    input_bestand.eerste_parserCB(xmldoc, this);
+    input_bestand.eerste_parserCB(xmldoc,cerr, this);
 
-    input_bestand.parser_catering(xmldoc, this);
+    input_bestand.parser_catering(xmldoc,cerr, this);
 
-    input_bestand.parserMRP(xmldoc, this);
+    input_bestand.parserMRP(xmldoc,cerr, this);
 
-    input_bestand.parser_renovatie(xmldoc,this);
+    input_bestand.parser_renovatie(xmldoc,cerr,this);
 
-    input_bestand.consistencyCheck(this);
+    input_bestand.consistencyCheck(cerr,this);
 
     _initcheck = this;
 

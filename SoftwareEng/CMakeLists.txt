@@ -64,6 +64,10 @@ set(DEBUG_SOURCE_FILES
 
         Main_Directory/Renovation.cpp
 
+        Tests/InputTests.cpp
+        Tests/compare_file.cpp
+        Tests/compare_file.h
+
 
 )
 # Create RELEASE target
@@ -74,9 +78,6 @@ add_executable(release_target ${RELEASE_SOURCE_FILES}
 add_executable(debug_target ${DEBUG_SOURCE_FILES}
 
         Tests/Tests.cpp
-
-
-
 
 )
 # Link library

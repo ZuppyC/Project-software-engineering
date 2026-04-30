@@ -2,6 +2,7 @@
 #include "gtest/gtest.h"
 #include "iostream"
 #include "../xmlparser/tinyxml.h"
+#include "compare_file.h"
 
 class SYSTEMTESTS: public ::testing::Test {
 protected:
@@ -52,79 +53,12 @@ protected:
 
 
 
-//  BRON SERGE DEMEYER  functie FileCompare.
-// Copyright   : Project Software Engineering - BA1 Informatica - Serge Demeyer - University of Antwerp
-bool FileCompare(const std::string leftFileName, const std::string rightFileName) {
-    ifstream leftFile, rightFile;
-    char leftRead, rightRead;
-    bool result;
-
-    // Open the two files.
-    leftFile.open(leftFileName.c_str());
-    if (!leftFile.is_open()) {
-        return false;
-    };
-    rightFile.open(rightFileName.c_str());
-    if (!rightFile.is_open()) {
-        leftFile.close();
-        return false;
-    };
-
-    result = true; // files exist and are open; assume equality unless a counterexamples shows up.
-    while (result && leftFile.good() && rightFile.good()) {
-        leftFile.get(leftRead);
-        rightFile.get(rightRead);
-        result = (leftRead == rightRead);
-    };
-    if (result) {
-        // last read was still equal; are we at the end of both files ?
-        result = (!leftFile.good()) && (!rightFile.good());
-    };
-
-    leftFile.close();
-    rightFile.close();
-    return result;
-}
-
-
-TEST_F(SYSTEMTESTS, SyntaxFoutXML_VAL)
-{
-    // maak een file om de cerr op te vangen
-    std::ofstream Test_file("Syntax_fout.txt");
-
-    // stuur de komende cerr in de file
-    std::streambuf* oldCerr = std::cerr.rdbuf(Test_file.rdbuf());
-
-    System s("../xmlfilesTests/Syntax_fout.txt.xml");
-
-    //herstel cerr zodat er niets meer erin kan
-    std::cerr.rdbuf(oldCerr);
-
-
-    EXPECT_TRUE(FileCompare("../Expected_output_tests/expected_Syntax_fout_val.txt","Syntax_fout.txt"));
-
-}
 
 
 
 
-// TEST_F(SYSTEMTESTS, NoMeeting_VAL)
-// {
-//     // maak een file om de cerr op te vangen
-//     std::ofstream Test_file("Nomeeting_val.txt");
-//
-//     // stuur de komende cerr in de file
-//     std::streambuf* oldCerr = std::cerr.rdbuf(Test_file.rdbuf());
-//
-//     System s("../xmlfilesTests/NoMeeting.xml");
-//
-//     //herstel cerr zodat er niets meer erin kan
-//     std::cerr.rdbuf(oldCerr);
-//
-//
-//     EXPECT_TRUE(FileCompare("../Expected_output_tests/expected_Nomeeting_val.txt","Nomeeting_val.txt"));
-//
-// }
+
+
 
 
 
