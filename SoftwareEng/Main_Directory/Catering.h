@@ -19,6 +19,7 @@ public:
     string getCampus();
     void setCo2(double co2);
     double getCo2() const;
+    ~Catering();
 };
 
 

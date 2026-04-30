@@ -22,3 +22,9 @@ std::string Campus::getId() {
 std::string Campus::getName() {
     return name;
 }
+
+Campus::~Campus()
+{
+
+}
+

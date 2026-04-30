@@ -714,19 +714,13 @@ void Input::parserMRP(const char* xmldoc, System* sys)
 
     for (Participation* p : sys->getParticipations())
     {
-        bool found = false;
         for (Meeting* m : sys->getMeeting())
         {
             if (p->getmeeting() == m->getId())
             {
                 m->setPart(p);
-                found = true;
                 break;
             }
-        }
-        if (!found)
-        {
-            cerr << "PARTICIPATION wijst naar een MEETING die niet bestaat" << endl;
         }
     }
 
@@ -903,7 +897,8 @@ void Input::consistencyCheck(System *sys)
     {
         if (!roomID.count(r->getRoom()))
         {
-            cerr << "Het roomID bestaat niet voor de renovatie van" << r->getBeginDatum() << "tot" << r->getEindDatum() << endl;
+            cerr << "Het roomID: " << r->getRoom() << " bestaat niet voor de renovatie" << endl;
+            nietConsistensy = true;
         }
     }
 
@@ -950,6 +945,7 @@ void Input::consistencyCheck(System *sys)
     if (nietConsistensy)
     {
         cerr << "Het systeem is niet consistent en wordt niet geaccepteerd." << endl;
+        delete sys;
         exit(-1);
 
     }

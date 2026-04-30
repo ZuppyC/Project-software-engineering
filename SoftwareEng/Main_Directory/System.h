@@ -39,6 +39,7 @@ private:
 public:
     System(const char* xmldoc);
     System();
+    ~System();
     void addRoom(Room* room);
     void addMeeting(Meeting* meeting);
     void addParticipation(Participation* participation);

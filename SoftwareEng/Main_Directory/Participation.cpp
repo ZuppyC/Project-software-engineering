@@ -1,3 +1,4 @@
+
 //
 // Created by Dell on 26/02/2026.
 //
@@ -56,3 +57,7 @@ bool Participation::getExternal() {
 }
 
 
+
+Participation::~Participation()
+{
+}

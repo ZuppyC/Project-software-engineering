@@ -22,3 +22,7 @@ string Catering::getCampus() {
     return campus;
 }
 
+Catering::~Catering()
+{
+
+}

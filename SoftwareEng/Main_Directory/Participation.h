@@ -33,6 +33,8 @@ public:
     void setExternal(string isExternal_);
     bool getExternal();
 
+    ~Participation();
+
 };
 
 

@@ -21,6 +21,8 @@ public:
     std::string getId();
     std::string getName();
 
+    ~Building();
+
 };
 
 

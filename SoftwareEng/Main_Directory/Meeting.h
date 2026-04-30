@@ -128,6 +128,8 @@
 
    void printMeeting(ofstream& outputFile);
    double co2ZonderCatering();
+
+   ~Meeting();
   };
 
 

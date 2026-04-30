@@ -241,3 +241,9 @@ double Meeting::co2ZonderCatering() {
     }
     return aantalCO2;
 }
+
+Meeting::~Meeting()
+{
+
+}
+

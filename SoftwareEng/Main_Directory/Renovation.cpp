@@ -77,3 +77,9 @@ tm *Renovation::getEindDatum() {
     return einddatum;
 
 }
+
+
+Renovation::~Renovation()
+{
+
+}

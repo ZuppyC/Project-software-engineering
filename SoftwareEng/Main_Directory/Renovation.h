@@ -28,6 +28,7 @@ public:
     tm* getEindDatum();
 
     bool isTussen(tm* datum);
+    ~Renovation();
 };
 
 

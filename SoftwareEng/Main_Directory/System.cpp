@@ -287,3 +287,44 @@ vector<Renovation*> System::getRenovations()
 {
     return renovations;
 }
+
+
+
+
+// vector<Building*> getBuilding();
+// vector<Renovation*> getRenovations();
+System::~System()
+{
+    for (Meeting* m : meetings)
+    {
+        delete m;
+    }
+    for (Participation* p : participations)
+    {
+        delete p;
+    }
+    for (Catering* c : caterings)
+    {
+        delete c;
+    }
+    for (Campus* c : campuses)
+    {
+        delete c;
+    }
+    for (Building* b : buildings)
+    {
+        delete b;
+    }
+    for (Room* r : rooms)
+    {
+        delete r;
+    }
+    for (Renovation* r : renovations)
+    {
+        delete r;
+    }
+
+}
+
+
+vector<Room*> getRooms();

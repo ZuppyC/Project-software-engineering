@@ -27,3 +27,8 @@ std::string Building::getId() {
 std::string Building::getName() {
     return name;
 }
+
+Building::~Building()
+{
+
+}
