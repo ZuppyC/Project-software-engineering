@@ -53,6 +53,7 @@ public:
 
     void setCampus(string _campus);
     string getCampus();
+    string getId();
 
     ~Room();
     /*

@@ -86,3 +86,12 @@ Room::~Room()
 
 }
 
+
+string Room::getId()
+{
+    return identifier;
+
+}
+
+
+

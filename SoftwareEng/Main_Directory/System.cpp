@@ -19,6 +19,8 @@ System::System(const char* xmldoc)
 
     input_bestand.parser_renovatie(xmldoc,this);
 
+    input_bestand.consistencyCheck(this);
+
     _initcheck = this;
 
 }
@@ -281,3 +283,7 @@ vector<Campus *> System::getCampus() {
 }
 
 
+vector<Renovation*> System::getRenovations()
+{
+    return renovations;
+}

@@ -5,6 +5,8 @@
 #include "Input.h"
 #include "../xmlparser/tinyxml.h"
 #include <iostream>
+#include <map>
+#include <set>
 #include <string>
 #include "System.h"
 #include <vector>
@@ -710,100 +712,24 @@ void Input::parserMRP(const char* xmldoc, System* sys)
         }
     }
 
+    for (Participation* p : sys->getParticipations())
+    {
+        bool found = false;
+        for (Meeting* m : sys->getMeeting())
+        {
+            if (p->getmeeting() == m->getId())
+            {
+                m->setPart(p);
+                found = true;
+                break;
+            }
+        }
+        if (!found)
+        {
+            cerr << "PARTICIPATION wijst naar een MEETING die niet bestaat" << endl;
+        }
+    }
 
-
-    //
-    // vector<Meeting*> meetings = sys->getMeeting();
-    // vector<Room*> rooms = sys->getRooms();
-    // vector<Participation*> participations = sys->getParticipations();
-    //
-    //
-    // for (Meeting* m : meetings) {
-    //     bool gevonden = false;
-    //
-    //     for (Room* r : rooms) {
-    //         if (m->getRoom() == r->getIdentifier()) {
-    //             gevonden = true;
-    //         }
-    //     }
-    //
-    //     if (!gevonden) {
-    //         cerr<<"MEETING wijst naar ROOM die niet bestaat"<<endl;
-    //         exit(-1);
-    //     }
-    // }
-    //
-    //
-    // for (Participation* p : participations) {
-    //
-    //     bool found = false;
-    //
-    //     for (Meeting* m : meetings) {
-    //         if (p->getmeeting() == m->getId()) {
-    //             m->setPart(p);
-    //             found = true;
-    //         }
-    //     }
-    //
-    //     if (!found) {
-    //         cerr<<"PARTICIPATION wijst naar een MEETING die niet bestaat"<<endl;
-    //         exit(-1);
-    //     }
-    // }
-    //
-    //
-    // for (Meeting* i: meetings) {
-    //     int teller= 0;
-    //     for (Participation* j: participations) {
-    //         if (j->getmeeting()== i->getId()) {
-    //             teller+=1;
-    //         }
-    //     }
-    //     for (Room* r: rooms) {
-    //         if (r->getIdentifier()==i->getRoom()) {
-    //              if (teller> r->getCapacity()) {
-    //                 cerr<<"Aantal PARTITCIPATIONs is groter dan ROOM CAPACITY"<<endl;
-    //                  exit(-1);
-    //             }
-    //         }
-    //     }
-    // }
-    //
-    //
-    //
-    // for (size_t i = 0; i < meetings.size(); i++) {
-    //     for (size_t j = i + 1; j < meetings.size(); j++) {
-    //
-    //         if (meetings[i]->getId() == meetings[j]->getId()) {
-    //             cerr<<"Dubbele MEETING IDENTIFIER"<<endl;
-    //             exit(-1);
-    //         }
-    //     }
-    // }
-    //
-    // for (size_t i = 0; i < rooms.size(); i++) {
-    //     for (size_t j = i + 1; j < rooms.size(); j++) {
-    //
-    //         if (rooms[i]->getIdentifier() == rooms[j]->getIdentifier()) {
-    //             cerr<<"Dubbele ROOM IDENTIFIER"<<endl;
-    //             exit(-1);
-    //         }
-    //     }
-    // }
-    //
-    //
-    //
-    // if (rooms.empty()) {
-    //     cerr<<"geen room"<<endl;
-    // }
-    //
-    // if (meetings.empty()) {
-    //     cerr<<"geen meeting"<<endl;
-    // }
-    //
-    // if (participations.empty()) {
-    //     cerr<<"geen participation"<<endl;
-    // }
 }
 
 void Input::consistencyCheck(System *sys)
@@ -861,19 +787,164 @@ void Input::consistencyCheck(System *sys)
 
         if (oneNonExternal)
         {
-            cerr << "er is geen Non-external in deze meeting: "<< m->getId() << endl;
+            cerr << "er is geen Non-external user in deze meeting: "<< m->getId() << endl;
             nietConsistensy = true;
         }
 
 
     }
 
+    set<string> campusID;
+    set<string> buildingID;
+    set<string> roomID;
+    set<string> meetingID;
+
+    for (Campus* c : sys->getCampus())
+    {
+        string id = c->getId();
+        if (campusID.count(id))
+        {
+            cerr << "dubbele id voor Campus met id: " << id << endl;
+            nietConsistensy = true;
+        }else
+        {
+            campusID.insert(id);
+        }
+    }
+    for (Building* b : sys->getBuilding())
+    {
+        string id = b->getId();
+        if (buildingID.count(id))
+        {
+            cerr << "dubbele id voor Building met id: " << id << endl;
+            nietConsistensy = true;
+        }else
+        {
+            buildingID.insert(id);
+        }
+
+    }
+    for (Room* r : sys->getRooms())
+    {
+        string id = r->getId();
+        if (roomID.count(id))
+        {
+            cerr << "dubbele id voor Room met id: " << id << endl;
+            nietConsistensy = true;
+        }else
+        {
+            roomID.insert(id);
+        }
+
+    }
+    for (Meeting* m : sys->getMeeting())
+    {
+        string id = m->getId();
+        if (meetingID.count(id))
+        {
+            cerr << "dubbele id voor Meeting met id: " << id << endl;
+            nietConsistensy = true;
+        }else
+        {
+            meetingID.insert(id);
+        }
+
+    }
+
+    for (Building* b : sys->getBuilding())
+    {
+        if (!campusID.count(b->getCampus()))
+        {
+            cerr << "Het campusID bestaat niet van het building " << b->getName() <<endl;
+            nietConsistensy = true;
+            // cerr << "De volgende campusID bestaat niet: " << b->getCampus() << endl;
+        }
+    }
+
+    for (Room* r : sys->getRooms())
+    {
+        if (!campusID.count(r->getCampus()))
+        {
+            cerr << "Het campusID bestaat niet van het room " << r->getName() <<endl;
+            nietConsistensy = true;
+        }
+
+        if (!buildingID.count(r->getBuilding()))
+        {
+            cerr << "Het buildingID bestaat niet van het room " << r->getName() << endl;
+            nietConsistensy = true;
+        }
+    }
+
+    for (Meeting* m : sys->getMeeting())
+    {
+        if (!roomID.count(m->getRoom()))
+        {
+            cerr << "Het roomID bestaat niet voor het meeting met id: " << m->getId() << endl;
+        }
+    }
+
+    map<string,int> capacityCheck;
+
+    for (Participation* p : sys->getParticipations())
+    {
+        if (!meetingID.count(p->getmeeting()))
+        {
+            cerr << "het MeetingID bestaat niet voor de participant "<<p->getUser() << endl;
+            nietConsistensy = true;
+
+        }else
+        {
+            capacityCheck[p->getmeeting()]++;
+        }
+    }
+
+    for (Renovation* r : sys->getRenovations())
+    {
+        if (!roomID.count(r->getRoom()))
+        {
+            cerr << "Het roomID bestaat niet voor de renovatie van" << r->getBeginDatum() << "tot" << r->getEindDatum() << endl;
+        }
+    }
+
+    for (Meeting* m : sys->getMeeting())
+    {
+        int capacity = 0;
+        for (Room* r:sys->getRooms())
+        {
+            if (m->getRoom() == r->getId())
+            {
+                capacity = r->getCapacity();
+                break;
+            }
+        }
+        if (capacityCheck[m->getId()] > capacity)
+        {
+            cerr << "er is niet genoeg plaatst voor de meeting "<< m->getId() << endl;
+            nietConsistensy = true;
+        }
+    }
+    set<string> catering_campus;
+    for (Catering* cater : sys->getCatering())
+    {
+        string c_campus = cater->getCampus();
+        if (!campusID.count(c_campus))
+        {
+            cerr << "het catering service verwijst naar een campusID dat niet bestaat" << endl;
+            nietConsistensy = true;
+        }
+
+        if (catering_campus.count(c_campus))
+        {
+            cerr << "de volgende campus " << c_campus <<" heeft meerdere catering services wat niet kan" << endl;
+            nietConsistensy = true;
+        }else
+        {
+            catering_campus.insert(c_campus);
+        }
 
 
-
-
-
-
+    }
 
 
     if (nietConsistensy)
