@@ -33,7 +33,7 @@
     <BUILDING>
         <NAME>Gebouw R</NAME>
         <IDENTIFIER>CDE_R</IDENTIFIER>
-        <CAMPUS>Campus_CDE</CAMPUS>
+        <CAMPUS></CAMPUS>
     </BUILDING>
     <ROOM>
         <NAME>R.014</NAME>

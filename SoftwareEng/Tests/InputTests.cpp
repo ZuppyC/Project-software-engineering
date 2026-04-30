@@ -7,6 +7,7 @@
 #include "gtest/gtest.h"
 #include "iostream"
 #include "../xmlparser/tinyxml.h"
+#include "compare_file.h"
 
 class InputTests: public ::testing::Test {
 protected:
@@ -36,6 +37,16 @@ protected:
 
 TEST_F(InputTests,Lege_campus)
 {
+    Input i;
+    System* s = new System;
+    ofstream myfile;
+    SuccessEnum result;
 
+    myfile.open("../InputTestsxml/actual_input1.txt");
+    result = i.eerste_parserCB("../InputTestsxml/input1.xml",myfile,s);
+    myfile.close();
+
+    EXPECT_TRUE(result == PartialImport);
+    EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input1.txt","../InputTestsxml/expected_input1.txt"));
 
 }
