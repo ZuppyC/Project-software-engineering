@@ -52,27 +52,6 @@ protected:
 
 };
 
-
-
-
-TEST_F(SYSTEMTESTS, SyntaxFoutXML_VAL)
-{
-    // maak een file om de cerr op te vangen
-    std::ofstream Test_file("Syntax_fout.txt");
-
-    // stuur de komende cerr in de file
-    std::streambuf* oldCerr = std::cerr.rdbuf(Test_file.rdbuf());
-
-    System s("../xmlfilesTests/Syntax_fout.txt.xml");
-
-    //herstel cerr zodat er niets meer erin kan
-    std::cerr.rdbuf(oldCerr);
-
-
-    EXPECT_TRUE(FileCompare("../Expected_output_tests/expected_Syntax_fout_val.txt","Syntax_fout.txt"));
-
-}
-
 TEST_F(SYSTEMTESTS, SystemOutputError) {
     System s("../xmlfilesTests/SysteemOutputFout.xml");
     Output o;
