@@ -61,7 +61,7 @@ string Meeting::getRoom() {
 
 void Meeting::setDate(const string& a) {
     REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
-    REQUIRE(a.size() == 10, "DATE moet formaat YYYY-MM-DD zijn");
+    REQUIRE(a.size() == 10 && a[4]=='-' && a[7]=='-', "DATE moet formaat YYYY-MM-DD zijn");
     date = strToTm(a);
     ENSURE(date != nullptr, "DATE is niet gelezen");
 }
@@ -83,6 +83,19 @@ tm* Meeting::strToTm(const string& datum) {
     time->tm_mday= dag;
     time->tm_mon= maand - 1;
     time->tm_year= jaar - 1900;
+
+    vector<int> maand1= {1,3,5,7,8,10,12};
+    bool dertig = true;
+    for (int i: maand1) {
+        if (i==maand) {
+            dertig= false;
+        }
+    }
+
+    ENSURE(maand<13, "De maand kan niet hoger zijn dan 12");
+    ENSURE(maand>0, "De maand kan niet kleiner zijn dan 1");
+    ENSURE(dag>0,"De dag kan niet kleiner zijn dan 1");
+    ENSURE((dag<30 && dertig) || (dag<31 && !dertig), "De dag kan niet groter zijn dan 30 of 31");
 
     return time;
 }
