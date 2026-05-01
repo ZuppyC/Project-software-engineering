@@ -11,15 +11,19 @@
 
 System::System(const char* xmldoc)
 {
-    input_bestand.eerste_parserCB(xmldoc,cerr, this);
+    // input_bestand.eerste_parserCB(xmldoc,cerr, this);
+    //
+    // input_bestand.parser_catering(xmldoc,cerr, this);
+    //
+    // input_bestand.parserMRP(xmldoc,cerr, this);
+    //
+    // input_bestand.parser_renovatie(xmldoc,cerr,this);
 
-    input_bestand.parser_catering(xmldoc,cerr, this);
-
-    input_bestand.parserMRP(xmldoc,cerr, this);
-
-    input_bestand.parser_renovatie(xmldoc,cerr,this);
+    input_bestand.parseAll(xmldoc,cerr, this);
 
     input_bestand.consistencyCheck(cerr,this);
+
+    input_bestand.returnConsistency(this);
 
     _initcheck = this;
 
@@ -326,5 +330,6 @@ System::~System()
 
 }
 
-
-vector<Room*> getRooms();
+Input System::getInput() {
+    return input_bestand;
+}

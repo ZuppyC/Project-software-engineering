@@ -50,6 +50,8 @@ TEST_F(InputTests,Lege_campus)
     EXPECT_TRUE(result == Success);
     EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input1.txt","../InputTestsxml/expected_input1.txt"));
 
+    delete s;
+
 }
 
 TEST_F(InputTests,Lege_gebouw)
@@ -67,6 +69,8 @@ TEST_F(InputTests,Lege_gebouw)
     EXPECT_TRUE(result == Success);
     EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input2.txt","../InputTestsxml/expected_input2.txt"));
 
+    delete s;
+
 }
 TEST_F(InputTests,geenCampusID_en_leeggebouw)
 {
@@ -82,6 +86,8 @@ TEST_F(InputTests,geenCampusID_en_leeggebouw)
 
     EXPECT_TRUE(result == Success);
     EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input3.txt","../InputTestsxml/expected_input3.txt"));
+
+    delete s;
 
 }
 
@@ -100,6 +106,8 @@ TEST_F(InputTests,over_capacity)
     EXPECT_TRUE(result == Success);
     EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input4.txt","../InputTestsxml/expected_input4.txt"));
 
+    delete s;
+
 }
 
 TEST_F(InputTests,geen_nonExternalUsers)
@@ -116,6 +124,8 @@ TEST_F(InputTests,geen_nonExternalUsers)
 
     EXPECT_TRUE(result == Success);
     EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input5.txt","../InputTestsxml/expected_input5.txt"));
+
+    delete s;
 
 }
 
@@ -134,6 +144,8 @@ TEST_F(InputTests,meerdere_cateringservices)
     EXPECT_TRUE(result == Success);
     EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input6.txt","../InputTestsxml/expected_input6.txt"));
 
+    delete s;
+
 }
 
 TEST_F(InputTests,Dubbele_ids)
@@ -150,6 +162,8 @@ TEST_F(InputTests,Dubbele_ids)
 
     EXPECT_TRUE(result == Success);
     EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input7.txt","../InputTestsxml/expected_input7.txt"));
+
+    delete s;
 
 }
 
@@ -168,6 +182,8 @@ TEST_F(InputTests,geen_valid_ID)
     EXPECT_TRUE(result == Success);
     EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input8.txt","../InputTestsxml/expected_input8.txt"));
 
+    delete s;
+
 }
 
 TEST_F(InputTests,syntax_error)
@@ -185,6 +201,8 @@ TEST_F(InputTests,syntax_error)
     EXPECT_TRUE(result == ImportAborted);
     EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input9.txt","../InputTestsxml/expected_input9.txt"));
 
+    delete s;
+
 }
 
 TEST_F(InputTests,lege_attributen)
@@ -200,6 +218,8 @@ TEST_F(InputTests,lege_attributen)
 
     EXPECT_TRUE(result == PartialImport);
     EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input10.txt","../InputTestsxml/expected_input10.txt"));
+
+    delete s;
 
 }
 
@@ -218,6 +238,8 @@ TEST_F(InputTests,geen_attributen)
     EXPECT_TRUE(result == PartialImport);
     EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input11.txt","../InputTestsxml/expected_input11.txt"));
 
+    delete s;
+
 }
 
 TEST_F(InputTests,foute_type)
@@ -233,5 +255,129 @@ TEST_F(InputTests,foute_type)
 
     EXPECT_TRUE(result == PartialImport);
     EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input12.txt","../InputTestsxml/expected_input12.txt"));
+
+    delete s;
+
+}
+
+TEST_F(InputTests,int_waarde)
+{
+    Input i;
+    System* s = new System;
+    ofstream myfile;
+    SuccessEnum result;
+
+    myfile.open("../InputTestsxml/actual_input13.txt");
+    result = i.parseAll("../InputTestsxml/input13.xml",myfile,s);
+    myfile.close();
+
+    EXPECT_TRUE(result == PartialImport);
+    EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input13.txt","../InputTestsxml/expected_input13.txt"));
+
+    delete s;
+
+}
+
+TEST_F(InputTests,end_voor_start)
+{
+    Input i;
+    System* s = new System;
+    ofstream myfile;
+    SuccessEnum result;
+
+    myfile.open("../InputTestsxml/actual_input14.txt");
+    result = i.parseAll("../InputTestsxml/input14.xml",myfile,s);
+    myfile.close();
+
+    EXPECT_TRUE(result == PartialImport);
+    EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input14.txt","../InputTestsxml/expected_input14.txt"));
+
+    delete s;
+
+}
+
+TEST_F(InputTests, Terminate)
+{
+    EXPECT_EXIT(
+        {
+            System* s = new System("../InputTestsxml/input1.xml");
+        },
+        ::testing::ExitedWithCode(1),
+        ""
+    );
+
+    EXPECT_EXIT(
+    {
+        System* s = new System("../InputTestsxml/input2.xml");
+    },
+    ::testing::ExitedWithCode(1),
+    ""
+);
+
+    EXPECT_EXIT(
+    {
+        System* s = new System("../InputTestsxml/input3.xml");
+    },
+    ::testing::ExitedWithCode(1),
+    ""
+);
+
+    EXPECT_EXIT(
+    {
+        System* s = new System("../InputTestsxml/input4.xml");
+    },
+    ::testing::ExitedWithCode(1),
+    ""
+);
+
+    EXPECT_EXIT(
+    {
+        System* s = new System("../InputTestsxml/input5.xml");
+    },
+    ::testing::ExitedWithCode(1),
+    ""
+);
+
+    EXPECT_EXIT(
+    {
+        System* s = new System("../InputTestsxml/input6.xml");
+    },
+    ::testing::ExitedWithCode(1),
+    ""
+);
+
+    EXPECT_EXIT(
+    {
+        System* s = new System("../InputTestsxml/input7.xml");
+    },
+    ::testing::ExitedWithCode(1),
+    ""
+);
+
+    EXPECT_EXIT(
+    {
+        System* s = new System("../InputTestsxml/input8.xml");
+    },
+    ::testing::ExitedWithCode(1),
+    ""
+);
+
+    EXPECT_EXIT(
+    {
+        System* s = new System("../InputTestsxml/input9.xml");
+    },
+    ::testing::ExitedWithCode(1),
+    ""
+);
+
+}
+
+TEST_F(InputTests,HappyDayScenario)
+{
+    System* s = new System("../InputTestsxml/input15.xml");
+
+    EXPECT_TRUE(s->getInput().getResultaat() == Success);
+
+
 
 }

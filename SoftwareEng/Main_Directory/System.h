@@ -47,6 +47,8 @@ public:
     void addCatering(Catering* catering);
     void addCampus(Campus* campus);
     void addRenovation(Renovation* renovation);
+    Input getInput();
+
 
     vector<Meeting*> getMeeting();
     vector<Room*> getRooms();

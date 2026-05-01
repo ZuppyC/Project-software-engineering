@@ -332,10 +332,10 @@ SuccessEnum Input::parser_renovatie(const char* xmldoc,std::ostream& errStream, 
                 tm begindatum = *r->getBeginDatum();
                 tm einddatum = *r->getEindDatum();
 
-                // als einddatum voor start datum is error
+                // als einddatum nietconsitency datum is error
                 if (mktime(&einddatum) <= mktime(&begindatum))
                 {
-                    errStream << "ATTRIBUTE END moet een datum zijn NA START" << endl;
+                    errStream << "ATTRIBUTE END moet een datum zijn NA START voor het renovatie van het room: "<< r->getRoom() << endl;
                     result = PartialImport;
                     delete r;
 
@@ -797,11 +797,10 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
 
 }
 
-bool Input::consistencyCheck(std::ostream& errStream,System *sys)
+void Input::consistencyCheck(std::ostream& errStream,System *sys)
 {
     vector<Campus*> campusen = sys->getCampus();
     vector<Building*> buildings = sys->getBuilding();
-    bool nietConsistensy = false;
 
     for (Campus* c : campusen)
     {
@@ -816,7 +815,7 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
         if (campusleeg)
         {
             errStream << "de volgende campus is leeg: " << c->getName() <<endl;
-            nietConsistensy = true;
+            nietconsistent = true;
         }
     }
 
@@ -833,7 +832,7 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
         if (buildingleeg)
         {
             errStream << "de volgende gebouw is leeg" << b->getName() << endl;
-            nietConsistensy = true;
+            nietconsistent = true;
         }
 
     }
@@ -855,7 +854,7 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
             if (oneNonExternal)
             {
                 errStream << "er is geen Non-external user in deze meeting: "<< m->getId() << endl;
-                nietConsistensy = true;
+                nietconsistent = true;
             }
         }
 
@@ -873,7 +872,7 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
         if (campusID.count(id))
         {
             errStream << "dubbele id voor Campus met id: " << id << endl;
-            nietConsistensy = true;
+            nietconsistent = true;
         }else
         {
             campusID.insert(id);
@@ -885,7 +884,7 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
         if (buildingID.count(id))
         {
             errStream << "dubbele id voor Building met id: " << id << endl;
-            nietConsistensy = true;
+            nietconsistent = true;
         }else
         {
             buildingID.insert(id);
@@ -898,7 +897,7 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
         if (roomID.count(id))
         {
             errStream << "dubbele id voor Room met id: " << id << endl;
-            nietConsistensy = true;
+            nietconsistent = true;
         }else
         {
             roomID.insert(id);
@@ -911,7 +910,7 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
         if (meetingID.count(id))
         {
             errStream << "dubbele id voor Meeting met id: " << id << endl;
-            nietConsistensy = true;
+            nietconsistent = true;
         }else
         {
             meetingID.insert(id);
@@ -924,7 +923,7 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
         if (!campusID.count(b->getCampus()))
         {
             errStream << "Het campusID bestaat niet van het building " << b->getName() <<endl;
-            nietConsistensy = true;
+            nietconsistent = true;
             // errStream << "De volgende campusID bestaat niet: " << b->getCampus() << endl;
         }
     }
@@ -934,13 +933,13 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
         if (!campusID.count(r->getCampus()))
         {
             errStream << "Het campusID bestaat niet van het room " << r->getName() <<endl;
-            nietConsistensy = true;
+            nietconsistent = true;
         }
 
         if (!buildingID.count(r->getBuilding()))
         {
             errStream << "Het buildingID bestaat niet van het room " << r->getName() << endl;
-            nietConsistensy = true;
+            nietconsistent = true;
         }
     }
 
@@ -949,6 +948,7 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
         if (!roomID.count(m->getRoom()))
         {
             errStream << "Het roomID bestaat niet voor het meeting met id: " << m->getId() << endl;
+            nietconsistent = true;
         }
     }
 
@@ -959,7 +959,7 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
         if (!meetingID.count(p->getmeeting()))
         {
             errStream << "het MeetingID bestaat niet voor de participant "<<p->getUser() << endl;
-            nietConsistensy = true;
+            nietconsistent = true;
 
         }else
         {
@@ -972,7 +972,7 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
         if (!roomID.count(r->getRoom()))
         {
             errStream << "Het roomID: " << r->getRoom() << " bestaat niet voor de renovatie" << endl;
-            nietConsistensy = true;
+            nietconsistent = true;
         }
     }
 
@@ -990,7 +990,7 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
         if (capacityCheck[m->getId()] > capacity)
         {
             errStream << "er is niet genoeg plaatst voor de meeting "<< m->getId() << endl;
-            nietConsistensy = true;
+            nietconsistent = true;
         }
     }
     set<string> catering_campus;
@@ -1000,13 +1000,13 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
         if (!campusID.count(c_campus))
         {
             errStream << "het catering service verwijst naar een campusID dat niet bestaat" << endl;
-            nietConsistensy = true;
+            nietconsistent = true;
         }
 
         if (catering_campus.count(c_campus))
         {
             errStream << "de volgende campus " << c_campus <<" heeft meerdere catering services wat niet kan" << endl;
-            nietConsistensy = true;
+            nietconsistent = true;
         }else
         {
             catering_campus.insert(c_campus);
@@ -1015,7 +1015,6 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
 
     }
 
-    return nietConsistensy;
 
 
 
@@ -1024,8 +1023,9 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
 
 void Input::returnConsistency(System *sys) {
 
-    if (nietconsistent)
+    if (nietconsistent || resultaat == ImportAborted)
     {
+        cerr << "systeem is inconsistent" << endl;
         delete sys;
         exit(1);
 
@@ -1036,22 +1036,28 @@ void Input::returnConsistency(System *sys) {
 
 SuccessEnum Input::parseAll(const char* xmldoc, std::ostream& errStream, System* sys)
 {
-    SuccessEnum result = Success;
-    result = eerste_parserCB(xmldoc, errStream, sys);
+    resultaat = Success;
+    resultaat = eerste_parserCB(xmldoc, errStream, sys);
 
-    if (result == PartialImport) {
-        result = PartialImport;
+    if (resultaat == PartialImport) {
+        resultaat = PartialImport;
     }
 
     if (parser_catering(xmldoc, errStream, sys) == PartialImport) {
-        result = PartialImport;
+        resultaat = PartialImport;
     }
     if (parserMRP(xmldoc, errStream, sys) == PartialImport) {
-        result = PartialImport;
+        resultaat = PartialImport;
     }
     if (parser_renovatie(xmldoc, errStream, sys) == PartialImport) {
-        result = PartialImport;
+        resultaat = PartialImport;
     }
 
-    return result;
+    return resultaat;
+
+
+}
+
+enum SuccessEnum Input::getResultaat() {
+    return resultaat;
 }

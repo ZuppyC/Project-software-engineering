@@ -1,3 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SYSTEM>
+    <MEETING>
+        <LABEL>monthly meeting</LABEL>
+        <IDENTIFIER>Meeting20</IDENTIFIER>
+        <ROOM>Room_87984521</ROOM>
+        <DATE>2028-05-22</DATE>
+        <HOUR>-1</HOUR>
+        <ONLINE>true</ONLINE>
+        <EXTERNALS>true</EXTERNALS>
+        <CATERING>false</CATERING>
+    </MEETING>
+    <MEETING>
+        <LABEL>monthly meeting</LABEL>
+        <IDENTIFIER>Meeting20</IDENTIFIER>
+        <ROOM>Room_87984521</ROOM>
+        <DATE>2028-05-22</DATE>
+        <HOUR>25</HOUR>
+        <ONLINE>false</ONLINE>
+        <EXTERNALS>false</EXTERNALS>
+        <CATERING>false</CATERING>
+    </MEETING>
+
+    <ROOM>
+        <NAME>R.014</NAME>
+        <IDENTIFIER>Room_8798451</IDENTIFIER>
+        <CAPACITY>-5</CAPACITY>
+        <CAMPUS>Campus_CDE</CAMPUS>
+        <BUILDING>CDE_R</BUILDING>
+    </ROOM>
+    <CATERING>
+        <CAMPUS>Campus_CDE</CAMPUS>
+        <CO2>-2</CO2>
+    </CATERING>
 </SYSTEM>

@@ -1,3 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SYSTEM>
+    <MEETING>
+        <LABEL>Weekly meeting</LABEL>
+        <IDENTIFIER>Meeting_478463</IDENTIFIER>
+        <ROOM>Room_87984521</ROOM>
+        <DATE>2026-05-22</DATE>
+        <HOUR>14</HOUR>
+        <ONLINE>false</ONLINE>
+        <EXTERNALS>false</EXTERNALS>
+        <CATERING>true</CATERING>
+    </MEETING>
+    <MEETING>
+        <LABEL>monthly meeting</LABEL>
+        <IDENTIFIER>Meeting20</IDENTIFIER>
+        <ROOM>Room_87984521</ROOM>
+        <DATE>2028-05-22</DATE>
+        <HOUR>11</HOUR>
+        <ONLINE>true</ONLINE>
+        <EXTERNALS>true</EXTERNALS>
+        <CATERING>false</CATERING>
+    </MEETING>
+    <PARTICIPATION>
+        <MEETING>Meeting_478463</MEETING>
+        <USER>Peter Selie</USER>
+        <EXTERNAL>false</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting_478463</MEETING>
+        <USER>zenci Selie</USER>
+        <EXTERNAL>false</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting20</MEETING>
+        <USER>mario mario</USER>
+        <EXTERNAL>true</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting20</MEETING>
+        <USER>mario bros</USER>
+        <EXTERNAL>false</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting20</MEETING>
+        <USER>mario bros</USER>
+        <EXTERNAL>false</EXTERNAL>
+    </PARTICIPATION>
+    <BUILDING>
+        <NAME>Gebouw R</NAME>
+        <IDENTIFIER>CDE_R</IDENTIFIER>
+        <CAMPUS>Campus_CDE</CAMPUS>
+    </BUILDING>
+    <ROOM>
+        <NAME>R.014</NAME>
+        <IDENTIFIER>Room_87984521</IDENTIFIER>
+        <CAPACITY>10</CAPACITY>
+        <CAMPUS>Campus_CDE</CAMPUS>
+        <BUILDING>CDE_R</BUILDING>
+    </ROOM>
+    <ROOM>
+        <NAME>R.014</NAME>
+        <IDENTIFIER>Room_8798451</IDENTIFIER>
+        <CAPACITY>10</CAPACITY>
+        <CAMPUS>Campus_CDE</CAMPUS>
+        <BUILDING>CDE_R</BUILDING>
+    </ROOM>
+    <RENOVATION>
+        <ROOM>Room_87984521</ROOM>
+        <START>2027-11-06</START>
+        <END>2027-11-07</END>
+    </RENOVATION>
+    <CAMPUS>
+        <NAME>Campus Drie Eiken</NAME>
+        <IDENTIFIER>Campus_CDE</IDENTIFIER>
+    </CAMPUS>
+    <CATERING>
+        <CAMPUS>Campus_CDE</CAMPUS>
+        <CO2>20</CO2>
+    </CATERING>
 </SYSTEM>
