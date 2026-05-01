@@ -49,25 +49,25 @@ SuccessEnum Input::eerste_parserCB(const char* xmldoc,std::ostream& errStream, S
             bool flag = false;
             if (id == nullptr)
             {
-                errStream << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
+                errStream << "geen ATTRIBUTE IDENTIFIER gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (id->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                errStream << "ATTRIBUTE IDENTIFIER is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }
             if (name == nullptr)
             {
-                errStream << "geen ATTRIBUTE NAME gevonden." << endl;
+                errStream << "geen ATTRIBUTE NAME gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
             }else if (name->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                errStream << "ATTRIBUTE NAME is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -92,13 +92,13 @@ SuccessEnum Input::eerste_parserCB(const char* xmldoc,std::ostream& errStream, S
             bool flag = false;
             if (id == nullptr)
             {
-                errStream << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
+                errStream << "geen ATTRIBUTE IDENTIFIER gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (id->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                errStream << "ATTRIBUTE IDENTIFIER is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -106,13 +106,13 @@ SuccessEnum Input::eerste_parserCB(const char* xmldoc,std::ostream& errStream, S
 
             if (name == nullptr)
             {
-                errStream << "geen ATTRIBUTE NAME gevonden." << endl;
+                errStream << "geen ATTRIBUTE NAME gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (name->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE NAME is leeg." << endl;
+                errStream << "ATTRIBUTE NAME is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -120,13 +120,13 @@ SuccessEnum Input::eerste_parserCB(const char* xmldoc,std::ostream& errStream, S
 
             if (campus == nullptr)
             {
-                errStream << "geen ATTRIBUTE CAMPUS gevonden." << endl;
+                errStream << "geen ATTRIBUTE CAMPUS gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (campus->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE CAMPUS is leeg." << endl;
+                errStream << "ATTRIBUTE CAMPUS is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -185,26 +185,27 @@ SuccessEnum Input::parser_catering(const char* xmldoc,std::ostream& errStream, S
             bool flag = false;
             if (campus == nullptr)
             {
-                errStream << "geen ATTRIBUTE CAMPUS gevonden." << endl;
+                errStream << "geen ATTRIBUTE CAMPUS gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (campus->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE CAMPUS is leeg." << endl;
+                errStream << "ATTRIBUTE CAMPUS is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
-            }else
+            }
+
             if (co2 == nullptr)
             {
-                errStream << "geen ATTRIBUTE CO2 gevonden." << endl;
+                errStream << "geen ATTRIBUTE CO2 gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (co2->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE CO2 is leeg." << endl;
+                errStream << "ATTRIBUTE CO2 is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -213,14 +214,14 @@ SuccessEnum Input::parser_catering(const char* xmldoc,std::ostream& errStream, S
                     double cap= stod(co2->GetText());
                     if (cap <= 0)
                     {
-                        errStream << "de CAPACITY moet groter zijn dan 0" << endl;
+                        errStream << "de CO2 moet groter zijn dan 0" << endl;
                         flag = true;
                         result = PartialImport;
                     }
                 }
                 catch (...) {
 
-                    errStream<<"CAPACITY moet een float zijn"<<endl;
+                    errStream<<"CO2 moet een float zijn"<<endl;
                     flag = true;
                     result = PartialImport;
                 }
@@ -277,13 +278,13 @@ SuccessEnum Input::parser_renovatie(const char* xmldoc,std::ostream& errStream, 
             bool flag = false;
             if (room == nullptr)
             {
-                errStream << "geen ATTRIBUTE ROOM gevonden." << endl;
+                errStream << "geen ATTRIBUTE ROOM gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (room->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE ROOM is leeg." << endl;
+                errStream << "ATTRIBUTE ROOM is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -291,13 +292,13 @@ SuccessEnum Input::parser_renovatie(const char* xmldoc,std::ostream& errStream, 
 
             if (start == nullptr)
             {
-                errStream << "geen ATTRIBUTE START gevonden." << endl;
+                errStream << "geen ATTRIBUTE START gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (start->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE START is leeg." << endl;
+                errStream << "ATTRIBUTE START is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -305,13 +306,13 @@ SuccessEnum Input::parser_renovatie(const char* xmldoc,std::ostream& errStream, 
 
             if (end == nullptr)
             {
-                errStream << "geen ATTRIBUTE END gevonden." << endl;
+                errStream << "geen ATTRIBUTE END gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (end->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE END is leeg." << endl;
+                errStream << "ATTRIBUTE END is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -391,13 +392,13 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
             bool flag = false;
             if (cap == nullptr)
             {
-                errStream << "geen ATTRIBUTE CAPACITY gevonden." << endl;
+                errStream << "geen ATTRIBUTE CAPACITY gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (cap->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE CAPACITY is leeg." << endl;
+                errStream << "ATTRIBUTE CAPACITY is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -426,13 +427,13 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
             }
             if (id == nullptr)
             {
-                errStream << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
+                errStream << "geen ATTRIBUTE IDENTIFIER gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (id->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                errStream << "ATTRIBUTE IDENTIFIER is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -440,13 +441,13 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
 
             if (building == nullptr)
             {
-                errStream << "geen ATTRIBUTE BUILDING gevonden." << endl;
+                errStream << "geen ATTRIBUTE BUILDING gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (building->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE BUILDING is leeg." << endl;
+                errStream << "ATTRIBUTE BUILDING is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -454,13 +455,13 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
 
             if (campus == nullptr)
             {
-                errStream << "geen ATTRIBUTE CAMPUS gevonden." << endl;
+                errStream << "geen ATTRIBUTE CAMPUS gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (campus->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE CAMPUS is leeg." << endl;
+                errStream << "ATTRIBUTE CAMPUS is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -468,13 +469,13 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
 
             if (name == nullptr)
             {
-                errStream << "geen ATTRIBUTE NAME gevonden." << endl;
+                errStream << "geen ATTRIBUTE NAME gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (name->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE NAME is leeg." << endl;
+                errStream << "ATTRIBUTE NAME is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -509,13 +510,13 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
             bool flag = false;
             if (id == nullptr)
             {
-                errStream << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
+                errStream << "geen ATTRIBUTE IDENTIFIER gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (id->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                errStream << "ATTRIBUTE IDENTIFIER is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -523,13 +524,13 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
 
             if (label == nullptr)
             {
-                errStream << "geen ATTRIBUTE LABEL gevonden." << endl;
+                errStream << "geen ATTRIBUTE LABEL gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (label->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE LABEL is leeg." << endl;
+                errStream << "ATTRIBUTE LABEL is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -537,13 +538,13 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
 
             if (room == nullptr)
             {
-                errStream << "geen ATTRIBUTE ROOM gevonden." << endl;
+                errStream << "geen ATTRIBUTE ROOM gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (room->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE ROOM is leeg." << endl;
+                errStream << "ATTRIBUTE ROOM is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -551,13 +552,13 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
 
             if (datum == nullptr)
             {
-                errStream << "geen ATTRIBUTE DATE gevonden." << endl;
+                errStream << "geen ATTRIBUTE DATE gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (datum->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE DATE is leeg." << endl;
+                errStream << "ATTRIBUTE DATE is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -565,13 +566,13 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
 
             if (uur == nullptr)
             {
-                errStream << "geen ATTRIBUTE HOUR gevonden." << endl;
+                errStream << "geen ATTRIBUTE HOUR gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (uur->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE HOUR is leeg." << endl;
+                errStream << "ATTRIBUTE HOUR is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -582,7 +583,7 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
                     int cap = stoi(uur->GetText());
                     if (0 > cap || cap > 23)
                     {
-                        errStream << "ATTRIBUTE HOUR is moet tussen 0 en 23 zijn." << endl;
+                        errStream << "ATTRIBUTE HOUR moet tussen 0 en 23 zijn voor het type "<< type << endl;
                         flag = true;
                         result = PartialImport;
 
@@ -590,7 +591,7 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
 
                 }catch (...)
                 {
-                    errStream << "ATTRIBUTE HOUR moet een int getal zijn." << endl;
+                    errStream << "ATTRIBUTE HOUR moet een int getal zijn voor het type "<< type << endl;
                     flag = true;
                     result = PartialImport;
 
@@ -601,13 +602,13 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
 
             if (online == nullptr)
             {
-                errStream << "geen ATTRIBUTE ONLINE gevonden." << endl;
+                errStream << "geen ATTRIBUTE ONLINE gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (online->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE ONLINE is leeg." << endl;
+                errStream << "ATTRIBUTE ONLINE is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -626,13 +627,13 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
 
             if (external == nullptr)
             {
-                errStream << "geen ATTRIBUTE EXTERNALS gevonden." << endl;
+                errStream << "geen ATTRIBUTE EXTERNALS gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (external->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE EXTERNALS is leeg." << endl;
+                errStream << "ATTRIBUTE EXTERNALS is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -641,7 +642,7 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
                 string boolean = external->GetText();
                 if (boolean != "true" && boolean != "false")
                 {
-                    errStream << "de ATTRIBUTE EXTERNALS moet een booleanse waarde zijn" << endl;
+                    errStream << "de ATTRIBUTE EXTERNAL moet een booleanse waarde zijn" << endl;
                     flag = true;
                     result = PartialImport;
 
@@ -651,13 +652,13 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
 
             if (catering == nullptr)
             {
-                errStream << "geen ATTRIBUTE CATERING gevonden." << endl;
+                errStream << "geen ATTRIBUTE CATERING gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (catering->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE CATERING is leeg." << endl;
+                errStream << "ATTRIBUTE CATERING is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -693,6 +694,7 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
                 {
                     errStream << "een online meeting kan geen catering hebben" << endl;
                     delete meetNgreet;
+                    result = PartialImport;
 
                 }else
                 {
@@ -712,13 +714,13 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
             bool flag = false;
             if (meeting == nullptr)
             {
-                errStream << "geen ATTRIBUTE MEETING gevonden." << endl;
+                errStream << "geen ATTRIBUTE MEETING gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (meeting->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE MEETING is leeg." << endl;
+                errStream << "ATTRIBUTE MEETING is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -726,13 +728,13 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
 
             if (user == nullptr)
             {
-                errStream << "geen ATTRIBUTE USER gevonden." << endl;
+                errStream << "geen ATTRIBUTE USER gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (user->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE USER is leeg." << endl;
+                errStream << "ATTRIBUTE USER is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -740,13 +742,13 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
 
             if (external == nullptr)
             {
-                errStream << "geen ATTRIBUTE EXTERNAL gevonden." << endl;
+                errStream << "geen ATTRIBUTE EXTERNAL gevonden voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
             }else if (external->GetText() == nullptr)
             {
-                errStream << "ATTRIBUTE EXTERNAL is leeg." << endl;
+                errStream << "ATTRIBUTE EXTERNAL is leeg voor het type "<< type << endl;
                 flag = true;
                 result = PartialImport;
 
@@ -755,7 +757,7 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
                 string boolean = external->GetText();
                 if (boolean != "true" && boolean != "false")
                 {
-                    errStream << "de ATTRIBUTE EXTERNALS moet een booleanse waarde zijn" << endl;
+                    errStream << "de ATTRIBUTE EXTERNAL moet een booleanse waarde zijn" << endl;
                     flag = true;
                     result = PartialImport;
 
@@ -848,10 +850,13 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
             }
         }
 
-        if (oneNonExternal)
-        {
-            errStream << "er is geen Non-external user in deze meeting: "<< m->getId() << endl;
-            nietConsistensy = true;
+
+        if (m->getPart().size() != 0) {
+            if (oneNonExternal)
+            {
+                errStream << "er is geen Non-external user in deze meeting: "<< m->getId() << endl;
+                nietConsistensy = true;
+            }
         }
 
 
@@ -1013,13 +1018,7 @@ bool Input::consistencyCheck(std::ostream& errStream,System *sys)
     return nietConsistensy;
 
 
-    if (nietConsistensy)
-    {
-        errStream << "Het systeem is niet consistent en wordt niet geaccepteerd." << endl;
-        delete sys;
-        exit(1);
 
-    }
 }
 
 
@@ -1038,8 +1037,9 @@ void Input::returnConsistency(System *sys) {
 SuccessEnum Input::parseAll(const char* xmldoc, std::ostream& errStream, System* sys)
 {
     SuccessEnum result = Success;
+    result = eerste_parserCB(xmldoc, errStream, sys);
 
-    if (eerste_parserCB(xmldoc, errStream, sys) == PartialImport) {
+    if (result == PartialImport) {
         result = PartialImport;
     }
 

@@ -1,3 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <SYSTEM>
+    <BUILDING>
+        <NAME>Gebouw R</NAME>
+        <IDENTIFIER>CDE_R</IDENTIFIER>
+        <CAMPUS>Campus_CDE</CAMPUS>
+    </BUILDING>
+    <BUILDING>
+        <NAME>Gebouw V</NAME>
+        <IDENTIFIER>CDE_V</IDENTIFIER>
+        <CAMPUS>Campus_CDE</CAMPUS>
+    </BUILDING>
+    <BUILDING>
+        <NAME>Gebouw Z</NAME>
+        <IDENTIFIER>CDE_Z</IDENTIFIER>
+        <CAMPUS>Campus_CDE</CAMPUS>
+    </BUILDING>
+    <BUILDING>
+        <NAME>Gebouw F</NAME>
+        <IDENTIFIER>CDE_F</IDENTIFIER>
+        <CAMPUS>Campus_CDE</CAMPUS>
+    </BUILDING>
 </SYSTEM>
+

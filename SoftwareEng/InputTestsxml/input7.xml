@@ -1,3 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SYSTEM>
+    <CAMPUS>
+        <NAME>Campus Drie Eiken</NAME>
+        <IDENTIFIER>Campus_CDE</IDENTIFIER>
+    </CAMPUS>
+    <CAMPUS>
+        <NAME>Campus Drie Eiken</NAME>
+        <IDENTIFIER>Campus_CDE</IDENTIFIER>
+    </CAMPUS>
+    <BUILDING>
+        <NAME>Gebouw R</NAME>
+        <IDENTIFIER>CDE_R</IDENTIFIER>
+        <CAMPUS>Campus_CDE</CAMPUS>
+    </BUILDING>
+    <BUILDING>
+        <NAME>Gebouw R</NAME>
+        <IDENTIFIER>CDE_R</IDENTIFIER>
+        <CAMPUS>Campus_CDE</CAMPUS>
+    </BUILDING>
+    <ROOM>
+        <NAME>R.251</NAME>
+        <IDENTIFIER>Room_r251</IDENTIFIER>
+        <CAPACITY>10</CAPACITY>
+        <CAMPUS>Campus_CDE</CAMPUS>
+        <BUILDING>CDE_R</BUILDING>
+    </ROOM>
+    <ROOM>
+        <NAME>R.251</NAME>
+        <IDENTIFIER>Room_r251</IDENTIFIER>
+        <CAPACITY>10</CAPACITY>
+        <CAMPUS>Campus_CDE</CAMPUS>
+        <BUILDING>CDE_R</BUILDING>
+    </ROOM>
+    <MEETING>
+        <LABEL>monthly meeting</LABEL>
+        <IDENTIFIER>Meeting1</IDENTIFIER>
+        <ROOM>Room_r251</ROOM>
+        <DATE>2026-05-22</DATE>
+        <HOUR>11</HOUR>
+        <ONLINE>false</ONLINE>
+        <EXTERNALS>true</EXTERNALS>
+        <CATERING>false</CATERING>
+    </MEETING>
+    <MEETING>
+        <LABEL>monthly meeting</LABEL>
+        <IDENTIFIER>Meeting1</IDENTIFIER>
+        <ROOM>Room_r251</ROOM>
+        <DATE>2026-05-22</DATE>
+        <HOUR>11</HOUR>
+        <ONLINE>false</ONLINE>
+        <EXTERNALS>true</EXTERNALS>
+        <CATERING>false</CATERING>
+    </MEETING>
 </SYSTEM>

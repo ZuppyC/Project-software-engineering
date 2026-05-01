@@ -1,3 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SYSTEM>
+    <CAMPUS>
+        <NAME>Campus Drie Eiken</NAME>
+        <IDENTIFIER>Campus_CDE</IDENTIFIER>
+    </CAMPUS>
+    <BUILDING>
+        <NAME>Gebouw v</NAME>
+        <IDENTIFIER>CDE_v</IDENTIFIER>
+        <CAMPUS>Campus_CDE</CAMPUS>
+    </BUILDING>
+    <BUILDING>
+        <NAME>Gebouw R</NAME>
+        <IDENTIFIER>CDE_R</IDENTIFIER>
+        <CAMPUS>Campus</CAMPUS>
+    </BUILDING>
+    <ROOM>
+        <NAME>R.251</NAME>
+        <IDENTIFIER>Room_r251</IDENTIFIER>
+        <CAPACITY>10</CAPACITY>
+        <CAMPUS>Campus_CDE</CAMPUS>
+        <BUILDING>CDE_v</BUILDING>
+    </ROOM>
+    <ROOM>
+        <NAME>R.252</NAME>
+        <IDENTIFIER>Room_r252</IDENTIFIER>
+        <CAPACITY>10</CAPACITY>
+        <CAMPUS>Campus_CDE</CAMPUS>
+        <BUILDING>CDE_R</BUILDING>
+    </ROOM>
+    <ROOM>
+        <NAME>R.253</NAME>
+        <IDENTIFIER>Room_r253</IDENTIFIER>
+        <CAPACITY>10</CAPACITY>
+        <CAMPUS>Campus</CAMPUS>
+        <BUILDING>CDE</BUILDING>
+    </ROOM>
+    <MEETING>
+        <LABEL>monthly meeting</LABEL>
+        <IDENTIFIER>Meeting1</IDENTIFIER>
+        <ROOM>Room_</ROOM>
+        <DATE>2026-05-22</DATE>
+        <HOUR>11</HOUR>
+        <ONLINE>false</ONLINE>
+        <EXTERNALS>true</EXTERNALS>
+        <CATERING>false</CATERING>
+    </MEETING>
+    <CATERING>
+        <CAMPUS>Campus</CAMPUS>
+        <CO2>20</CO2>
+    </CATERING>
+    <RENOVATION>
+        <ROOM>Room_212121</ROOM>
+        <START>2027-11-06</START>
+        <END>2027-11-07</END>
+    </RENOVATION>
+    <PARTICIPATION>
+        <MEETING>Meeting2000</MEETING>
+        <USER>mario bros</USER>
+        <EXTERNAL>false</EXTERNAL>
+    </PARTICIPATION>
 </SYSTEM>

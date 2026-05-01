@@ -1,1 +1,4 @@
-expected_input2
+de volgende gebouw is leegGebouw R
+de volgende gebouw is leegGebouw V
+de volgende gebouw is leegGebouw Z
+de volgende gebouw is leegGebouw F

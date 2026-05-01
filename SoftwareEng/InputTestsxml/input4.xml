@@ -1,3 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SYSTEM>
+    <CAMPUS>
+        <NAME>Campus Drie Eiken</NAME>
+        <IDENTIFIER>Campus_CDE</IDENTIFIER>
+    </CAMPUS>
+    <BUILDING>
+        <NAME>Gebouw R</NAME>
+        <IDENTIFIER>CDE_R</IDENTIFIER>
+        <CAMPUS>Campus_CDE</CAMPUS>
+    </BUILDING>
+    <ROOM>
+        <NAME>R.014</NAME>
+        <IDENTIFIER>Room_r251</IDENTIFIER>
+        <CAPACITY>5</CAPACITY>
+        <CAMPUS>Campus_CDE</CAMPUS>
+        <BUILDING>CDE_R</BUILDING>
+    </ROOM>
+    <MEETING>
+        <LABEL>monthly meeting</LABEL>
+        <IDENTIFIER>Meeting1</IDENTIFIER>
+        <ROOM>Room_r251</ROOM>
+        <DATE>2026-05-22</DATE>
+        <HOUR>11</HOUR>
+        <ONLINE>false</ONLINE>
+        <EXTERNALS>true</EXTERNALS>
+        <CATERING>false</CATERING>
+    </MEETING>
+    <PARTICIPATION>
+        <MEETING>Meeting1</MEETING>
+        <USER>user 1</USER>
+        <EXTERNAL>false</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting1</MEETING>
+        <USER>user 2</USER>
+        <EXTERNAL>false</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting1</MEETING>
+        <USER>user 3</USER>
+        <EXTERNAL>false</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting1</MEETING>
+        <USER>user 4</USER>
+        <EXTERNAL>true</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting1</MEETING>
+        <USER>user 5</USER>
+        <EXTERNAL>true</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting1</MEETING>
+        <USER>user 6</USER>
+        <EXTERNAL>true</EXTERNAL>
+    </PARTICIPATION>
+    <ROOM>
+        <NAME>R.015</NAME>
+        <IDENTIFIER>Room_r252</IDENTIFIER>
+        <CAPACITY>7</CAPACITY>
+        <CAMPUS>Campus_CDE</CAMPUS>
+        <BUILDING>CDE_R</BUILDING>
+    </ROOM>
+    <MEETING>
+        <LABEL>monthly meeting</LABEL>
+        <IDENTIFIER>Meeting2</IDENTIFIER>
+        <ROOM>Room_r252</ROOM>
+        <DATE>2026-05-22</DATE>
+        <HOUR>11</HOUR>
+        <ONLINE>false</ONLINE>
+        <EXTERNALS>true</EXTERNALS>
+        <CATERING>false</CATERING>
+    </MEETING>
+    <PARTICIPATION>
+        <MEETING>Meeting2</MEETING>
+        <USER>user 1</USER>
+        <EXTERNAL>false</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting2</MEETING>
+        <USER>user 2</USER>
+        <EXTERNAL>false</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting2</MEETING>
+        <USER>user 3</USER>
+        <EXTERNAL>false</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting2</MEETING>
+        <USER>user 4</USER>
+        <EXTERNAL>true</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting2</MEETING>
+        <USER>user 5</USER>
+        <EXTERNAL>true</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting2</MEETING>
+        <USER>user 6</USER>
+        <EXTERNAL>true</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting2</MEETING>
+        <USER>user 7</USER>
+        <EXTERNAL>true</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>Meeting2</MEETING>
+        <USER>user 8</USER>
+        <EXTERNAL>true</EXTERNAL>
+    </PARTICIPATION>
 </SYSTEM>

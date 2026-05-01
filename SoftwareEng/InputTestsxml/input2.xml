@@ -1,3 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SYSTEM>
+    <CAMPUS>
+        <NAME>Campus Drie Eiken</NAME>
+        <IDENTIFIER>Campus_CDE</IDENTIFIER>
+    </CAMPUS>
+    <BUILDING>
+        <NAME>Gebouw R</NAME>
+        <IDENTIFIER>CDE_R</IDENTIFIER>
+        <CAMPUS>Campus_CDE</CAMPUS>
+    </BUILDING>
+    <BUILDING>
+        <NAME>Gebouw V</NAME>
+        <IDENTIFIER>CDE_V</IDENTIFIER>
+        <CAMPUS>Campus_CDE</CAMPUS>
+    </BUILDING>
+    <BUILDING>
+        <NAME>Gebouw Z</NAME>
+        <IDENTIFIER>CDE_Z</IDENTIFIER>
+        <CAMPUS>Campus_CDE</CAMPUS>
+    </BUILDING>
+    <BUILDING>
+        <NAME>Gebouw F</NAME>
+        <IDENTIFIER>CDE_F</IDENTIFIER>
+        <CAMPUS>Campus_CDE</CAMPUS>
+    </BUILDING>
 </SYSTEM>

@@ -1,1 +1,4 @@
-expected_input7
+dubbele id voor Campus met id: Campus_CDE
+dubbele id voor Building met id: CDE_R
+dubbele id voor Room met id: Room_r251
+dubbele id voor Meeting met id: Meeting1

@@ -1,3 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SYSTEM>
+    <MEETING>
+        <LABEL></LABEL>
+        <IDENTIFIER></IDENTIFIER>
+        <ROOM></ROOM>
+        <DATE></DATE>
+        <HOUR></HOUR>
+        <ONLINE></ONLINE>
+        <EXTERNALS></EXTERNALS>
+        <CATERING></CATERING>
+    </MEETING>
+    <PARTICIPATION>
+        <MEETING></MEETING>
+        <USER></USER>
+        <EXTERNAL></EXTERNAL>
+    </PARTICIPATION>
+    <BUILDING>
+        <NAME></NAME>
+        <IDENTIFIER></IDENTIFIER>
+        <CAMPUS></CAMPUS>
+    </BUILDING>
+    <ROOM>
+        <NAME></NAME>
+        <IDENTIFIER></IDENTIFIER>
+        <CAPACITY></CAPACITY>
+        <CAMPUS></CAMPUS>
+        <BUILDING></BUILDING>
+    </ROOM>
+    <RENOVATION>
+        <ROOM></ROOM>
+        <START></START>
+        <END></END>
+    </RENOVATION>
+    <CAMPUS>
+        <NAME></NAME>
+        <IDENTIFIER></IDENTIFIER>
+    </CAMPUS>
+    <CATERING>
+        <CAMPUS></CAMPUS>
+        <CO2></CO2>
+    </CATERING>
 </SYSTEM>
