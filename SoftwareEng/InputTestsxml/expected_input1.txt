@@ -1,1 +1,4 @@
-ATTRIBUTE CAMPUS is leeg.
+de volgende campus is leeg: Campus Drie Eiken
+de volgende campus is leeg: Campus Middelheim
+de volgende campus is leeg: stadscampus
+de volgende campus is leeg: Campus KU Leuven

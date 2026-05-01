@@ -795,7 +795,7 @@ SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System*
 
 }
 
-void Input::consistencyCheck(std::ostream& errStream,System *sys)
+bool Input::consistencyCheck(std::ostream& errStream,System *sys)
 {
     vector<Campus*> campusen = sys->getCampus();
     vector<Building*> buildings = sys->getBuilding();
@@ -1010,6 +1010,8 @@ void Input::consistencyCheck(std::ostream& errStream,System *sys)
 
     }
 
+    return nietConsistensy;
+
 
     if (nietConsistensy)
     {
@@ -1018,4 +1020,38 @@ void Input::consistencyCheck(std::ostream& errStream,System *sys)
         exit(1);
 
     }
+}
+
+
+void Input::returnConsistency(System *sys) {
+
+    if (nietconsistent)
+    {
+        delete sys;
+        exit(1);
+
+    }
+
+}
+
+
+SuccessEnum Input::parseAll(const char* xmldoc, std::ostream& errStream, System* sys)
+{
+    SuccessEnum result = Success;
+
+    if (eerste_parserCB(xmldoc, errStream, sys) == PartialImport) {
+        result = PartialImport;
+    }
+
+    if (parser_catering(xmldoc, errStream, sys) == PartialImport) {
+        result = PartialImport;
+    }
+    if (parserMRP(xmldoc, errStream, sys) == PartialImport) {
+        result = PartialImport;
+    }
+    if (parser_renovatie(xmldoc, errStream, sys) == PartialImport) {
+        result = PartialImport;
+    }
+
+    return result;
 }

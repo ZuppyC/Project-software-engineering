@@ -11,6 +11,11 @@ class System;
 enum SuccessEnum {ImportAborted, PartialImport, Success};
 
 class Input {
+private:
+    enum SuccessEnum resultaat;
+
+    bool nietconsistent;
+
 
     public:
 
@@ -22,7 +27,11 @@ class Input {
 
         SuccessEnum parser_renovatie(const char* xmldoc,std::ostream& errStream, System* sys);
 
-        void consistencyCheck(std::ostream& errStream, System* sys);
+        SuccessEnum parseAll(const char* xmldoc, std::ostream& errStream, System* sys);
+
+        bool consistencyCheck(std::ostream& errStream, System* sys);
+
+        void returnConsistency(System* sys);
 
 
 

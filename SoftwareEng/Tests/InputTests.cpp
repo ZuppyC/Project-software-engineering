@@ -43,10 +43,11 @@ TEST_F(InputTests,Lege_campus)
     SuccessEnum result;
 
     myfile.open("../InputTestsxml/actual_input1.txt");
-    result = i.eerste_parserCB("../InputTestsxml/input1.xml",myfile,s);
+    result = i.parseAll("../InputTestsxml/input1.xml",myfile,s);
+    i.consistencyCheck(myfile,s);
     myfile.close();
 
-    EXPECT_TRUE(result == PartialImport);
+    EXPECT_TRUE(result == Success);
     EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input1.txt","../InputTestsxml/expected_input1.txt"));
 
 }
