@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SYSTEM>
-
     <MEETING>
         <LABEL>Weekly meeting</LABEL>
         <IDENTIFIER>Meeting_478463</IDENTIFIER>
@@ -28,7 +27,7 @@
     </PARTICIPATION>
     <PARTICIPATION>
         <MEETING>Meeting_478463</MEETING>
-        <USER>zenci Selie</USER>µ
+        <USER>zenci Selie</USER>
         <EXTERNAL>false</EXTERNAL>
     </PARTICIPATION>
     <PARTICIPATION>
@@ -42,7 +41,7 @@
         <EXTERNAL>false</EXTERNAL>
     </PARTICIPATION>
     <PARTICIPATION>
-        <MEETING>Meeting0</MEETING>
+        <MEETING>Meeting20</MEETING>
         <USER>mario bros</USER>
         <EXTERNAL>false</EXTERNAL>
     </PARTICIPATION>
@@ -78,4 +77,5 @@
         <CAMPUS>Campus_CDE</CAMPUS>
         <CO2>20</CO2>
     </CATERING>
+
 </SYSTEM>

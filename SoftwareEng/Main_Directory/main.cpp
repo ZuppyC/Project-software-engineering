@@ -15,8 +15,7 @@ int main()
     System* s = new System("xmlfile.xml");
 
     Output out;
-
-    out.print("SystemOutput", *s);
     s->takePlaceEveryMeeting();
+    out.print("SystemOutput", *s);
     return 0;
 }

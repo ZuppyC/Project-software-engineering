@@ -1,0 +1,23 @@
+## ==== [SYSTEM STATUS] ==== ##
+
+--== Meetings ==--
+
+[een meeting]
+ -  ID:  een meeting
+ -  Time:  22/5/2026, 14h00
+ -  Location:  een room
+ -  Externals not allowed
+ -  Catering
+ -  CO2 emitted:  1360
+
+--== Rooms ==--
+
+[een room]
+ -  ID:  een room
+ -  Capacity: 10
+ -  Building: een gebouw
+ -  Campus: een campus
+
+--== CO2 Summary ==--
+
+-  Total CO2:  1360

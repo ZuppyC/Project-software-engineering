@@ -54,7 +54,7 @@ void Output::print(const std::string& filename, System& system) {
     }
 
     outputFile<<"--== CO2 Summary ==--\n"<<endl;
-    outputFile<<"-  Total CO2:  "<<system.getTotalCo2()<<endl;
+    outputFile<<"-  Total CO2:  "<<system.getTotalCo2()<<"\n";
 
 
 

@@ -2,6 +2,7 @@
 #include "gtest/gtest.h"
 #include "iostream"
 #include "../xmlparser/tinyxml.h"
+#include "../Main_Directory/Output.h"
 
 class SYSTEMTESTS: public ::testing::Test {
 protected:
@@ -102,6 +103,16 @@ TEST_F(SYSTEMTESTS, SyntaxFoutXML_VAL)
 
 
     EXPECT_TRUE(FileCompare("../Expected_output_tests/expected_Syntax_fout_val.txt","Syntax_fout.txt"));
+
+}
+
+TEST_F(SYSTEMTESTS, SystemOutputError) {
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    Output o;
+    s.takePlaceEveryMeeting();
+    o.print("SystemOutputTest.txt", s);
+
+    EXPECT_TRUE(FileCompare("../Expected_output_tests/SysteemOutputIsJuist.txt","SystemOutputTest.txt"));
 
 }
 

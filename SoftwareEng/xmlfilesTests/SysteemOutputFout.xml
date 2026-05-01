@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SYSTEM>
+    <MEETING>
+        <LABEL>een meeting</LABEL>
+        <IDENTIFIER>een meeting</IDENTIFIER>
+        <ROOM>een room</ROOM>
+        <DATE>2026-05-22</DATE>
+        <HOUR>14</HOUR>
+        <ONLINE>false</ONLINE>
+        <EXTERNALS>false</EXTERNALS>
+        <CATERING>true</CATERING>
+    </MEETING>
+    <PARTICIPATION>
+        <MEETING>een meeting</MEETING>
+        <USER>bob</USER>
+        <EXTERNAL>false</EXTERNAL>
+    </PARTICIPATION>
+    <PARTICIPATION>
+        <MEETING>een meeting</MEETING>
+        <USER>de bouwer</USER>
+        <EXTERNAL>true</EXTERNAL>
+    </PARTICIPATION>
+    <BUILDING>
+        <NAME>een gebouw</NAME>
+        <IDENTIFIER>een gebouw</IDENTIFIER>
+        <CAMPUS>een campus</CAMPUS>
+    </BUILDING>
+    <ROOM>
+        <NAME>een room</NAME>
+        <IDENTIFIER>een room</IDENTIFIER>
+        <CAPACITY>10</CAPACITY>
+        <CAMPUS>een campus</CAMPUS>
+        <BUILDING>een gebouw</BUILDING>
+    </ROOM>
+    <RENOVATION>
+        <ROOM>een room</ROOM>
+        <START>2027-11-06</START>
+        <END>2027-11-07</END>
+    </RENOVATION>
+    <CAMPUS>
+        <NAME>een campus</NAME>
+        <IDENTIFIER>een campus</IDENTIFIER>
+    </CAMPUS>
+    <CATERING>
+        <CAMPUS>een campus</CAMPUS>
+        <CO2>20</CO2>
+    </CATERING>
+</SYSTEM>
