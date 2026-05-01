@@ -196,10 +196,42 @@ TEST_F(InputTests,lege_attributen)
 
     myfile.open("../InputTestsxml/actual_input10.txt");
     result = i.parseAll("../InputTestsxml/input10.xml",myfile,s);
-    i.consistencyCheck(myfile,s);
     myfile.close();
 
     EXPECT_TRUE(result == PartialImport);
     EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input10.txt","../InputTestsxml/expected_input10.txt"));
+
+}
+
+
+TEST_F(InputTests,geen_attributen)
+{
+    Input i;
+    System* s = new System;
+    ofstream myfile;
+    SuccessEnum result;
+
+    myfile.open("../InputTestsxml/actual_input11.txt");
+    result = i.parseAll("../InputTestsxml/input11.xml",myfile,s);
+    myfile.close();
+
+    EXPECT_TRUE(result == PartialImport);
+    EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input11.txt","../InputTestsxml/expected_input11.txt"));
+
+}
+
+TEST_F(InputTests,foute_type)
+{
+    Input i;
+    System* s = new System;
+    ofstream myfile;
+    SuccessEnum result;
+
+    myfile.open("../InputTestsxml/actual_input12.txt");
+    result = i.parseAll("../InputTestsxml/input12.xml",myfile,s);
+    myfile.close();
+
+    EXPECT_TRUE(result == PartialImport);
+    EXPECT_TRUE(FileCompare("../InputTestsxml/actual_input12.txt","../InputTestsxml/expected_input12.txt"));
 
 }

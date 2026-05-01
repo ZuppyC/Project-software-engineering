@@ -1,3 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SYSTEM>
+    <MEETING>
+        <LABEL>monthly meeting</LABEL>
+        <IDENTIFIER>Meeting20</IDENTIFIER>
+        <ROOM>Room_87984521</ROOM>
+        <DATE>2028-05-22</DATE>
+        <HOUR>elf</HOUR>
+        <ONLINE>nee</ONLINE>
+        <EXTERNALS>toegestaan</EXTERNALS>
+        <CATERING>aangwezig</CATERING>
+    </MEETING>
+    <PARTICIPATION>
+        <MEETING>Meeting_478463</MEETING>
+        <USER>Peter Selie</USER>
+        <EXTERNAL>geen</EXTERNAL>
+    </PARTICIPATION>
+    <ROOM>
+        <NAME>R.014</NAME>
+        <IDENTIFIER>Room_8798451</IDENTIFIER>
+        <CAPACITY>tien</CAPACITY>
+        <CAMPUS>Campus_CDE</CAMPUS>
+        <BUILDING>CDE_R</BUILDING>
+    </ROOM>
+    <CATERING>
+        <CAMPUS>Campus_CDE</CAMPUS>
+        <CO2>twintig</CO2>
+    </CATERING>
 </SYSTEM>
