@@ -8,6 +8,7 @@
 #include "iostream"
 #include "../xmlparser/tinyxml.h"
 #include "compare_file.h"
+#include "../Main_Directory/Output.h"
 
 class InputTests: public ::testing::Test {
 protected:
@@ -377,6 +378,11 @@ TEST_F(InputTests,HappyDayScenario)
     System* s = new System("../InputTestsxml/input15.xml");
 
     EXPECT_TRUE(s->getInput().getResultaat() == Success);
+    s->takePlaceEveryMeeting();
+    Output o;
+    o.print("../InputTestsxml/HappyDayScenario.txt",*s);
+
+    EXPECT_TRUE(FileCompare("../InputTestsxml/expected_HappyDayScenario.txt","../InputTestsxml/HappyDayScenario.txt"));
 
 
 

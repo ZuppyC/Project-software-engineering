@@ -2,8 +2,8 @@
 <SYSTEM>
     <MEETING>
         <LABEL>Weekly meeting</LABEL>
-        <IDENTIFIER>Meeting_478463</IDENTIFIER>
-        <ROOM>Room_87984521</ROOM>
+        <IDENTIFIER>Meeting_1</IDENTIFIER>
+        <ROOM>Room_r_250</ROOM>
         <DATE>2026-05-22</DATE>
         <HOUR>14</HOUR>
         <ONLINE>false</ONLINE>
@@ -12,8 +12,8 @@
     </MEETING>
     <MEETING>
         <LABEL>monthly meeting</LABEL>
-        <IDENTIFIER>Meeting20</IDENTIFIER>
-        <ROOM>Room_87984521</ROOM>
+        <IDENTIFIER>Meeting2</IDENTIFIER>
+        <ROOM>Room_r_251</ROOM>
         <DATE>2028-05-22</DATE>
         <HOUR>11</HOUR>
         <ONLINE>true</ONLINE>
@@ -21,27 +21,27 @@
         <CATERING>false</CATERING>
     </MEETING>
     <PARTICIPATION>
-        <MEETING>Meeting_478463</MEETING>
+        <MEETING>Meeting_1</MEETING>
         <USER>Peter Selie</USER>
         <EXTERNAL>false</EXTERNAL>
     </PARTICIPATION>
     <PARTICIPATION>
-        <MEETING>Meeting_478463</MEETING>
+        <MEETING>Meeting_1</MEETING>
         <USER>zenci Selie</USER>
         <EXTERNAL>false</EXTERNAL>
     </PARTICIPATION>
     <PARTICIPATION>
-        <MEETING>Meeting20</MEETING>
+        <MEETING>Meeting2</MEETING>
         <USER>mario mario</USER>
         <EXTERNAL>true</EXTERNAL>
     </PARTICIPATION>
     <PARTICIPATION>
-        <MEETING>Meeting20</MEETING>
+        <MEETING>Meeting2</MEETING>
         <USER>mario bros</USER>
         <EXTERNAL>false</EXTERNAL>
     </PARTICIPATION>
     <PARTICIPATION>
-        <MEETING>Meeting20</MEETING>
+        <MEETING>Meeting2</MEETING>
         <USER>mario bros</USER>
         <EXTERNAL>false</EXTERNAL>
     </PARTICIPATION>
@@ -51,21 +51,21 @@
         <CAMPUS>Campus_CDE</CAMPUS>
     </BUILDING>
     <ROOM>
-        <NAME>R.014</NAME>
-        <IDENTIFIER>Room_87984521</IDENTIFIER>
+        <NAME>R.250</NAME>
+        <IDENTIFIER>Room_r_250</IDENTIFIER>
         <CAPACITY>10</CAPACITY>
         <CAMPUS>Campus_CDE</CAMPUS>
         <BUILDING>CDE_R</BUILDING>
     </ROOM>
     <ROOM>
-        <NAME>R.014</NAME>
-        <IDENTIFIER>Room_8798451</IDENTIFIER>
+        <NAME>R.251</NAME>
+        <IDENTIFIER>Room_r_251</IDENTIFIER>
         <CAPACITY>10</CAPACITY>
         <CAMPUS>Campus_CDE</CAMPUS>
         <BUILDING>CDE_R</BUILDING>
     </ROOM>
     <RENOVATION>
-        <ROOM>Room_87984521</ROOM>
+        <ROOM>Room_r_251</ROOM>
         <START>2027-11-06</START>
         <END>2027-11-07</END>
     </RENOVATION>
