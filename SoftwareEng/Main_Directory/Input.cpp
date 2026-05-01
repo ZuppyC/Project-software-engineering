@@ -17,14 +17,15 @@
 #include "Renovation.h"
 
 
-void Input::eerste_parserCB(const char* xmldoc, System* sys)
+SuccessEnum Input::eerste_parserCB(const char* xmldoc,std::ostream& errStream, System* sys)
 {
+    SuccessEnum result = Success;
 
     TiXmlDocument doc(xmldoc);
     if (!doc.LoadFile()) {
-        std::cerr << "XML kon niet geladen worden: "
+        errStream << "XML kon niet geladen worden: "
                   << doc.ErrorDesc() << std::endl;
-        return;
+        return ImportAborted;
     }
 
     TiXmlElement* s = doc.FirstChildElement("SYSTEM");
@@ -48,23 +49,28 @@ void Input::eerste_parserCB(const char* xmldoc, System* sys)
             bool flag = false;
             if (id == nullptr)
             {
-                cerr << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
+                errStream << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (id->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                errStream << "ATTRIBUTE IDENTIFIER is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
             if (name == nullptr)
             {
-                cerr << "geen ATTRIBUTE NAME gevonden." << endl;
+                errStream << "geen ATTRIBUTE NAME gevonden." << endl;
                 flag = true;
+                result = PartialImport;
             }else if (name->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                errStream << "ATTRIBUTE IDENTIFIER is leeg." << endl;
                 flag = true;
+                result = PartialImport;
+
             }
 
             if (!flag)
@@ -86,37 +92,43 @@ void Input::eerste_parserCB(const char* xmldoc, System* sys)
             bool flag = false;
             if (id == nullptr)
             {
-                cerr << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
+                errStream << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (id->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                errStream << "ATTRIBUTE IDENTIFIER is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
 
             if (name == nullptr)
             {
-                cerr << "geen ATTRIBUTE NAME gevonden." << endl;
+                errStream << "geen ATTRIBUTE NAME gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (name->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE NAME is leeg." << endl;
+                errStream << "ATTRIBUTE NAME is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
 
             if (campus == nullptr)
             {
-                cerr << "geen ATTRIBUTE CAMPUS gevonden." << endl;
+                errStream << "geen ATTRIBUTE CAMPUS gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (campus->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE CAMPUS is leeg." << endl;
+                errStream << "ATTRIBUTE CAMPUS is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
             if (!flag) {
@@ -137,21 +149,22 @@ void Input::eerste_parserCB(const char* xmldoc, System* sys)
 
     }
 
-
+    return result;
 
 
 
 }
 
 
-void Input::parser_catering(const char* xmldoc, System* sys)
+SuccessEnum Input::parser_catering(const char* xmldoc,std::ostream& errStream, System* sys)
 {
+    SuccessEnum result = Success;
 
     TiXmlDocument doc(xmldoc);
     if (!doc.LoadFile()) {
-        std::cerr << "XML kon niet geladen worden: "
+        errStream << "XML kon niet geladen worden: "
                   << doc.ErrorDesc() << std::endl;
-        return;
+        return ImportAborted;
     }
 
     TiXmlElement* s = doc.FirstChildElement("SYSTEM");
@@ -172,38 +185,44 @@ void Input::parser_catering(const char* xmldoc, System* sys)
             bool flag = false;
             if (campus == nullptr)
             {
-                cerr << "geen ATTRIBUTE CAMPUS gevonden." << endl;
+                errStream << "geen ATTRIBUTE CAMPUS gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (campus->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE CAMPUS is leeg." << endl;
+                errStream << "ATTRIBUTE CAMPUS is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else
             if (co2 == nullptr)
             {
-                cerr << "geen ATTRIBUTE CO2 gevonden." << endl;
+                errStream << "geen ATTRIBUTE CO2 gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (co2->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE CO2 is leeg." << endl;
+                errStream << "ATTRIBUTE CO2 is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             } else {
                 try {
                     double cap= stod(co2->GetText());
                     if (cap <= 0)
                     {
-                        cerr << "de CAPACITY moet groter zijn dan 0" << endl;
+                        errStream << "de CAPACITY moet groter zijn dan 0" << endl;
                         flag = true;
+                        result = PartialImport;
                     }
                 }
                 catch (...) {
 
-                    cerr<<"CAPACITY moet een float zijn"<<endl;
+                    errStream<<"CAPACITY moet een float zijn"<<endl;
                     flag = true;
+                    result = PartialImport;
                 }
             }
 
@@ -222,20 +241,21 @@ void Input::parser_catering(const char* xmldoc, System* sys)
         }
     }
 
-
+return result;
 }
 
 
 
 
-void Input::parser_renovatie(const char* xmldoc, System* sys)
+SuccessEnum Input::parser_renovatie(const char* xmldoc,std::ostream& errStream, System* sys)
 {
+    SuccessEnum result = Success;
 
     TiXmlDocument doc(xmldoc);
     if (!doc.LoadFile()) {
-        std::cerr << "XML kon niet geladen worden: "
+        errStream << "XML kon niet geladen worden: "
                   << doc.ErrorDesc() << std::endl;
-        return;
+        return ImportAborted;
     }
 
     TiXmlElement* s = doc.FirstChildElement("SYSTEM");
@@ -257,37 +277,43 @@ void Input::parser_renovatie(const char* xmldoc, System* sys)
             bool flag = false;
             if (room == nullptr)
             {
-                cerr << "geen ATTRIBUTE ROOM gevonden." << endl;
+                errStream << "geen ATTRIBUTE ROOM gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (room->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE ROOM is leeg." << endl;
+                errStream << "ATTRIBUTE ROOM is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
 
             if (start == nullptr)
             {
-                cerr << "geen ATTRIBUTE START gevonden." << endl;
+                errStream << "geen ATTRIBUTE START gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (start->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE START is leeg." << endl;
+                errStream << "ATTRIBUTE START is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
 
             if (end == nullptr)
             {
-                cerr << "geen ATTRIBUTE END gevonden." << endl;
+                errStream << "geen ATTRIBUTE END gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (end->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE END is leeg." << endl;
+                errStream << "ATTRIBUTE END is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
 
@@ -308,7 +334,8 @@ void Input::parser_renovatie(const char* xmldoc, System* sys)
                 // als einddatum voor start datum is error
                 if (mktime(&einddatum) <= mktime(&begindatum))
                 {
-                    cerr << "ATTRIBUTE END moet een datum zijn NA START" << endl;
+                    errStream << "ATTRIBUTE END moet een datum zijn NA START" << endl;
+                    result = PartialImport;
                     delete r;
 
                 }else
@@ -320,9 +347,7 @@ void Input::parser_renovatie(const char* xmldoc, System* sys)
     }
 
 
-
-
-
+    return result;
 }
 
 
@@ -336,14 +361,15 @@ void Input::parser_renovatie(const char* xmldoc, System* sys)
 
 
 
-void Input::parserMRP(const char* xmldoc, System* sys)
+SuccessEnum Input::parserMRP(const char* xmldoc,std::ostream& errStream, System* sys)
 {
+    SuccessEnum result = Success;
 
     TiXmlDocument doc(xmldoc);
     if (!doc.LoadFile()) {
-        std::cerr << "XML kon niet geladen worden: "
+        errStream << "XML kon niet geladen worden: "
                   << doc.ErrorDesc() << std::endl;
-        return;
+        return ImportAborted;
     }
 
     TiXmlElement* s = doc.FirstChildElement("SYSTEM");
@@ -365,13 +391,15 @@ void Input::parserMRP(const char* xmldoc, System* sys)
             bool flag = false;
             if (cap == nullptr)
             {
-                cerr << "geen ATTRIBUTE CAPACITY gevonden." << endl;
+                errStream << "geen ATTRIBUTE CAPACITY gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (cap->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE CAPACITY is leeg." << endl;
+                errStream << "ATTRIBUTE CAPACITY is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else
             {
@@ -380,64 +408,75 @@ void Input::parserMRP(const char* xmldoc, System* sys)
                     int cap= stoi(childs->FirstChildElement("CAPACITY")->GetText());
                     if (cap <= 0)
                     {
-                        cerr << "de CAPACITY moet groter zijn dan 0" << endl;
+                        errStream << "de CAPACITY moet groter zijn dan 0" << endl;
                         flag = true;
+                        result = PartialImport;
                     }
 
 
                 }catch (...)
                 {
-                    cerr << "de CAPACITY moet een int zijn" << endl;
+                    errStream << "de CAPACITY moet een int zijn" << endl;
                     flag = true;
+                    result = PartialImport;
+
 
                 }
 
             }
             if (id == nullptr)
             {
-                cerr << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
+                errStream << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (id->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                errStream << "ATTRIBUTE IDENTIFIER is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
 
             if (building == nullptr)
             {
-                cerr << "geen ATTRIBUTE BUILDING gevonden." << endl;
+                errStream << "geen ATTRIBUTE BUILDING gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (building->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE BUILDING is leeg." << endl;
+                errStream << "ATTRIBUTE BUILDING is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
 
             if (campus == nullptr)
             {
-                cerr << "geen ATTRIBUTE CAMPUS gevonden." << endl;
+                errStream << "geen ATTRIBUTE CAMPUS gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (campus->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE CAMPUS is leeg." << endl;
+                errStream << "ATTRIBUTE CAMPUS is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
 
             if (name == nullptr)
             {
-                cerr << "geen ATTRIBUTE NAME gevonden." << endl;
+                errStream << "geen ATTRIBUTE NAME gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (name->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE NAME is leeg." << endl;
+                errStream << "ATTRIBUTE NAME is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
 
@@ -470,61 +509,71 @@ void Input::parserMRP(const char* xmldoc, System* sys)
             bool flag = false;
             if (id == nullptr)
             {
-                cerr << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
+                errStream << "geen ATTRIBUTE IDENTIFIER gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (id->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE IDENTIFIER is leeg." << endl;
+                errStream << "ATTRIBUTE IDENTIFIER is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
 
             if (label == nullptr)
             {
-                cerr << "geen ATTRIBUTE LABEL gevonden." << endl;
+                errStream << "geen ATTRIBUTE LABEL gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (label->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE LABEL is leeg." << endl;
+                errStream << "ATTRIBUTE LABEL is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
 
             if (room == nullptr)
             {
-                cerr << "geen ATTRIBUTE ROOM gevonden." << endl;
+                errStream << "geen ATTRIBUTE ROOM gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (room->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE ROOM is leeg." << endl;
+                errStream << "ATTRIBUTE ROOM is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
 
             if (datum == nullptr)
             {
-                cerr << "geen ATTRIBUTE DATE gevonden." << endl;
+                errStream << "geen ATTRIBUTE DATE gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (datum->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE DATE is leeg." << endl;
+                errStream << "ATTRIBUTE DATE is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
 
             if (uur == nullptr)
             {
-                cerr << "geen ATTRIBUTE HOUR gevonden." << endl;
+                errStream << "geen ATTRIBUTE HOUR gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (uur->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE HOUR is leeg." << endl;
+                errStream << "ATTRIBUTE HOUR is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else
             {
@@ -533,15 +582,17 @@ void Input::parserMRP(const char* xmldoc, System* sys)
                     int cap = stoi(uur->GetText());
                     if (0 > cap || cap > 23)
                     {
-                        cerr << "ATTRIBUTE HOUR is moet tussen 0 en 23 zijn." << endl;
+                        errStream << "ATTRIBUTE HOUR is moet tussen 0 en 23 zijn." << endl;
                         flag = true;
+                        result = PartialImport;
 
                     }
 
                 }catch (...)
                 {
-                    cerr << "ATTRIBUTE HOUR moet een int getal zijn." << endl;
+                    errStream << "ATTRIBUTE HOUR moet een int getal zijn." << endl;
                     flag = true;
+                    result = PartialImport;
 
                 }
 
@@ -550,21 +601,24 @@ void Input::parserMRP(const char* xmldoc, System* sys)
 
             if (online == nullptr)
             {
-                cerr << "geen ATTRIBUTE ONLINE gevonden." << endl;
+                errStream << "geen ATTRIBUTE ONLINE gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (online->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE ONLINE is leeg." << endl;
+                errStream << "ATTRIBUTE ONLINE is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else
             {
                 string boolean = online->GetText();
                 if (boolean != "true" && boolean != "false")
                 {
-                    cerr << "de ATTRIBUTE ONLINE moet een booleanse waarde zijn" << endl;
+                    errStream << "de ATTRIBUTE ONLINE moet een booleanse waarde zijn" << endl;
                     flag = true;
+                    result = PartialImport;
 
                 }
 
@@ -572,21 +626,24 @@ void Input::parserMRP(const char* xmldoc, System* sys)
 
             if (external == nullptr)
             {
-                cerr << "geen ATTRIBUTE EXTERNALS gevonden." << endl;
+                errStream << "geen ATTRIBUTE EXTERNALS gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (external->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE EXTERNALS is leeg." << endl;
+                errStream << "ATTRIBUTE EXTERNALS is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else
             {
                 string boolean = external->GetText();
                 if (boolean != "true" && boolean != "false")
                 {
-                    cerr << "de ATTRIBUTE EXTERNALS moet een booleanse waarde zijn" << endl;
+                    errStream << "de ATTRIBUTE EXTERNALS moet een booleanse waarde zijn" << endl;
                     flag = true;
+                    result = PartialImport;
 
                 }
 
@@ -594,21 +651,24 @@ void Input::parserMRP(const char* xmldoc, System* sys)
 
             if (catering == nullptr)
             {
-                cerr << "geen ATTRIBUTE CATERING gevonden." << endl;
+                errStream << "geen ATTRIBUTE CATERING gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (catering->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE CATERING is leeg." << endl;
+                errStream << "ATTRIBUTE CATERING is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else
             {
                 string boolean = catering->GetText();
                 if (boolean != "true" && boolean != "false")
                 {
-                    cerr << "de ATTRIBUTE CATERING moet een booleanse waarde zijn" << endl;
+                    errStream << "de ATTRIBUTE CATERING moet een booleanse waarde zijn" << endl;
                     flag = true;
+                    result = PartialImport;
 
                 }
 
@@ -631,7 +691,7 @@ void Input::parserMRP(const char* xmldoc, System* sys)
 
                 if (meetNgreet->getOnline() && meetNgreet->getCatering())
                 {
-                    cerr << "een online meeting kan geen catering hebben" << endl;
+                    errStream << "een online meeting kan geen catering hebben" << endl;
                     delete meetNgreet;
 
                 }else
@@ -652,45 +712,52 @@ void Input::parserMRP(const char* xmldoc, System* sys)
             bool flag = false;
             if (meeting == nullptr)
             {
-                cerr << "geen ATTRIBUTE MEETING gevonden." << endl;
+                errStream << "geen ATTRIBUTE MEETING gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (meeting->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE MEETING is leeg." << endl;
+                errStream << "ATTRIBUTE MEETING is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
 
             if (user == nullptr)
             {
-                cerr << "geen ATTRIBUTE USER gevonden." << endl;
+                errStream << "geen ATTRIBUTE USER gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (user->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE USER is leeg." << endl;
+                errStream << "ATTRIBUTE USER is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }
 
             if (external == nullptr)
             {
-                cerr << "geen ATTRIBUTE EXTERNAL gevonden." << endl;
+                errStream << "geen ATTRIBUTE EXTERNAL gevonden." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else if (external->GetText() == nullptr)
             {
-                cerr << "ATTRIBUTE EXTERNAL is leeg." << endl;
+                errStream << "ATTRIBUTE EXTERNAL is leeg." << endl;
                 flag = true;
+                result = PartialImport;
 
             }else
             {
                 string boolean = external->GetText();
                 if (boolean != "true" && boolean != "false")
                 {
-                    cerr << "de ATTRIBUTE EXTERNALS moet een booleanse waarde zijn" << endl;
+                    errStream << "de ATTRIBUTE EXTERNALS moet een booleanse waarde zijn" << endl;
                     flag = true;
+                    result = PartialImport;
 
                 }
 
@@ -724,9 +791,11 @@ void Input::parserMRP(const char* xmldoc, System* sys)
         }
     }
 
+    return result;
+
 }
 
-void Input::consistencyCheck(System *sys)
+void Input::consistencyCheck(std::ostream& errStream,System *sys)
 {
     vector<Campus*> campusen = sys->getCampus();
     vector<Building*> buildings = sys->getBuilding();
@@ -744,7 +813,7 @@ void Input::consistencyCheck(System *sys)
         }
         if (campusleeg)
         {
-            cerr << "de volgende campus is leeg: " << c->getName() <<endl;
+            errStream << "de volgende campus is leeg: " << c->getName() <<endl;
             nietConsistensy = true;
         }
     }
@@ -761,7 +830,7 @@ void Input::consistencyCheck(System *sys)
         }
         if (buildingleeg)
         {
-            cerr << "de volgende gebouw is leeg" << b->getName() << endl;
+            errStream << "de volgende gebouw is leeg" << b->getName() << endl;
             nietConsistensy = true;
         }
 
@@ -781,7 +850,7 @@ void Input::consistencyCheck(System *sys)
 
         if (oneNonExternal)
         {
-            cerr << "er is geen Non-external user in deze meeting: "<< m->getId() << endl;
+            errStream << "er is geen Non-external user in deze meeting: "<< m->getId() << endl;
             nietConsistensy = true;
         }
 
@@ -798,7 +867,7 @@ void Input::consistencyCheck(System *sys)
         string id = c->getId();
         if (campusID.count(id))
         {
-            cerr << "dubbele id voor Campus met id: " << id << endl;
+            errStream << "dubbele id voor Campus met id: " << id << endl;
             nietConsistensy = true;
         }else
         {
@@ -810,7 +879,7 @@ void Input::consistencyCheck(System *sys)
         string id = b->getId();
         if (buildingID.count(id))
         {
-            cerr << "dubbele id voor Building met id: " << id << endl;
+            errStream << "dubbele id voor Building met id: " << id << endl;
             nietConsistensy = true;
         }else
         {
@@ -823,7 +892,7 @@ void Input::consistencyCheck(System *sys)
         string id = r->getId();
         if (roomID.count(id))
         {
-            cerr << "dubbele id voor Room met id: " << id << endl;
+            errStream << "dubbele id voor Room met id: " << id << endl;
             nietConsistensy = true;
         }else
         {
@@ -836,7 +905,7 @@ void Input::consistencyCheck(System *sys)
         string id = m->getId();
         if (meetingID.count(id))
         {
-            cerr << "dubbele id voor Meeting met id: " << id << endl;
+            errStream << "dubbele id voor Meeting met id: " << id << endl;
             nietConsistensy = true;
         }else
         {
@@ -849,9 +918,9 @@ void Input::consistencyCheck(System *sys)
     {
         if (!campusID.count(b->getCampus()))
         {
-            cerr << "Het campusID bestaat niet van het building " << b->getName() <<endl;
+            errStream << "Het campusID bestaat niet van het building " << b->getName() <<endl;
             nietConsistensy = true;
-            // cerr << "De volgende campusID bestaat niet: " << b->getCampus() << endl;
+            // errStream << "De volgende campusID bestaat niet: " << b->getCampus() << endl;
         }
     }
 
@@ -859,13 +928,13 @@ void Input::consistencyCheck(System *sys)
     {
         if (!campusID.count(r->getCampus()))
         {
-            cerr << "Het campusID bestaat niet van het room " << r->getName() <<endl;
+            errStream << "Het campusID bestaat niet van het room " << r->getName() <<endl;
             nietConsistensy = true;
         }
 
         if (!buildingID.count(r->getBuilding()))
         {
-            cerr << "Het buildingID bestaat niet van het room " << r->getName() << endl;
+            errStream << "Het buildingID bestaat niet van het room " << r->getName() << endl;
             nietConsistensy = true;
         }
     }
@@ -874,7 +943,7 @@ void Input::consistencyCheck(System *sys)
     {
         if (!roomID.count(m->getRoom()))
         {
-            cerr << "Het roomID bestaat niet voor het meeting met id: " << m->getId() << endl;
+            errStream << "Het roomID bestaat niet voor het meeting met id: " << m->getId() << endl;
         }
     }
 
@@ -884,7 +953,7 @@ void Input::consistencyCheck(System *sys)
     {
         if (!meetingID.count(p->getmeeting()))
         {
-            cerr << "het MeetingID bestaat niet voor de participant "<<p->getUser() << endl;
+            errStream << "het MeetingID bestaat niet voor de participant "<<p->getUser() << endl;
             nietConsistensy = true;
 
         }else
@@ -897,7 +966,7 @@ void Input::consistencyCheck(System *sys)
     {
         if (!roomID.count(r->getRoom()))
         {
-            cerr << "Het roomID: " << r->getRoom() << " bestaat niet voor de renovatie" << endl;
+            errStream << "Het roomID: " << r->getRoom() << " bestaat niet voor de renovatie" << endl;
             nietConsistensy = true;
         }
     }
@@ -915,7 +984,7 @@ void Input::consistencyCheck(System *sys)
         }
         if (capacityCheck[m->getId()] > capacity)
         {
-            cerr << "er is niet genoeg plaatst voor de meeting "<< m->getId() << endl;
+            errStream << "er is niet genoeg plaatst voor de meeting "<< m->getId() << endl;
             nietConsistensy = true;
         }
     }
@@ -925,13 +994,13 @@ void Input::consistencyCheck(System *sys)
         string c_campus = cater->getCampus();
         if (!campusID.count(c_campus))
         {
-            cerr << "het catering service verwijst naar een campusID dat niet bestaat" << endl;
+            errStream << "het catering service verwijst naar een campusID dat niet bestaat" << endl;
             nietConsistensy = true;
         }
 
         if (catering_campus.count(c_campus))
         {
-            cerr << "de volgende campus " << c_campus <<" heeft meerdere catering services wat niet kan" << endl;
+            errStream << "de volgende campus " << c_campus <<" heeft meerdere catering services wat niet kan" << endl;
             nietConsistensy = true;
         }else
         {
@@ -944,9 +1013,9 @@ void Input::consistencyCheck(System *sys)
 
     if (nietConsistensy)
     {
-        cerr << "Het systeem is niet consistent en wordt niet geaccepteerd." << endl;
+        errStream << "Het systeem is niet consistent en wordt niet geaccepteerd." << endl;
         delete sys;
-        exit(-1);
+        exit(1);
 
     }
 }

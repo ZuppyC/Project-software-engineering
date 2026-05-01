@@ -4,21 +4,25 @@
 
 #ifndef SOFTWAREENG_INPUT_H
 #define SOFTWAREENG_INPUT_H
+#include <iostream>
 
 class System;
+
+enum SuccessEnum {ImportAborted, PartialImport, Success};
+
 class Input {
 
     public:
 
-        void eerste_parserCB(const char* xmldoc, System* sys);
+        SuccessEnum eerste_parserCB(const char* xmldoc,std::ostream& errStream, System* sys);
 
-        void parser_catering(const char* xmldoc, System* sys);
+        SuccessEnum parser_catering(const char* xmldoc,std::ostream& errStream, System* sys);
 
-        void parserMRP(const char* xmldoc, System* sys);
+        SuccessEnum parserMRP(const char* xmldoc,std::ostream& errStream, System* sys);
 
-        void parser_renovatie(const char* xmldoc, System* sys);
+        SuccessEnum parser_renovatie(const char* xmldoc,std::ostream& errStream, System* sys);
 
-        void consistencyCheck(System* sys);
+        void consistencyCheck(std::ostream& errStream, System* sys);
 
 
 
