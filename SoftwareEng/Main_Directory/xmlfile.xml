@@ -18,7 +18,7 @@
         <HOUR>11</HOUR>
         <ONLINE>true</ONLINE>
         <EXTERNALS>true</EXTERNALS>
-        <CATERING>true</CATERING>
+        <CATERING>false</CATERING>
     </MEETING>
     <PARTICIPATION>
         <MEETING>Meeting_478463</MEETING>

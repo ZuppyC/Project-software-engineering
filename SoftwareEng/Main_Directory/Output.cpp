@@ -45,7 +45,11 @@ void Output::print(const std::string& filename, System& system) {
             }
         }
         cateringCO2=cateringCO2* meeting->getPart().size();
-        outputFile<<" -  CO2 emitted:  "<<meeting->co2ZonderCatering()+cateringCO2<<"\n"<<endl;
+        if (!meeting->getCatering()) {
+            cateringCO2=0;
+        }
+        double co2zonder= meeting->co2ZonderCatering();
+        outputFile<<" -  CO2 emitted:  "<<co2zonder+cateringCO2<<"\n"<<endl;
     }
 
     outputFile<<"--== Rooms ==--\n"<<endl;
