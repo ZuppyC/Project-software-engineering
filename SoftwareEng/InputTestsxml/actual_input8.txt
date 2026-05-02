@@ -1,0 +1,7 @@
+Het campusID bestaat niet van het building Gebouw R
+Het campusID bestaat niet van het room R.253
+Het buildingID bestaat niet van het room R.253
+Het roomID bestaat niet voor het meeting met id: Meeting1
+het MeetingID bestaat niet voor de participant mario bros
+Het roomID: Room_212121 bestaat niet voor de renovatie
+het catering service verwijst naar een campusID dat niet bestaat

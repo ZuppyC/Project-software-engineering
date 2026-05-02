@@ -1,0 +1,37 @@
+## ==== [SYSTEM STATUS] ==== ##
+
+--== Meetings ==--
+
+[Weekly meeting]
+ -  ID:  Meeting_1
+ -  Time:  22/5/2026, 14h00
+ -  Location:  Room_r_250
+ -  Externals not allowed
+ -  Catering
+ -  CO2 emitted:  280
+
+[monthly meeting]
+ -  ID:  Meeting2
+ -  Time:  22/5/2028, 11h00
+ -  Location:  Room_r_251
+ -  Externals allowed
+ -  No Catering
+ -  CO2 emitted:  150
+
+--== Rooms ==--
+
+[R.250]
+ -  ID:  Room_r_250
+ -  Capacity: 10
+ -  Building: CDE_R
+ -  Campus: Campus_CDE
+
+[R.251]
+ -  ID:  Room_r_251
+ -  Capacity: 10
+ -  Building: CDE_R
+ -  Campus: Campus_CDE
+
+--== CO2 Summary ==--
+
+-  Total CO2:  370

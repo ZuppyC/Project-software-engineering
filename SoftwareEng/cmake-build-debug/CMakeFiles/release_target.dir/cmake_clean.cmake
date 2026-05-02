@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/release_target.dir/Main_Directory/Building.cpp.obj"
+  "CMakeFiles/release_target.dir/Main_Directory/Building.cpp.obj.d"
+  "CMakeFiles/release_target.dir/Main_Directory/Campus.cpp.obj"
+  "CMakeFiles/release_target.dir/Main_Directory/Campus.cpp.obj.d"
+  "CMakeFiles/release_target.dir/Main_Directory/Catering.cpp.obj"
+  "CMakeFiles/release_target.dir/Main_Directory/Catering.cpp.obj.d"
+  "CMakeFiles/release_target.dir/Main_Directory/Input.cpp.obj"
+  "CMakeFiles/release_target.dir/Main_Directory/Input.cpp.obj.d"
+  "CMakeFiles/release_target.dir/Main_Directory/Meeting.cpp.obj"
+  "CMakeFiles/release_target.dir/Main_Directory/Meeting.cpp.obj.d"
+  "CMakeFiles/release_target.dir/Main_Directory/Output.cpp.obj"
+  "CMakeFiles/release_target.dir/Main_Directory/Output.cpp.obj.d"
+  "CMakeFiles/release_target.dir/Main_Directory/Participation.cpp.obj"
+  "CMakeFiles/release_target.dir/Main_Directory/Participation.cpp.obj.d"
+  "CMakeFiles/release_target.dir/Main_Directory/Renovation.cpp.obj"
+  "CMakeFiles/release_target.dir/Main_Directory/Renovation.cpp.obj.d"
+  "CMakeFiles/release_target.dir/Main_Directory/Room.cpp.obj"
+  "CMakeFiles/release_target.dir/Main_Directory/Room.cpp.obj.d"
+  "CMakeFiles/release_target.dir/Main_Directory/System.cpp.obj"
+  "CMakeFiles/release_target.dir/Main_Directory/System.cpp.obj.d"
+  "CMakeFiles/release_target.dir/Main_Directory/main.cpp.obj"
+  "CMakeFiles/release_target.dir/Main_Directory/main.cpp.obj.d"
+  "CMakeFiles/release_target.dir/xmlparser/tinystr.cpp.obj"
+  "CMakeFiles/release_target.dir/xmlparser/tinystr.cpp.obj.d"
+  "CMakeFiles/release_target.dir/xmlparser/tinyxml.cpp.obj"
+  "CMakeFiles/release_target.dir/xmlparser/tinyxml.cpp.obj.d"
+  "CMakeFiles/release_target.dir/xmlparser/tinyxmlerror.cpp.obj"
+  "CMakeFiles/release_target.dir/xmlparser/tinyxmlerror.cpp.obj.d"
+  "CMakeFiles/release_target.dir/xmlparser/tinyxmlparser.cpp.obj"
+  "CMakeFiles/release_target.dir/xmlparser/tinyxmlparser.cpp.obj.d"
+  "librelease_target.dll.a"
+  "release_target.exe"
+  "release_target.exe.manifest"
+  "release_target.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/release_target.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
