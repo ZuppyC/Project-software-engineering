@@ -16,7 +16,7 @@
  -  Location:  Room_r_251
  -  Externals allowed
  -  No Catering
- -  CO2 emitted:  150
+ -  CO2 emitted:  90
 
 --== Rooms ==--
 
