@@ -11,10 +11,13 @@ using namespace std;
 class Catering
 {
 private:
+    Catering* _initCheck;
     std::string campus;
     double co2;
 
 public:
+    Catering();
+    bool properlyInitialized();
     void setCampus(const std::string& campus);
     string getCampus();
     void setCo2(double co2);

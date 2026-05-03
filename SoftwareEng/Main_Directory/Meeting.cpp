@@ -18,11 +18,14 @@ bool Meeting::properlyInitialized() {
 }
 
 bool Meeting::getCo2Tracked() {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     return co2Tracked;
 }
 
 void Meeting::setCo2Tracked(bool tracked) {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     co2Tracked = tracked;
+    ENSURE(co2Tracked==true||co2Tracked==false, "CO2tracking is niet goed gelezen.");
 }
 
 void Meeting::setId(string id) {
@@ -72,7 +75,7 @@ tm* Meeting::getDate() const {
 
 tm* Meeting::strToTm(const string& datum) {
     REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
-
+    REQUIRE(datum.size() == 10 && datum[4]=='-' && datum[7]=='-', "DATE moet formaat YYYY-MM-DD zijn");
     int jaar = stoi(datum.substr(0, 4));
 
     int maand= stoi(datum.substr(5, 2));
@@ -153,11 +156,13 @@ bool Meeting::getBezig() {
 void Meeting::setBezig(bool bezig) {
     REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     isBezig= bezig;
+    ENSURE(isBezig==bezig, "isBezig variabele niet goed ingesteld");
 }
 
 void Meeting::setCanceled(bool canceled) {
     REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     isCanceled= canceled;
+    ENSURE(isCanceled==canceled, "IsCanceled variabele niet goed ingesteld");
 }
 
 bool Meeting::getCanceled() {
@@ -166,39 +171,52 @@ bool Meeting::getCanceled() {
 }
 
 bool Meeting::getOnline() {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     return isOnline;
 }
 
 void Meeting::setOnline(bool online) {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     isOnline= online;
 }
 
 bool Meeting::getCatering() {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     return hasCatering;
 }
 void Meeting::setCatering(string catering) {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
+    REQUIRE(catering=="true"||catering=="false", "De CATERING variabele mag alleen 'true' of 'false' zijn.");
     if (catering=="true") {
         hasCatering= true;
     }
     else {
         hasCatering= false;
     }
+    ENSURE(hasCatering==true && catering=="true"||hasCatering==false && catering=="false", "De EXTERNALS variabele is niet juist gelezen.");
+
 }
 
 bool Meeting::getExternals() {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     return hasExternals;
 }
 
 void Meeting::setExternals(string externals) {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
+    REQUIRE(externals=="true"||externals=="false", "De EXTERNALS variabele mag alleen 'true' of 'false' zijn.");
     if (externals=="true") {
         hasExternals= true;
     }
     else {
         hasExternals= false;
     }
+    ENSURE(hasExternals==true && externals=="true"||hasExternals==false && externals=="false", "De EXTERNALS variabele is niet juist gelezen.");
+
 }
 
 int Meeting::getHour() {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     return hour;
 }
 
@@ -209,15 +227,20 @@ void Meeting::setHour(int h) {
     ENSURE(hour == h, "Hour is niet correct gezet");
 }
 
-void Meeting::setOccupancy(int occupancy) {
-    this->occupancy = occupancy;
+void Meeting::setOccupancy(int occupancy_) {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
+    REQUIRE(occupancy_>1, "Er moeten 2 or meer mensen in de ROOM kunnen");
+    this->occupancy = occupancy_;
+    ENSURE(occupancy==occupancy_, "OCCUPANCY is niet goed ingesteld");
 }
 
 int Meeting::getOccupancy() {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     return occupancy;
 }
 
 void Meeting::printMeeting(ofstream& outputfile) {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
     outputfile<<"["<<label<<"]"<<endl;
     tm* d1 = date;
     outputfile<<" -  ID:  "<<identifier<<endl;
@@ -238,6 +261,7 @@ void Meeting::printMeeting(ofstream& outputfile) {
 
 }
 double Meeting::co2ZonderCatering() {
+    REQUIRE(properlyInitialized(), "MEETING is niet geinitialiseerd");
 
     if (isOnline) {
         return participants.size()*30;

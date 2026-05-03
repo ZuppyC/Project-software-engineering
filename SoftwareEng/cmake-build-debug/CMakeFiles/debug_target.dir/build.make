@@ -329,6 +329,66 @@ CMakeFiles/debug_target.dir/Tests/compare_file.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/debug_target.dir/Tests/compare_file.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Tests\compare_file.cpp -o CMakeFiles\debug_target.dir\Tests\compare_file.cpp.s
 
+CMakeFiles/debug_target.dir/Tests/ParticipationTests.cpp.obj: CMakeFiles/debug_target.dir/flags.make
+CMakeFiles/debug_target.dir/Tests/ParticipationTests.cpp.obj: CMakeFiles/debug_target.dir/includes_CXX.rsp
+CMakeFiles/debug_target.dir/Tests/ParticipationTests.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Tests/ParticipationTests.cpp
+CMakeFiles/debug_target.dir/Tests/ParticipationTests.cpp.obj: CMakeFiles/debug_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/debug_target.dir/Tests/ParticipationTests.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/debug_target.dir/Tests/ParticipationTests.cpp.obj -MF CMakeFiles\debug_target.dir\Tests\ParticipationTests.cpp.obj.d -o CMakeFiles\debug_target.dir\Tests\ParticipationTests.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Tests\ParticipationTests.cpp
+
+CMakeFiles/debug_target.dir/Tests/ParticipationTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/debug_target.dir/Tests/ParticipationTests.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Tests\ParticipationTests.cpp > CMakeFiles\debug_target.dir\Tests\ParticipationTests.cpp.i
+
+CMakeFiles/debug_target.dir/Tests/ParticipationTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/debug_target.dir/Tests/ParticipationTests.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Tests\ParticipationTests.cpp -o CMakeFiles\debug_target.dir\Tests\ParticipationTests.cpp.s
+
+CMakeFiles/debug_target.dir/Tests/MeetingTests.cpp.obj: CMakeFiles/debug_target.dir/flags.make
+CMakeFiles/debug_target.dir/Tests/MeetingTests.cpp.obj: CMakeFiles/debug_target.dir/includes_CXX.rsp
+CMakeFiles/debug_target.dir/Tests/MeetingTests.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Tests/MeetingTests.cpp
+CMakeFiles/debug_target.dir/Tests/MeetingTests.cpp.obj: CMakeFiles/debug_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/debug_target.dir/Tests/MeetingTests.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/debug_target.dir/Tests/MeetingTests.cpp.obj -MF CMakeFiles\debug_target.dir\Tests\MeetingTests.cpp.obj.d -o CMakeFiles\debug_target.dir\Tests\MeetingTests.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Tests\MeetingTests.cpp
+
+CMakeFiles/debug_target.dir/Tests/MeetingTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/debug_target.dir/Tests/MeetingTests.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Tests\MeetingTests.cpp > CMakeFiles\debug_target.dir\Tests\MeetingTests.cpp.i
+
+CMakeFiles/debug_target.dir/Tests/MeetingTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/debug_target.dir/Tests/MeetingTests.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Tests\MeetingTests.cpp -o CMakeFiles\debug_target.dir\Tests\MeetingTests.cpp.s
+
+CMakeFiles/debug_target.dir/Tests/BuildingTests.cpp.obj: CMakeFiles/debug_target.dir/flags.make
+CMakeFiles/debug_target.dir/Tests/BuildingTests.cpp.obj: CMakeFiles/debug_target.dir/includes_CXX.rsp
+CMakeFiles/debug_target.dir/Tests/BuildingTests.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Tests/BuildingTests.cpp
+CMakeFiles/debug_target.dir/Tests/BuildingTests.cpp.obj: CMakeFiles/debug_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/debug_target.dir/Tests/BuildingTests.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/debug_target.dir/Tests/BuildingTests.cpp.obj -MF CMakeFiles\debug_target.dir\Tests\BuildingTests.cpp.obj.d -o CMakeFiles\debug_target.dir\Tests\BuildingTests.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Tests\BuildingTests.cpp
+
+CMakeFiles/debug_target.dir/Tests/BuildingTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/debug_target.dir/Tests/BuildingTests.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Tests\BuildingTests.cpp > CMakeFiles\debug_target.dir\Tests\BuildingTests.cpp.i
+
+CMakeFiles/debug_target.dir/Tests/BuildingTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/debug_target.dir/Tests/BuildingTests.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Tests\BuildingTests.cpp -o CMakeFiles\debug_target.dir\Tests\BuildingTests.cpp.s
+
+CMakeFiles/debug_target.dir/Tests/CampusTests.cpp.obj: CMakeFiles/debug_target.dir/flags.make
+CMakeFiles/debug_target.dir/Tests/CampusTests.cpp.obj: CMakeFiles/debug_target.dir/includes_CXX.rsp
+CMakeFiles/debug_target.dir/Tests/CampusTests.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Tests/CampusTests.cpp
+CMakeFiles/debug_target.dir/Tests/CampusTests.cpp.obj: CMakeFiles/debug_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/debug_target.dir/Tests/CampusTests.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/debug_target.dir/Tests/CampusTests.cpp.obj -MF CMakeFiles\debug_target.dir\Tests\CampusTests.cpp.obj.d -o CMakeFiles\debug_target.dir\Tests\CampusTests.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Tests\CampusTests.cpp
+
+CMakeFiles/debug_target.dir/Tests/CampusTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/debug_target.dir/Tests/CampusTests.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Tests\CampusTests.cpp > CMakeFiles\debug_target.dir\Tests\CampusTests.cpp.i
+
+CMakeFiles/debug_target.dir/Tests/CampusTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/debug_target.dir/Tests/CampusTests.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Tests\CampusTests.cpp -o CMakeFiles\debug_target.dir\Tests\CampusTests.cpp.s
+
 # Object files for target debug_target
 debug_target_OBJECTS = \
 "CMakeFiles/debug_target.dir/Tests/Tests.cpp.obj" \
@@ -347,7 +407,11 @@ debug_target_OBJECTS = \
 "CMakeFiles/debug_target.dir/Main_Directory/Catering.cpp.obj" \
 "CMakeFiles/debug_target.dir/Main_Directory/Renovation.cpp.obj" \
 "CMakeFiles/debug_target.dir/Tests/InputTests.cpp.obj" \
-"CMakeFiles/debug_target.dir/Tests/compare_file.cpp.obj"
+"CMakeFiles/debug_target.dir/Tests/compare_file.cpp.obj" \
+"CMakeFiles/debug_target.dir/Tests/ParticipationTests.cpp.obj" \
+"CMakeFiles/debug_target.dir/Tests/MeetingTests.cpp.obj" \
+"CMakeFiles/debug_target.dir/Tests/BuildingTests.cpp.obj" \
+"CMakeFiles/debug_target.dir/Tests/CampusTests.cpp.obj"
 
 # External object files for target debug_target
 debug_target_EXTERNAL_OBJECTS =
@@ -369,11 +433,15 @@ debug_target.exe: CMakeFiles/debug_target.dir/Main_Directory/Catering.cpp.obj
 debug_target.exe: CMakeFiles/debug_target.dir/Main_Directory/Renovation.cpp.obj
 debug_target.exe: CMakeFiles/debug_target.dir/Tests/InputTests.cpp.obj
 debug_target.exe: CMakeFiles/debug_target.dir/Tests/compare_file.cpp.obj
+debug_target.exe: CMakeFiles/debug_target.dir/Tests/ParticipationTests.cpp.obj
+debug_target.exe: CMakeFiles/debug_target.dir/Tests/MeetingTests.cpp.obj
+debug_target.exe: CMakeFiles/debug_target.dir/Tests/BuildingTests.cpp.obj
+debug_target.exe: CMakeFiles/debug_target.dir/Tests/CampusTests.cpp.obj
 debug_target.exe: CMakeFiles/debug_target.dir/build.make
 debug_target.exe: CMakeFiles/debug_target.dir/linkLibs.rsp
 debug_target.exe: CMakeFiles/debug_target.dir/objects1.rsp
 debug_target.exe: CMakeFiles/debug_target.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable debug_target.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable debug_target.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\debug_target.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

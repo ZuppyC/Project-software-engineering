@@ -438,6 +438,54 @@ Main_Directory/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\release_target.dir\build.make CMakeFiles/release_target.dir/Main_Directory/main.cpp.s
 .PHONY : Main_Directory/main.cpp.s
 
+Tests/BuildingTests.obj: Tests/BuildingTests.cpp.obj
+.PHONY : Tests/BuildingTests.obj
+
+# target to build an object file
+Tests/BuildingTests.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/BuildingTests.cpp.obj
+.PHONY : Tests/BuildingTests.cpp.obj
+
+Tests/BuildingTests.i: Tests/BuildingTests.cpp.i
+.PHONY : Tests/BuildingTests.i
+
+# target to preprocess a source file
+Tests/BuildingTests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/BuildingTests.cpp.i
+.PHONY : Tests/BuildingTests.cpp.i
+
+Tests/BuildingTests.s: Tests/BuildingTests.cpp.s
+.PHONY : Tests/BuildingTests.s
+
+# target to generate assembly for a file
+Tests/BuildingTests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/BuildingTests.cpp.s
+.PHONY : Tests/BuildingTests.cpp.s
+
+Tests/CampusTests.obj: Tests/CampusTests.cpp.obj
+.PHONY : Tests/CampusTests.obj
+
+# target to build an object file
+Tests/CampusTests.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/CampusTests.cpp.obj
+.PHONY : Tests/CampusTests.cpp.obj
+
+Tests/CampusTests.i: Tests/CampusTests.cpp.i
+.PHONY : Tests/CampusTests.i
+
+# target to preprocess a source file
+Tests/CampusTests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/CampusTests.cpp.i
+.PHONY : Tests/CampusTests.cpp.i
+
+Tests/CampusTests.s: Tests/CampusTests.cpp.s
+.PHONY : Tests/CampusTests.s
+
+# target to generate assembly for a file
+Tests/CampusTests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/CampusTests.cpp.s
+.PHONY : Tests/CampusTests.cpp.s
+
 Tests/InputTests.obj: Tests/InputTests.cpp.obj
 .PHONY : Tests/InputTests.obj
 
@@ -461,6 +509,54 @@ Tests/InputTests.s: Tests/InputTests.cpp.s
 Tests/InputTests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/InputTests.cpp.s
 .PHONY : Tests/InputTests.cpp.s
+
+Tests/MeetingTests.obj: Tests/MeetingTests.cpp.obj
+.PHONY : Tests/MeetingTests.obj
+
+# target to build an object file
+Tests/MeetingTests.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/MeetingTests.cpp.obj
+.PHONY : Tests/MeetingTests.cpp.obj
+
+Tests/MeetingTests.i: Tests/MeetingTests.cpp.i
+.PHONY : Tests/MeetingTests.i
+
+# target to preprocess a source file
+Tests/MeetingTests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/MeetingTests.cpp.i
+.PHONY : Tests/MeetingTests.cpp.i
+
+Tests/MeetingTests.s: Tests/MeetingTests.cpp.s
+.PHONY : Tests/MeetingTests.s
+
+# target to generate assembly for a file
+Tests/MeetingTests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/MeetingTests.cpp.s
+.PHONY : Tests/MeetingTests.cpp.s
+
+Tests/ParticipationTests.obj: Tests/ParticipationTests.cpp.obj
+.PHONY : Tests/ParticipationTests.obj
+
+# target to build an object file
+Tests/ParticipationTests.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/ParticipationTests.cpp.obj
+.PHONY : Tests/ParticipationTests.cpp.obj
+
+Tests/ParticipationTests.i: Tests/ParticipationTests.cpp.i
+.PHONY : Tests/ParticipationTests.i
+
+# target to preprocess a source file
+Tests/ParticipationTests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/ParticipationTests.cpp.i
+.PHONY : Tests/ParticipationTests.cpp.i
+
+Tests/ParticipationTests.s: Tests/ParticipationTests.cpp.s
+.PHONY : Tests/ParticipationTests.s
+
+# target to generate assembly for a file
+Tests/ParticipationTests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/ParticipationTests.cpp.s
+.PHONY : Tests/ParticipationTests.cpp.s
 
 Tests/Tests.obj: Tests/Tests.cpp.obj
 .PHONY : Tests/Tests.obj
@@ -661,9 +757,21 @@ help:
 	@echo ... Main_Directory/main.obj
 	@echo ... Main_Directory/main.i
 	@echo ... Main_Directory/main.s
+	@echo ... Tests/BuildingTests.obj
+	@echo ... Tests/BuildingTests.i
+	@echo ... Tests/BuildingTests.s
+	@echo ... Tests/CampusTests.obj
+	@echo ... Tests/CampusTests.i
+	@echo ... Tests/CampusTests.s
 	@echo ... Tests/InputTests.obj
 	@echo ... Tests/InputTests.i
 	@echo ... Tests/InputTests.s
+	@echo ... Tests/MeetingTests.obj
+	@echo ... Tests/MeetingTests.i
+	@echo ... Tests/MeetingTests.s
+	@echo ... Tests/ParticipationTests.obj
+	@echo ... Tests/ParticipationTests.i
+	@echo ... Tests/ParticipationTests.s
 	@echo ... Tests/Tests.obj
 	@echo ... Tests/Tests.i
 	@echo ... Tests/Tests.s

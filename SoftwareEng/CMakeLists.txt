@@ -67,6 +67,10 @@ set(DEBUG_SOURCE_FILES
         Tests/InputTests.cpp
         Tests/compare_file.cpp
         Tests/compare_file.h
+        Tests/ParticipationTests.cpp
+        Tests/MeetingTests.cpp
+        Tests/BuildingTests.cpp
+        Tests/CampusTests.cpp
 
 
 )

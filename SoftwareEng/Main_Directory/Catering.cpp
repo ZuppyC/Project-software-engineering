@@ -3,6 +3,17 @@
 //
 
 #include "Catering.h"
+#include <bits/locale_classes.h>
+#include "../src/DesignByContract.h"
+
+
+Catering::Catering() {
+    _initCheck = this;
+}
+
+bool Catering::properlyInitialized() {
+    return _initCheck == this;
+}
 
 void Catering::setCampus(const std::string &campus)
 {
