@@ -44,15 +44,19 @@ string Participation::getmeeting() {
 }
 
 void Participation::setExternal(string external) {
+    REQUIRE(properlyInitialized(), "PARTICIPATION is niet geinitialiseerd");
+    REQUIRE(external=="true"||external=="false", "De EXTERNAL variabele mag alleen 'true' of 'false' zijn.");
     if (external=="true") {
         isExternal = true;
     }
     else {
         isExternal = false;
     }
+    ENSURE(isExternal==true && external=="true"||isExternal==false && external=="false", "De EXTERNAL variabele is niet juist gelezen.");
 }
 
 bool Participation::getExternal() {
+    REQUIRE(properlyInitialized(), "PARTICIPATION is niet geinitialiseerd");
     return isExternal;
 }
 

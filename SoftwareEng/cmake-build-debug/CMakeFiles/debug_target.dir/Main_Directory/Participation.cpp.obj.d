@@ -1,6 +1,6 @@
 CMakeFiles/debug_target.dir/Main_Directory/Participation.cpp.obj: \
- C:\Users\amens\Downloads\pp1\SoftwareEng\Main_Directory\Participation.cpp \
- C:\Users\amens\Downloads\pp1\SoftwareEng\Main_Directory\Participation.h \
+ C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Participation.cpp \
+ C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Participation.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -103,5 +103,5 @@ CMakeFiles/debug_target.dir/Main_Directory/Participation.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
- C:/Users/amens/Downloads/pp1/SoftwareEng/src/DesignByContract.h \
+ C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/src/DesignByContract.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/assert.h

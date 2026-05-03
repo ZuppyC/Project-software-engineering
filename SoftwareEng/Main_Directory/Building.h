@@ -9,11 +9,14 @@
 class Building
 {
 private:
+    Building* _initCheck;
     std::string name;
     std::string id;
     std::string campus;
 
 public:
+    Building();
+    bool properlyInitialized();
     void setName(const std::string& name);
     void setId(const std::string& id);
     void setCampus(const std::string& campus);

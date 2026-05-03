@@ -1,6 +1,6 @@
 CMakeFiles/debug_target.dir/xmlparser/tinyxmlerror.cpp.obj: \
- C:\Users\amens\Downloads\pp1\SoftwareEng\xmlparser\tinyxmlerror.cpp \
- C:\Users\amens\Downloads\pp1\SoftwareEng\xmlparser\tinyxml.h \
+ C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinyxmlerror.cpp \
+ C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinyxml.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/ctype.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/crtdefs.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/corecrt.h \
@@ -33,4 +33,4 @@ CMakeFiles/debug_target.dir/xmlparser/tinyxmlerror.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/string.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/assert.h \
- C:\Users\amens\Downloads\pp1\SoftwareEng\xmlparser\tinystr.h
+ C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinystr.h

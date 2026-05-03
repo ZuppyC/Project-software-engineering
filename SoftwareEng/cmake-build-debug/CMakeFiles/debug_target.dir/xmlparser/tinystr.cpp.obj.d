@@ -1,6 +1,6 @@
 CMakeFiles/debug_target.dir/xmlparser/tinystr.cpp.obj: \
- C:\Users\amens\Downloads\pp1\SoftwareEng\xmlparser\tinystr.cpp \
- C:\Users\amens\Downloads\pp1\SoftwareEng\xmlparser\tinystr.h \
+ C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinystr.cpp \
+ C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinystr.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/assert.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/crtdefs.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/corecrt.h \

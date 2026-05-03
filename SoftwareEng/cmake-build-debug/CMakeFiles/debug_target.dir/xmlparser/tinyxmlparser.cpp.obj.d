@@ -1,5 +1,5 @@
 CMakeFiles/debug_target.dir/xmlparser/tinyxmlparser.cpp.obj: \
- C:\Users\amens\Downloads\pp1\SoftwareEng\xmlparser\tinyxmlparser.cpp \
+ C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinyxmlparser.cpp \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/ctype.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/crtdefs.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/corecrt.h \
@@ -10,7 +10,7 @@ CMakeFiles/debug_target.dir/xmlparser/tinyxmlparser.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stddef.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/stddef.h \
- C:\Users\amens\Downloads\pp1\SoftwareEng\xmlparser\tinyxml.h \
+ C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinyxml.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/stdio.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/_mingw_off_t.h \
@@ -35,4 +35,4 @@ CMakeFiles/debug_target.dir/xmlparser/tinyxmlparser.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/string.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/x86_64-w64-mingw32/include/assert.h \
- C:\Users\amens\Downloads\pp1\SoftwareEng\xmlparser\tinystr.h
+ C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinystr.h

@@ -8,9 +8,12 @@
 
 class Campus {
 private:
+    Campus* _initCheck;
     std::string name;
     std::string identifier;
 public:
+    Campus();
+    bool properlyInitialized();
     void setName(const std::string& name);
     void setId(const std::string& id);
     std::string getId();

@@ -10,6 +10,7 @@ using namespace std;
 
 class Renovation {
 private:
+    Renovation* _initCheck;
     std::string room;
     tm* begindatum = nullptr;
     tm* einddatum = nullptr;
@@ -17,7 +18,8 @@ private:
 
 
 public:
-
+    Renovation();
+    bool properlyInitialized();
     void setRoom(const std::string& room);
     string getRoom();
 

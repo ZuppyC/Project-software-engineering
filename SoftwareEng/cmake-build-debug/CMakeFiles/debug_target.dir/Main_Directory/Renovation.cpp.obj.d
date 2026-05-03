@@ -1,6 +1,6 @@
 CMakeFiles/debug_target.dir/Main_Directory/Renovation.cpp.obj: \
- C:\Users\amens\Downloads\pp1\SoftwareEng\Main_Directory\Renovation.cpp \
- C:\Users\amens\Downloads\pp1\SoftwareEng\Main_Directory\Renovation.h \
+ C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Renovation.cpp \
+ C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Renovation.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Program\ Files/JetBrains/CLion\ 2025.2.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
