@@ -6,6 +6,8 @@
 // Description : Declarations for design by contract in C++
 //============================================================================
 
+#ifndef DESIGNBYCONTRACT_H
+#define DESIGNBYCONTRACT_H
 
 #include "assert.h"
 #include <stdio.h>
@@ -38,3 +40,5 @@ static inline void contract_fail
         if (!(assertion)) \
             contract_fail(#assertion, __FILE__, __LINE__, what); \
     } while (0)
+
+#endif
