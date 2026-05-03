@@ -1,0 +1,4 @@
+de CO2 moet groter zijn dan 0
+ATTRIBUTE HOUR moet tussen 0 en 23 zijn voor het type MEETING
+ATTRIBUTE HOUR moet tussen 0 en 23 zijn voor het type MEETING
+De CAPACITY moet groter zijn dan 0

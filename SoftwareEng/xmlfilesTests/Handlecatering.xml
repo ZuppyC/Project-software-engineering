@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SYSTEM>
+    <CAMPUS>
+        <NAME>Campus</NAME>
+        <IDENTIFIER>C1</IDENTIFIER>
+    </CAMPUS>
+
+    <BUILDING>
+        <NAME>Building 1</NAME>
+        <IDENTIFIER>B1</IDENTIFIER>
+        <CAMPUS>C1</CAMPUS>
+    </BUILDING>
+
+    <ROOM>
+        <NAME>M123</NAME>
+        <IDENTIFIER>M123</IDENTIFIER>
+        <CAPACITY>2</CAPACITY>
+        <CAMPUS>C1</CAMPUS>
+        <BUILDING>B1</BUILDING>
+    </ROOM>
+
+    <CATERING>
+        <CAMPUS>C1</CAMPUS>
+        <CO2>50</CO2>
+    </CATERING>
+
+    <MEETING>
+        <LABEL>Weekly meeting</LABEL>
+        <IDENTIFIER>Meeting_100001</IDENTIFIER>
+        <ROOM>M123</ROOM>
+        <DATE>2026-05-22</DATE>
+        <HOUR>14</HOUR>
+        <ONLINE>false</ONLINE>
+        <EXTERNALS>true</EXTERNALS>
+        <CATERING>true</CATERING>
+    </MEETING>
+
+    <PARTICIPATION>
+        <MEETING>Meeting_100001</MEETING>
+        <USER>Peter Selie</USER>
+        <EXTERNAL>false</EXTERNAL>
+    </PARTICIPATION>
+
+    <PARTICIPATION>
+        <MEETING>Meeting_100001</MEETING>
+        <USER>Selie</USER>
+        <EXTERNAL>true</EXTERNAL>
+    </PARTICIPATION>
+</SYSTEM>

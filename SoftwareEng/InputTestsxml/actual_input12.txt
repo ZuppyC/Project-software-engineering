@@ -1,0 +1,7 @@
+CO2 moet een float zijn
+ATTRIBUTE HOUR moet een int getal zijn voor het type MEETING
+Het ATTRIBUTE ONLINE moet een booleanse waarde zijn voor het type MEETING
+Het ATTRIBUTE EXTERNAL moet een booleanse waarde zijn voor het type MEETING
+Het ATTRIBUTE CATERING moet een booleanse waarde zijn voor het type MEETING
+Het ATTRIBUTE EXTERNAL moet een booleanse waarde zijn voor het type PARTICIPATION
+De CAPACITY moet een int zijn voor het type ROOM
