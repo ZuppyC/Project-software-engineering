@@ -243,7 +243,45 @@ void System::trackOccupancy(Meeting* meeting) {
     }
 }
 
+void System::statisticsReport(const string& filename) {
+    ofstream file(filename);
 
+    if (!file.is_open()) {
+        cerr << "Kan statistics report niet openen" << endl;
+        return;
+    }
+    int onlineMeetings = 0;
+    int canceledMeetings = 0;
+    int cateringMeetings = 0;
+    int totalParticipants = 0;
+    for (Meeting* m : meetings) {
+        if (m->getOnline()) {
+            onlineMeetings++;
+        }
+        if (m->getCanceled()) {
+            canceledMeetings++;
+        }
+        if (m->getCatering()) {
+            cateringMeetings++;
+        }
+        totalParticipants += m->getPart().size();
+    }
+
+    auto print = [&](ostream& out) {
+        out << "STATISTICS REPORT: " << endl;
+        out << "Total meetings: " << meetings.size() << endl;
+        out << "Online meetings: " << onlineMeetings << endl;
+        out << "Canceled meetings: " << canceledMeetings << endl;
+        out << "Meetings with catering: " << cateringMeetings << endl;
+        out << "Total participants: " << totalParticipants << endl;
+        out << "Total CO2: " << totalCo2 << endl;
+    };
+
+    print(cout);
+    print(file);
+
+    file.close();
+}
 
 
 

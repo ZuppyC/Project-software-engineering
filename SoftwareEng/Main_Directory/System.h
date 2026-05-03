@@ -80,6 +80,8 @@ public:
 
     double getTotalCo2();
 
+    void statisticsReport(const string& filename);
+
 
 
 };

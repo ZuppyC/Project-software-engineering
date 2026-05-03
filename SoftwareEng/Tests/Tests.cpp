@@ -62,7 +62,111 @@ TEST_F(SYSTEMTESTS, SystemOutputError) {
 
 }
 
+TEST_F(SYSTEMTESTS, AllMeetingsAreProcessed) {
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
 
+    s.takePlaceEveryMeeting();
+
+    vector<Meeting*> meetings = s.getMeeting();
+
+    ASSERT_FALSE(meetings.empty());
+
+    for (Meeting* m : meetings) {
+        EXPECT_TRUE(m->getBezig() || m->getCanceled());
+    }
+}
+TEST_F(SYSTEMTESTS, SingleMeetingTakesPlace) {
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+
+    vector<Meeting*> meetings = s.getMeeting();
+
+    ASSERT_FALSE(meetings.empty());
+
+    Meeting* meeting = meetings[0];
+
+    s.takesPlace(meeting);
+
+    EXPECT_TRUE(meeting->getBezig() || meeting->getCanceled());
+}
+
+
+TEST_F(SYSTEMTESTS, CateringFileIsCreated) {
+    remove("catering.txt");
+
+    System s("../xmlfilesTests/HandleCatering.xml");
+
+    s.takePlaceEveryMeeting();
+
+    ifstream file("catering.txt");
+
+    EXPECT_TRUE(file.is_open());
+}
+
+
+TEST_F(SYSTEMTESTS, CateringIsHandled) {
+    remove("catering.txt");
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    s.takePlaceEveryMeeting();
+    ifstream cateringFile("catering.txt");
+    EXPECT_TRUE(cateringFile.is_open());
+    if (cateringFile.is_open()) {
+        EXPECT_NE(cateringFile.peek(), ifstream::traits_type::eof());
+        cateringFile.close();
+    }
+
+    remove("catering.txt");
+}
+
+
+TEST_F(SYSTEMTESTS, CateringIsHandledJuist) {
+    remove("catering.txt");
+
+    System s("../xmlfilesTests/HandleCatering.xml");
+    s.takePlaceEveryMeeting();
+
+    ifstream file("catering.txt");
+    ASSERT_TRUE(file.is_open());
+
+    string content((istreambuf_iterator<char>(file)), {});
+
+    EXPECT_TRUE(content.find(s.getMeeting()[0]->getId()));
+    EXPECT_TRUE(content.find(s.getMeeting()[0]->getRoom()));
+    EXPECT_TRUE(content.find("Catering cost"));
+}
+
+TEST_F(SYSTEMTESTS, CO2StartsAtZero) {
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+
+    EXPECT_TRUE(s.getTotalCo2() == 0.0);
+}
+
+TEST_F(SYSTEMTESTS, CO2IsTracked) {
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+
+    EXPECT_FALSE(s.getTotalCo2() > 0.0);
+
+    s.takePlaceEveryMeeting();
+
+    EXPECT_TRUE(s.getTotalCo2() > 0.0);
+}
+
+TEST_F(SYSTEMTESTS, CO2IsTrackedNaProcessing) {
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+
+    s.takePlaceEveryMeeting();
+
+
+    EXPECT_TRUE(s.getTotalCo2() > 0.0);
+}
+
+TEST_F(SYSTEMTESTS, StatisticsReportIsCreated) {
+    remove("statistics_report_test.txt");
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    s.takePlaceEveryMeeting();
+    s.statisticsReport("statistics_report_test.txt");
+    ifstream file("statistics_report_test.txt");
+    EXPECT_TRUE(file.is_open());
+}
 
 
 // TEST_F(SYSTEMTESTS, NoMeeting_VAL)
@@ -229,7 +333,6 @@ TEST_F(SYSTEMTESTS, SystemOutputError) {
 //
 //     EXPECT_TRUE(m2->getCanceled());
 // }
-//
 //
 //
 //
