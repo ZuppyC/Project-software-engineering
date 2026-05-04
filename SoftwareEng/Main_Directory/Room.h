@@ -1,9 +1,6 @@
-//
-// Created by Dell on 26/02/2026.
-//
-
 #ifndef SOFTWAREENG_ROOM_H
 #define SOFTWAREENG_ROOM_H
+
 #include <string>
 using namespace std;
 
@@ -13,8 +10,8 @@ private:
     Room* _initCheck;
     string name;
     string identifier;
-    int capacity=0;
-    bool isOccupied= false;
+    int capacity = 0;
+    bool isOccupied = false;
     string campus;
     string building;
 
@@ -22,58 +19,85 @@ public:
     Room();
     /*
      * constructor voor Room
-     *
      */
+
     bool properlyInitialized();
 
     void setName(string name);
+    /*
+     * getters en setters voor room Name
+     \n REQUIRE(properlyInitialized(), "ROOM is niet geinitialiseerd");
+     \n REQUIRE(!name.empty(), "Er is geen NAME");
+     \n ENSURE(name == name, "NAME is niet gelezen");
+     */
     string getName();
     /*
-     *  getters en setters voor room Name
+     \n REQUIRE(properlyInitialized(), "ROOM is niet geinitialiseerd");
      */
 
     void setIdentifier(string id);
+    /*
+     * getters en setters voor room Identifier
+     \n REQUIRE(properlyInitialized(), "ROOM is niet geinitialiseerd");
+     \n REQUIRE(!id.empty(), "Er is geen IDENTIFIER");
+     \n ENSURE(identifier == id, "IDENTIFIER is niet gelezen");
+     */
     string getIdentifier();
     /*
-     *  getters en setters voor room Identifier
+     \n REQUIRE(properlyInitialized(), "ROOM is niet geinitialiseerd");
      */
 
     void setCapacity(int getal);
+    /*
+     * getters en setters voor room Capacity
+     \n REQUIRE(properlyInitialized(), "ROOM is niet geinitialiseerd");
+     \n REQUIRE(getal > 0, "CAPACITY moet groter zijn dan 0");
+     \n ENSURE(capacity == getal, "CAPACITY is niet gelezen");
+     */
     int getCapacity();
     /*
-     *  getters en setters voor room Capacity
+     \n REQUIRE(properlyInitialized(), "ROOM is niet geinitialiseerd");
      */
 
     bool getOccupied();
     void setOccupied(bool occupied);
     /*
-     *  getters en setters voor room occupation, om te zien of de room word gebruikt of niet
+     * getters en setters voor room occupation
      */
 
     void printRoom(ofstream& outputFile);
     /*
-    *  print de room naar een output bestand
-    */
+     \n REQUIRE(properlyInitialized(), "ROOM is niet geinitialiseerd");
+     */
 
     void setBuilding(string _building);
+    /*
+     * getters en setters voor room Building
+     \n REQUIRE(properlyInitialized(), "Room is niet geinitialiseerd");
+     \n REQUIRE(!_building.empty(), "Building mag niet leeg zijn");
+     \n ENSURE(building == _building, "Building niet correct gezet");
+     */
     string getBuilding();
     /*
-     *  getters en setters voor room Building
+     \n REQUIRE(properlyInitialized(), "Room is niet geinitialiseerd");
+     \n ENSURE(!building.empty(), "Building mag niet leeg zijn");
      */
-
 
     void setCampus(string _campus);
+    /*
+     * getters en setters voor room Campus
+     \n REQUIRE(properlyInitialized(), "Room is niet geinitialiseerd");
+     \n ENSURE(!campus.empty(), "Campus mag niet leeg zijn");
+     */
     string getCampus();
     /*
-     *  getters en setters voor room Campus
+     \n REQUIRE(properlyInitialized(), "Room is niet geinitialiseerd");
      */
-
 
     ~Room();
     /*
-     *  Room object destructor
+     * Room object destructor
      */
 };
-
 
 #endif //SOFTWAREENG_ROOM_H
