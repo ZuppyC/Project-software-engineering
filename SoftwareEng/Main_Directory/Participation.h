@@ -30,8 +30,12 @@ public:
     /*
      *  getters en setters voor participation Meeting
      */
+
     void setExternal(string isExternal_);
     bool getExternal();
+    /*
+     *  getters en setters voor participation isExternal
+     */
 
     ~Participation();
 

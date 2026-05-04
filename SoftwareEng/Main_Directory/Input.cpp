@@ -893,7 +893,7 @@ void Input::consistencyCheck(std::ostream& errStream,System *sys)
     }
     for (Room* r : sys->getRooms())
     {
-        string id = r->getId();
+        string id = r->getIdentifier();
         if (roomID.count(id))
         {
             errStream << "dubbele id voor Room met id: " << id << endl;
@@ -981,7 +981,7 @@ void Input::consistencyCheck(std::ostream& errStream,System *sys)
         int capacity = 0;
         for (Room* r:sys->getRooms())
         {
-            if (m->getRoom() == r->getId())
+            if (m->getRoom() == r->getIdentifier())
             {
                 capacity = r->getCapacity();
                 break;

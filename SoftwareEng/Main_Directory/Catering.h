@@ -17,12 +17,36 @@ private:
 
 public:
     Catering();
+    /*
+     * constructor voor Catering
+     *
+     */
+
     bool properlyInitialized();
+    /*
+     * controleert of het object correct geïnitialiseerd is
+     *
+     */
+
     void setCampus(const std::string& campus);
-    string getCampus();
+    std::string getCampus();
+    /*
+     * getters en setters voor de campus van de catering
+     *
+     */
+
     void setCo2(double co2);
-    double getCo2() ;
+    double getCo2();
+    /*
+     * getters en setters voor de CO2 uitstoot van de catering
+     *
+     */
+
     ~Catering();
+    /*
+     * destructor van Catering
+     *
+     */
 };
 
 

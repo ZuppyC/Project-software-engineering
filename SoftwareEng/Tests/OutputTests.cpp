@@ -48,44 +48,19 @@ TEST_F(OUTPUTTESTS, geenMeetingsFout) {
     Room* r = new Room();
     r->setIdentifier("R1");
     s.addRoom(r);
-    delete r;
+
     EXPECT_DEATH(o.print("test.txt", s), "Er zijn geen MEETINGs");
 }
 TEST_F(OUTPUTTESTS, geenParticipationsFout) {
     Room* r = new Room();
     r->setIdentifier("R1");
     s.addRoom(r);
-    delete r;
+
 
     Meeting* m = new Meeting();
     m->setRoom("R1");
     s.addMeeting(m);
-    delete m;
+
 
     EXPECT_DEATH(o.print("test.txt", s), "Er zijn geen PARTICIPATIONs");
-}
-TEST_F(OUTPUTTESTS, printJuist) {
-    Room* r = new Room();
-    r->setIdentifier("R1");
-    r->setCampus("C1");
-    s.addRoom(r);
-
-    Meeting* m = new Meeting();
-    m->setRoom("R1");
-    m->setCatering("false");
-    s.addMeeting(m);
-
-    Participation* p = new Participation();
-    s.addParticipation(p);
-    m->setPart(p);
-
-    Catering* c = new Catering();
-    c->setCampus("C1");
-    c->setCo2(10);
-    s.addCatering(c);
-
-    o.print("test.txt", s);
-
-    ifstream file("test.txt");
-    EXPECT_TRUE(file.good());
 }

@@ -86,6 +86,7 @@ void Room::setCampus(string _campus) {
 }
 
 string Room::getCampus() {
+    REQUIRE(properlyInitialized(), "Room is niet geinitialiseerd");
     return campus;
 }
 
@@ -97,11 +98,6 @@ Room::~Room()
 }
 
 
-string Room::getId()
-{
-    return identifier;
-
-}
 
 
 

@@ -20,6 +20,10 @@ private:
 
 public:
     Room();
+    /*
+     * constructor voor Room
+     *
+     */
     bool properlyInitialized();
 
     void setName(string name);
@@ -47,13 +51,23 @@ public:
      */
 
     void printRoom(ofstream& outputFile);
+    /*
+    *  print de room naar een output bestand
+    */
 
     void setBuilding(string _building);
     string getBuilding();
+    /*
+     *  getters en setters voor room Building
+     */
+
 
     void setCampus(string _campus);
     string getCampus();
-    string getId();
+    /*
+     *  getters en setters voor room Campus
+     */
+
 
     ~Room();
     /*
