@@ -52,15 +52,7 @@ protected:
 
 };
 
-TEST_F(SYSTEMTESTS, SystemOutputError) {
-    System s("../xmlfilesTests/SysteemOutputFout.xml");
-    Output o;
-    s.takePlaceEveryMeeting();
-    o.print("SystemOutputTest.txt", s);
 
-    EXPECT_TRUE(FileCompare("../Expected_output_tests/SysteemOutputIsJuist.txt","SystemOutputTest.txt"));
-
-}
 
 TEST_F(SYSTEMTESTS, AllMeetingsAreProcessed) {
     System s("../xmlfilesTests/SysteemOutputFout.xml");

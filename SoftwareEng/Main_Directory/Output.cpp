@@ -32,7 +32,7 @@ void Output::print(const std::string& filename, System& system) {
     outputFile<<"--== Meetings ==--\n"<<endl;
     for (Meeting* meeting : meetings) {
         meeting->printMeeting(outputFile);
-        Room* r;
+        Room* r=nullptr;
         double cateringCO2=0.0;
         for (Room* room : system.getRooms()) {
             if (meeting->getRoom()==room->getIdentifier()) {
@@ -60,6 +60,6 @@ void Output::print(const std::string& filename, System& system) {
     outputFile<<"--== CO2 Summary ==--\n"<<endl;
     outputFile<<"-  Total CO2:  "<<system.getTotalCo2()<<"\n";
 
-
+    ENSURE(outputFile.good(), "Schrijven naar file is foutgegaa,");
 
 }

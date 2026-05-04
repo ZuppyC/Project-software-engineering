@@ -55,8 +55,10 @@ RM = "C:\Program Files\JetBrains\CLion 2025.2.4\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+CMAKE_SOURCE_DIR = C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng
 
 # The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/release_target.dir/depend.make
@@ -74,153 +76,228 @@ CMakeFiles/release_target.dir/codegen:
 
 CMakeFiles/release_target.dir/Main_Directory/main.cpp.obj: CMakeFiles/release_target.dir/flags.make
 CMakeFiles/release_target.dir/Main_Directory/main.cpp.obj: CMakeFiles/release_target.dir/includes_CXX.rsp
+CMakeFiles/release_target.dir/Main_Directory/main.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Main_Directory/main.cpp
 CMakeFiles/release_target.dir/Main_Directory/main.cpp.obj: CMakeFiles/release_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/release_target.dir/Main_Directory/main.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/release_target.dir/Main_Directory/main.cpp.obj -MF CMakeFiles\release_target.dir\Main_Directory\main.cpp.obj.d -o CMakeFiles\release_target.dir\Main_Directory\main.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\main.cpp
 
 CMakeFiles/release_target.dir/Main_Directory/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/release_target.dir/Main_Directory/main.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\main.cpp > CMakeFiles\release_target.dir\Main_Directory\main.cpp.i
 
 CMakeFiles/release_target.dir/Main_Directory/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/release_target.dir/Main_Directory/main.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\main.cpp -o CMakeFiles\release_target.dir\Main_Directory\main.cpp.s
 
 CMakeFiles/release_target.dir/xmlparser/tinyxml.cpp.obj: CMakeFiles/release_target.dir/flags.make
 CMakeFiles/release_target.dir/xmlparser/tinyxml.cpp.obj: CMakeFiles/release_target.dir/includes_CXX.rsp
+CMakeFiles/release_target.dir/xmlparser/tinyxml.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/xmlparser/tinyxml.cpp
 CMakeFiles/release_target.dir/xmlparser/tinyxml.cpp.obj: CMakeFiles/release_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/release_target.dir/xmlparser/tinyxml.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/release_target.dir/xmlparser/tinyxml.cpp.obj -MF CMakeFiles\release_target.dir\xmlparser\tinyxml.cpp.obj.d -o CMakeFiles\release_target.dir\xmlparser\tinyxml.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinyxml.cpp
 
 CMakeFiles/release_target.dir/xmlparser/tinyxml.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/release_target.dir/xmlparser/tinyxml.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinyxml.cpp > CMakeFiles\release_target.dir\xmlparser\tinyxml.cpp.i
 
 CMakeFiles/release_target.dir/xmlparser/tinyxml.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/release_target.dir/xmlparser/tinyxml.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinyxml.cpp -o CMakeFiles\release_target.dir\xmlparser\tinyxml.cpp.s
 
 CMakeFiles/release_target.dir/xmlparser/tinyxmlerror.cpp.obj: CMakeFiles/release_target.dir/flags.make
 CMakeFiles/release_target.dir/xmlparser/tinyxmlerror.cpp.obj: CMakeFiles/release_target.dir/includes_CXX.rsp
+CMakeFiles/release_target.dir/xmlparser/tinyxmlerror.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/xmlparser/tinyxmlerror.cpp
 CMakeFiles/release_target.dir/xmlparser/tinyxmlerror.cpp.obj: CMakeFiles/release_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/release_target.dir/xmlparser/tinyxmlerror.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/release_target.dir/xmlparser/tinyxmlerror.cpp.obj -MF CMakeFiles\release_target.dir\xmlparser\tinyxmlerror.cpp.obj.d -o CMakeFiles\release_target.dir\xmlparser\tinyxmlerror.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinyxmlerror.cpp
 
 CMakeFiles/release_target.dir/xmlparser/tinyxmlerror.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/release_target.dir/xmlparser/tinyxmlerror.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinyxmlerror.cpp > CMakeFiles\release_target.dir\xmlparser\tinyxmlerror.cpp.i
 
 CMakeFiles/release_target.dir/xmlparser/tinyxmlerror.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/release_target.dir/xmlparser/tinyxmlerror.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinyxmlerror.cpp -o CMakeFiles\release_target.dir\xmlparser\tinyxmlerror.cpp.s
 
 CMakeFiles/release_target.dir/xmlparser/tinystr.cpp.obj: CMakeFiles/release_target.dir/flags.make
 CMakeFiles/release_target.dir/xmlparser/tinystr.cpp.obj: CMakeFiles/release_target.dir/includes_CXX.rsp
+CMakeFiles/release_target.dir/xmlparser/tinystr.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/xmlparser/tinystr.cpp
 CMakeFiles/release_target.dir/xmlparser/tinystr.cpp.obj: CMakeFiles/release_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/release_target.dir/xmlparser/tinystr.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/release_target.dir/xmlparser/tinystr.cpp.obj -MF CMakeFiles\release_target.dir\xmlparser\tinystr.cpp.obj.d -o CMakeFiles\release_target.dir\xmlparser\tinystr.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinystr.cpp
 
 CMakeFiles/release_target.dir/xmlparser/tinystr.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/release_target.dir/xmlparser/tinystr.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinystr.cpp > CMakeFiles\release_target.dir\xmlparser\tinystr.cpp.i
 
 CMakeFiles/release_target.dir/xmlparser/tinystr.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/release_target.dir/xmlparser/tinystr.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinystr.cpp -o CMakeFiles\release_target.dir\xmlparser\tinystr.cpp.s
 
 CMakeFiles/release_target.dir/xmlparser/tinyxmlparser.cpp.obj: CMakeFiles/release_target.dir/flags.make
 CMakeFiles/release_target.dir/xmlparser/tinyxmlparser.cpp.obj: CMakeFiles/release_target.dir/includes_CXX.rsp
+CMakeFiles/release_target.dir/xmlparser/tinyxmlparser.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/xmlparser/tinyxmlparser.cpp
 CMakeFiles/release_target.dir/xmlparser/tinyxmlparser.cpp.obj: CMakeFiles/release_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/release_target.dir/xmlparser/tinyxmlparser.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/release_target.dir/xmlparser/tinyxmlparser.cpp.obj -MF CMakeFiles\release_target.dir\xmlparser\tinyxmlparser.cpp.obj.d -o CMakeFiles\release_target.dir\xmlparser\tinyxmlparser.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinyxmlparser.cpp
 
 CMakeFiles/release_target.dir/xmlparser/tinyxmlparser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/release_target.dir/xmlparser/tinyxmlparser.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinyxmlparser.cpp > CMakeFiles\release_target.dir\xmlparser\tinyxmlparser.cpp.i
 
 CMakeFiles/release_target.dir/xmlparser/tinyxmlparser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/release_target.dir/xmlparser/tinyxmlparser.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\xmlparser\tinyxmlparser.cpp -o CMakeFiles\release_target.dir\xmlparser\tinyxmlparser.cpp.s
 
 CMakeFiles/release_target.dir/Main_Directory/System.cpp.obj: CMakeFiles/release_target.dir/flags.make
 CMakeFiles/release_target.dir/Main_Directory/System.cpp.obj: CMakeFiles/release_target.dir/includes_CXX.rsp
+CMakeFiles/release_target.dir/Main_Directory/System.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Main_Directory/System.cpp
 CMakeFiles/release_target.dir/Main_Directory/System.cpp.obj: CMakeFiles/release_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/release_target.dir/Main_Directory/System.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/release_target.dir/Main_Directory/System.cpp.obj -MF CMakeFiles\release_target.dir\Main_Directory\System.cpp.obj.d -o CMakeFiles\release_target.dir\Main_Directory\System.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\System.cpp
 
 CMakeFiles/release_target.dir/Main_Directory/System.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/release_target.dir/Main_Directory/System.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\System.cpp > CMakeFiles\release_target.dir\Main_Directory\System.cpp.i
 
 CMakeFiles/release_target.dir/Main_Directory/System.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/release_target.dir/Main_Directory/System.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\System.cpp -o CMakeFiles\release_target.dir\Main_Directory\System.cpp.s
 
 CMakeFiles/release_target.dir/Main_Directory/Room.cpp.obj: CMakeFiles/release_target.dir/flags.make
 CMakeFiles/release_target.dir/Main_Directory/Room.cpp.obj: CMakeFiles/release_target.dir/includes_CXX.rsp
+CMakeFiles/release_target.dir/Main_Directory/Room.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Main_Directory/Room.cpp
 CMakeFiles/release_target.dir/Main_Directory/Room.cpp.obj: CMakeFiles/release_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/release_target.dir/Main_Directory/Room.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/release_target.dir/Main_Directory/Room.cpp.obj -MF CMakeFiles\release_target.dir\Main_Directory\Room.cpp.obj.d -o CMakeFiles\release_target.dir\Main_Directory\Room.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Room.cpp
 
 CMakeFiles/release_target.dir/Main_Directory/Room.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/release_target.dir/Main_Directory/Room.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Room.cpp > CMakeFiles\release_target.dir\Main_Directory\Room.cpp.i
 
 CMakeFiles/release_target.dir/Main_Directory/Room.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/release_target.dir/Main_Directory/Room.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Room.cpp -o CMakeFiles\release_target.dir\Main_Directory\Room.cpp.s
 
 CMakeFiles/release_target.dir/Main_Directory/Participation.cpp.obj: CMakeFiles/release_target.dir/flags.make
 CMakeFiles/release_target.dir/Main_Directory/Participation.cpp.obj: CMakeFiles/release_target.dir/includes_CXX.rsp
+CMakeFiles/release_target.dir/Main_Directory/Participation.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Main_Directory/Participation.cpp
 CMakeFiles/release_target.dir/Main_Directory/Participation.cpp.obj: CMakeFiles/release_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/release_target.dir/Main_Directory/Participation.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/release_target.dir/Main_Directory/Participation.cpp.obj -MF CMakeFiles\release_target.dir\Main_Directory\Participation.cpp.obj.d -o CMakeFiles\release_target.dir\Main_Directory\Participation.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Participation.cpp
 
 CMakeFiles/release_target.dir/Main_Directory/Participation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/release_target.dir/Main_Directory/Participation.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Participation.cpp > CMakeFiles\release_target.dir\Main_Directory\Participation.cpp.i
 
 CMakeFiles/release_target.dir/Main_Directory/Participation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/release_target.dir/Main_Directory/Participation.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Participation.cpp -o CMakeFiles\release_target.dir\Main_Directory\Participation.cpp.s
 
 CMakeFiles/release_target.dir/Main_Directory/Meeting.cpp.obj: CMakeFiles/release_target.dir/flags.make
 CMakeFiles/release_target.dir/Main_Directory/Meeting.cpp.obj: CMakeFiles/release_target.dir/includes_CXX.rsp
+CMakeFiles/release_target.dir/Main_Directory/Meeting.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Main_Directory/Meeting.cpp
 CMakeFiles/release_target.dir/Main_Directory/Meeting.cpp.obj: CMakeFiles/release_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/release_target.dir/Main_Directory/Meeting.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/release_target.dir/Main_Directory/Meeting.cpp.obj -MF CMakeFiles\release_target.dir\Main_Directory\Meeting.cpp.obj.d -o CMakeFiles\release_target.dir\Main_Directory\Meeting.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Meeting.cpp
 
 CMakeFiles/release_target.dir/Main_Directory/Meeting.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/release_target.dir/Main_Directory/Meeting.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Meeting.cpp > CMakeFiles\release_target.dir\Main_Directory\Meeting.cpp.i
 
 CMakeFiles/release_target.dir/Main_Directory/Meeting.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/release_target.dir/Main_Directory/Meeting.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Meeting.cpp -o CMakeFiles\release_target.dir\Main_Directory\Meeting.cpp.s
 
 CMakeFiles/release_target.dir/Main_Directory/Input.cpp.obj: CMakeFiles/release_target.dir/flags.make
 CMakeFiles/release_target.dir/Main_Directory/Input.cpp.obj: CMakeFiles/release_target.dir/includes_CXX.rsp
+CMakeFiles/release_target.dir/Main_Directory/Input.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Main_Directory/Input.cpp
 CMakeFiles/release_target.dir/Main_Directory/Input.cpp.obj: CMakeFiles/release_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/release_target.dir/Main_Directory/Input.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/release_target.dir/Main_Directory/Input.cpp.obj -MF CMakeFiles\release_target.dir\Main_Directory\Input.cpp.obj.d -o CMakeFiles\release_target.dir\Main_Directory\Input.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Input.cpp
 
 CMakeFiles/release_target.dir/Main_Directory/Input.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/release_target.dir/Main_Directory/Input.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Input.cpp > CMakeFiles\release_target.dir\Main_Directory\Input.cpp.i
 
 CMakeFiles/release_target.dir/Main_Directory/Input.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/release_target.dir/Main_Directory/Input.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Input.cpp -o CMakeFiles\release_target.dir\Main_Directory\Input.cpp.s
 
 CMakeFiles/release_target.dir/Main_Directory/Output.cpp.obj: CMakeFiles/release_target.dir/flags.make
 CMakeFiles/release_target.dir/Main_Directory/Output.cpp.obj: CMakeFiles/release_target.dir/includes_CXX.rsp
+CMakeFiles/release_target.dir/Main_Directory/Output.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Main_Directory/Output.cpp
 CMakeFiles/release_target.dir/Main_Directory/Output.cpp.obj: CMakeFiles/release_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/release_target.dir/Main_Directory/Output.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/release_target.dir/Main_Directory/Output.cpp.obj -MF CMakeFiles\release_target.dir\Main_Directory\Output.cpp.obj.d -o CMakeFiles\release_target.dir\Main_Directory\Output.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Output.cpp
 
 CMakeFiles/release_target.dir/Main_Directory/Output.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/release_target.dir/Main_Directory/Output.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Output.cpp > CMakeFiles\release_target.dir\Main_Directory\Output.cpp.i
 
 CMakeFiles/release_target.dir/Main_Directory/Output.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/release_target.dir/Main_Directory/Output.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Output.cpp -o CMakeFiles\release_target.dir\Main_Directory\Output.cpp.s
 
 CMakeFiles/release_target.dir/Main_Directory/Catering.cpp.obj: CMakeFiles/release_target.dir/flags.make
 CMakeFiles/release_target.dir/Main_Directory/Catering.cpp.obj: CMakeFiles/release_target.dir/includes_CXX.rsp
+CMakeFiles/release_target.dir/Main_Directory/Catering.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Main_Directory/Catering.cpp
 CMakeFiles/release_target.dir/Main_Directory/Catering.cpp.obj: CMakeFiles/release_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/release_target.dir/Main_Directory/Catering.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/release_target.dir/Main_Directory/Catering.cpp.obj -MF CMakeFiles\release_target.dir\Main_Directory\Catering.cpp.obj.d -o CMakeFiles\release_target.dir\Main_Directory\Catering.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Catering.cpp
 
 CMakeFiles/release_target.dir/Main_Directory/Catering.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/release_target.dir/Main_Directory/Catering.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Catering.cpp > CMakeFiles\release_target.dir\Main_Directory\Catering.cpp.i
 
 CMakeFiles/release_target.dir/Main_Directory/Catering.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/release_target.dir/Main_Directory/Catering.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Catering.cpp -o CMakeFiles\release_target.dir\Main_Directory\Catering.cpp.s
 
 CMakeFiles/release_target.dir/Main_Directory/Campus.cpp.obj: CMakeFiles/release_target.dir/flags.make
 CMakeFiles/release_target.dir/Main_Directory/Campus.cpp.obj: CMakeFiles/release_target.dir/includes_CXX.rsp
+CMakeFiles/release_target.dir/Main_Directory/Campus.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Main_Directory/Campus.cpp
 CMakeFiles/release_target.dir/Main_Directory/Campus.cpp.obj: CMakeFiles/release_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/release_target.dir/Main_Directory/Campus.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/release_target.dir/Main_Directory/Campus.cpp.obj -MF CMakeFiles\release_target.dir\Main_Directory\Campus.cpp.obj.d -o CMakeFiles\release_target.dir\Main_Directory\Campus.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Campus.cpp
 
 CMakeFiles/release_target.dir/Main_Directory/Campus.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/release_target.dir/Main_Directory/Campus.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Campus.cpp > CMakeFiles\release_target.dir\Main_Directory\Campus.cpp.i
 
 CMakeFiles/release_target.dir/Main_Directory/Campus.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/release_target.dir/Main_Directory/Campus.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Campus.cpp -o CMakeFiles\release_target.dir\Main_Directory\Campus.cpp.s
 
 CMakeFiles/release_target.dir/Main_Directory/Building.cpp.obj: CMakeFiles/release_target.dir/flags.make
 CMakeFiles/release_target.dir/Main_Directory/Building.cpp.obj: CMakeFiles/release_target.dir/includes_CXX.rsp
+CMakeFiles/release_target.dir/Main_Directory/Building.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Main_Directory/Building.cpp
 CMakeFiles/release_target.dir/Main_Directory/Building.cpp.obj: CMakeFiles/release_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/release_target.dir/Main_Directory/Building.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/release_target.dir/Main_Directory/Building.cpp.obj -MF CMakeFiles\release_target.dir\Main_Directory\Building.cpp.obj.d -o CMakeFiles\release_target.dir\Main_Directory\Building.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Building.cpp
 
 CMakeFiles/release_target.dir/Main_Directory/Building.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/release_target.dir/Main_Directory/Building.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Building.cpp > CMakeFiles\release_target.dir\Main_Directory\Building.cpp.i
 
 CMakeFiles/release_target.dir/Main_Directory/Building.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/release_target.dir/Main_Directory/Building.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Building.cpp -o CMakeFiles\release_target.dir\Main_Directory\Building.cpp.s
 
 CMakeFiles/release_target.dir/Main_Directory/Renovation.cpp.obj: CMakeFiles/release_target.dir/flags.make
 CMakeFiles/release_target.dir/Main_Directory/Renovation.cpp.obj: CMakeFiles/release_target.dir/includes_CXX.rsp
+CMakeFiles/release_target.dir/Main_Directory/Renovation.cpp.obj: C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/Main_Directory/Renovation.cpp
 CMakeFiles/release_target.dir/Main_Directory/Renovation.cpp.obj: CMakeFiles/release_target.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/release_target.dir/Main_Directory/Renovation.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/release_target.dir/Main_Directory/Renovation.cpp.obj -MF CMakeFiles\release_target.dir\Main_Directory\Renovation.cpp.obj.d -o CMakeFiles\release_target.dir\Main_Directory\Renovation.cpp.obj -c C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Renovation.cpp
 
 CMakeFiles/release_target.dir/Main_Directory/Renovation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/release_target.dir/Main_Directory/Renovation.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Renovation.cpp > CMakeFiles\release_target.dir\Main_Directory\Renovation.cpp.i
 
 CMakeFiles/release_target.dir/Main_Directory/Renovation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/release_target.dir/Main_Directory/Renovation.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\Main_Directory\Renovation.cpp -o CMakeFiles\release_target.dir\Main_Directory\Renovation.cpp.s
 
 # Object files for target release_target
 release_target_OBJECTS = \
@@ -262,6 +339,7 @@ release_target.exe: CMakeFiles/release_target.dir/build.make
 release_target.exe: CMakeFiles/release_target.dir/linkLibs.rsp
 release_target.exe: CMakeFiles/release_target.dir/objects1.rsp
 release_target.exe: CMakeFiles/release_target.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable release_target.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\release_target.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -273,5 +351,6 @@ CMakeFiles/release_target.dir/clean:
 .PHONY : CMakeFiles/release_target.dir/clean
 
 CMakeFiles/release_target.dir/depend:
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles\release_target.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/release_target.dir/depend
 

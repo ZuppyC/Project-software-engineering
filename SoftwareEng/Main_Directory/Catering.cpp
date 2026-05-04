@@ -17,22 +17,39 @@ bool Catering::properlyInitialized() {
 
 void Catering::setCampus(const std::string &campus)
 {
+    REQUIRE(properlyInitialized(), "Catering is niet geinitialiseerd");
+    REQUIRE(!campus.empty(), "Campus mag niet leeg zijn");
+
     this->campus = campus;
+
+    ENSURE(this->campus == campus, "Campus is niet correct ingesteld");
 }
 
 void Catering::setCo2(double co2)
 {
+    REQUIRE(properlyInitialized(), "Catering is niet geinitialiseerd");
+    REQUIRE(co2 >= 0, "CO2 mag niet negatief zijn");
+
     this->co2 = co2;
+
+    ENSURE(this->co2 == co2, "CO2 is niet correct ingesteld");
 }
 
-double Catering::getCo2() const
+double Catering::getCo2()
 {
+    REQUIRE(properlyInitialized(), "Catering is niet geinitialiseerd");
+
+    ENSURE(co2 >= 0, "CO2 moet geldig zijn");
     return co2;
 }
-string Catering::getCampus() {
+
+string Catering::getCampus()
+{
+    REQUIRE(properlyInitialized(), "Catering is niet geinitialiseerd");
+
+    ENSURE(!campus.empty(), "Campus mag niet leeg zijn");
     return campus;
 }
-
 Catering::~Catering()
 {
 

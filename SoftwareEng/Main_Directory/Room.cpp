@@ -63,15 +63,25 @@ void Room::printRoom(ofstream& outputfile) {
 }
 
 void Room::setBuilding(string _building) {
+    REQUIRE(properlyInitialized(), "Room is niet geinitialiseerd");
+    REQUIRE(!_building.empty(), "Building mag niet leeg zijn");
     building= _building;
+    ENSURE(building == _building, "Building niet correct gezet");
 }
 
 string Room::getBuilding() {
+    REQUIRE(properlyInitialized(), "Room is niet geinitialiseerd");
+
+    ENSURE(!building.empty(), "Building mag niet leeg zijn");
     return building;
 }
 
 void Room::setCampus(string _campus) {
+    REQUIRE(properlyInitialized(), "Room is niet geinitialiseerd");
+
+
     campus=_campus;
+    ENSURE(!campus.empty(), "Campus mag niet leeg zijn");
 
 }
 

@@ -21,7 +21,7 @@ public:
     void setCampus(const std::string& campus);
     string getCampus();
     void setCo2(double co2);
-    double getCo2() const;
+    double getCo2() ;
     ~Catering();
 };
 

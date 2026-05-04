@@ -486,6 +486,30 @@ Tests/CampusTests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/CampusTests.cpp.s
 .PHONY : Tests/CampusTests.cpp.s
 
+Tests/CateringTests.obj: Tests/CateringTests.cpp.obj
+.PHONY : Tests/CateringTests.obj
+
+# target to build an object file
+Tests/CateringTests.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/CateringTests.cpp.obj
+.PHONY : Tests/CateringTests.cpp.obj
+
+Tests/CateringTests.i: Tests/CateringTests.cpp.i
+.PHONY : Tests/CateringTests.i
+
+# target to preprocess a source file
+Tests/CateringTests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/CateringTests.cpp.i
+.PHONY : Tests/CateringTests.cpp.i
+
+Tests/CateringTests.s: Tests/CateringTests.cpp.s
+.PHONY : Tests/CateringTests.s
+
+# target to generate assembly for a file
+Tests/CateringTests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/CateringTests.cpp.s
+.PHONY : Tests/CateringTests.cpp.s
+
 Tests/InputTests.obj: Tests/InputTests.cpp.obj
 .PHONY : Tests/InputTests.obj
 
@@ -534,6 +558,30 @@ Tests/MeetingTests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/MeetingTests.cpp.s
 .PHONY : Tests/MeetingTests.cpp.s
 
+Tests/OutputTests.obj: Tests/OutputTests.cpp.obj
+.PHONY : Tests/OutputTests.obj
+
+# target to build an object file
+Tests/OutputTests.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/OutputTests.cpp.obj
+.PHONY : Tests/OutputTests.cpp.obj
+
+Tests/OutputTests.i: Tests/OutputTests.cpp.i
+.PHONY : Tests/OutputTests.i
+
+# target to preprocess a source file
+Tests/OutputTests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/OutputTests.cpp.i
+.PHONY : Tests/OutputTests.cpp.i
+
+Tests/OutputTests.s: Tests/OutputTests.cpp.s
+.PHONY : Tests/OutputTests.s
+
+# target to generate assembly for a file
+Tests/OutputTests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/OutputTests.cpp.s
+.PHONY : Tests/OutputTests.cpp.s
+
 Tests/ParticipationTests.obj: Tests/ParticipationTests.cpp.obj
 .PHONY : Tests/ParticipationTests.obj
 
@@ -557,6 +605,54 @@ Tests/ParticipationTests.s: Tests/ParticipationTests.cpp.s
 Tests/ParticipationTests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/ParticipationTests.cpp.s
 .PHONY : Tests/ParticipationTests.cpp.s
+
+Tests/RenovationTests.obj: Tests/RenovationTests.cpp.obj
+.PHONY : Tests/RenovationTests.obj
+
+# target to build an object file
+Tests/RenovationTests.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/RenovationTests.cpp.obj
+.PHONY : Tests/RenovationTests.cpp.obj
+
+Tests/RenovationTests.i: Tests/RenovationTests.cpp.i
+.PHONY : Tests/RenovationTests.i
+
+# target to preprocess a source file
+Tests/RenovationTests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/RenovationTests.cpp.i
+.PHONY : Tests/RenovationTests.cpp.i
+
+Tests/RenovationTests.s: Tests/RenovationTests.cpp.s
+.PHONY : Tests/RenovationTests.s
+
+# target to generate assembly for a file
+Tests/RenovationTests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/RenovationTests.cpp.s
+.PHONY : Tests/RenovationTests.cpp.s
+
+Tests/RoomTests.obj: Tests/RoomTests.cpp.obj
+.PHONY : Tests/RoomTests.obj
+
+# target to build an object file
+Tests/RoomTests.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/RoomTests.cpp.obj
+.PHONY : Tests/RoomTests.cpp.obj
+
+Tests/RoomTests.i: Tests/RoomTests.cpp.i
+.PHONY : Tests/RoomTests.i
+
+# target to preprocess a source file
+Tests/RoomTests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/RoomTests.cpp.i
+.PHONY : Tests/RoomTests.cpp.i
+
+Tests/RoomTests.s: Tests/RoomTests.cpp.s
+.PHONY : Tests/RoomTests.s
+
+# target to generate assembly for a file
+Tests/RoomTests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/RoomTests.cpp.s
+.PHONY : Tests/RoomTests.cpp.s
 
 Tests/Tests.obj: Tests/Tests.cpp.obj
 .PHONY : Tests/Tests.obj
@@ -763,15 +859,27 @@ help:
 	@echo ... Tests/CampusTests.obj
 	@echo ... Tests/CampusTests.i
 	@echo ... Tests/CampusTests.s
+	@echo ... Tests/CateringTests.obj
+	@echo ... Tests/CateringTests.i
+	@echo ... Tests/CateringTests.s
 	@echo ... Tests/InputTests.obj
 	@echo ... Tests/InputTests.i
 	@echo ... Tests/InputTests.s
 	@echo ... Tests/MeetingTests.obj
 	@echo ... Tests/MeetingTests.i
 	@echo ... Tests/MeetingTests.s
+	@echo ... Tests/OutputTests.obj
+	@echo ... Tests/OutputTests.i
+	@echo ... Tests/OutputTests.s
 	@echo ... Tests/ParticipationTests.obj
 	@echo ... Tests/ParticipationTests.i
 	@echo ... Tests/ParticipationTests.s
+	@echo ... Tests/RenovationTests.obj
+	@echo ... Tests/RenovationTests.i
+	@echo ... Tests/RenovationTests.s
+	@echo ... Tests/RoomTests.obj
+	@echo ... Tests/RoomTests.i
+	@echo ... Tests/RoomTests.s
 	@echo ... Tests/Tests.obj
 	@echo ... Tests/Tests.i
 	@echo ... Tests/Tests.s

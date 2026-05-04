@@ -71,6 +71,10 @@ set(DEBUG_SOURCE_FILES
         Tests/MeetingTests.cpp
         Tests/BuildingTests.cpp
         Tests/CampusTests.cpp
+        Tests/RenovationTests.cpp
+        Tests/CateringTests.cpp
+        Tests/OutputTests.cpp
+        Tests/RoomTests.cpp
 
 
 )
