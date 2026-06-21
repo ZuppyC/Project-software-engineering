@@ -2,13 +2,14 @@
 #define SOFTWAREENG_RENOVATION_H
 
 #include <string>
+#include"Room.h"
 using namespace std;
 
 class Renovation {
 private:
     Renovation* _initCheck;
     std::string room;
-    Room room_pointer;
+    Room* room_pointer;
     tm* begindatum = nullptr;
     tm* einddatum = nullptr;
 

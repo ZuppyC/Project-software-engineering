@@ -1,4 +1,4 @@
-C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/cmake-build-debug/CMakeFiles/release_target.dir
-C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/cmake-build-debug/CMakeFiles/debug_target.dir
-C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Admin/CLionProjects/Project-software-engineering/SoftwareEng/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/amens/Downloads/123/SoftwareEng/cmake-build-debug/CMakeFiles/release_target.dir
+C:/Users/amens/Downloads/123/SoftwareEng/cmake-build-debug/CMakeFiles/debug_target.dir
+C:/Users/amens/Downloads/123/SoftwareEng/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/amens/Downloads/123/SoftwareEng/cmake-build-debug/CMakeFiles/rebuild_cache.dir

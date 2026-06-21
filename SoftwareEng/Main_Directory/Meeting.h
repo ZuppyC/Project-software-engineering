@@ -3,8 +3,9 @@
 
 #include <string>
 #include "Catering.h"
-#include "Participation.h"
+#include <vector>
 #include "Room.h"
+#include "Participation.h"
 
 using namespace std;
 

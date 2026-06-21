@@ -8,6 +8,8 @@
 #include <fstream>
 #include <bits/locale_classes.h>
 #include "../src/DesignByContract.h"
+#include "Meeting.h"
+#include "Participation.h"
 
 Meeting::Meeting() {
     _initCheck = this;
