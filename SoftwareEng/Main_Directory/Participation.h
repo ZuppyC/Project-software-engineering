@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 
+#include "Meeting.h"
+
 using namespace std;
 
 class Participation
@@ -12,6 +14,7 @@ private:
     Participation* _initCheck;
     string user;
     string meeting;
+    Meeting meeting_pointer;
     bool isExternal = false;
 
 public:

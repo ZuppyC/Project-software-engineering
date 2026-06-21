@@ -2,6 +2,7 @@
 #define SOFTWAREENG_BUILDING_H
 
 #include <string>
+#include "Campus.h"
 
 class Building
 {
@@ -10,6 +11,7 @@ private:
     std::string name;
     std::string id;
     std::string campus;
+    Campus campus_pointer;
 
 public:
     Building();

@@ -8,6 +8,7 @@ class Renovation {
 private:
     Renovation* _initCheck;
     std::string room;
+    Room room_pointer;
     tm* begindatum = nullptr;
     tm* einddatum = nullptr;
 

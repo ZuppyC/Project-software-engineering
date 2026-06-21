@@ -4,6 +4,7 @@
 #include <string>
 #include "Catering.h"
 #include "Participation.h"
+#include "Room.h"
 
 using namespace std;
 
@@ -13,6 +14,7 @@ private:
     string label;
     string identifier;
     string room;
+    Room room_pointer;
     tm* date = nullptr;
     bool isOnline = false;
     vector<Participation*> participants;

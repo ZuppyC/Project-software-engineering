@@ -2,6 +2,9 @@
 #define SOFTWAREENG_ROOM_H
 
 #include <string>
+
+#include "Building.h"
+#include "Campus.h"
 using namespace std;
 
 class Room
@@ -13,7 +16,9 @@ private:
     int capacity = 0;
     bool isOccupied = false;
     string campus;
+    Campus campus_pointer;
     string building;
+    Building building_pointer;
 
 public:
     Room();

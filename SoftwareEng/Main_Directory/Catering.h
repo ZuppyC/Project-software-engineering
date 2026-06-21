@@ -2,6 +2,7 @@
 #define SOFTWAREENG_CATERING_H
 
 #include <string>
+#include "Campus.h"
 
 using namespace std;
 
@@ -10,6 +11,7 @@ class Catering
 private:
     Catering* _initCheck;
     std::string campus;
+    Campus campus_pointer;
     double co2;
 
 public:
