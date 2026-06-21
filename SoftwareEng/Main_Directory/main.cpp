@@ -12,8 +12,8 @@ using namespace std;
 
 int main()
 {
-    System* s = new System("xmlfile.xml");
-
+    System* s = new System;
+    Input i("xmlfile.xml",cerr,s);
     Output out;
     s->takePlaceEveryMeeting();
     out.print("SystemOutput", *s);

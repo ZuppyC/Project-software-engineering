@@ -1,5 +1,5 @@
 #include "../Main_Directory/System.h"
-#include "gtest/gtest.h"
+#include "../gtest/include/gtest/gtest.h"
 #include "iostream"
 #include "../xmlparser/tinyxml.h"
 #include "../Main_Directory/Output.h"

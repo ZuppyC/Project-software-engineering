@@ -1061,3 +1061,15 @@ SuccessEnum Input::parseAll(const char* xmldoc, std::ostream& errStream, System*
 enum SuccessEnum Input::getResultaat() {
     return resultaat;
 }
+
+
+Input::Input(const char *xmldoc, std::ostream &errStream, System *sys)
+{
+    this->parseAll(xmldoc,errStream,sys);
+    this->consistencyCheck(errStream,sys);
+    this->returnConsistency(sys);
+}
+
+Input::Input() {
+
+}

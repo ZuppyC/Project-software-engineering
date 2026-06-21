@@ -19,6 +19,9 @@ private:
 
 
     public:
+        Input(const char* xmldoc,std::ostream& errStream, System* sys);
+        Input();
+
 
         SuccessEnum eerste_parserCB(const char* xmldoc,std::ostream& errStream, System* sys);
 
