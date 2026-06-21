@@ -10,7 +10,9 @@
 #include "input.h"
 
 System::System(const char* xmldoc)
+
 {
+
     // input_bestand.eerste_parserCB(xmldoc,cerr, this);
     //
     // input_bestand.parser_catering(xmldoc,cerr, this);
@@ -18,6 +20,9 @@ System::System(const char* xmldoc)
     // input_bestand.parserMRP(xmldoc,cerr, this);
     //
     // input_bestand.parser_renovatie(xmldoc,cerr,this);
+    _initcheck = this;
+
+    REQUIRE(xmldoc != nullptr, "Er is geen XML bestand opgegeven");
 
     input_bestand.parseAll(xmldoc,cerr, this);
 
@@ -25,64 +30,86 @@ System::System(const char* xmldoc)
 
     input_bestand.returnConsistency(this);
 
-    _initcheck = this;
 
+    ENSURE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
 }
 
 System::System()
 {
-
+    _initcheck = this;
 }
 
 
 void System::addParticipation(Participation* participation) {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
+    REQUIRE(participation != nullptr, "Er is geen participation");
     participations.push_back(participation);
+    ENSURE(!participations.empty() && participations.back() ==participation, "Participation is niet toegevoegd");
 }
 
 vector<Room*> System::getRooms() {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
     return rooms;
 }
 
 vector<Participation*> System::getParticipations() {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
     return participations;
 }
 void System::addRoom(Room *room) {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
+    REQUIRE(room != nullptr, "Er is geen ROOM");
     rooms.push_back(room);
+    ENSURE(!rooms.empty() && rooms.back() == room, "ROOM is niet toegevoegd");
 }
 
 void System::addMeeting(Meeting* meeting) {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
+    REQUIRE(meeting != nullptr, "Er is geen Meeting");
     meetings.push_back(meeting);
+    ENSURE(!meetings.empty() && meetings.back() == meeting, "Meeting is niet toegevoegd");
 }
 
 void System::addBuilding(Building* building) {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
+    REQUIRE(building != nullptr, "Er is geen Building");
     buildings.push_back(building);
+    ENSURE(!buildings.empty() && buildings.back() == building, "Building is niet toegevoegd");
 }
 
 void System::addCampus(Campus* campus) {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
+    REQUIRE(campus != nullptr, "Er is geen Campus");
     campuses.push_back(campus);
+    ENSURE(!campuses.empty() && campuses.back() == campus, "Campus is niet toegevoegd");
+
 }
 
 void System::addCatering(Catering* catering) {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
+    REQUIRE(catering != nullptr, "Er is geen Catering");
     caterings.push_back(catering);
+    ENSURE(!caterings.empty() && caterings.back() == catering, "Catering is niet toegevoegd");
 }
 
 void System::addRenovation(Renovation* renovation) {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
+    REQUIRE(renovation != nullptr, "Er is geen Renovation");
     renovations.push_back(renovation);
+    ENSURE(!renovations.empty() && renovations.back() == renovation, "Renovation is niet toegevoegd");
 }
 
 double System::getTotalCo2() {
-
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
     return totalCo2;
 }
 
 
 void System::takesPlace(Meeting* meeting) {
-
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
+    REQUIRE(meeting != nullptr, "Er is geen MEETING");
     REQUIRE(!rooms.empty(),"Er zijn geen ROOMs");
     REQUIRE(!meetings.empty(),"Er zijn geen MEETINGs");
-
-
-
 
     if (!meeting->getExternals()) {
         for (Participation* p: meeting->getPart()) {
@@ -138,11 +165,13 @@ void System::takesPlace(Meeting* meeting) {
 
     }
 
-    ENSURE(meeting->getBezig() || meeting->getCanceled(), "Meeting hasnt taken place, or hasnt been canceled.");
+    ENSURE(meeting->getBezig() || meeting->getCanceled(), "Meeting hasnt taken place or hasnt been canceled.");
 }
 
 void System::handleCatering(Meeting* meeting) {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
     REQUIRE(meeting!=nullptr,"Er is geen meeting");
+
     if (!meeting->getCatering()) {
         return;
     }
@@ -156,6 +185,7 @@ void System::handleCatering(Meeting* meeting) {
     vector<Participation*> parts = meeting->getPart();
 
     for (Participation* p : parts) {
+        REQUIRE(p != nullptr, "PARTICIPATION is een nullptr");
         if (p->getExternal()) {
             totalCost += 20.79;
         } else {
@@ -179,16 +209,19 @@ void System::handleCatering(Meeting* meeting) {
 }
 
 void System::trackCo2(Meeting* meeting) {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
     REQUIRE(meeting != nullptr, "Er is geen MEETING");
 
     if (meeting->getCo2Tracked()) {
         return;
     }
 
+    double oldTotalCo2 = totalCo2;
     double meetingCo2 =0.0;
     vector<Participation*> parts = meeting->getPart();
 
     for (Participation* p : parts) {
+        REQUIRE(p != nullptr, "Participation is een nullptr");
         if (meeting->getOnline()) {
             meetingCo2 +=30;
         }
@@ -204,23 +237,26 @@ void System::trackCo2(Meeting* meeting) {
         string campus = getCampusFromRoom(meeting->getRoom());
 
         for (Catering* c : caterings) {
+            REQUIRE(c != nullptr, "Catering is een nullptr");
             if (c->getCampus()==campus) {
                 meetingCo2 +=c->getCo2()*parts.size();
                 break;
             }
         }
 
-
-
         }
     totalCo2 += meetingCo2;
     meeting->setCo2Tracked(true);
+    ENSURE(meeting->getCo2Tracked(), "CO2 moet als getracked gemarkeerd zijn");
+    ENSURE(totalCo2 == oldTotalCo2 + meetingCo2, "totalCo2 is niet correct updated");
     }
 
 
 
 
 string System::getCampusFromRoom(const string& roomId) {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
+    REQUIRE(!roomId.empty(), "Er is geen room id");
     for (Room* r : rooms) {
         if (r->getIdentifier() == roomId) {
             return r->getCampus();
@@ -231,21 +267,27 @@ string System::getCampusFromRoom(const string& roomId) {
 
 
 void System::trackOccupancy(Meeting* meeting) {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
     REQUIRE(meeting != nullptr, "Er is geen Meeting");
 
     int participantsCount = meeting->getPart().size();
+    bool roomFound = false;
 
     for (Room* r :rooms) {
         if (r->getIdentifier() == meeting->getRoom()) {
             meeting->setOccupancy(participantsCount);
-            return;
+            roomFound=true;
+            break;
         }
     }
+    ENSURE(!roomFound || meeting->getOccupancy() == participantsCount,"Occupancy is niet correct");
 }
 
 void System::statisticsReport(const string& filename) {
-    ofstream file(filename);
 
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
+    REQUIRE(!filename.empty(), "Er is geen bestandsnaam opgegeven");
+    ofstream file(filename);
     if (!file.is_open()) {
         cerr << "Kan statistics report niet openen" << endl;
         return;
@@ -286,7 +328,7 @@ void System::statisticsReport(const string& filename) {
 
 
 void System::takePlaceEveryMeeting() {
-
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
     REQUIRE(!rooms.empty(),"Er zijn geen ROOMs");
     REQUIRE(!meetings.empty(),"Er zijn geen MEETINGs");
     REQUIRE(!participations.empty(),"Er zijn geen PARTICIPATIONs");
@@ -304,10 +346,12 @@ void System::takePlaceEveryMeeting() {
 
 
 vector<Meeting *>System::getMeeting() {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
     return meetings;
 }
 
 vector<Catering*> System::getCatering() {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
     return caterings;
 }
 
@@ -317,16 +361,19 @@ bool System::properlyInitialized()
 }
 
 vector<Building *> System::getBuilding() {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
     return buildings;
 }
 
 vector<Campus *> System::getCampus() {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
     return campuses;
 }
 
 
 vector<Renovation*> System::getRenovations()
 {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
     return renovations;
 }
 
@@ -369,5 +416,6 @@ System::~System()
 }
 
 Input System::getInput() {
+    REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
     return input_bestand;
 }
