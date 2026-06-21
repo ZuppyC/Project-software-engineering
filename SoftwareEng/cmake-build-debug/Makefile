@@ -59,10 +59,10 @@ RM = "C:\Program Files\JetBrains\CLion 2025.2.4\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\amens\Downloads\123\SoftwareEng
+CMAKE_SOURCE_DIR = C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\amens\Downloads\123\SoftwareEng\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -89,9 +89,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\amens\Downloads\123\SoftwareEng\cmake-build-debug\CMakeFiles C:\Users\amens\Downloads\123\SoftwareEng\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\amens\Downloads\123\SoftwareEng\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Admin\CLionProjects\Project-software-engineering\SoftwareEng\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -654,6 +654,30 @@ Tests/RoomTests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/RoomTests.cpp.s
 .PHONY : Tests/RoomTests.cpp.s
 
+Tests/SilenceOutput.obj: Tests/SilenceOutput.cpp.obj
+.PHONY : Tests/SilenceOutput.obj
+
+# target to build an object file
+Tests/SilenceOutput.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/SilenceOutput.cpp.obj
+.PHONY : Tests/SilenceOutput.cpp.obj
+
+Tests/SilenceOutput.i: Tests/SilenceOutput.cpp.i
+.PHONY : Tests/SilenceOutput.i
+
+# target to preprocess a source file
+Tests/SilenceOutput.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/SilenceOutput.cpp.i
+.PHONY : Tests/SilenceOutput.cpp.i
+
+Tests/SilenceOutput.s: Tests/SilenceOutput.cpp.s
+.PHONY : Tests/SilenceOutput.s
+
+# target to generate assembly for a file
+Tests/SilenceOutput.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\debug_target.dir\build.make CMakeFiles/debug_target.dir/Tests/SilenceOutput.cpp.s
+.PHONY : Tests/SilenceOutput.cpp.s
+
 Tests/Tests.obj: Tests/Tests.cpp.obj
 .PHONY : Tests/Tests.obj
 
@@ -880,6 +904,9 @@ help:
 	@echo ... Tests/RoomTests.obj
 	@echo ... Tests/RoomTests.i
 	@echo ... Tests/RoomTests.s
+	@echo ... Tests/SilenceOutput.obj
+	@echo ... Tests/SilenceOutput.i
+	@echo ... Tests/SilenceOutput.s
 	@echo ... Tests/Tests.obj
 	@echo ... Tests/Tests.i
 	@echo ... Tests/Tests.s

@@ -37,6 +37,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/debug_target.dir/Tests/RenovationTests.cpp.obj.d"
   "CMakeFiles/debug_target.dir/Tests/RoomTests.cpp.obj"
   "CMakeFiles/debug_target.dir/Tests/RoomTests.cpp.obj.d"
+  "CMakeFiles/debug_target.dir/Tests/SilenceOutput.cpp.obj"
+  "CMakeFiles/debug_target.dir/Tests/SilenceOutput.cpp.obj.d"
   "CMakeFiles/debug_target.dir/Tests/Tests.cpp.obj"
   "CMakeFiles/debug_target.dir/Tests/Tests.cpp.obj.d"
   "CMakeFiles/debug_target.dir/Tests/compare_file.cpp.obj"

@@ -11,7 +11,7 @@ class Catering
 private:
     Catering* _initCheck;
     std::string campus;
-    Campus campus_pointer;
+    Campus* campus_pointer;
     double co2;
 
 public:

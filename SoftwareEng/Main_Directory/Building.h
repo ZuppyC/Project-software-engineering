@@ -11,7 +11,7 @@ private:
     std::string name;
     std::string id;
     std::string campus;
-    Campus campus_pointer;
+    Campus* campus_pointer;
 
 public:
     Building();

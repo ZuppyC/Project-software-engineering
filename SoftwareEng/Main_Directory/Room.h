@@ -16,9 +16,9 @@ private:
     int capacity = 0;
     bool isOccupied = false;
     string campus;
-    Campus campus_pointer;
+    Campus* campus_pointer;
     string building;
-    Building building_pointer;
+    Building* building_pointer;
 
 public:
     Room();

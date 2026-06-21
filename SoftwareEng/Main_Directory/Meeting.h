@@ -15,7 +15,7 @@ private:
     string label;
     string identifier;
     string room;
-    Room room_pointer;
+    Room* room_pointer;
     tm* date = nullptr;
     bool isOnline = false;
     vector<Participation*> participants;

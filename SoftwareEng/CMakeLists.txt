@@ -75,6 +75,8 @@ set(DEBUG_SOURCE_FILES
         Tests/CateringTests.cpp
         Tests/OutputTests.cpp
         Tests/RoomTests.cpp
+        Tests/SilenceOutput.cpp
+        Tests/SilenceOutput.h
 
 
 )
@@ -90,3 +92,4 @@ add_executable(debug_target ${DEBUG_SOURCE_FILES}
 )
 # Link library
 target_link_libraries(debug_target gtest)
+
