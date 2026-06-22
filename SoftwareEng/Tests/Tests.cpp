@@ -54,30 +54,144 @@ protected:
 
 
 
+
+
+TEST_F(SYSTEMTESTS, ConstructorNullptr)
+{
+    EXPECT_DEATH(System(nullptr), "Er is geen XML bestand opgegeven");
+}
+
+
+TEST_F(SYSTEMTESTS, AddMeetingNullptr)
+{
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    EXPECT_DEATH(s.addMeeting(nullptr), "Er is geen Meeting");
+}
+
+TEST_F(SYSTEMTESTS, AddMeetingEnsure)
+{System s("../xmlfilesTests/SysteemOutputFout.xml");
+    Meeting* m = new Meeting();
+    s.addMeeting(m);
+    EXPECT_EQ(s.getMeeting().back(), m);
+}
+
+TEST_F(SYSTEMTESTS, AddRoomNullptr)
+{
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    EXPECT_DEATH(s.addRoom(nullptr), "Er is geen ROOM");
+
+}
+
+TEST_F(SYSTEMTESTS, AddRoomEnsure)
+{System s("../xmlfilesTests/SysteemOutputFout.xml");
+    Room* r = new Room();
+    size_t vroeger = s.getRooms().size();
+    s.addRoom(r);
+    EXPECT_EQ(s.getRooms().size(), vroeger + 1);
+    EXPECT_EQ(s.getRooms().back(), r);
+}
+
+TEST_F(SYSTEMTESTS, AddParticipationNullptr)
+{
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    EXPECT_DEATH(s.addParticipation(nullptr), "Er is geen participation");
+}
+TEST_F(SYSTEMTESTS, AddParticipationEnsure)
+{
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    Participation* p = new Participation();
+    s.addParticipation(p);
+    EXPECT_EQ(s.getParticipations().back(), p);
+}
+
+
+TEST_F(SYSTEMTESTS, AddBuildingNullptr)
+{
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    EXPECT_DEATH(s.addBuilding(nullptr), "Er is geen Building");
+}
+TEST_F(SYSTEMTESTS, AddBuildingEnsure)
+{
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    Building* b = new Building();
+    s.addBuilding(b);
+    EXPECT_EQ(s.getBuilding().back(), b);
+}
+
+
+TEST_F(SYSTEMTESTS, AddCampusNullptr)
+{
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    EXPECT_DEATH(s.addCampus(nullptr), "Er is geen Campus");
+}
+TEST_F(SYSTEMTESTS, AddCampusEnsure)
+{
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    Campus* c = new Campus();
+    s.addCampus(c);
+    EXPECT_EQ(s.getCampus().back(), c);
+}
+
+
+TEST_F(SYSTEMTESTS, AddCateringNullptr)
+{
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    EXPECT_DEATH(s.addCatering(nullptr), "Er is geen Catering");
+}
+TEST_F(SYSTEMTESTS, AddCateringEnsure)
+{System s("../xmlfilesTests/SysteemOutputFout.xml");
+    Catering* c = new Catering();
+    s.addCatering(c);
+    EXPECT_EQ(s.getCatering().back(), c);
+}
+
+
+
+TEST_F(SYSTEMTESTS, AddRenovationNullptr)
+{
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    EXPECT_DEATH(s.addRenovation(nullptr), "Er is geen Renovation");
+}
+TEST_F(SYSTEMTESTS, AddRenovationEnsure)
+{System s("../xmlfilesTests/SysteemOutputFout.xml");
+    Renovation* r = new Renovation();
+    s.addRenovation(r);
+    EXPECT_EQ(s.getRenovations().back(), r);
+}
+
 TEST_F(SYSTEMTESTS, AllMeetingsAreProcessed) {
     System s("../xmlfilesTests/SysteemOutputFout.xml");
-
     s.takePlaceEveryMeeting();
-
     vector<Meeting*> meetings = s.getMeeting();
-
     ASSERT_FALSE(meetings.empty());
 
     for (Meeting* m : meetings) {
         EXPECT_TRUE(m->getBezig() || m->getCanceled());
     }
 }
+
+TEST_F(SYSTEMTESTS, TakesPlaceNullptr)
+{
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    EXPECT_DEATH(s.takesPlace(nullptr), "Er is geen MEETING");
+}
+
+
+TEST_F(SYSTEMTESTS, TakesPlaceEnsurestate)
+{
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    Meeting* m = s.getMeeting()[0];
+    s.takesPlace(m);
+    EXPECT_TRUE(m->getBezig() || m->getCanceled());
+}
+
+
 TEST_F(SYSTEMTESTS, SingleMeetingTakesPlace) {
     System s("../xmlfilesTests/SysteemOutputFout.xml");
-
     vector<Meeting*> meetings = s.getMeeting();
-
     ASSERT_FALSE(meetings.empty());
-
     Meeting* meeting = meetings[0];
-
     s.takesPlace(meeting);
-
     EXPECT_TRUE(meeting->getBezig() || meeting->getCanceled());
 }
 
@@ -88,9 +202,7 @@ TEST_F(SYSTEMTESTS, CateringFileIsCreated) {
     System s("../xmlfilesTests/HandleCatering.xml");
 
     s.takePlaceEveryMeeting();
-
     ifstream file("catering.txt");
-
     EXPECT_TRUE(file.is_open());
 }
 
@@ -115,15 +227,25 @@ TEST_F(SYSTEMTESTS, CateringIsHandledJuist) {
 
     System s("../xmlfilesTests/HandleCatering.xml");
     s.takePlaceEveryMeeting();
-
     ifstream file("catering.txt");
     ASSERT_TRUE(file.is_open());
 
     string content((istreambuf_iterator<char>(file)), {});
 
-    EXPECT_TRUE(content.find(s.getMeeting()[0]->getId()));
-    EXPECT_TRUE(content.find(s.getMeeting()[0]->getRoom()));
-    EXPECT_TRUE(content.find("Catering cost"));
+    EXPECT_NE(content.find(s.getMeeting()[0]->getId()),std::string::npos);
+    EXPECT_NE(content.find(s.getMeeting()[0]->getRoom()),std::string::npos);
+    EXPECT_NE(content.find("Catering cost"),std::string::npos);
+}
+TEST_F(SYSTEMTESTS, TrackCo2Nullptr)
+{
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    EXPECT_DEATH(s.trackCo2(nullptr), "Er is geen MEETING");
+}
+
+TEST_F(SYSTEMTESTS, TrackOccupancyNullptr)
+{
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    EXPECT_DEATH(s.trackOccupancy(nullptr), "Er is geen Meeting");
 }
 
 TEST_F(SYSTEMTESTS, CO2StartsAtZero) {
@@ -136,12 +258,19 @@ TEST_F(SYSTEMTESTS, CO2IsTracked) {
     System s("../xmlfilesTests/SysteemOutputFout.xml");
 
     EXPECT_FALSE(s.getTotalCo2() > 0.0);
-
     s.takePlaceEveryMeeting();
-
     EXPECT_TRUE(s.getTotalCo2() > 0.0);
 }
 
+TEST_F(SYSTEMTESTS, TrackCo2Update)
+{
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    Meeting* m = s.getMeeting()[0];
+    double before = s.getTotalCo2();
+    s.trackCo2(m);
+    EXPECT_TRUE(m->getCo2Tracked());
+    EXPECT_TRUE(s.getTotalCo2() > before);
+}
 TEST_F(SYSTEMTESTS, CO2IsTrackedNaProcessing) {
     System s("../xmlfilesTests/SysteemOutputFout.xml");
 
@@ -150,7 +279,11 @@ TEST_F(SYSTEMTESTS, CO2IsTrackedNaProcessing) {
 
     EXPECT_TRUE(s.getTotalCo2() > 0.0);
 }
-
+TEST_F(SYSTEMTESTS, StatisticsReport_LegeFilename)
+{
+    System s("../xmlfilesTests/SysteemOutputFout.xml");
+    EXPECT_DEATH(s.statisticsReport(""), "Er is geen bestandsnaam opgegeven");
+}
 TEST_F(SYSTEMTESTS, StatisticsReportIsCreated) {
     remove("statistics_report_test.txt");
     System s("../xmlfilesTests/SysteemOutputFout.xml");

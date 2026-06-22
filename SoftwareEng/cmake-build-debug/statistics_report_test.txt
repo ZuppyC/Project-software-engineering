@@ -1,7 +1,0 @@
-STATISTICS REPORT: 
-Total meetings: 1
-Online meetings: 0
-Canceled meetings: 0
-Meetings with catering: 1
-Total participants: 2
-Total CO2: 1360

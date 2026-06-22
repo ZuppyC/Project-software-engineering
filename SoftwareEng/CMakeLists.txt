@@ -76,7 +76,6 @@ set(DEBUG_SOURCE_FILES
         Tests/OutputTests.cpp
         Tests/RoomTests.cpp
         Tests/SilenceOutput.cpp
-        Tests/SilenceOutput.h
 
 
 )

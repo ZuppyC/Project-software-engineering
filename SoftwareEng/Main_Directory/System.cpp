@@ -212,12 +212,13 @@ void System::trackCo2(Meeting* meeting) {
     REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
     REQUIRE(meeting != nullptr, "Er is geen MEETING");
 
+    double oldTotalCo2 = totalCo2;
+    double meetingCo2 =0.0;
+
     if (meeting->getCo2Tracked()) {
         return;
     }
 
-    double oldTotalCo2 = totalCo2;
-    double meetingCo2 =0.0;
     vector<Participation*> parts = meeting->getPart();
 
     for (Participation* p : parts) {
@@ -343,8 +344,6 @@ void System::takePlaceEveryMeeting() {
     }
 
 }
-
-
 vector<Meeting *>System::getMeeting() {
     REQUIRE(properlyInitialized(), "SYSTEM is niet geinitialiseerd");
     return meetings;
